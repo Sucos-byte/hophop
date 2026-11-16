@@ -1,0 +1,7 @@
+{
+  "instrument": "nordic-ppk2",
+  "run_id": "lab-000001",
+  "summary_version": 1,
+  "target_mean_power_mw": 12.5,
+  "target_total_energy_mj": 250.0
+}
