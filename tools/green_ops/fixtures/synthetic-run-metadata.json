@@ -1,0 +1,14 @@
+{
+  "metadata_version": 1,
+  "run_id": "synthetic-demo-001",
+  "adapter_id": "hophop",
+  "feature_profile_id": "hophop-nrf9151-v1",
+  "execution_kind": "synthetic",
+  "firmware_revision": null,
+  "firmware_dirty": null,
+  "device_id": null,
+  "target_provenance": {
+    "target_power_draw_mw": "missing",
+    "target_ping_rtt_latency_ms": "missing"
+  }
+}
