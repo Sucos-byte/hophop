@@ -1,13 +1,21 @@
 # SPDX-FileCopyrightText: 2026 Parth Shailesh Thite
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
+import csv
+import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from converter import CSV_FIELDS
-from dataset_builder import DATASET_FIELDS, aggregate_telemetry, build_dataset_row
+from dataset_builder import (
+    DATASET_FIELDS,
+    aggregate_telemetry,
+    build_dataset_row,
+    build_dataset_row_from_files,
+)
 
 
 def event_row(*, segment_id=0, event="rx_data", run_id="demo-001",
@@ -328,6 +336,174 @@ class DatasetRowTests(unittest.TestCase):
                 build_dataset_row(
                     run_metadata(), aggregated, experiment=planned
                 )
+
+
+def experiment_plan(*, execution_kind="synthetic", experiments=None):
+    planned = experiment(execution_kind=execution_kind)
+    entry = {
+        "run_id": planned["run_id"],
+        "state": planned["state"],
+        "requested_settings": planned["requested_settings"],
+    }
+    return {
+        "plan_version": 2,
+        "plan_id": "week4-demo",
+        "adapter_id": planned["adapter_id"],
+        "feature_profile_id": planned["feature_profile_id"],
+        "execution_kind": execution_kind,
+        "configuration_sha256": "a" * 64,
+        "experiments": [entry] if experiments is None else experiments,
+    }
+
+
+class DatasetFileJoinTests(unittest.TestCase):
+    def write_inputs(self, directory, *, metadata=None, rows=None, plan=None,
+                     energy=None):
+        directory = Path(directory)
+        telemetry_path = directory / "events.csv"
+        metadata_path = directory / "run.json"
+        plan_path = directory / "plan.json"
+        energy_path = directory / "ppk2.json"
+
+        with telemetry_path.open("w", encoding="utf-8", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=CSV_FIELDS)
+            writer.writeheader()
+            writer.writerows(rows if rows is not None else [
+                event_row(rx_attempts=5, rx_data_packets=4),
+                event_row(event="sync_beacon", sync_beacons=3),
+                event_row(event="tx_success", tx_successes=6),
+            ])
+        metadata_path.write_text(
+            json.dumps(metadata if metadata is not None else run_metadata()),
+            encoding="utf-8",
+        )
+        if plan is not None:
+            plan_path.write_text(json.dumps(plan), encoding="utf-8")
+        if energy is not None:
+            energy_path.write_text(json.dumps(energy), encoding="utf-8")
+        return telemetry_path, metadata_path, plan_path, energy_path
+
+    def test_loads_unmeasured_artifacts_without_optional_inputs(self):
+        with tempfile.TemporaryDirectory() as directory:
+            telemetry_path, metadata_path, _, _ = self.write_inputs(directory)
+            result = build_dataset_row_from_files(telemetry_path, metadata_path)
+        self.assertEqual(result["run_id"], "demo-001")
+        self.assertEqual(result["delivered_packets"], 4)
+        self.assertEqual(result["measurement_status"], "unmeasured")
+        self.assertIsNone(result["target_total_energy_mj"])
+
+    def test_loads_matching_experiment_features(self):
+        with tempfile.TemporaryDirectory() as directory:
+            telemetry_path, metadata_path, plan_path, _ = self.write_inputs(
+                directory, plan=experiment_plan()
+            )
+            result = build_dataset_row_from_files(
+                telemetry_path, metadata_path, plan_path
+            )
+        self.assertEqual(result["payload_size_bytes"], 64)
+        self.assertEqual(result["loss_preset"], "moderate")
+        self.assertEqual(result["seed"], 42)
+
+    def test_loads_matching_hardware_energy(self):
+        metadata = run_metadata(execution_kind="hardware", measured_power=True)
+        rows = [
+            event_row(source_kind="hardware", rx_attempts=5, rx_data_packets=4)
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            telemetry_path, metadata_path, _, energy_path = self.write_inputs(
+                directory, metadata=metadata, rows=rows, energy=ppk2()
+            )
+            result = build_dataset_row_from_files(
+                telemetry_path,
+                metadata_path,
+                ppk2_summary_json=energy_path,
+            )
+        self.assertEqual(result["measurement_status"], "measured")
+        self.assertEqual(result["target_energy_per_delivered_packet_uj"], 62_500.0)
+
+    def test_rejects_wrong_missing_and_repeated_csv_headers(self):
+        with tempfile.TemporaryDirectory() as directory:
+            telemetry_path, metadata_path, _, _ = self.write_inputs(directory)
+            original = telemetry_path.read_text(encoding="utf-8")
+            cases = [
+                original.replace("source_line,", "", 1),
+                original.replace("source_line,", "source_line,unknown,", 1),
+                original + original.splitlines()[0] + "\n",
+            ]
+            for content in cases:
+                telemetry_path.write_text(content, encoding="utf-8")
+                with self.subTest(content=content), self.assertRaises(ValueError):
+                    build_dataset_row_from_files(telemetry_path, metadata_path)
+
+    def test_rejects_empty_telemetry_and_invalid_utf8(self):
+        with tempfile.TemporaryDirectory() as directory:
+            telemetry_path, metadata_path, _, _ = self.write_inputs(directory)
+            telemetry_path.write_text(",".join(CSV_FIELDS) + "\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "empty"):
+                build_dataset_row_from_files(telemetry_path, metadata_path)
+            telemetry_path.write_bytes(b"\xff")
+            with self.assertRaises(UnicodeDecodeError):
+                build_dataset_row_from_files(telemetry_path, metadata_path)
+
+    def test_rejects_duplicate_run_metadata_keys(self):
+        with tempfile.TemporaryDirectory() as directory:
+            telemetry_path, metadata_path, _, _ = self.write_inputs(directory)
+            metadata_path.write_text(
+                json.dumps(run_metadata()).replace(
+                    '"metadata_version": 1',
+                    '"metadata_version": 2, "metadata_version": 1',
+                ),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "duplicate"):
+                build_dataset_row_from_files(telemetry_path, metadata_path)
+
+    def test_plan_must_contain_exactly_one_matching_experiment(self):
+        entry = experiment_plan()["experiments"][0]
+        cases = [
+            [],
+            [entry, dict(entry)],
+            [{**entry, "run_id": "other-run"}],
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            telemetry_path, metadata_path, plan_path, _ = self.write_inputs(directory)
+            for experiments in cases:
+                plan_path.write_text(
+                    json.dumps(experiment_plan(experiments=experiments)),
+                    encoding="utf-8",
+                )
+                with self.subTest(experiments=experiments), self.assertRaises(ValueError):
+                    build_dataset_row_from_files(
+                        telemetry_path, metadata_path, plan_path
+                    )
+
+    def test_cross_artifact_identity_mismatches_are_rejected(self):
+        bad_metadata = run_metadata()
+        bad_metadata["run_id"] = "other-run"
+        bad_plan = experiment_plan()
+        bad_plan["adapter_id"] = "platform-b"
+        bad_energy = ppk2()
+        bad_energy["run_id"] = "other-run"
+        cases = [
+            {"metadata": bad_metadata},
+            {"plan": bad_plan},
+            {
+                "metadata": run_metadata(execution_kind="hardware", measured_power=True),
+                "rows": [event_row(source_kind="hardware")],
+                "energy": bad_energy,
+            },
+        ]
+        for case in cases:
+            with tempfile.TemporaryDirectory() as directory:
+                paths = self.write_inputs(directory, **case)
+                telemetry_path, metadata_path, plan_path, energy_path = paths
+                with self.subTest(case=case), self.assertRaises(ValueError):
+                    build_dataset_row_from_files(
+                        telemetry_path,
+                        metadata_path,
+                        plan_path if "plan" in case else None,
+                        energy_path if "energy" in case else None,
+                    )
 
 
 if __name__ == "__main__":

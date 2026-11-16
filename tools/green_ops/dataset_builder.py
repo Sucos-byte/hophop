@@ -3,12 +3,16 @@
 
 """Build platform-independent Green-Ops dataset features from run artifacts."""
 
+import csv
+import json
 import math
+from pathlib import Path
+import re
 
 from channel_loss import PROBABILITY_FIELDS, validate_loss_scenario
 from converter import CSV_FIELDS, RUN_ID_PATTERN
-from ppk2_summary import validate_ppk2_summary
-from run_metadata import validate_run_metadata
+from ppk2_summary import load_ppk2_summary, validate_ppk2_summary
+from run_metadata import load_run_metadata, validate_run_metadata
 
 
 COUNTER_COLUMNS = (
@@ -76,6 +80,17 @@ SETTING_FIELDS = {
     "seed",
     "repetition",
 }
+PLAN_FIELDS = {
+    "plan_version",
+    "plan_id",
+    "adapter_id",
+    "feature_profile_id",
+    "execution_kind",
+    "configuration_sha256",
+    "experiments",
+}
+PLAN_EXPERIMENT_FIELDS = {"run_id", "state", "requested_settings"}
+SHA256 = re.compile(r"[0-9a-f]{64}")
 
 
 def _nonnegative_integer(value, field):
@@ -313,3 +328,102 @@ def build_dataset_row(run_metadata, telemetry, experiment=None, ppk2_summary=Non
         })
 
     return row
+
+
+def _unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON key: {key}")
+        result[key] = value
+    return result
+
+
+def _reject_constant(value):
+    raise ValueError(f"nonfinite JSON value: {value}")
+
+
+def _load_json_object(path):
+    with Path(path).open(encoding="utf-8") as stream:
+        return json.load(
+            stream,
+            object_pairs_hook=_unique_object,
+            parse_constant=_reject_constant,
+        )
+
+
+def _load_telemetry_csv(path):
+    with Path(path).open(encoding="utf-8", newline="") as stream:
+        reader = csv.DictReader(stream)
+        if reader.fieldnames != CSV_FIELDS:
+            raise ValueError("telemetry CSV header does not match the event schema")
+        return aggregate_telemetry(reader)
+
+
+def _select_experiment(plan, metadata):
+    if not isinstance(plan, dict) or set(plan) != PLAN_FIELDS:
+        raise ValueError("experiment plan must contain exactly the documented fields")
+    if type(plan["plan_version"]) is not int or plan["plan_version"] != 2:
+        raise ValueError("plan_version must be integer 2")
+    for field in ("plan_id", "adapter_id", "feature_profile_id"):
+        value = plan[field]
+        if not isinstance(value, str) or RUN_ID_PATTERN.fullmatch(value) is None:
+            raise ValueError(f"plan {field} is invalid")
+    if plan["execution_kind"] not in {"synthetic", "simulation", "hardware"}:
+        raise ValueError("plan execution_kind is invalid")
+    if (
+        not isinstance(plan["configuration_sha256"], str)
+        or SHA256.fullmatch(plan["configuration_sha256"]) is None
+    ):
+        raise ValueError("configuration_sha256 must be 64 lowercase hexadecimal digits")
+    if not isinstance(plan["experiments"], list):
+        raise ValueError("plan experiments must be a list")
+
+    matches = []
+    for entry in plan["experiments"]:
+        if not isinstance(entry, dict) or set(entry) != PLAN_EXPERIMENT_FIELDS:
+            raise ValueError("plan experiment must contain exactly the documented fields")
+        entry_run_id = entry["run_id"]
+        if (
+            not isinstance(entry_run_id, str)
+            or RUN_ID_PATTERN.fullmatch(entry_run_id) is None
+        ):
+            raise ValueError("plan experiment run_id is invalid")
+        if entry_run_id == metadata["run_id"]:
+            matches.append(entry)
+    if len(matches) != 1:
+        raise ValueError("plan must contain exactly one experiment matching run_id")
+
+    selected = matches[0]
+    return {
+        "run_id": selected["run_id"],
+        "adapter_id": plan["adapter_id"],
+        "feature_profile_id": plan["feature_profile_id"],
+        "execution_kind": plan["execution_kind"],
+        "state": selected["state"],
+        "requested_settings": selected["requested_settings"],
+    }
+
+
+def build_dataset_row_from_files(
+    telemetry_csv,
+    run_metadata_json,
+    experiment_plan_json=None,
+    ppk2_summary_json=None,
+):
+    """Load strict run artifacts and return one validated dataset row."""
+    metadata = load_run_metadata(run_metadata_json)
+    telemetry = _load_telemetry_csv(telemetry_csv)
+    experiment = None
+    if experiment_plan_json is not None:
+        experiment = _select_experiment(
+            _load_json_object(experiment_plan_json),
+            metadata,
+        )
+    energy = None
+    if ppk2_summary_json is not None:
+        energy = load_ppk2_summary(
+            ppk2_summary_json,
+            expected_run_id=metadata["run_id"],
+        )
+    return build_dataset_row(metadata, telemetry, experiment, energy)
