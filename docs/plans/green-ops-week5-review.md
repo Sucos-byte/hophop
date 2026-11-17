@@ -70,3 +70,7 @@ pending. Group independence, train-only preprocessing and count ablations are
 later evaluation requirements. Prospective candidate inference needs a planned-
 workload input path; recorded-run completion assertions must not be invented for
 unexecuted candidates. Actual hours remain unreported. No push or publish.
+
+Corrections committed locally as `18a9589`. The full `25b1aaa..18a9589` diff
+passes whitespace checks; working tree verified clean before the final tracker
+checkpoint. Test evidence above applies to that code commit.

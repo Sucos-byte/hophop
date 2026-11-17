@@ -221,3 +221,9 @@ and separate two-row analytical contract-test demos pass in
 Week 6 is ready for implementation of the sourced analytical generator;
 calibrated hardware accuracy and scientifically validated training remain
 pending. No actual effort hours inferred; no push or publish.
+
+Review corrections committed locally as `18a9589` (`Fix Week 5 evidence,
+prediction context and artifact integrity gaps`). Working tree verified clean
+at that checkpoint; full-range diff check from `25b1aaa` passes. The final
+tracker-only commit does not change the verified code or require another suite
+run. No push/publish performed.
