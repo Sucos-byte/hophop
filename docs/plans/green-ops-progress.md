@@ -425,3 +425,20 @@ ResourceWarning errors enabled; git diff --check passes. No real experiment
 fit or held-out performance inspection yet. Current: commit verified workflow.
 Next: train/CV/validation only, locally commit frozen choices/models, then locked
 one-pass test/stress evaluation without tuning/refitting.
+
+Workflow committed as `58cbe92` after265 passing tests. Starting the real
+train/CV/validation-only stage now. Recipe, folds, raw feature profile and
+candidate settings remain those frozen before fitting. Next checkpoint must
+commit selection/models before any real test/stress score is inspected.
+
+## Week 7 real selection checkpoint — before held-out scores
+
+Real training/grouped CV/validation stage completed under frozen recipe. Choices:
+mean power ridge alpha1.0; total energy ridge alpha0.01; per-delivery energy
+ridge alpha0.01. No test or stress performance inspected. Exact selection digest:
+31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b.
+All six baseline/chosen model hashes and selection-report hash verified; exact
+snapshots copied to docs/results/week7-regression-v1/training. Selected models
+remain fitted only on training labels (no train+validation refit). Current:
+commit this choice before held-out evaluation. Next: locked evaluator once,
+saved predictions/metrics, then documentation with honest results. No tuning.
