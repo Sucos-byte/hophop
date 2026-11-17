@@ -387,3 +387,22 @@ folds, seeds and selection rules before any fit. Static count/isolation planning
 assertions pass. Current: recipe/source freeze. Next: actual materialization and
 audit, then standard-library numerical core. No training or held-out evaluation
 yet. Incoming suite evidence: 246 passing tests; actual hours unreported.
+
+Experiment freeze committed as `6c4662e`, before any fitting. Current task:
+materialize/audit the frozen dataset. Next: commit actual count/hash/isolation
+evidence, then numerical core and toy-data workflow tests. Test/stress scores
+remain unobserved.
+
+## Week 7 dataset milestone verified
+
+Materialized/replay-audited all720 bundles at build/green-ops-week7/dataset:
+540 primary rows (360/90/90 across24/6/6 families), 180 stress rows only in the
+six test families. IDs, full-slot schedule, source hashes/provenance, pre-run
+capabilities, family/CV membership and group-local seeds checked. Separate
+primary and two stress CSV/manifest tables saved. Dataset SHA-256:
+e921297009bc1b12ca325cf13dfc16fbf4e4c5013bceb28fd1dbd02b18b9cf98.
+Recipe SHA-256:4a979b6cec4555c27d1813f33dc8481410e1ba2382dec2bb93b8366be32d1daf.
+Audit archived at docs/results/green-ops-week7-dataset-audit.json. Five targeted
+dataset tests pass. No design correction was necessary. No real-experiment
+fitting or held-out scoring occurred. Current: commit data milestone. Next:
+verified numerical core (toy tests only), then selection/evaluation workflow.

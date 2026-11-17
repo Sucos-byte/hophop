@@ -1,0 +1,22 @@
+{
+  "all_source_replays_passed": true,
+  "audit_version": 1,
+  "dataset_sha256": "e921297009bc1b12ca325cf13dfc16fbf4e4c5013bceb28fd1dbd02b18b9cf98",
+  "group_counts": {
+    "stress": 6,
+    "test": 6,
+    "train": 24,
+    "validation": 6
+  },
+  "partition_counts": {
+    "stress": 180,
+    "test": 90,
+    "train": 360,
+    "validation": 90
+  },
+  "primary_rows": 540,
+  "provenance": "analytical_simulation",
+  "recipe_sha256": "4a979b6cec4555c27d1813f33dc8481410e1ba2382dec2bb93b8366be32d1daf",
+  "row_count": 720,
+  "stress_rows": 180
+}
