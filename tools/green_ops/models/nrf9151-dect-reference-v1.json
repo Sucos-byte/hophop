@@ -1,0 +1,161 @@
+{
+  "conditions": {
+    "band": 1,
+    "modem_mode": "minimum_latency",
+    "rx_signal_dbm": -90,
+    "scope": "exclusive_VDD_scenario",
+    "supply_v": 3.7,
+    "temperature_c": 25,
+    "tx_power_dbm": 19
+  },
+  "currents_ma": {
+    "idle": {
+      "basis": "official_typical",
+      "max": 44.4,
+      "min": 29.6,
+      "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+      "source_id": "dect-idle",
+      "unit": "mA",
+      "value": 37
+    },
+    "rx": {
+      "basis": "official_typical",
+      "max": 56.4,
+      "min": 37.6,
+      "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+      "source_id": "dect-rx",
+      "unit": "mA",
+      "value": 47
+    },
+    "tx": {
+      "basis": "official_typical",
+      "max": 282.0,
+      "min": 188.0,
+      "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+      "source_id": "dect-tx",
+      "unit": "mA",
+      "value": 235
+    }
+  },
+  "description": "Exclusive nominal DECT NR+ scenario accounting; timings and loss are assumptions.",
+  "loss_probability": {
+    "basis": "assumption",
+    "max": 0.5,
+    "min": 0.0,
+    "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+    "source_id": null,
+    "unit": "probability",
+    "value": 0.1
+  },
+  "model_id": "nrf9151-dect-min-latency-reference",
+  "model_schema_version": 1,
+  "model_version": "1.0.0",
+  "parameter_version": "2026-11-17.1",
+  "rtt_extra_ms": null,
+  "sources": {
+    "dect-idle": {
+      "conditions": {
+        "band": 1,
+        "modem_mode": "minimum_latency",
+        "rx_signal_dbm": -90,
+        "scope": "exclusive_VDD_scenario",
+        "supply_v": 3.7,
+        "temperature_c": 25,
+        "tx_power_dbm": 19
+      },
+      "document": "nRF9151 Product Specification",
+      "revision": "1.1, June 2025",
+      "section": "Current consumption / Electrical specification / DECT NR+ current consumption",
+      "symbol": "IIDLE_LOW_LATENCY",
+      "table": "Unnumbered HTML current table",
+      "unit": "mA",
+      "url": "https://docs.nordicsemi.com/r/bundle/ps_nrf9151/page/_tmp/alta.nrf9151/autodita/application.current/parameters.id_current_dect_nr.html",
+      "value": 37
+    },
+    "dect-rx": {
+      "conditions": {
+        "band": 1,
+        "modem_mode": "minimum_latency",
+        "rx_signal_dbm": -90,
+        "scope": "exclusive_VDD_scenario",
+        "supply_v": 3.7,
+        "temperature_c": 25,
+        "tx_power_dbm": 19
+      },
+      "document": "nRF9151 Product Specification",
+      "revision": "1.1, June 2025",
+      "section": "Current consumption / Electrical specification / DECT NR+ current consumption",
+      "symbol": "IRX_-90DBM_LOW_LATENCY",
+      "table": "Unnumbered HTML current table",
+      "unit": "mA",
+      "url": "https://docs.nordicsemi.com/r/bundle/ps_nrf9151/page/_tmp/alta.nrf9151/autodita/application.current/parameters.id_current_dect_nr.html",
+      "value": 47
+    },
+    "dect-tx": {
+      "conditions": {
+        "band": 1,
+        "modem_mode": "minimum_latency",
+        "rx_signal_dbm": -90,
+        "scope": "exclusive_VDD_scenario",
+        "supply_v": 3.7,
+        "temperature_c": 25,
+        "tx_power_dbm": 19
+      },
+      "document": "nRF9151 Product Specification",
+      "revision": "1.1, June 2025",
+      "section": "Current consumption / Electrical specification / DECT NR+ current consumption",
+      "symbol": "ITX_PL13_LOW_LATENCY",
+      "table": "Unnumbered HTML current table",
+      "unit": "mA",
+      "url": "https://docs.nordicsemi.com/r/bundle/ps_nrf9151/page/_tmp/alta.nrf9151/autodita/application.current/parameters.id_current_dect_nr.html",
+      "value": 235
+    }
+  },
+  "timing_us": {
+    "backoff": {
+      "basis": "assumption",
+      "max": 5000,
+      "min": 0,
+      "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+      "source_id": null,
+      "unit": "us",
+      "value": 1000
+    },
+    "prepare": {
+      "basis": "assumption",
+      "max": 2000,
+      "min": 100,
+      "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+      "source_id": null,
+      "unit": "us",
+      "value": 500
+    },
+    "rx": {
+      "basis": "assumption",
+      "max": 4000,
+      "min": 500,
+      "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+      "source_id": null,
+      "unit": "us",
+      "value": 1500
+    },
+    "tx_base": {
+      "basis": "assumption",
+      "max": 2000,
+      "min": 500,
+      "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+      "source_id": null,
+      "unit": "us",
+      "value": 1000
+    },
+    "tx_per_byte": {
+      "basis": "assumption",
+      "max": 10,
+      "min": 1,
+      "range_note": "Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.",
+      "source_id": null,
+      "unit": "us",
+      "value": 4
+    }
+  }
+}

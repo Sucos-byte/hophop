@@ -227,3 +227,16 @@ prediction context and artifact integrity gaps`). Working tree verified clean
 at that checkpoint; full-range diff check from `25b1aaa` passes. The final
 tracker-only commit does not change the verified code or require another suite
 run. No push/publish performed.
+
+## Week 6 started — source/plan milestone
+
+Verified clean entry at `1726971dd46b67c45e9e23aa0b50b91000dc64a3` and
+created `green-ops/week6-analytical-reference`. Read instructions/current APIs
+and Week 5 review; no applicable AGENTS.md. Plan saved in
+`green-ops-week6-plan.md`. Official Nordic HTML revision history and DECT current
+sections are accessible: PS 1.1 (June 2025), minimum-latency typical TX/RX/idle
+currents under pinned conditions. Exact audit: `../green-ops-analytical-sources.md`.
+No LTE current substituted. Timings, loss, optional RTT and uncertainty ranges
+remain assumptions. Current task: versioned profile/core validation. Next step:
+implement exclusive state-time accounting with independent energy oracles.
+Incoming suite evidence remains 197 tests; no unchanged full-suite rerun.
