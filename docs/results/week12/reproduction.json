@@ -1,0 +1,14 @@
+{
+  "all_files_identical": true,
+  "audit": {
+    "aggregate_hash": "1c203fd041b5cadce22d141a426bb530e75595e01efca62c809b0201e12212ca",
+    "case_count": 1920,
+    "case_hash": "af441adb389dc9a7f9c59c2169749717c9f27877163bbc8275567f4b26857030",
+    "completed_ledgers_audited": 3819,
+    "infeasible_ledgers": 21
+  },
+  "compared_files": 3844,
+  "inventory_sha256": "5b82b9a8b01d5a5f3f8e59da67b38951f620f643d8778d057fe2deb005e1ec2a",
+  "provenance": "analytical_simulation",
+  "reproduction_version": 1
+}

@@ -1,0 +1,28 @@
+{
+  "consumption_version": 1,
+  "partitions": {
+    "locked_evaluation": [
+      "fp-1c9fb617dcdbd71266021e94072ac69e",
+      "fp-32e283d2b4f09bf00876dc1d0db6e902",
+      "fp-544fc9c19dc145f3840f09a3a165ae32",
+      "fp-6972ee86c211891a98cb52e01bf0b590",
+      "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+      "fp-de4b8748ffb217c90317211def1b047f",
+      "fp-e72f35aa5b7a6101289154f6418e5009",
+      "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+    ],
+    "validation": [
+      "fp-0ac3abd6dae2983f305753eb51d94ead",
+      "fp-522af99a3adbb05e27f343afc91be129",
+      "fp-8093b1e82ff40a91208f2bb32db13343",
+      "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+      "fp-9a67741725ceb6c20fc681e310e6daf6",
+      "fp-b50a4cbcb863d757d9e8ce251b67c093",
+      "fp-d0f48437795bc81de309c288605287ac",
+      "fp-e812bc32e826b79d05b9466197eb9a5d"
+    ]
+  },
+  "recipe_sha256": "f0340476576f6603302c0c33ad9aa62c701d58eada8fae3130cad78d3b03ac29",
+  "status": "BOTH_PARTITIONS_CONSUMED_ON_EXECUTION_START",
+  "tooling_sha256": "e51b7133fa9572f5d5bdc99c9036e133fefbf5753f6b610a4d9a5917aeabff54"
+}

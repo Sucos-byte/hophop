@@ -925,3 +925,25 @@ partitions without tuning, reproduce independently and report negative outcomes.
 Full suite passed351 tests (the initial10 new tests plus341 existing); subsequent
 JSONL/audit additions verified by the12-test targeted suite. No frozen behavior
 modified. Pre-scoring tooling milestone ready; no energy labels generated yet.
+
+Pre-scoring tooling committed2f3559c. Both Week12 partitions now consumed on
+execution start; do not relabel them fresh even if a run fails. Running1920 cases
+into build/green-ops-week12-a and independent process build/green-ops-week12-b.
+Same frozen dependencies/tooling; no validation/locked tuning. Separate durable
+consumption receipts survive publication rollback. Next audit all ledgers/hashes.
+
+Week12 execution/reproduction verified at tooling2f3559c:1920cases,16parents,
+48streams;3844 output files per run byte-identical in two independent processes.
+Independent rational audit checks3819 completed ledgers +21infeasible/null per
+run, time/energy/units/oracle/hashes/aggregation. Locked949feasible/11infeasible,
+2715%-oracle violations; validation950/10,281violations; invalid0. All1920
+ABSTAIN3/block; positiveFAIL0, all552violations missed. Controls288/split all
+abstention-blocked;0falsealarms is not good selectivity. Absolute200mW point
+violations29locked/32validation. No X/prediction changes, no tuning/overrides.
+Current: archive verified benchmark evidence/report; next final353-test suite,
+project-wide limitations/follow-up and final handoff. Both splits consumed.
+Final full suite353 tests passes with ResourceWarning errors on the final source
+state (341existing+12new); no production/frozen changes. Final report and project
+summary distinguish analytical software evidence, historical remoteff801898 run,
+and unperformed physical validation. Next commit evidence, verify archived report
+regeneration/hash receipt and clean checkout, update final handoff/export. No push.

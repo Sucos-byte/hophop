@@ -1,0 +1,45 @@
+{
+  "actual_gate_exits": {
+    "ABSTAIN": 3
+  },
+  "code_checkpoint": "2f3559cb8eb6fe35b8bdbcd328029c9998c31797",
+  "execution_version": 1,
+  "executor_exit": 0,
+  "executor_exit_meaning": "offline software completed; NOT candidate energy approval",
+  "frozen_engine_hashes": {
+    "tools/green_ops/fault_benchmark.py": "e240ccf56fca984f33b256d9a79ee8079b37c22c510dd41b9bf7795c8ffad081",
+    "tools/green_ops/fault_injection.py": "b9ecc62499fcdeeff4417c9cc5e58a18a49463f48d5d6203d16df32eec5b37a6",
+    "tools/green_ops/fault_workflow.py": "09a6bc2c97594c8f83f89141b1c73368bed3e69522d4ae72b58b246e6d7b12cf"
+  },
+  "frozen_receipt_sha256": "97a2c8a795eb2508a1ec47b433349070ca047198fced4486632ea8b47ab3a980",
+  "limitations": [
+    "both partitions consumed; new seeds do not restore parent independence",
+    "only8 locked parent groups",
+    "no physical validation"
+  ],
+  "no_model_policy_mechanism_or_severity_changes": true,
+  "no_tuning_between_partitions": true,
+  "outputs_sha256": {
+    "aggregate.json": "1c203fd041b5cadce22d141a426bb530e75595e01efca62c809b0201e12212ca",
+    "cases.jsonl": "af441adb389dc9a7f9c59c2169749717c9f27877163bbc8275567f4b26857030",
+    "consumption-a.json": "e5e0a2465baa0f66a4159e8bed0186fa78a4d460b53a1d9250d3d789511ca655",
+    "consumption-b.json": "e5e0a2465baa0f66a4159e8bed0186fa78a4d460b53a1d9250d3d789511ca655",
+    "manifest.json": "024007b87adc8b81644d56b07b288f5b9fdec0076aae7100ae511fe0a7ff5063",
+    "preflight.json": "2f9198bd2765e7e7bb76bc39e1caa2b66bb522a521e9c33cbbda8ef2f1378860",
+    "reproduction.json": "8c9fb0470489ca0b1cffc38686f8be17e427f22b1e157853178c9190a5841b0e"
+  },
+  "provenance": "analytical_simulation",
+  "python": "3.14.4",
+  "raw_replayable_outputs": [
+    "build/green-ops-week12-a",
+    "build/green-ops-week12-b"
+  ],
+  "raw_storage": "ignored local build; regenerate using reproduce.py",
+  "recipe_sha256": "f0340476576f6603302c0c33ad9aa62c701d58eada8fae3130cad78d3b03ac29",
+  "reproduction": "two separate Python processes/directories, all3844 files identical; independent rational energy/oracle/time audit",
+  "status": "COMPLETED_BOTH_PARTITIONS_CONSUMED",
+  "tooling_sha256": {
+    "tools/green_ops/benchmark_audit.py": "a7082d2e192cda4d2e4ce534ba37f672030915b0daf14658122c8e0301405923",
+    "tools/green_ops/benchmark_evaluation.py": "e51b7133fa9572f5d5bdc99c9036e133fefbf5753f6b610a4d9a5917aeabff54"
+  }
+}

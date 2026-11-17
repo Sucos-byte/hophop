@@ -1,0 +1,6048 @@
+{
+  "aggregation_version": 1,
+  "by_fault_severity": {
+    "locked_evaluation/beacon_hyper_wakeup/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/beacon_hyper_wakeup/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 2.5252499999999998,
+          "mean": 1.1932499999999944,
+          "median": 0.7214999999999943,
+          "minimum": 0.4162499999999862
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 4.218000000000075,
+          "mean": 1.1932499999999944,
+          "median": 0.7770000000000437,
+          "minimum": 0.11100000000001842
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.5532318953212364,
+          "mean": 0.2626205300146616,
+          "median": 0.17139976606889584,
+          "minimum": 0.07967260719791276
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.8436000000000092,
+          "mean": 0.3912749999999991,
+          "median": 0.2442000000000064,
+          "minimum": 0.11100000000001842
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/beacon_hyper_wakeup/20": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 18,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 50.50500000000001,
+          "mean": 23.865000000000002,
+          "median": 14.429999999999998,
+          "minimum": 8.325000000000008
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 84.36000000000001,
+          "mean": 23.865000000000002,
+          "median": 15.54000000000002,
+          "minimum": 2.2200000000000273
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 11.064637906424535,
+          "mean": 5.252410600293268,
+          "median": 3.4279953213779093,
+          "minimum": 1.5934521439580103
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 16.872000000000014,
+          "mean": 7.825500000000001,
+          "median": 4.883999999999986,
+          "minimum": 2.2200000000000273
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 18,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 3,
+        "parent_count": 8,
+        "value": 0.375
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 18
+    },
+    "locked_evaluation/beacon_hyper_wakeup/3": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 7.575749999999999,
+          "mean": 3.5797499999999953,
+          "median": 2.164500000000004,
+          "minimum": 1.2487500000000058
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 12.653999999999996,
+          "mean": 3.5797499999999953,
+          "median": 2.3310000000000315,
+          "minimum": 0.3329999999999984
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 1.6596956859636793,
+          "mean": 0.7878615900439881,
+          "median": 0.5141992982066875,
+          "minimum": 0.23901782159369747
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 2.5307999999999993,
+          "mean": 1.1738249999999961,
+          "median": 0.7325999999999908,
+          "minimum": 0.3329999999999984
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/bursty_retry_storm/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/bursty_retry_storm/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 8,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 25.675010400000005,
+          "mean": 11.32793665,
+          "median": 7.4677174,
+          "minimum": 4.465219200000007
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 42.41958240000008,
+          "mean": 11.32793665,
+          "median": 7.992710399999993,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 5.729150545534378,
+          "mean": 2.5129445529824825,
+          "median": 1.707457245698244,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 8.930438400000014,
+          "mean": 3.743627810000001,
+          "median": 2.420155199999982,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 46,
+        "None": 2,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 8,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 2,
+        "parent_count": 8,
+        "value": 0.25
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 8
+    },
+    "locked_evaluation/bursty_retry_storm/3": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 27,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 77.02503120000002,
+          "mean": 33.983809949999994,
+          "median": 22.403152200000005,
+          "minimum": 13.395657600000002
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 127.25874720000002,
+          "mean": 33.983809949999994,
+          "median": 23.97813119999998,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 17.187451636603118,
+          "mean": 7.538833658947446,
+          "median": 5.122371737094772,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 26.791315200000014,
+          "mean": 11.230883429999995,
+          "median": 7.260465600000003,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 46,
+        "None": 2,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 27,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 6,
+        "parent_count": 8,
+        "value": 0.75
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 27
+    },
+    "locked_evaluation/bursty_retry_storm/7": {
+      "absolute_200mW_fault_violations": 12,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 46,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 179.72507280000002,
+          "mean": 79.29555655,
+          "median": 52.27402180000001,
+          "minimum": 31.256534399999993
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 296.9370768000001,
+          "mean": 79.29555655,
+          "median": 55.94897280000001,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 40.104053818740574,
+          "mean": 17.590611870877378,
+          "median": 11.95220071988779,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 62.513068799999985,
+          "mean": 26.205394669999997,
+          "median": 16.94108639999999,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 46,
+        "None": 2,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 46,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 8,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 46
+    },
+    "locked_evaluation/cpu_busy_poll/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/cpu_busy_poll/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.05491725000002153,
+          "mean": 0.05373209375000165,
+          "median": 0.054402333333338035,
+          "minimum": 0.051673583333349406
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.09153800000001411,
+          "mean": 0.05373209375000165,
+          "median": 0.05222550000000581,
+          "minimum": 0.017093999999985954
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.013190293815937643,
+          "mean": 0.012382330374497479,
+          "median": 0.012750429977087314,
+          "minimum": 0.010811474653307842
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.018352000000021462,
+          "mean": 0.017921643750000864,
+          "median": 0.01813555000001088,
+          "minimum": 0.017093999999985954
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/cpu_busy_poll/1000": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 54.97561133333337,
+          "mean": 53.97600700000001,
+          "median": 54.5383946666667,
+          "minimum": 52.10391800000003
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 91.63997200000006,
+          "mean": 53.97600700000001,
+          "median": 52.60082800000002,
+          "minimum": 17.214028000000013
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 13.20497333645929,
+          "mean": 12.436007494803299,
+          "median": 12.785251713319226,
+          "minimum": 10.887388990492836
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 18.372423999999995,
+          "mean": 18.00161,
+          "median": 18.18558880000002,
+          "minimum": 17.214028000000013
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 48,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 8,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 48
+    },
+    "locked_evaluation/cpu_busy_poll/400": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 30,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 21.990160666666657,
+          "mean": 21.590150583333322,
+          "median": 21.81519691666667,
+          "minimum": 20.840915999999993
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 36.655844499999944,
+          "mean": 21.590150583333322,
+          "median": 21.039772499999984,
+          "minimum": 6.885403999999994
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 5.281968059916271,
+          "mean": 4.974347812395047,
+          "median": 5.114056444907938,
+          "minimum": 4.354824548019511
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 7.348939999999999,
+          "mean": 7.200561366666661,
+          "median": 7.274172249999992,
+          "minimum": 6.885403999999994
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 30,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 5,
+        "parent_count": 8,
+        "value": 0.625
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 30
+    },
+    "locked_evaluation/none/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/payload_fragmentation_bloat/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/payload_fragmentation_bloat/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 18,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 43.32701480000001,
+          "mean": 19.984930249999994,
+          "median": 12.078746200000003,
+          "minimum": 6.3312328000000235
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 74.73576720000005,
+          "mean": 19.984930249999994,
+          "median": 13.494580799999994,
+          "minimum": 1.6699728000000107
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 10.057461128233708,
+          "mean": 4.405649300705784,
+          "median": 2.8800622355285066,
+          "minimum": 1.1986584407709666
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 15.275908799999996,
+          "mean": 6.5679650899999995,
+          "median": 4.110187919999987,
+          "minimum": 1.6699728000000107
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 18,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 3,
+        "parent_count": 8,
+        "value": 0.375
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 18
+    },
+    "locked_evaluation/payload_fragmentation_bloat/15": {
+      "absolute_200mW_fault_violations": 16,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 37,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 7,
+          "maximum": 365.9089396,
+          "mean": 185.8579242857143,
+          "median": 175.1400624,
+          "minimum": 99.74417079999999
+        },
+        "paired_energy_mj": {
+          "count": 37,
+          "maximum": 615.8794152000002,
+          "mean": 183.01998,
+          "median": 171.58433279999997,
+          "minimum": 24.3931824
+        },
+        "paired_increase_percent": {
+          "count": 37,
+          "maximum": 136.1931052492597,
+          "mean": 43.74432743240992,
+          "median": 38.55768499855068,
+          "minimum": 17.53232579344936
+        },
+        "paired_power_mw": {
+          "count": 37,
+          "maximum": 206.858712,
+          "mean": 62.913500639999995,
+          "median": 54.61075679999999,
+          "minimum": 24.3931824
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 37,
+        "INFEASIBLE": 11,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 37,
+        "None": 11,
+        "True": 0
+      },
+      "oracle_known": 37,
+      "oracle_unknown": 11,
+      "oracle_violations": 37,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 7,
+        "parent_count": 8,
+        "value": 0.875
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 37
+    },
+    "locked_evaluation/payload_fragmentation_bloat/3": {
+      "absolute_200mW_fault_violations": 1,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 39,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 125.00093320000002,
+          "mean": 58.45955600000001,
+          "median": 35.25386640000001,
+          "minimum": 19.180666799999987
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 214.5204648,
+          "mean": 58.45955600000001,
+          "median": 38.5396884000001,
+          "minimum": 4.916145600000021
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 28.278231846150657,
+          "mean": 12.874253670040254,
+          "median": 8.302936342391295,
+          "minimum": 3.528667903752107
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 43.51581839999997,
+          "mean": 19.183224240000005,
+          "median": 11.836533840000016,
+          "minimum": 4.916145600000021
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 39,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 7,
+        "parent_count": 8,
+        "value": 0.875
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 39
+    },
+    "locked_evaluation/tx_power_lock/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/tx_power_lock/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 3.0350804000000124,
+          "mean": 1.320328350000003,
+          "median": 0.8726622666666799,
+          "minimum": 0.4812910666666568
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 5.068289600000071,
+          "mean": 1.320328350000003,
+          "median": 0.858932799999991,
+          "minimum": 0.11786720000000628
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.7342012521538422,
+          "mean": 0.295717807566886,
+          "median": 0.19727153646848944,
+          "minimum": 0.08507608990120347
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 1.1197383999999886,
+          "mean": 0.4315217499999993,
+          "median": 0.277736800000028,
+          "minimum": 0.11786720000000628
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "locked_evaluation/tx_power_lock/5": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 15.175402000000005,
+          "mean": 6.601641750000005,
+          "median": 4.363311333333352,
+          "minimum": 2.4064553333333265
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 25.341448000000014,
+          "mean": 6.601641750000005,
+          "median": 4.294663999999955,
+          "minimum": 0.589336000000003
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 3.671006260769248,
+          "mean": 1.478589037834434,
+          "median": 0.9863576823423986,
+          "minimum": 0.4253804495059968
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 5.598692,
+          "mean": 2.157608750000001,
+          "median": 1.388684000000012,
+          "minimum": 0.589336000000003
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/beacon_hyper_wakeup/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/beacon_hyper_wakeup/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 2.525250000000019,
+          "mean": 1.3874999999999964,
+          "median": 1.4984999999999977,
+          "minimum": 0.4162499999999625
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 4.218000000000075,
+          "mean": 1.3874999999999964,
+          "median": 0.7770000000000437,
+          "minimum": 0.11099999999999
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.5572544756333097,
+          "mean": 0.30543116454299024,
+          "median": 0.33755368518902346,
+          "minimum": 0.07934393777403358
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.8436000000000377,
+          "mean": 0.457874999999999,
+          "median": 0.4994999999999834,
+          "minimum": 0.11099999999999
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/beacon_hyper_wakeup/20": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 30,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 50.505000000000024,
+          "mean": 27.75000000000001,
+          "median": 29.97,
+          "minimum": 8.325000000000003
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 84.36000000000013,
+          "mean": 27.75000000000001,
+          "median": 15.54000000000002,
+          "minimum": 2.219999999999999
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 11.145089512666297,
+          "mean": 6.108623290859812,
+          "median": 6.751073703780316,
+          "minimum": 1.586878755480814
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 16.872000000000043,
+          "mean": 9.157500000000004,
+          "median": 9.990000000000009,
+          "minimum": 2.219999999999999
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 30,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 5,
+        "parent_count": 8,
+        "value": 0.625
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 30
+    },
+    "validation/beacon_hyper_wakeup/3": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 7.575750000000023,
+          "mean": 4.162500000000002,
+          "median": 4.495499999999997,
+          "minimum": 1.248749999999987
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 12.65400000000011,
+          "mean": 4.162500000000002,
+          "median": 2.3310000000000315,
+          "minimum": 0.3329999999999984
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 1.671763426899944,
+          "mean": 0.9162934936289722,
+          "median": 1.0126610555670532,
+          "minimum": 0.23803181332212106
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 2.5308000000000277,
+          "mean": 1.3736249999999994,
+          "median": 1.4984999999999928,
+          "minimum": 0.3329999999999984
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/bursty_retry_storm/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/bursty_retry_storm/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 6,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 27.630105200000035,
+          "mean": 13.358004550000018,
+          "median": 14.455189600000004,
+          "minimum": 3.3194920000000394
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 45.982948800000145,
+          "mean": 13.358004550000018,
+          "median": 6.6654168000000595,
+          "minimum": 0.9053159999999991
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 6.2435008872297235,
+          "mean": 2.959706909528581,
+          "median": 3.2487278220273113,
+          "minimum": 0.6484330858821366
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 9.680620800000014,
+          "mean": 4.442243310000005,
+          "median": 4.840310400000007,
+          "minimum": 0.9053159999999991
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 6,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 8,
+        "value": 0.125
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 6
+    },
+    "validation/bursty_retry_storm/3": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 30,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 82.89031560000001,
+          "mean": 40.074013650000005,
+          "median": 43.36556879999999,
+          "minimum": 9.958476000000042
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 137.9488464000001,
+          "mean": 40.074013650000005,
+          "median": 19.996250400000065,
+          "minimum": 2.7159479999999974
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 18.730502661689155,
+          "mean": 8.879120728585738,
+          "median": 9.746183466081924,
+          "minimum": 1.9452992576464097
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 29.041862400000014,
+          "mean": 13.32672993,
+          "median": 14.520931200000007,
+          "minimum": 2.7159479999999974
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 30,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 5,
+        "parent_count": 8,
+        "value": 0.625
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 30
+    },
+    "validation/bursty_retry_storm/7": {
+      "absolute_200mW_fault_violations": 8,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 45,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 193.41073640000002,
+          "mean": 93.50603185,
+          "median": 101.1863272,
+          "minimum": 23.236444000000034
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 321.8806416000001,
+          "mean": 93.50603185000001,
+          "median": 46.65791760000002,
+          "minimum": 6.337211999999994
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 43.70450621060801,
+          "mean": 20.717948366700053,
+          "median": 22.741094754191153,
+          "minimum": 4.539031601174976
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 67.76434560000001,
+          "mean": 31.095703170000004,
+          "median": 33.882172800000006,
+          "minimum": 6.337211999999994
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 45,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 8,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 45
+    },
+    "validation/cpu_busy_poll/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/cpu_busy_poll/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.054895666666643216,
+          "mean": 0.05343802083333552,
+          "median": 0.053321625,
+          "minimum": 0.05153791666667473
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.09153799999990042,
+          "mean": 0.05343802083333552,
+          "median": 0.05197575000003951,
+          "minimum": 0.016927500000008422
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.013230420578014136,
+          "mean": 0.01218267084909824,
+          "median": 0.012078836126293483,
+          "minimum": 0.01050734756422981
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.018352000000021462,
+          "mean": 0.017814420833333955,
+          "median": 0.01781180000000404,
+          "minimum": 0.016927500000008422
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/cpu_busy_poll/1000": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 54.99090466666666,
+          "mean": 53.729217000000006,
+          "median": 53.62276800000001,
+          "minimum": 51.93963800000001
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 91.70923599999992,
+          "mean": 53.729217000000006,
+          "median": 52.335020000000014,
+          "minimum": 17.08438000000001
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 13.25282693542915,
+          "mean": 12.24706782770574,
+          "median": 12.154026799357414,
+          "minimum": 10.604727135093032
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 18.383080000000007,
+          "mean": 17.910639333333336,
+          "median": 17.904595999999998,
+          "minimum": 17.08438000000001
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 48,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 8,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 48
+    },
+    "validation/cpu_busy_poll/400": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 18,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 21.996253333333332,
+          "mean": 21.491481604166673,
+          "median": 21.448716541666677,
+          "minimum": 20.775392083333355
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 36.683501999999976,
+          "mean": 21.491481604166673,
+          "median": 20.933628750000054,
+          "minimum": 6.833622500000018
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 5.301130774171652,
+          "mean": 4.898781934024802,
+          "median": 4.861522870493979,
+          "minimum": 4.241810469957495
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 7.353231999999991,
+          "mean": 7.164188054166669,
+          "median": 7.161738500000013,
+          "minimum": 6.833622500000018
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 18,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 3,
+        "parent_count": 8,
+        "value": 0.375
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 18
+    },
+    "validation/none/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/payload_fragmentation_bloat/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/payload_fragmentation_bloat/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 27,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 44.27140279999999,
+          "mean": 23.1208264,
+          "median": 23.860086399999986,
+          "minimum": 6.513376399999984
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 78.1315679999999,
+          "mean": 23.1208264,
+          "median": 11.689809600000046,
+          "minimum": 1.5879215999999872
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 11.37524901135216,
+          "mean": 5.084502477627959,
+          "median": 5.27102270042543,
+          "minimum": 1.135062636220308
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 17.637456000000014,
+          "mean": 7.628553439999999,
+          "median": 7.792608479999998,
+          "minimum": 1.5879215999999872
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 27,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 5,
+        "parent_count": 8,
+        "value": 0.625
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 27
+    },
+    "validation/payload_fragmentation_bloat/15": {
+      "absolute_200mW_fault_violations": 21,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 38,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 7,
+          "maximum": 612.3330540000001,
+          "mean": 296.9565218857143,
+          "median": 364.16430080000003,
+          "minimum": 99.30323440000006
+        },
+        "paired_energy_mj": {
+          "count": 38,
+          "maximum": 1021.4960592000001,
+          "mean": 263.7589921894737,
+          "median": 166.68869999999998,
+          "minimum": 25.043553599999996
+        },
+        "paired_increase_percent": {
+          "count": 38,
+          "maximum": 134.7921375293747,
+          "mean": 59.14349380099524,
+          "median": 79.00002060121534,
+          "minimum": 17.90138881512841
+        },
+        "paired_power_mw": {
+          "count": 38,
+          "maximum": 204.29921184000003,
+          "mean": 86.66121507789474,
+          "median": 117.69574199999998,
+          "minimum": 25.043553599999996
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 38,
+        "INFEASIBLE": 10,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 38,
+        "None": 10,
+        "True": 0
+      },
+      "oracle_known": 38,
+      "oracle_unknown": 10,
+      "oracle_violations": 38,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 7,
+        "parent_count": 8,
+        "value": 0.875
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 38
+    },
+    "validation/payload_fragmentation_bloat/3": {
+      "absolute_200mW_fault_violations": 3,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 39,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 127.81978560000003,
+          "mean": 68.35624385000001,
+          "median": 72.01337380000001,
+          "minimum": 19.642115999999984
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 222.06775440000013,
+          "mean": 68.35624385000001,
+          "median": 38.456083199999995,
+          "minimum": 4.781347199999999
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 30.423044134554463,
+          "mean": 15.007370581830886,
+          "median": 15.971699327844572,
+          "minimum": 3.417755988404359
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 46.05594239999999,
+          "mean": 22.513570930000004,
+          "median": 23.58956904,
+          "minimum": 4.781347199999999
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 39,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 8,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 39
+    },
+    "validation/tx_power_lock/0": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 48,
+      "control_abstention_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 48,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 48,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 48,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 0,
+        "None": 48,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/tx_power_lock/1": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 3.335446399999981,
+          "mean": 1.5427538499999975,
+          "median": 1.637035400000014,
+          "minimum": 0.40130199999997274
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 5.772887999999966,
+          "mean": 1.5427538499999975,
+          "median": 0.7708580000000183,
+          "minimum": 0.09442400000000362
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 0.8293276590533457,
+          "mean": 0.3488485700840141,
+          "median": 0.36891481023761674,
+          "minimum": 0.06830513337701696
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 1.2828640000000178,
+          "mean": 0.5126097166666668,
+          "median": 0.5325513599999994,
+          "minimum": 0.09442400000000362
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    },
+    "validation/tx_power_lock/5": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 48,
+      "control_abstention_blocks": 0,
+      "control_abstention_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_count": 0,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 0,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": null
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 16.67723199999999,
+          "mean": 7.713769249999994,
+          "median": 8.185176999999996,
+          "minimum": 2.006509999999968
+        },
+        "paired_energy_mj": {
+          "count": 48,
+          "maximum": 28.864439999999945,
+          "mean": 7.713769249999994,
+          "median": 3.8542900000000344,
+          "minimum": 0.47211999999998966
+        },
+        "paired_increase_percent": {
+          "count": 48,
+          "maximum": 4.146638295266674,
+          "mean": 1.7442428504200735,
+          "median": 1.8445740511880642,
+          "minimum": 0.3415256668850643
+        },
+        "paired_power_mw": {
+          "count": 48,
+          "maximum": 6.414320000000004,
+          "mean": 2.563048583333332,
+          "median": 2.662756800000011,
+          "minimum": 0.47211999999998966
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 48,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 48,
+        "None": 0,
+        "True": 0
+      },
+      "oracle_known": 48,
+      "oracle_unknown": 0,
+      "oracle_violations": 0,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 48,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 0
+    }
+  },
+  "by_parent": {
+    "fp-0ac3abd6dae2983f305753eb51d94ead": {
+      "absolute_200mW_fault_violations": 9,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 42,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 33.12671536842106,
+          "mean": 33.12671536842106,
+          "median": 33.12671536842106,
+          "minimum": 33.12671536842106
+        },
+        "paired_energy_mj": {
+          "count": 114,
+          "maximum": 321.8806416000001,
+          "mean": 33.12671536842106,
+          "median": 5.6125299999999925,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 114,
+          "maximum": 43.70450621060801,
+          "mean": 7.005177121949463,
+          "median": 1.60102187851202,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 114,
+          "maximum": 67.76434560000001,
+          "mean": 11.052734018947374,
+          "median": 2.514150000000015,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 114,
+        "INFEASIBLE": 6,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 78,
+        "None": 42,
+        "True": 0
+      },
+      "oracle_known": 114,
+      "oracle_unknown": 6,
+      "oracle_violations": 42,
+      "parent_count": 1,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 42
+    },
+    "fp-1c9fb617dcdbd71266021e94072ac69e": {
+      "absolute_200mW_fault_violations": 7,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 42,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 31.64874488333334,
+          "mean": 31.64874488333334,
+          "median": 31.64874488333334,
+          "minimum": 31.64874488333334
+        },
+        "paired_energy_mj": {
+          "count": 114,
+          "maximum": 296.9370768000001,
+          "mean": 31.64874488333334,
+          "median": 5.038822800000034,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 114,
+          "maximum": 40.104053818740574,
+          "mean": 6.787210585820831,
+          "median": 1.6117433928599456,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 114,
+          "maximum": 62.513068799999985,
+          "mean": 10.596792619473687,
+          "median": 2.5141500000000008,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 114,
+        "INFEASIBLE": 6,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 78,
+        "None": 42,
+        "True": 0
+      },
+      "oracle_known": 114,
+      "oracle_unknown": 6,
+      "oracle_violations": 42,
+      "parent_count": 1,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 42
+    },
+    "fp-32e283d2b4f09bf00876dc1d0db6e902": {
+      "absolute_200mW_fault_violations": 3,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 32,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 20.024431943333333,
+          "mean": 20.024431943333333,
+          "median": 20.024431943333333,
+          "minimum": 20.024431943333333
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 300.7545,
+          "mean": 20.024431943333333,
+          "median": 1.8529747999999984,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 42.21663154024096,
+          "mean": 4.614474571705047,
+          "median": 0.6786943112467144,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 60.15090000000001,
+          "mean": 6.5419497486666645,
+          "median": 0.9556360000000126,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 32,
+      "parent_count": 1,
+      "parents": [
+        "fp-32e283d2b4f09bf00876dc1d0db6e902"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 32
+    },
+    "fp-522af99a3adbb05e27f343afc91be129": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 23,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 12.611961710000015,
+          "mean": 12.611961710000015,
+          "median": 12.611961710000015,
+          "minimum": 12.611961710000015
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 175.57758000000013,
+          "mean": 12.611961710000015,
+          "median": 0.8134080000000523,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 25.15150776328219,
+          "mean": 2.8618675604708566,
+          "median": 0.32599658309598256,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 35.115516000000014,
+          "mean": 3.986534931333336,
+          "median": 0.45251000000000374,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 23,
+      "parent_count": 1,
+      "parents": [
+        "fp-522af99a3adbb05e27f343afc91be129"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 23
+    },
+    "fp-544fc9c19dc145f3840f09a3a165ae32": {
+      "absolute_200mW_fault_violations": 7,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 39,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 31.43939538173912,
+          "mean": 31.43939538173912,
+          "median": 31.43939538173912,
+          "minimum": 31.43939538173912
+        },
+        "paired_energy_mj": {
+          "count": 115,
+          "maximum": 265.75762080000004,
+          "mean": 31.43939538173912,
+          "median": 4.298571199999969,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 115,
+          "maximum": 136.1931052492597,
+          "mean": 7.671741270035324,
+          "median": 1.6488921238459533,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 115,
+          "maximum": 206.858712,
+          "mean": 11.704525310782603,
+          "median": 2.530799999999971,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 115,
+        "INFEASIBLE": 5,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 79,
+        "None": 41,
+        "True": 0
+      },
+      "oracle_known": 115,
+      "oracle_unknown": 5,
+      "oracle_violations": 39,
+      "parent_count": 1,
+      "parents": [
+        "fp-544fc9c19dc145f3840f09a3a165ae32"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 39
+    },
+    "fp-6972ee86c211891a98cb52e01bf0b590": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 23,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 13.212971949999998,
+          "mean": 13.212971949999998,
+          "median": 13.212971949999998,
+          "minimum": 13.212971949999998
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 174.91255679999995,
+          "mean": 13.212971949999998,
+          "median": 0.7732852000000321,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 24.982930270694823,
+          "mean": 3.015363254451683,
+          "median": 0.27400274978744765,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 34.98251135999999,
+          "mean": 4.210677478000003,
+          "median": 0.3829499999999939,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 81,
+        "None": 39,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 23,
+      "parent_count": 1,
+      "parents": [
+        "fp-6972ee86c211891a98cb52e01bf0b590"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 23
+    },
+    "fp-8093b1e82ff40a91208f2bb32db13343": {
+      "absolute_200mW_fault_violations": 6,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 41,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 38.09590152000001,
+          "mean": 38.09590152000001,
+          "median": 38.09590152000001,
+          "minimum": 38.09590152000001
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 613.087632,
+          "mean": 38.09590152000001,
+          "median": 4.184093200000007,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 83.9118481356334,
+          "mean": 8.499847883090442,
+          "median": 1.5029501320237486,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 124.0139064,
+          "mean": 12.631468998000003,
+          "median": 2.192471999999995,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 41,
+      "parent_count": 1,
+      "parents": [
+        "fp-8093b1e82ff40a91208f2bb32db13343"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 41
+    },
+    "fp-82ee9180ec7f17d6b994db330d6dc7e7": {
+      "absolute_200mW_fault_violations": 6,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 41,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 36.52189093333333,
+          "mean": 36.52189093333333,
+          "median": 36.52189093333333,
+          "minimum": 36.52189093333333
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 609.8236992000001,
+          "mean": 36.52189093333333,
+          "median": 3.4397716000000003,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 84.83932220914032,
+          "mean": 8.31648259358396,
+          "median": 1.335319013916049,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 123.7736136,
+          "mean": 12.197084779999999,
+          "median": 1.9287360000000007,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 41,
+      "parent_count": 1,
+      "parents": [
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 41
+    },
+    "fp-9a67741725ceb6c20fc681e310e6daf6": {
+      "absolute_200mW_fault_violations": 4,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 38,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 38.59683094482757,
+          "mean": 38.59683094482757,
+          "median": 38.59683094482757,
+          "minimum": 38.59683094482757
+        },
+        "paired_energy_mj": {
+          "count": 116,
+          "maximum": 1021.4960592000001,
+          "mean": 38.59683094482757,
+          "median": 4.2335399999999765,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 116,
+          "maximum": 134.7921375293747,
+          "mean": 8.414090168111002,
+          "median": 1.6638247153348584,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 116,
+          "maximum": 204.29921184000003,
+          "mean": 12.822268599999996,
+          "median": 2.530799999999985,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 116,
+        "INFEASIBLE": 4,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 80,
+        "None": 40,
+        "True": 0
+      },
+      "oracle_known": 116,
+      "oracle_unknown": 4,
+      "oracle_violations": 38,
+      "parent_count": 1,
+      "parents": [
+        "fp-9a67741725ceb6c20fc681e310e6daf6"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 38
+    },
+    "fp-b50a4cbcb863d757d9e8ce251b67c093": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 25,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 13.057468103333326,
+          "mean": 13.057468103333326,
+          "median": 13.057468103333326,
+          "minimum": 13.057468103333326
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 177.1742928,
+          "mean": 13.057468103333326,
+          "median": 0.8927064000000229,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 25.329200113662832,
+          "mean": 3.014458797193119,
+          "median": 0.3445839557692738,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 35.43485856000001,
+          "mean": 4.204433333333335,
+          "median": 0.4785580000000067,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 25,
+      "parent_count": 1,
+      "parents": [
+        "fp-b50a4cbcb863d757d9e8ce251b67c093"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 25
+    },
+    "fp-d0f48437795bc81de309c288605287ac": {
+      "absolute_200mW_fault_violations": 6,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 41,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 37.63498302333334,
+          "mean": 37.63498302333334,
+          "median": 37.63498302333334,
+          "minimum": 37.63498302333334
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 618.1501200000001,
+          "mean": 37.63498302333334,
+          "median": 3.705949600000011,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 84.89220385797567,
+          "mean": 8.511154632183974,
+          "median": 1.4288352326810032,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 124.74632880000001,
+          "mean": 12.557398130666668,
+          "median": 2.07525600000001,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 41,
+      "parent_count": 1,
+      "parents": [
+        "fp-d0f48437795bc81de309c288605287ac"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 41
+    },
+    "fp-db7057fb9e1cd389a3eefb6c85ef3020": {
+      "absolute_200mW_fault_violations": 3,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 20.3125268625,
+          "mean": 20.3125268625,
+          "median": 20.3125268625,
+          "minimum": 20.3125268625
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 301.5631128000001,
+          "mean": 20.3125268625,
+          "median": 2.07601080000002,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 42.19129685748039,
+          "mean": 4.6218017201127175,
+          "median": 0.7137868790736122,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 60.31262256000002,
+          "mean": 6.578960324499995,
+          "median": 1.0077320000000043,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 36,
+      "parent_count": 1,
+      "parents": [
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 36
+    },
+    "fp-de4b8748ffb217c90317211def1b047f": {
+      "absolute_200mW_fault_violations": 6,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 42,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 35.64057522999999,
+          "mean": 35.64057522999999,
+          "median": 35.64057522999999,
+          "minimum": 35.64057522999999
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 615.8794152000002,
+          "mean": 35.64057522999999,
+          "median": 3.2269919999999956,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 85.2552805297261,
+          "mean": 8.049275480990428,
+          "median": 1.3353281456537422,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 124.43277599999999,
+          "mean": 11.786791360666662,
+          "median": 1.929550000000006,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 42,
+      "parent_count": 1,
+      "parents": [
+        "fp-de4b8748ffb217c90317211def1b047f"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 42
+    },
+    "fp-e72f35aa5b7a6101289154f6418e5009": {
+      "absolute_200mW_fault_violations": 0,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 27,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 13.690706422500012,
+          "mean": 13.690706422500012,
+          "median": 13.690706422500012,
+          "minimum": 13.690706422500012
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 180.34152240000003,
+          "mean": 13.690706422500012,
+          "median": 0.7776808000000415,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 25.754575294952293,
+          "mean": 3.096874884673678,
+          "median": 0.27353270744710867,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 36.06830448000002,
+          "mean": 4.329160376500007,
+          "median": 0.3829499999999939,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 81,
+        "None": 39,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 27,
+      "parent_count": 1,
+      "parents": [
+        "fp-e72f35aa5b7a6101289154f6418e5009"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 27
+    },
+    "fp-e812bc32e826b79d05b9466197eb9a5d": {
+      "absolute_200mW_fault_violations": 1,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 30,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 19.319138066666678,
+          "mean": 19.319138066666678,
+          "median": 19.319138066666678,
+          "minimum": 19.319138066666678
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 296.8960512000001,
+          "mean": 19.319138066666678,
+          "median": 1.515816000000001,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 42.09367329942291,
+          "mean": 4.428471155322335,
+          "median": 0.5979190481588434,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 59.37921024000002,
+          "mean": 6.236481325333335,
+          "median": 0.8384199999999993,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 30,
+      "parent_count": 1,
+      "parents": [
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 30
+    },
+    "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88": {
+      "absolute_200mW_fault_violations": 3,
+      "case_count": 120,
+      "control_abstention_blocks": 36,
+      "control_abstention_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 36,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "control_count": 36,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 36,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 30,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 1,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 1,
+          "maximum": 19.446879549166674,
+          "mean": 19.446879549166674,
+          "median": 19.446879549166674,
+          "minimum": 19.446879549166674
+        },
+        "paired_energy_mj": {
+          "count": 120,
+          "maximum": 299.78178479999997,
+          "mean": 19.446879549166674,
+          "median": 1.785412799999989,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 120,
+          "maximum": 42.19448010959489,
+          "mean": 4.4590010421642985,
+          "median": 0.6333590433254894,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 120,
+          "maximum": 59.956356959999994,
+          "mean": 6.319367831166667,
+          "median": 0.8905160000000052,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 120,
+        "INFEASIBLE": 0,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 84,
+        "None": 36,
+        "True": 0
+      },
+      "oracle_known": 120,
+      "oracle_unknown": 0,
+      "oracle_violations": 30,
+      "parent_count": 1,
+      "parents": [
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 1,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 1,
+        "parent_count": 1,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 120,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 30
+    }
+  },
+  "by_split": {
+    "locked_evaluation": {
+      "absolute_200mW_fault_violations": 29,
+      "case_count": 960,
+      "control_abstention_blocks": 288,
+      "control_abstention_rate": {
+        "denominator": 288,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 288,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 288,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 288,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 271,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 35.64057522999999,
+          "mean": 23.177029027821558,
+          "median": 20.168479402916667,
+          "minimum": 13.212971949999998
+        },
+        "paired_energy_mj": {
+          "count": 949,
+          "maximum": 615.8794152000002,
+          "mean": 23.079935111169654,
+          "median": 2.2326095999999893,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 949,
+          "maximum": 136.1931052492597,
+          "mean": 5.2674469624124125,
+          "median": 0.6640721413035214,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 949,
+          "maximum": 206.858712,
+          "mean": 7.719793070284509,
+          "median": 0.9900844800000073,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 949,
+        "INFEASIBLE": 11,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 655,
+        "None": 305,
+        "True": 0
+      },
+      "oracle_known": 949,
+      "oracle_unknown": 11,
+      "oracle_violations": 271,
+      "parent_count": 8,
+      "parents": [
+        "fp-1c9fb617dcdbd71266021e94072ac69e",
+        "fp-32e283d2b4f09bf00876dc1d0db6e902",
+        "fp-544fc9c19dc145f3840f09a3a165ae32",
+        "fp-6972ee86c211891a98cb52e01bf0b590",
+        "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+        "fp-de4b8748ffb217c90317211def1b047f",
+        "fp-e72f35aa5b7a6101289154f6418e5009",
+        "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 8,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 960,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 271
+    },
+    "validation": {
+      "absolute_200mW_fault_violations": 32,
+      "case_count": 960,
+      "control_abstention_blocks": 288,
+      "control_abstention_rate": {
+        "denominator": 288,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 288,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "control_count": 288,
+      "control_error_blocks": 0,
+      "control_false_alarm_rate": {
+        "denominator": 288,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "control_false_alarms": 0,
+      "detection_rate": {
+        "denominator": 281,
+        "denominator_unit": "cases",
+        "dependence_unit": "parent",
+        "numerator": 0,
+        "parent_count": 8,
+        "value": 0.0
+      },
+      "effects": {
+        "equal_parent_mean_delta_mj": {
+          "count": 8,
+          "maximum": 38.59683094482757,
+          "mean": 28.62061120873942,
+          "median": 34.8243031508772,
+          "minimum": 12.611961710000015
+        },
+        "paired_energy_mj": {
+          "count": 950,
+          "maximum": 1021.4960592000001,
+          "mean": 28.550146467789478,
+          "median": 2.63654600000001,
+          "minimum": 0.0
+        },
+        "paired_increase_percent": {
+          "count": 950,
+          "maximum": 134.7921375293747,
+          "mean": 6.3689458589731345,
+          "median": 0.8836008282022889,
+          "minimum": 0.0
+        },
+        "paired_power_mw": {
+          "count": 950,
+          "maximum": 204.29921184000003,
+          "mean": 9.436845279578948,
+          "median": 1.2751532000000196,
+          "minimum": 0.0
+        }
+      },
+      "feasibility": {
+        "COMPLETE": 950,
+        "INFEASIBLE": 10,
+        "INVALID": 0
+      },
+      "inputs_changed": 0,
+      "observability": {
+        "False": 662,
+        "None": 298,
+        "True": 0
+      },
+      "oracle_known": 950,
+      "oracle_unknown": 10,
+      "oracle_violations": 281,
+      "parent_count": 8,
+      "parents": [
+        "fp-0ac3abd6dae2983f305753eb51d94ead",
+        "fp-522af99a3adbb05e27f343afc91be129",
+        "fp-8093b1e82ff40a91208f2bb32db13343",
+        "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+        "fp-9a67741725ceb6c20fc681e310e6daf6",
+        "fp-b50a4cbcb863d757d9e8ce251b67c093",
+        "fp-d0f48437795bc81de309c288605287ac",
+        "fp-e812bc32e826b79d05b9466197eb9a5d"
+      ],
+      "parents_with_violation_rate": {
+        "denominator": 8,
+        "denominator_unit": "parents",
+        "dependence_unit": "parent",
+        "numerator": 8,
+        "parent_count": 8,
+        "value": 1.0
+      },
+      "positive_FAIL_detections": 0,
+      "predictions_changed": 0,
+      "statuses": {
+        "ABSTAIN": 960,
+        "ERROR": 0,
+        "FAIL": 0,
+        "PASS": 0
+      },
+      "violations_without_positive_detection": 281
+    }
+  },
+  "dependence": "variants/repetitions share parent; descriptive only, no IID/population inference",
+  "overall": {
+    "absolute_200mW_fault_violations": 61,
+    "case_count": 1920,
+    "control_abstention_blocks": 576,
+    "control_abstention_rate": {
+      "denominator": 576,
+      "denominator_unit": "cases",
+      "dependence_unit": "parent",
+      "numerator": 576,
+      "parent_count": 16,
+      "value": 1.0
+    },
+    "control_count": 576,
+    "control_error_blocks": 0,
+    "control_false_alarm_rate": {
+      "denominator": 576,
+      "denominator_unit": "cases",
+      "dependence_unit": "parent",
+      "numerator": 0,
+      "parent_count": 16,
+      "value": 0.0
+    },
+    "control_false_alarms": 0,
+    "detection_rate": {
+      "denominator": 552,
+      "denominator_unit": "cases",
+      "dependence_unit": "parent",
+      "numerator": 0,
+      "parent_count": 16,
+      "value": 0.0
+    },
+    "effects": {
+      "equal_parent_mean_delta_mj": {
+        "count": 16,
+        "maximum": 38.59683094482757,
+        "mean": 25.898820118280486,
+        "median": 25.875961122119563,
+        "minimum": 12.611961710000015
+      },
+      "paired_energy_mj": {
+        "count": 1899,
+        "maximum": 1021.4960592000001,
+        "mean": 25.816481076829913,
+        "median": 2.4974999999999454,
+        "minimum": 0.0
+      },
+      "paired_increase_percent": {
+        "count": 1899,
+        "maximum": 136.1931052492597,
+        "mean": 5.818486431465959,
+        "median": 0.7550774048226107,
+        "minimum": 0.0
+      },
+      "paired_power_mw": {
+        "count": 1899,
+        "maximum": 206.858712,
+        "mean": 8.578771268720379,
+        "median": 1.0863792000000103,
+        "minimum": 0.0
+      }
+    },
+    "feasibility": {
+      "COMPLETE": 1899,
+      "INFEASIBLE": 21,
+      "INVALID": 0
+    },
+    "inputs_changed": 0,
+    "observability": {
+      "False": 1317,
+      "None": 603,
+      "True": 0
+    },
+    "oracle_known": 1899,
+    "oracle_unknown": 21,
+    "oracle_violations": 552,
+    "parent_count": 16,
+    "parents": [
+      "fp-0ac3abd6dae2983f305753eb51d94ead",
+      "fp-1c9fb617dcdbd71266021e94072ac69e",
+      "fp-32e283d2b4f09bf00876dc1d0db6e902",
+      "fp-522af99a3adbb05e27f343afc91be129",
+      "fp-544fc9c19dc145f3840f09a3a165ae32",
+      "fp-6972ee86c211891a98cb52e01bf0b590",
+      "fp-8093b1e82ff40a91208f2bb32db13343",
+      "fp-82ee9180ec7f17d6b994db330d6dc7e7",
+      "fp-9a67741725ceb6c20fc681e310e6daf6",
+      "fp-b50a4cbcb863d757d9e8ce251b67c093",
+      "fp-d0f48437795bc81de309c288605287ac",
+      "fp-db7057fb9e1cd389a3eefb6c85ef3020",
+      "fp-de4b8748ffb217c90317211def1b047f",
+      "fp-e72f35aa5b7a6101289154f6418e5009",
+      "fp-e812bc32e826b79d05b9466197eb9a5d",
+      "fp-f0cf4180e2f5f29d4eb3c2d4ee11cd88"
+    ],
+    "parents_with_violation_rate": {
+      "denominator": 16,
+      "denominator_unit": "parents",
+      "dependence_unit": "parent",
+      "numerator": 16,
+      "parent_count": 16,
+      "value": 1.0
+    },
+    "positive_FAIL_detections": 0,
+    "predictions_changed": 0,
+    "statuses": {
+      "ABSTAIN": 1920,
+      "ERROR": 0,
+      "FAIL": 0,
+      "PASS": 0
+    },
+    "violations_without_positive_detection": 552
+  },
+  "provenance": "analytical_simulation",
+  "units": {
+    "delta_mj": "mJ",
+    "delta_power_mw": "mW",
+    "increase_percent": "%"
+  }
+}
