@@ -1,0 +1,12 @@
+{
+  "ablation_sha256": "8f971502c475a6eeb0a9110e5f28af07c97073e60debb73667463e380c57b875",
+  "calibration_set_version": 1,
+  "dataset_sha256": "d4a3c8a0ecbaf774274aa33ccd334bdf991180863212a14e5cae47e8b163545e",
+  "files": {
+    "target_energy_per_delivered_packet_uj-calibration.json": "42ab820b364efcff5e5f129dc037f34803f97aa346922d188c2938379bcdab44",
+    "target_mean_power_mw-calibration.json": "7b100a97607f3821bc6efaa72b5a10f3f71de59e4963eab41139426b97ed082b",
+    "target_total_energy_mj-calibration.json": "26cc914103919e9bb96783b5eac3237bfab579fb0dd97aaac0ac7d0156ae0ef7"
+  },
+  "provenance": "analytical_simulation",
+  "recipe_sha256": "547c93bf038eb9a064571f3d1d46f28fb071e1f76106673ec537e597d3cb20fa"
+}

@@ -22,3 +22,7 @@ milestone ready to commit; real scoring stages still pending in prescribed order
 Methods/data committed6da8dba. Actual ablations running to
 build/green-ops-week8-ablations (CLI replay then original-training-only fits).
 Next archive/commit ablations.json; then calibrate/commit before evaluation.
+
+Ablations frozen3e491f9 at docs/results/week8/ablations/ablations.json.
+Calibration running to build/green-ops-week8-calibration. Next archive/commit
+thresholds before evaluate; no evaluation scores inspected yet.

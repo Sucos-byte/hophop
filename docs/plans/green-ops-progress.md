@@ -585,3 +585,14 @@ Artifact archived docs/results/week8/ablations/ablations.json, binds original
 and study dataset/recipe/model/split hashes. No calibration/evaluation label
 used for any fit. Current: commit immutable ablation artifact. Next: nominal
 calibration-family scores only, freeze/commit thresholds before real evaluation.
+
+Ablation artifact committed3e491f9 before actual calibration. Current: calibration
+command reads only450 nominal calibration labels; no evaluation target access.
+Next: archive/commit three thresholds and hash inventory, then locked evaluation.
+
+Calibration complete using450 rows/30 nominal calibration families per target,
+no null labels/excluded families in this realization. Finite95% rank30 family
+max scores; strict three calibration artifacts and inventory archived. No
+threshold/method selection. Current: commit frozen calibration artifacts before
+actual locked evaluation. Next: nominal+assumption-shift coverage, explanations
+and predeclared ablation diagnostics without fitting or threshold changes.
