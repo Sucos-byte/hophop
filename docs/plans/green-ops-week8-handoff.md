@@ -26,3 +26,9 @@ data. No hardware actuation, fake PPK2, push/publish or inferred research hours.
 
 Final verified results/compatibility commit541bda5. Week8 complete; no pending
 implementation. Next separately authorized Week9 work. Verify clean Git status.
+
+Standing user instruction: refresh the Windows status export after each verified
+milestone/local commit, before requesting input and before stopping. See
+[export policy](green-ops-status-export.md) for exact external paths and atomic
+publication requirements. Repository tracker remains authoritative; no polling
+service or second agent. Export success does not mean the Windows chat read it.

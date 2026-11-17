@@ -648,3 +648,15 @@ Current: Week8 complete,284 tests and exact replay pass; all results remain
 analytical_simulation and original Week7 models/selection unchanged. Next:
 separately authorized Week9 research gatekeeper, with explicit coverage failure,
 provenance/scope/abstention rules and no hardware assurance claim. No push/publish.
+
+## Windows planning-chat status export setup
+
+Read external green-ops-status-export-instructions.md. Recorded standing refresh
+policy in docs/plans/green-ops-status-export.md and Week8 handoff: after verified
+milestones/local commits, before user input, before stopping. Export is one-way,
+UTF-8 temporary sibling followed by atomic replacement. Tracker stays authoritative;
+no background agent, polling or remote notification. Current Week8 complete at
+c78705f, clean before these documentation edits; tested source unchanged (284
+release tests, code committed541bda5). Current: commit setup docs then publish
+fresh exact branch/HEAD/status snapshot. Next: separately authorized Week9 work;
+no completed coding task restarted and no unchanged-code tests repeated.
