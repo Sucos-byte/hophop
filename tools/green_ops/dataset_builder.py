@@ -427,3 +427,140 @@ def build_dataset_row_from_files(
             expected_run_id=metadata["run_id"],
         )
     return build_dataset_row(metadata, telemetry, experiment, energy)
+
+
+# V1 column meanings are frozen. V2 explicitly separates radio decoding from
+# application delivery and appends bounded-window provenance.
+_V2_RENAMES = {
+    "rx_attempts": "rx_operations",
+    "delivered_packets": "rx_decoded_packets",
+    "packet_delivery_ratio": "rx_decode_per_operation_ratio",
+}
+DATASET_FIELDS_V2 = tuple(_V2_RENAMES.get(f, f) for f in DATASET_FIELDS) + (
+    "window_duration_ms", "offered_packets", "delivery_status",
+    "evaluation_group_id", "analytical_model_id", "delivered_packets",
+    "packet_delivery_ratio",
+)
+
+
+def build_dataset_row_v2(
+    run_metadata, telemetry_rows, *, measurement_window, experiment=None,
+    ppk2_summary=None, delivery_summary=None,
+    duration_tolerance_ms=1.0, duration_tolerance_fraction=0.001,
+    max_alignment_uncertainty_ms=1.0, max_window_duration_ms=3600000.0,
+):
+    """Build a bounded v2 row; supplied summaries do not prove authenticity."""
+    from measurement_window import (
+        validate_measurement_window, compute_counter_deltas,
+        validate_delivery_summary,
+    )
+    from ppk2_summary import validate_ppk2_summary_v2
+
+    validate_run_metadata(run_metadata)
+    window = validate_measurement_window(
+        measurement_window, expected_run_id=run_metadata["run_id"],
+        max_window_duration_ms=max_window_duration_ms,
+    )
+    rows = list(telemetry_rows)
+    aggregate = aggregate_telemetry(rows)
+    previous = window["start_counters"].copy()
+    for event in rows:
+        if _nonnegative_integer(event["segment_id"], "segment_id") != window["segment_id"]:
+            raise ValueError("telemetry segment does not match measurement window")
+        for field in COUNTER_COLUMNS:
+            value = _optional_counter(event[field], field)
+            if value is not None:
+                if not previous[field] <= value <= window["end_counters"][field]:
+                    raise ValueError(f"{field}: telemetry outside endpoints or decreasing")
+                previous[field] = value
+    deltas = compute_counter_deltas(window, max_window_duration_ms=max_window_duration_ms)
+    if deltas["rx_data_packets"] > deltas["rx_attempts"]:
+        raise ValueError("decoded packets exceed receive operations")
+    aggregate.update({
+        "segment_count": 1, "rx_attempts": deltas["rx_attempts"],
+        "delivered_packets": deltas["rx_data_packets"],
+        "sync_beacons": deltas["sync_beacons"], "tx_successes": deltas["tx_successes"],
+        "packet_delivery_ratio": (
+            deltas["rx_data_packets"] / deltas["rx_attempts"]
+            if deltas["rx_attempts"] else None
+        ),
+    })
+    # Reuse v1 configuration/provenance checks without passing v2 energy into
+    # the legacy validator. The original metadata is never modified.
+    import copy
+    metadata = copy.deepcopy(run_metadata)
+    power = metadata["target_provenance"]["target_power_draw_mw"]
+    if power == "measured" and ppk2_summary is None:
+        raise ValueError("measured power provenance requires a bounded PPK2 v2 summary")
+    if ppk2_summary is not None:
+        if run_metadata["execution_kind"] != "hardware" or power != "measured":
+            raise ValueError("PPK2 measurements require measured hardware provenance")
+        if ppk2_summary.get("summary_version") == 1:
+            raise ValueError("dataset v2 requires PPK2 summary v2; regenerate from bounded capture")
+        energy = validate_ppk2_summary_v2(
+            ppk2_summary, expected_run_id=run_metadata["run_id"], window=window,
+            duration_tolerance_ms=duration_tolerance_ms,
+            duration_tolerance_fraction=duration_tolerance_fraction,
+            max_alignment_uncertainty_ms=max_alignment_uncertainty_ms,
+            max_window_duration_ms=max_window_duration_ms,
+        )
+    # Policies must be valid even when no energy artifact is supplied.
+    from ppk2_summary import _v2_finite_number
+    for name, value in (("duration_tolerance_ms", duration_tolerance_ms),
+                        ("duration_tolerance_fraction", duration_tolerance_fraction),
+                        ("max_alignment_uncertainty_ms", max_alignment_uncertainty_ms)):
+        _v2_finite_number(value, name)
+    if duration_tolerance_fraction > 1:
+        raise ValueError("duration_tolerance_fraction must not exceed one")
+    if power == "measured":
+        metadata["target_provenance"]["target_power_draw_mw"] = "missing"
+    legacy = build_dataset_row(metadata, aggregate, experiment)
+    row = dict.fromkeys(DATASET_FIELDS_V2)
+    row.update({_V2_RENAMES.get(k, k): v for k, v in legacy.items()})
+    row.update(dataset_version=2, window_duration_ms=window["window_duration_ms"],
+               evaluation_group_id=window["evaluation_group_id"], delivery_status="unavailable")
+    if delivery_summary is not None:
+        delivery = validate_delivery_summary(
+            delivery_summary, expected_run_id=row["run_id"],
+            expected_window_id=window["window_id"],
+        )
+        offered = len(delivery["offered_packet_ids"])
+        delivered = len(delivery["delivered_packet_ids"])
+        row.update(delivery_status="validated", offered_packets=offered,
+                   delivered_packets=delivered,
+                   packet_delivery_ratio=delivered / offered if offered else None)
+    if ppk2_summary is not None:
+        row.update(measurement_status="measured",
+                   target_mean_power_mw=energy["target_mean_power_mw"],
+                   target_total_energy_mj=energy["target_total_energy_mj"])
+        if row["delivered_packets"]:
+            try:
+                per_packet = energy["target_total_energy_mj"] * 1000 / row["delivered_packets"]
+            except OverflowError as error:
+                raise ValueError("energy per delivery overflow") from error
+            if not math.isfinite(per_packet):
+                raise ValueError("energy per delivery overflow")
+            row["target_energy_per_delivered_packet_uj"] = per_packet
+    return row
+
+
+def build_dataset_row_v2_from_files(
+    telemetry_csv, run_metadata, *, measurement_window,
+    experiment_plan=None, ppk2_summary=None, delivery_summary=None, **policies,
+):
+    """Load strict artifacts and build a bounded v2 row."""
+    metadata = load_run_metadata(run_metadata)
+    with Path(telemetry_csv).open(encoding="utf-8", newline="") as stream:
+        reader = csv.DictReader(stream)
+        if reader.fieldnames != CSV_FIELDS:
+            raise ValueError("telemetry CSV header does not match the event schema")
+        rows = list(reader)
+    experiment = (_select_experiment(_load_json_object(experiment_plan), metadata)
+                  if experiment_plan is not None else None)
+    return build_dataset_row_v2(
+        metadata, rows, measurement_window=_load_json_object(measurement_window),
+        experiment=experiment,
+        ppk2_summary=_load_json_object(ppk2_summary) if ppk2_summary is not None else None,
+        delivery_summary=_load_json_object(delivery_summary) if delivery_summary is not None else None,
+        **policies,
+    )

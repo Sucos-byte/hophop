@@ -5,10 +5,10 @@
 
 import math
 
-from dataset_builder import DATASET_FIELDS
+from dataset_builder import DATASET_FIELDS, DATASET_FIELDS_V2
 
 
-FEATURE_CONTRACT_VERSION = 1
+FEATURE_CONTRACT_VERSION = 2
 
 METADATA_IDENTIFIERS = frozenset({
     "dataset_version",
@@ -70,9 +70,39 @@ _COUNTER_FIELDS = frozenset({
 })
 
 
+# Preserve legacy profiles explicitly while publishing v2 defaults.
+_V1_METADATA = METADATA_IDENTIFIERS
+_V1_PREDICTION = PREDICTION_TIME_FEATURES
+_V1_PRE = PRE_RUN_FEATURES
+_V1_POST = POST_RUN_FEATURES
+METADATA_IDENTIFIERS = _V1_METADATA | {
+    "delivery_status", "evaluation_group_id", "analytical_model_id",
+}
+PREDICTION_TIME_FEATURES = (_V1_PREDICTION - {"rx_attempts"}) | {
+    "rx_operations", "rx_decoded_packets", "rx_decode_per_operation_ratio",
+    "window_duration_ms", "offered_packets",
+}
+PRE_RUN_FEATURES = _V1_PRE + ("window_duration_ms",)
+POST_RUN_FEATURES = PRE_RUN_FEATURES + (
+    "rx_operations", "rx_decoded_packets", "sync_beacons", "tx_successes",
+    "rx_decode_per_operation_ratio", "offered_packets", "delivered_packets",
+    "packet_delivery_ratio",
+)
+_COUNTER_FIELDS = _COUNTER_FIELDS | {
+    "rx_operations", "rx_decoded_packets", "offered_packets",
+}
+
+
+def feature_roles(schema_version):
+    _validate_schema_version(schema_version)
+    if schema_version == 1:
+        return _V1_METADATA, _V1_PREDICTION, TARGET_COLUMNS
+    return METADATA_IDENTIFIERS, PREDICTION_TIME_FEATURES, TARGET_COLUMNS
+
+
 def _validate_schema_version(schema_version):
-    if type(schema_version) is not int or schema_version != 1:
-        raise ValueError("unsupported dataset schema_version; expected integer 1")
+    if type(schema_version) is not int or schema_version not in {1, 2}:
+        raise ValueError("unsupported dataset schema_version; expected integer 1 or 2")
 
 
 def validate_feature_partition(fields, *, schema_version):
@@ -85,11 +115,7 @@ def validate_feature_partition(fields, *, schema_version):
     if len(fields) != len(set(fields)):
         raise ValueError("schema contains duplicate fields")
 
-    roles = (
-        METADATA_IDENTIFIERS,
-        PREDICTION_TIME_FEATURES,
-        TARGET_COLUMNS,
-    )
+    roles = feature_roles(schema_version)
     for index, left in enumerate(roles):
         for right in roles[index + 1:]:
             if left & right:
@@ -108,7 +134,9 @@ def select_feature_names(
     *, schema_version, prediction_mode, available_fields
 ):
     """Select a fixed feature profile, requiring every selected capability."""
-    validate_feature_partition(DATASET_FIELDS, schema_version=schema_version)
+    _validate_schema_version(schema_version)
+    fields = DATASET_FIELDS if schema_version == 1 else DATASET_FIELDS_V2
+    validate_feature_partition(fields, schema_version=schema_version)
     if not isinstance(prediction_mode, str) or prediction_mode not in {
         "pre_run", "post_run"
     }:
@@ -117,16 +145,18 @@ def select_feature_names(
         raise ValueError("available_fields must be a frozenset")
     if any(not isinstance(field, str) for field in available_fields):
         raise ValueError("available field names must be strings")
-    unknown = available_fields - set(DATASET_FIELDS)
+    unknown = available_fields - set(fields)
     if unknown:
         raise ValueError(f"unknown available fields: {sorted(unknown)}")
 
+    pre, post = ((_V1_PRE, _V1_POST) if schema_version == 1
+                 else (PRE_RUN_FEATURES, POST_RUN_FEATURES))
     selected = (
-        PRE_RUN_FEATURES
+        pre
         if prediction_mode == "pre_run"
-        else POST_RUN_FEATURES
+        else post
     )
-    if set(selected) - PREDICTION_TIME_FEATURES:
+    if set(selected) - feature_roles(schema_version)[1]:
         raise ValueError("selected profile contains a forbidden feature")
     missing = set(selected) - available_fields
     if missing:
@@ -153,7 +183,10 @@ def _validate_feature_value(field, value):
     elif field in _COUNTER_FIELDS:
         if type(value) is not int or value < 0:
             raise ValueError(f"{field} must be a nonnegative integer")
-    elif field == "packet_delivery_ratio":
+    elif field == "window_duration_ms":
+        if value <= 0:
+            raise ValueError(f"{field} must be positive")
+    elif field in {"packet_delivery_ratio", "rx_decode_per_operation_ratio"}:
         if not 0 <= value <= 1:
             raise ValueError(f"{field} must be between zero and one")
 

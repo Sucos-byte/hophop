@@ -39,3 +39,18 @@ without those counters before interpreting predictive performance.
 
 This version preserves the Week 4 dataset schema. Dataset v2 and measurement
 window contracts are subsequent Week 5 increments.
+
+## Registry v2
+
+`FEATURE_CONTRACT_VERSION=2` adds a separate exhaustive schema-v2 partition.
+`feature_roles(1)` and the v1 selectors preserve the legacy classification and
+profiles; public role/profile constants now describe v2.
+
+V2 pre-run inputs are payload size, interval, requested TX power and planned
+`window_duration_ms`. Use that profile only for a fixed-duration workload that
+completed as planned; an early termination needs a separate post-run context.
+V2 post-run adds `rx_operations`, `rx_decoded_packets`, `sync_beacons`,
+`tx_successes`, `rx_decode_per_operation_ratio`, `offered_packets`,
+`delivered_packets` and `packet_delivery_ratio`. A missing delivery capability
+prevents selecting this full diagnostic profile; it never becomes zero.
+Delivery status, evaluation group and analytical model identity are metadata.

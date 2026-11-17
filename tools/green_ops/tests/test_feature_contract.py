@@ -14,9 +14,7 @@ import feature_contract as contract
 class FeatureContractTests(unittest.TestCase):
     def test_roles_cover_schema_without_overlap(self):
         roles = (
-            contract.METADATA_IDENTIFIERS,
-            contract.PREDICTION_TIME_FEATURES,
-            contract.TARGET_COLUMNS,
+            *contract.feature_roles(1),
         )
         self.assertEqual(set().union(*roles), set(DATASET_FIELDS))
         for index, left in enumerate(roles):
@@ -161,7 +159,10 @@ class FeatureBoundaryTests(unittest.TestCase):
         )
 
     def test_rejects_invalid_selected_numeric_values(self):
-        for field in contract.POST_RUN_FEATURES:
+        for field in contract.select_feature_names(
+            schema_version=1, prediction_mode="post_run",
+            available_fields=frozenset(DATASET_FIELDS),
+        ):
             for value in (None, True, "1", float("nan"), float("inf")):
                 with self.subTest(field=field, value=value):
                     row = self.valid_row()

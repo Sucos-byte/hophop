@@ -99,3 +99,41 @@ Run from the repository root:
 python3 -W error::ResourceWarning -m unittest discover \
   -s tools/green_ops/tests -v
 ```
+
+## Explicit bounded dataset v2
+
+Use `--dataset-version 2 --measurement-window WINDOW.json` with the existing
+CLI arguments. Optional `--delivery-summary DELIVERY.json` supplies unique
+logical packet evidence. V1 remains the default and rejects v2-only flags.
+Measured v2 requires a bounded PPK2 summary v2; regenerate summaries from the
+source capture rather than changing a version number.
+
+V2 column order is the frozen v1 order with `rx_attempts` renamed to
+`rx_operations`, old `delivered_packets` to `rx_decoded_packets`, and old
+`packet_delivery_ratio` to `rx_decode_per_operation_ratio`; append, in order:
+`window_duration_ms`, `offered_packets`, `delivery_status`,
+`evaluation_group_id`, `analytical_model_id`, `delivered_packets`,
+`packet_delivery_ratio`. Counts are exact integers, ratios/power/energy/duration
+are finite numbers, identity/status/configuration categories are strings.
+Unavailable optional values are null (empty CSV cells). The new delivered count
+uses unique receiver acceptance divided by unique sender offers for its ratio.
+No correlated RTT evidence is accepted by this API yet, so RTT stays null.
+
+Counters use endpoint subtraction, with observations required to be in the
+single declared segment, between endpoints and nondecreasing in source order.
+No delivery evidence means all application delivery values and energy per
+delivery remain null. Zero offered packets gives a null ratio; zero delivered
+packets gives null energy per delivery. Synthetic unmeasured energy stays null.
+Analytical generation is a later explicit API; this builder cannot label a
+simulation as measured through a PPK2 summary.
+
+CLI tolerances are `--duration-tolerance-ms` (default 1),
+`--duration-tolerance-fraction` (0.001), and
+`--max-alignment-uncertainty-ms` (1). The Python API additionally supports a
+`max_window_duration_ms` policy propagated through all validators (default one
+hour). These are software policies, not instrument specifications.
+
+The v2 manifest records input hashes, CSV hash, policies, schema/registry
+versions, roles and selected profiles. Profiles with missing capabilities are
+null. The existing output reservation and rollback protect normal failures;
+this does not establish multi-file crash atomicity or evidence authenticity.

@@ -110,6 +110,7 @@ def validate_ppk2_summary_v2(
     duration_tolerance_ms=1.0,
     duration_tolerance_fraction=0.001,
     max_alignment_uncertainty_ms=1.0,
+    max_window_duration_ms=3600000.0,
     energy_tolerance_mj=0.001,
     energy_tolerance_fraction=0.001,
 ):
@@ -137,7 +138,8 @@ def validate_ppk2_summary_v2(
             raise ValueError(f"{field} must not exceed one")
 
     validated_window = validate_measurement_window(
-        window, expected_run_id=expected_run_id
+        window, expected_run_id=expected_run_id,
+        max_window_duration_ms=max_window_duration_ms,
     )
     if not isinstance(data, dict) or set(data) != _V2_FIELDS:
         raise ValueError("PPK2 v2 summary must contain exactly the documented fields")

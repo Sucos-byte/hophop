@@ -145,12 +145,13 @@ def validate_measurement_window(
     return copy.deepcopy(data)
 
 
-def compute_counter_deltas(window):
+def compute_counter_deltas(window, *, max_window_duration_ms=3600000.0):
     """Subtract validated endpoints; never infer a zero baseline."""
     if not isinstance(window, dict):
         raise ValueError("measurement window must be a dictionary")
     validated = validate_measurement_window(
-        window, expected_run_id=window.get("run_id")
+        window, expected_run_id=window.get("run_id"),
+        max_window_duration_ms=max_window_duration_ms
     )
     return {
         field: (

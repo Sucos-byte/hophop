@@ -13,7 +13,8 @@ import sys
 
 from atomic_outputs import reserve_outputs
 from dataset_builder import (
-    DATASET_FIELDS,
+    DATASET_FIELDS, DATASET_FIELDS_V2,
+    build_dataset_row_v2_from_files,
     build_dataset_row_from_files,
 )
 
@@ -34,6 +35,12 @@ def parse_arguments():
     parser.add_argument("--ppk2-summary", type=Path)
     parser.add_argument("--dataset-output", required=True, type=Path)
     parser.add_argument("--manifest-output", required=True, type=Path)
+    parser.add_argument("--dataset-version", type=int, choices=(1, 2), default=1)
+    parser.add_argument("--measurement-window", type=Path)
+    parser.add_argument("--delivery-summary", type=Path)
+    parser.add_argument("--duration-tolerance-ms", type=float)
+    parser.add_argument("--duration-tolerance-fraction", type=float)
+    parser.add_argument("--max-alignment-uncertainty-ms", type=float)
     return parser.parse_args()
 
 
@@ -51,13 +58,15 @@ def _sha256(path):
 
 def _dataset_csv(row):
     output = io.StringIO(newline="")
-    writer = csv.DictWriter(output, fieldnames=DATASET_FIELDS, lineterminator="\n")
+    writer = csv.DictWriter(output, fieldnames=(DATASET_FIELDS_V2 if row["dataset_version"] == 2 else DATASET_FIELDS), lineterminator="\n")
     writer.writeheader()
     writer.writerow(row)
     return output.getvalue()
 
 
-def _manifest(row, input_paths):
+def _manifest(row, input_paths, policies=None):
+    if row["dataset_version"] == 2:
+        return _manifest_v2(row, input_paths, policies)
     named_inputs = {
         "telemetry_csv": input_paths["telemetry_csv"],
         "run_metadata": input_paths["run_metadata"],
@@ -98,6 +107,38 @@ def _manifest(row, input_paths):
     return json.dumps(manifest, indent=2, sort_keys=True) + "\n"
 
 
+def _manifest_v2(row, input_paths, policies):
+    from feature_contract import FEATURE_CONTRACT_VERSION, feature_roles, select_feature_names
+    roles = feature_roles(2)
+    # Available capabilities require actual non-null values. Configuration
+    # defaults are never invented merely because a CSV column exists.
+    available = frozenset(k for k, v in row.items() if v is not None)
+    selected = {}
+    for mode in ("pre_run", "post_run"):
+        try:
+            selected[mode] = list(select_feature_names(
+                schema_version=2, prediction_mode=mode, available_fields=available,
+            ))
+        except ValueError:
+            selected[mode] = None
+    manifest = {
+        "manifest_version": 2, "dataset_version": 2, "dataset_rows": 1,
+        "feature_contract_version": FEATURE_CONTRACT_VERSION,
+        "column_roles": dict(zip(("metadata", "features", "targets"),
+                                 (sorted(role) for role in roles))),
+        "selected_features": selected, "available_fields": sorted(available),
+        "policies": policies,
+        "dataset_sha256": hashlib.sha256(_dataset_csv(row).encode("utf-8")).hexdigest(),
+        "input_paths": {name: str(path) for name, path in input_paths.items()},
+        "input_sha256": {name: _sha256(path) for name, path in input_paths.items()},
+    }
+    for field in ("run_id", "adapter", "feature_profile_id", "source_kind",
+                  "execution_kind", "measurement_status", "evaluation_group_id",
+                  "analytical_model_id"):
+        manifest[field] = row[field]
+    return json.dumps(manifest, indent=2, sort_keys=True) + "\n"
+
+
 def _validate_paths(inputs, outputs):
     input_paths = {name: _resolved(path) for name, path in inputs.items()}
     output_paths = {name: _resolved(path) for name, path in outputs.items()}
@@ -124,15 +165,41 @@ def main():
         inputs["experiment_plan"] = arguments.experiment_plan
     if arguments.ppk2_summary is not None:
         inputs["ppk2_summary"] = arguments.ppk2_summary
+    for name in ("measurement_window", "delivery_summary"):
+        if getattr(arguments, name) is not None:
+            inputs[name] = getattr(arguments, name)
     outputs = {
         "dataset": arguments.dataset_output,
         "manifest": arguments.manifest_output,
     }
 
     try:
+        policies = {
+            "duration_tolerance_ms": arguments.duration_tolerance_ms,
+            "duration_tolerance_fraction": arguments.duration_tolerance_fraction,
+            "max_alignment_uncertainty_ms": arguments.max_alignment_uncertainty_ms,
+        }
+        if arguments.dataset_version == 1 and (
+            arguments.measurement_window is not None or arguments.delivery_summary is not None
+            or any(value is not None for value in policies.values())
+        ):
+            raise ValueError("v2-only flags require --dataset-version 2")
+        if arguments.dataset_version == 2 and arguments.measurement_window is None:
+            raise ValueError("dataset v2 requires --measurement-window")
+        policies = {name: value if value is not None else default
+                    for (name, value), default in zip(policies.items(), (1.0, 0.001, 1.0))}
         input_paths, output_paths = _validate_paths(inputs, outputs)
         with reserve_outputs(output_paths.values()) as reservation:
-            row = build_dataset_row_from_files(
+            if arguments.dataset_version == 2:
+                row = build_dataset_row_v2_from_files(
+                    input_paths["telemetry_csv"], input_paths["run_metadata"],
+                    measurement_window=input_paths["measurement_window"],
+                    experiment_plan=input_paths.get("experiment_plan"),
+                    ppk2_summary=input_paths.get("ppk2_summary"),
+                    delivery_summary=input_paths.get("delivery_summary"), **policies,
+                )
+            else:
+                row = build_dataset_row_from_files(
                 input_paths["telemetry_csv"],
                 input_paths["run_metadata"],
                 input_paths.get("experiment_plan"),
@@ -140,7 +207,7 @@ def main():
             )
             reservation.publish({
                 output_paths["dataset"]: _dataset_csv(row),
-                output_paths["manifest"]: _manifest(row, input_paths),
+                output_paths["manifest"]: _manifest(row, input_paths, policies),
             })
     except (OSError, UnicodeError, ValueError) as error:
         print(f"error: {error}", file=sys.stderr)
