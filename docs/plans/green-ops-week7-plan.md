@@ -91,5 +91,16 @@ and reports may be committed as inspectable reproducibility evidence.
 
 ## Current task / next step
 
-Current: freeze recipe/splits and implement materialization/validation, before
-any fit. Next: commit validated 540+180 dataset milestone, then numerical core.
+All five software milestones verified. Recipe/splits freeze6c4662e; real dataset
+13b6064; numerical coreea8fafd; pre-experiment tested workflow58cbe92; frozen
+model choice8b18a39 committed before locked evaluation. Actual540+180 counts and
+source replay pass. Full suite267 passes (21 new tests), ResourceWarning errors.
+
+Real locked evaluation and saved1620 predictions complete; no refit/tuning after
+scores. Results/docs include weak power stress performance honestly. Final
+prediction compatibility adds recipe/full-slot/retry policy and consumed-snapshot
+hash checks without changing frozen estimator state or saved scores. All270
+locked inputs pass the guard. Current task: commit final results/compatibility
+milestone, then immediately update tracker/handoff with actual hash. Next is a
+separately requested Week8 calibration/explainability design; current held-out
+sets are already observed, and physical validation remains pending.

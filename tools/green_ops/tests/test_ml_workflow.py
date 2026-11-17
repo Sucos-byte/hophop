@@ -90,14 +90,14 @@ class WorkflowTests(unittest.TestCase):
         record=next(r for r in self.dataset['records'] if r['split']=='test')
         artifact_dir=self.data_root/record['entry']['path'];output=self.root/'prediction.json'
         target='target_total_energy_mj'
-        result=self.run_cli('predict','--model',training/f'{target}-chosen.json','--artifact-dir',artifact_dir,'--output',output)
+        result=self.run_cli('predict','--recipe',self.recipe,'--model',training/f'{target}-chosen.json','--artifact-dir',artifact_dir,'--output',output)
         self.assertEqual(result.returncode,0,result.stderr)
         prediction=json.loads(output.read_text());self.assertEqual(prediction['unit'],'mJ')
         rows=json.loads((evaluation/'predictions.json').read_text())['rows']
         expected=next(p['prediction'] for p in rows if p['partition']=='test' and p['target']==target and p['model_role']=='chosen')
         self.assertEqual(prediction['value'],expected)
         original=output.read_bytes()
-        self.assertEqual(self.run_cli('predict','--model',training/f'{target}-chosen.json','--artifact-dir',artifact_dir,'--output',output).returncode,1)
+        self.assertEqual(self.run_cli('predict','--recipe',self.recipe,'--model',training/f'{target}-chosen.json','--artifact-dir',artifact_dir,'--output',output).returncode,1)
         self.assertEqual(original,output.read_bytes())
         self.assertEqual(self.run_cli('train','--dataset',self.data_root,'--output-dir',training).returncode,1)
         self.assertEqual(self.run_cli('bad-command').returncode,1)
@@ -112,3 +112,19 @@ class WorkflowTests(unittest.TestCase):
         with mock.patch.object(cli,'publish_files',side_effect=failing_publish),contextlib.redirect_stdout(io.StringIO()),contextlib.redirect_stderr(io.StringIO()):
             self.assertEqual(cli.main(['train','--dataset',str(self.data_root),'--output-dir',str(out)]),1)
         self.assertFalse(out.exists());self.assertEqual(original,(self.data_root/'inventory.json').read_bytes())
+
+
+    def test_prediction_digest_identifies_consumed_manifest_snapshot(self):
+        training=self.root/'training';publish_files(training,workflow.train_selection(self.dataset))
+        record=next(r for r in self.dataset['records'] if r['split']=='test')
+        source=self.data_root/record['entry']['path'];original=(source/'manifest.json').read_bytes()
+        real_load=cli.load_design_record
+        def mutate_after_load(path):
+            loaded=real_load(path)
+            (source/'manifest.json').write_text('{"changed":true}')
+            return loaded
+        output=self.root/'snapshot-prediction.json'
+        with mock.patch.object(cli,'load_design_record',side_effect=mutate_after_load),contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(cli.main(['predict','--recipe',str(self.recipe),'--model',str(training/'target_total_energy_mj-chosen.json'),
+                '--artifact-dir',str(source),'--output',str(output)]),0)
+        self.assertEqual(json.loads(output.read_text())['input_manifest_sha256'],hashlib.sha256(original).hexdigest())

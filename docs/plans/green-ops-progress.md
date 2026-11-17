@@ -14,7 +14,7 @@ Week 5   Feature/window/table contracts     [####------] Software contracts, tab
 
 PHASE 2  Analytical data and learning
 Week 6   Analytical reference generator     [##########] Reference software complete; physical validation pending
-Week 7   Regression + grouped evaluation    [----------] Planned; laptop executable
+Week 7   Regression + grouped evaluation    [##########] Analytical software pilot complete; validation limits recorded
 Week 8   Uncertainty + explainability       [----------] Planned; laptop executable
 
 PHASE 3  Regression policy and CI
@@ -61,20 +61,19 @@ Sources checked 17 November 2026: [European Commission overview](https://energy-
 
 ### Current handoff
 
-Week 6 software and pre-training review are complete on
-`green-ops/week6-analytical-reference`. Original checkpoint: `9ed6b96`; initial
-review corrections: `f8c35bf`. Generator arithmetic patch: 1.0.1; v1/dataset v2/
-feature-contract 3 remain compatible. Latest full suite: 246 passing tests,
-ResourceWarning errors enabled (22 new review/design cases). Final review and
-training design: `green-ops-week6-review.md`.
+Week7 analytical regression pilot is complete on green-ops/week7-ml-regression.
+Entry9138511; recipe freeze6c4662e; data13b6064; coreea8fafd; workflow58cbe92;
+frozen real selection8b18a39 BEFORE locked test/stress scoring. Full suite267
+passes (21 new Week7 tests), ResourceWarning errors enabled. Results:
+../green-ops-week7-results.md; workflow: ../green-ops-ml-regression.md.
 
-Audited acceptance: 96 primary rows plus 192 separate stress rows, 24 declared
-families, source/state/packet/sensitivity replay verified. The two-row demo and
-indiscriminately pooled parameter variants are not primary training designs.
-Week 7 is ready for a fixed-scope grouped software pilot after freezing its
-recipe/splits: proposed 540 primary rows / 36 families plus 180 held-out stress
-rows. No fit, hardware accuracy or physical-validation readiness is claimed.
-Current/next-step handoff: `green-ops-week6-handoff.md`. Actual hours unreported.
+540 primary rows /36 families,24/6/6 split, plus180 separate stress rows.
+Test RMSE:6.3664mW power,51.1850mJ total energy,991.1826uJ per delivery;
+power stress R2 only0.169–0.264. Models/selection stayed unchanged after test.
+All results analytical_simulation, not hardware accuracy. Week8 may begin
+software uncertainty/explainability only after a new independent calibration/
+evaluation design; current validation/test/stress are already consumed.
+Current/next step: green-ops-week7-handoff.md. Actual hours remain unreported.
 
 The historical status below records completed evidence. Its hardware-dependent model-training wording is superseded by the revised software/lab separation above.
 
@@ -442,3 +441,36 @@ snapshots copied to docs/results/week7-regression-v1/training. Selected models
 remain fitted only on training labels (no train+validation refit). Current:
 commit this choice before held-out evaluation. Next: locked evaluator once,
 saved predictions/metrics, then documentation with honest results. No tuning.
+
+Frozen real selection/models committed as `8b18a39`, before any real held-out
+score was inspected. Selection digest31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b.
+Current: locked test/stress evaluation once with these exact model hashes.
+Next: save/report predictions and metrics without refitting or tuning.
+
+
+## Week7 final locked evaluation and verification
+
+Frozen selection8b18a39 was evaluated once on90 test rows /6 families and two
+90-row stress panels /same6 families. All three selected ridge models beat the
+training-mean baseline on this analytical test; modest power testR2=0.6316 and
+weak stressR2=0.1688/0.2641 are reported without retuning. Saved1620 baseline/
+chosen held-out predictions, per-family errors and full units/counts/baseline
+comparisons at docs/results/week7-regression-v1/evaluation. No missing energy
+labels occurred in these real held-out panels; explicit missing-label exclusion
+and null truth handling are independently tested. No clipping or refit.
+
+Final compatibility review fixes only input/output provenance: retain the exact
+consumed manifest snapshot digest, and require exact frozen recipe bytes plus
+full-slot offers/frozen retry cap for prediction. These settings are absent
+from X. Targeted tests reproduce/reject incompatible partial offers/retry caps.
+Every real locked input already passed identical policy in dataset validation;
+all270 passed the tightened guard. No estimator/scaler/settings/saved score
+changed. Exact pre-test selection digest and all model hashes remain unchanged:
+31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b.
+
+Final full suite267 passes (21 new Week7 tests), ResourceWarning errors enabled;
+git diff --check passes. Workflow and results docs saved. Current: commit final
+verified results/compatibility milestone and immediately record actual hash.
+Next: Week8 separately requested work with new group-disjoint calibration and
+assessment data; no uncertainty or explainability implementation performed.
+Physical calibration remains pending; no actual effort hours, push or publish.

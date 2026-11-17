@@ -24,17 +24,18 @@ def main(argv=None):
         if name=='evaluate':sub.add_argument('--training',type=Path,required=True)
     sub=commands.add_parser('predict');sub.add_argument('--model',type=Path,required=True)
     sub.add_argument('--artifact-dir',type=Path,required=True);sub.add_argument('--output',type=Path,required=True)
+    sub.add_argument('--recipe',type=Path,required=True)
     sub.add_argument('--domain',choices=('primary','declared_stress'),default='primary')
     args=parser.parse_args(argv)
     try:
         if args.command=='predict':
             output=args.output.expanduser().resolve();source=args.artifact_dir.resolve()
-            if output==args.model.resolve() or source==output or source in output.parents:raise ValueError('prediction output aliases input sources')
+            if output in (args.model.resolve(),args.recipe.resolve()) or source==output or source in output.parents:raise ValueError('prediction output aliases input sources')
             model_bytes=args.model.read_bytes();model=model_from_bytes(model_bytes);record=load_design_record(source)
-            value=predict_record(model,record,domain=args.domain)
+            recipe_bytes=args.recipe.read_bytes();value=predict_record(model,record,domain=args.domain,recipe_bytes=recipe_bytes)
             prediction=dict(prediction_version=1,provenance='analytical_simulation',target=model['target'],unit=model['unit'],
                 run_id=record['row']['run_id'],value=value,domain=args.domain,model_sha256=_sha256(model_bytes),
-                input_manifest_sha256=_sha256((source/'manifest.json').read_bytes()),feature_order=model['feature_order'])
+                input_manifest_sha256=record['manifest_sha256'],recipe_sha256=_sha256(recipe_bytes),feature_order=model['feature_order'])
             publish_outputs({output:_json_bytes(prediction).decode('utf-8')})
         else:
             output=args.output_dir.expanduser().resolve()

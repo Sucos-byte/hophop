@@ -1,0 +1,18 @@
+{
+  "domain": "primary",
+  "feature_order": [
+    "payload_size_bytes",
+    "interval_ms",
+    "tx_power_dbm",
+    "window_duration_ms"
+  ],
+  "input_manifest_sha256": "9ac69318d0279e8ca6b2b71323d71d8e3bd9cdc862593798f5b0a406c44de36c",
+  "model_sha256": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4",
+  "prediction_version": 1,
+  "provenance": "analytical_simulation",
+  "recipe_sha256": "4a979b6cec4555c27d1813f33dc8481410e1ba2382dec2bb93b8366be32d1daf",
+  "run_id": "ar-01b0f260f799e0c77c959e5313831c13",
+  "target": "target_total_energy_mj",
+  "unit": "mJ",
+  "value": 154.060685148929
+}

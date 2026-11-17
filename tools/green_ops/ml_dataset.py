@@ -215,7 +215,7 @@ def load_dataset(directory,*,progress=None):
         row_count=len(records),primary_rows=recipe['primary_row_count'],stress_rows=recipe['stress_row_count'],
         partition_counts=counts,group_counts={s:len({r['row']['evaluation_group_id'] for r in records if r['split']==s}) for s in counts},
         provenance='analytical_simulation',all_source_replays_passed=True)
-    return dict(recipe=recipe,recipe_sha256=_sha256(recipe_bytes),dataset_sha256=expected_digest,records=records,audit=audit)
+    return dict(recipe=recipe,recipe_bytes=recipe_bytes,recipe_sha256=_sha256(recipe_bytes),dataset_sha256=expected_digest,records=records,audit=audit)
 
 
 

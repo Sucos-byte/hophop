@@ -149,7 +149,7 @@ def locked_evaluation(dataset,training_directory):
             scores={}
             for role in ('baseline','chosen'):
                 model=models[choice[f'{role}_model']]
-                summary,predictions=evaluate_estimator(model['estimator'],records,target,scope=model['scope'],domain=domain)
+                summary,predictions=evaluate_estimator(model['estimator'],records,target,scope=model['scope'],domain=domain,recipe=dataset['recipe'])
                 scores[role]=summary
                 saved += [{**p,'partition':partition,'model_role':role} for p in predictions]
             scores['chosen_minus_baseline']={metric:(scores['chosen'][metric]-scores['baseline'][metric])

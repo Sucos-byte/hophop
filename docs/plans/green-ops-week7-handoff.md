@@ -1,24 +1,27 @@
-# Week 7 current task / next step
+# Week7 current task / next step
 
-Branch green-ops/week7-ml-regression; entry9138511. Recipe freeze6c4662e,
-dataset13b6064, numerical coreea8fafd, tested workflow58cbe92. Pre-experiment
-suite265 tests passes (19 new), ResourceWarning errors enabled.
+Branch green-ops/week7-ml-regression; entry9138511. Milestones:6c4662e recipe
+freeze,13b6064 data,ea8fafd core,58cbe92 pre-experiment workflow,8b18a39 selected
+models BEFORE any real held-out score. Current: final results/compatibility
+milestone verified and ready for commit; next immediately record its hash.
 
-Current: real train/CV/validation selection completed; commit exact models and
-selection snapshots BEFORE evaluating held-out sets. Selection SHA-256:
-31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b.
-Choices: mean-power ridge1.0; total-energy/per-delivery ridge0.01.
-All real test/stress scores remain unobserved at this checkpoint.
+Full suite267 passes (21 new tests), ResourceWarning errors; git diff --check.
+540 primary/36 families,24/6/6 train/validation/test, plus180 stress rows.
+Selection31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b
+and all model hashes remain unchanged after test. No refit/tuning. Test RMSE
+6.3664mW,51.1850mJ,991.1826uJ; stress powerR2 weak0.169–0.264. Saved1620
+held-out baseline/chosen predictions and per-family metrics. No real label
+missingness in these panels, but target-null handling is explicitly tested.
 
-Data: build/green-ops-week7/dataset (540 primary+180 stress,24/6/6 families).
-Training: build/green-ops-week7/training, exact committed-copy destination
- docs/results/week7-regression-v1/training. Source/inventory digest:
-e921297009bc1b12ca325cf13dfc16fbf4e4c5013bceb28fd1dbd02b18b9cf98.
+Read ../green-ops-week7-results.md, ../green-ops-ml-regression.md and Week7 plan.
+Outputs build/green-ops-week7; committed model/report copies docs/results/
+week7-regression-v1. Compatibility guards require recipe bytes for prediction
+(--recipe FILE) and full-slot offers/retry cap, plus original manifest digest.
+These tighten new-input checks only; all270 locked inputs pass; no scores changed.
 
-Next AFTER selection commit: python3 tools/green_ops/green_ops_ml.py evaluate
---dataset build/green-ops-week7/dataset --training build/green-ops-week7/training
---output-dir build/green-ops-week7/evaluation. Do not refit/tune after inspecting
-those results. Verify selection bytes/hashes remain unchanged. Then prediction
-CLI example, save held-out reports/predictions, docs, final checks/checkpoint.
-No push/publish. Analytical formula recovery is not hardware validation.
-Week8 uncertainty/explainability remain out of scope. Verify Git status first.
+No Week7 implementation remains after final commit. Next separately requested
+Week8: predeclare new group-disjoint calibration/evaluation data before interval
+or attribution choices. Existing validation selected models; existing test/
+stress are already observed. No uncertainty/explainability implemented here.
+All results analytical_simulation; not physical accuracy or battery evidence.
+No push/publish, no inferred research hours. Verify Git status before resuming.

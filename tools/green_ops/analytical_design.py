@@ -222,7 +222,7 @@ def load_design_record(directory):
         timings={k:v["value"] for k,v in model["timing_us"].items()},loss=model["loss_probability"]["value"],
         rtt=model["rtt_extra_ms"]["value"] if model["rtt_extra_ms"] is not None else None)
     realization = {k:v for k,v in workload.items() if k not in {"run_id","evaluation_group_id","repetition"}}
-    return dict(row=row,manifest=manifest,workload=workload,family=configuration_family(workload),
+    return dict(row=row,manifest=manifest,manifest_sha256=artifact['manifest_sha256'],workload=workload,family=configuration_family(workload),
                 parameter_sha256=_sha256(snapshots["parameters"]),
                 assumption_sha256=_sha256(snapshots["assumptions_document"]),
                 realization_sha256=_sha256(_json_bytes(dict(point=_canonical_numeric_point(point),workload=realization))))

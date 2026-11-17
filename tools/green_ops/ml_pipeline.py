@@ -149,13 +149,20 @@ def metrics(truth,predictions):
     return dict(sample_count=n,mae=mae,rmse=rmse,r2=r2,r2_undefined_reason=reason)
 
 
-def record_features(record,*,scope=None,domain='primary'):
+def record_features(record,*,scope=None,domain='primary',recipe=None):
     if not isinstance(record,dict) or 'row' not in record or 'manifest' not in record:raise ValueError('validated analytical record required')
     row=validate_dataset_row(record['row'],schema_version=2);manifest=_validate_manifest(row,record['manifest'])
     if (row['source_kind'],row['execution_kind'],row['measurement_status'])!=('synthetic','simulation','analytical_simulation'):
         raise ValueError('regression scope is analytical_simulation only')
     if manifest['selected_features']['pre_run']!=list(PRE_RUN_FEATURES):raise ValueError('pre-run capabilities unavailable')
     if scope is not None:
+        if recipe is None:raise ValueError('frozen recipe required for prediction workload policy')
+        workload=record.get('workload')
+        if (not isinstance(workload,dict) or type(workload.get('max_attempts')) is not int
+                or workload['max_attempts']!=recipe['max_attempts']
+                or any(workload.get(k)!=row[k] for k in ('offered_packets','interval_ms','window_duration_ms'))
+                or row['offered_packets']!=int(row['window_duration_ms'])//row['interval_ms']):
+            raise ValueError('prediction workload policy differs from frozen recipe')
         for name in ('source_kind','execution_kind','measurement_status','adapter','feature_profile_id','analytical_model_id'):
             if row[name]!=scope[name]:raise ValueError(f'incompatible prediction {name}')
         allowed=[scope['primary_parameters_sha256']] if domain=='primary' else scope['stress_parameters_sha256'] if domain=='declared_stress' else []
@@ -179,11 +186,11 @@ def prepare_target(records,target):
     return X,y,used,sorted(missing)
 
 
-def evaluate_estimator(estimator,records,target,*,scope=None,domain='primary'):
+def evaluate_estimator(estimator,records,target,*,scope=None,domain='primary',recipe=None):
     if not isinstance(target,str) or target not in TARGET_UNITS:raise ValueError('unsupported energy target')
     predictions=[];truth=[];scores=[];families={};missing=[]
     for record in records:
-        features=record_features(record,scope=scope,domain=domain)
+        features=record_features(record,scope=scope,domain=domain,recipe=recipe)
         prediction=predict_matrix(estimator,[features])[0];row=record['row'];value=row[target]
         predictions.append(dict(run_id=row['run_id'],group_id=row['evaluation_group_id'],target=target,
                                 truth=value,prediction=prediction,provenance='analytical_simulation'))
@@ -260,7 +267,13 @@ def package_model(estimator,target,dataset,training_records):
 def model_to_bytes(artifact):return _json_bytes(validate_model_artifact(artifact))
 def model_from_bytes(content):return validate_model_artifact(_json_from_bytes(content))
 
-def predict_record(artifact,record,*,domain='primary'):
+def predict_record(artifact,record,*,domain='primary',recipe_bytes=None):
     artifact=validate_model_artifact(artifact)
-    X=record_features(record,scope=artifact['scope'],domain=domain)
+    if not isinstance(recipe_bytes,bytes) or _sha256(recipe_bytes)!=artifact['training']['recipe_sha256']:
+        raise ValueError('exact frozen recipe bytes required for prediction compatibility')
+    recipe=validate_recipe(_json_from_bytes(recipe_bytes))
+    if (recipe['parameters_sha256']!=artifact['scope']['primary_parameters_sha256']
+            or recipe['assumptions_sha256']!=artifact['scope']['assumptions_sha256']):
+        raise ValueError('recipe/model source scope mismatch')
+    X=record_features(record,scope=artifact['scope'],domain=domain,recipe=recipe)
     return predict_matrix(artifact['estimator'],[X])[0]

@@ -77,15 +77,19 @@ class ModelArtifactTests(unittest.TestCase):
         X,y,_,_=ml.prepare_target(self.train,self.target)
         self.artifact=ml.package_model(ml.fit_regressor(X,y),self.target,self.dataset,self.train)
 
+    def predict(self,artifact,record,**kwargs):
+        return ml.predict_record(artifact,record,recipe_bytes=self.dataset['recipe_bytes'],**kwargs)
+
     def test_strict_roundtrip_prediction_and_compatibility(self):
         encoded=ml.model_to_bytes(self.artifact)
         loaded=ml.model_from_bytes(encoded)
-        self.assertEqual(ml.predict_record(loaded,self.train[0]),ml.predict_record(self.artifact,self.train[0]))
+        self.assertEqual(self.predict(loaded,self.train[0]),self.predict(self.artifact,self.train[0]))
         for name,value in (('feature_contract_version',99),('feature_order',['target_total_energy_mj']),('target','ping_rtt_latency_ms'),('extra',1)):
             bad=copy.deepcopy(self.artifact);bad[name]=value
             with self.subTest(name=name),self.assertRaises(ValueError):ml.model_to_bytes(bad)
         with self.assertRaises(ValueError):ml.model_from_bytes(b'{"a":1,"a":2}')
         with self.assertRaises(ValueError):ml.model_from_bytes(b'{"bad":NaN}')
+        with self.assertRaises(ValueError):ml.predict_record(self.artifact,self.train[0],recipe_bytes=b'{}')
 
     def test_missing_label_is_excluded_and_invalid_x_cannot_hide_behind_it(self):
         zero=save_bundle(self.root/'zero',workload(run_id='zero',offered_packets=0))
@@ -102,10 +106,12 @@ class ModelArtifactTests(unittest.TestCase):
 
     def test_scope_and_availability_block_wrong_prediction_domain(self):
         stress=next(r for r in self.dataset['records'] if r['split']=='stress')
-        with self.assertRaises(ValueError):ml.predict_record(self.artifact,stress)
-        self.assertTrue(math.isfinite(ml.predict_record(self.artifact,stress,domain='declared_stress')))
+        with self.assertRaises(ValueError):self.predict(self.artifact,stress)
+        self.assertTrue(math.isfinite(self.predict(self.artifact,stress,domain='declared_stress')))
+        primary=next(r for r in self.dataset['records'] if r['split']=='test')
+        self.assertEqual(self.predict(self.artifact,primary),self.predict(self.artifact,stress,domain='declared_stress'))
         bad=copy.deepcopy(self.train[0]);bad['manifest']['available_fields']=[]
-        with self.assertRaises(ValueError):ml.predict_record(self.artifact,bad)
+        with self.assertRaises(ValueError):self.predict(self.artifact,bad)
         bad=copy.deepcopy(self.artifact);bad['training']['train_group_ids']=bad['training']['split_membership']['test']
         with self.assertRaises(ValueError):ml.model_to_bytes(bad)
 
@@ -115,3 +121,10 @@ class ModelArtifactTests(unittest.TestCase):
         self.assertEqual(len(features),4)
         self.assertEqual(features,[record['row'][name] for name in self.artifact['feature_order']])
         self.assertFalse(set(self.artifact['feature_order'])&{'seed','run_id','rx_operations','target_total_energy_mj'})
+
+    def test_prediction_rejects_unidentifiable_offer_policy_and_retry_changes(self):
+        for index,changes in enumerate((dict(offered_packets=1),dict(offered_packets=10,max_attempts=2))):
+            directory=save_bundle(self.root/f'incompatible-{index}',workload(run_id=f'incompatible-{index}',**changes),assumptions=(self.root/'data/assumptions.md').read_bytes())
+            record=load_design_record(directory)
+            with self.subTest(changes=changes),self.assertRaises(ValueError):
+                self.predict(self.artifact,record)
