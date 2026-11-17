@@ -155,3 +155,9 @@ reference checks, deterministic provenance filtering, target missing policies,
 null preservation and duplicate rejection. Eight focused table tests pass.
 The table validates summary contracts and byte identity, not physical truth.
 Next: table CLI and atomic output integration.
+
+Task 4 committed as `c037dd8`. Task 5 table CLI implemented with explicit
+provenance selection, repeatable source pairs, deterministic output digest,
+source/output alias checks and two-output reservation/rollback. Five focused
+CLI tests pass, including a simulated second-publication failure. No physical
+or analytical model accuracy is claimed. Next: protocol and runnable demos.
