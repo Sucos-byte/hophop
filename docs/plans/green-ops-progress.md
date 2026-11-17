@@ -333,3 +333,8 @@ feature contract 3 remain unchanged. Generator arithmetic patch: 1.0.1.
 commit verified correction milestone. Next: larger fixed-parameter and stress
 panel acceptance, final suite, review report and Week 7 dataset design. No
 training/hardware results claimed. See green-ops-week6-review.md.
+
+Review correction milestone committed as `f8c35bf`. Current task: multi-panel
+acceptance and final documentation. Next: generate/audit 24 traffic families
+with duration/repetition variants and separate model-stress panels, then final
+suite and Week 7 readiness/design report. 45 focused checks pass.

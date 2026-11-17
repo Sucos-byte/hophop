@@ -17,3 +17,6 @@ check group/seed isolation and table integration, finish review/design docs,
 run final full suite after changes, and commit final checkpoint. Do not train,
 push or publish. Source currents remain conditioned typical values; timing,
 loss, envelopes and optional RTT are assumptions. Physical validation pending.
+
+Correction milestone committed: f8c35bf. Current task is now multi-panel
+acceptance, followed by final suite and final review/design report. No training.
