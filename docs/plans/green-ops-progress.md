@@ -914,3 +914,14 @@ Execution plan written before scoring. Frozen recipe/receipt retained unchanged;
 new execution ledger will distinguish consumed data from historical freeze state.
 Current: hash/isolation preflight and execution tooling; next verified tooling
 commit before any benchmark energy generation. No tuning/push/hardware claims.
+
+Week12 preflight verified all frozen receipt/code/model/calibration/policy hashes,
+1920 unique IDs,16 parents,960/960 cases,48 streams;109 historical exclusions,
+zero parent/known seed overlap.12 targeted executor/audit tests pass with
+ResourceWarning errors (0.341s). Tests use only Week11 development labels, not
+Week12. Executor and separate rational-ledger audit added; frozen files unchanged.
+Current: finish full-suite verification and tooling commit; next score both
+partitions without tuning, reproduce independently and report negative outcomes.
+Full suite passed351 tests (the initial10 new tests plus341 existing); subsequent
+JSONL/audit additions verified by the12-test targeted suite. No frozen behavior
+modified. Pre-scoring tooling milestone ready; no energy labels generated yet.
