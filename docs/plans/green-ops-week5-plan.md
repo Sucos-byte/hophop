@@ -229,3 +229,15 @@ Week 6 analytical_reference.py will produce v2 analytical artifacts through an e
 Week 7 starts with stdlib constant/linear baselines; add an optional sklearn tree ensemble adapter after stable interfaces. Fit imputation/scaling on train folds only. Evaluate per target with explicit missing-label filters, group-level splits and MAE/RMSE/R²; report undefined R² for constant truth. Week 8 adds calibrated prediction intervals, group-bootstrap metric intervals, ablations and attribution. Later gatekeeper decisions include model/contract/provenance compatibility and uncertainty policy.
 
 Five years is a configurable battery-design policy, not a verified universal EU autonomy mandate. See official references in green-ops-progress.md. Benchmark detection targets apply to specified injected cases and thresholds; also report false positives and inconclusive predictions.
+
+
+## Native migration record — 17 November 2026
+
+Entry branch and HEAD verified: `green-ops/week5-measurement-contract`,
+`25b1aaa` (full baseline SHA recorded in the progress tracker). Only the three
+supplied planning files were untracked. No applicable AGENTS.md was found.
+Confirmed incoming suite evidence: 153 tests. Task 3 and registry v2 committed
+as `822679f`; Task 4 as `c037dd8`; Task 5 as `f119f2d`.
+Task 6 adds a fresh-directory demonstration and acquisition protocol; physical
+acquisition remains pending. This supersedes the earlier remote-only execution
+notes. No actual hours or hardware results are inferred from these milestones.

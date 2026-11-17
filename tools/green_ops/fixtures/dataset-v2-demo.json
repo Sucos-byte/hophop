@@ -1,0 +1,130 @@
+[
+  {
+    "run_metadata": {
+      "metadata_version": 1,
+      "run_id": "demo-v2-1",
+      "adapter_id": "hophop",
+      "feature_profile_id": "hophop-nrf9151-v1",
+      "execution_kind": "synthetic",
+      "firmware_revision": null,
+      "firmware_dirty": null,
+      "device_id": null,
+      "target_provenance": {
+        "target_power_draw_mw": "missing",
+        "target_ping_rtt_latency_ms": "missing"
+      }
+    },
+    "measurement_window": {
+      "window_version": 1,
+      "run_id": "demo-v2-1",
+      "window_id": "window-1",
+      "clock_id": "device-monotonic",
+      "start_us": 1000000,
+      "end_us": 2000000,
+      "window_duration_ms": 1000.0,
+      "segment_id": 0,
+      "observed_segment_ids": [
+        0
+      ],
+      "start_counters": {
+        "rx_attempts": 10,
+        "rx_data_packets": 8,
+        "sync_beacons": 2,
+        "tx_successes": 3
+      },
+      "end_counters": {
+        "rx_attempts": 15,
+        "rx_data_packets": 12,
+        "sync_beacons": 3,
+        "tx_successes": 5
+      },
+      "alignment": {
+        "method": "synthetic_fixture",
+        "reference_artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "start_marker_id": "start-001",
+        "end_marker_id": "end-001",
+        "uncertainty_ms": 0.5
+      },
+      "evaluation_group_id": "demo-session-1"
+    },
+    "telemetry_rows": [
+      {
+        "run_id": "demo-v2-1",
+        "source_kind": "synthetic",
+        "source_line": "1",
+        "segment_id": "0",
+        "event": "rx_data",
+        "rx_attempts": "15",
+        "rx_data_packets": "12",
+        "sync_beacons": "3",
+        "tx_successes": "5",
+        "local_rx_ticks": "",
+        "scheduled_tx_ticks": ""
+      }
+    ]
+  },
+  {
+    "run_metadata": {
+      "metadata_version": 1,
+      "run_id": "demo-v2-2",
+      "adapter_id": "hophop",
+      "feature_profile_id": "hophop-nrf9151-v1",
+      "execution_kind": "synthetic",
+      "firmware_revision": null,
+      "firmware_dirty": null,
+      "device_id": null,
+      "target_provenance": {
+        "target_power_draw_mw": "missing",
+        "target_ping_rtt_latency_ms": "missing"
+      }
+    },
+    "measurement_window": {
+      "window_version": 1,
+      "run_id": "demo-v2-2",
+      "window_id": "window-2",
+      "clock_id": "device-monotonic",
+      "start_us": 1000000,
+      "end_us": 2000000,
+      "window_duration_ms": 1000.0,
+      "segment_id": 0,
+      "observed_segment_ids": [
+        0
+      ],
+      "start_counters": {
+        "rx_attempts": 10,
+        "rx_data_packets": 8,
+        "sync_beacons": 2,
+        "tx_successes": 3
+      },
+      "end_counters": {
+        "rx_attempts": 15,
+        "rx_data_packets": 12,
+        "sync_beacons": 3,
+        "tx_successes": 5
+      },
+      "alignment": {
+        "method": "synthetic_fixture",
+        "reference_artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "start_marker_id": "start-001",
+        "end_marker_id": "end-001",
+        "uncertainty_ms": 0.5
+      },
+      "evaluation_group_id": "demo-session-2"
+    },
+    "telemetry_rows": [
+      {
+        "run_id": "demo-v2-2",
+        "source_kind": "synthetic",
+        "source_line": "1",
+        "segment_id": "0",
+        "event": "rx_data",
+        "rx_attempts": "15",
+        "rx_data_packets": "12",
+        "sync_beacons": "3",
+        "tx_successes": "5",
+        "local_rx_ticks": "",
+        "scheduled_tx_ticks": ""
+      }
+    ]
+  }
+]

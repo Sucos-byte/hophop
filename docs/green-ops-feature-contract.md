@@ -1,4 +1,4 @@
-# Green-Ops feature contract v1
+# Green-Ops versioned feature contract
 
 The registry partitions dataset schema v1 into metadata, potential prediction
 features, and targets. Classification is exhaustive and roles are disjoint.
@@ -37,8 +37,8 @@ Post-run delivery counters also relate to the energy-per-delivery target's
 denominator. Report this diagnostic prediction context and evaluate an ablation
 without those counters before interpreting predictive performance.
 
-This version preserves the Week 4 dataset schema. Dataset v2 and measurement
-window contracts are subsequent Week 5 increments.
+The legacy profiles above preserve the Week 4 dataset schema; the v2 registry
+below supplies the bounded Week 5 contract.
 
 ## Registry v2
 

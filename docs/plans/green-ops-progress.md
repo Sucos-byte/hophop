@@ -161,3 +161,15 @@ provenance selection, repeatable source pairs, deterministic output digest,
 source/output alias checks and two-output reservation/rollback. Five focused
 CLI tests pass, including a simulated second-publication failure. No physical
 or analytical model accuracy is claimed. Next: protocol and runnable demos.
+
+Task 5 committed as `f119f2d`. Task 6 acceptance demo passed at
+`/tmp/green-ops-week5-demo`: two distinct synthetic runs/groups with null energy
+and RTT, plus two separate analytical contract-test runs/groups. Added saved
+source fixtures, fresh-directory runner, migration/table guide and acquisition
+protocol with official Nordic sources checked 17 November 2026. Board revision,
+wiring review and all physical acquisition remain pending; no board pin mapping
+or DECT current values were guessed. Incoming full baseline SHA:
+`25b1aaab3ead347de94fa66f0e662b9500ea86a4`. Latest full suite at this checkpoint:
+178 passing tests. Final validation review added strict numeric-token, manifest
+selection and integer-energy overflow checks; 16 focused table/CLI tests pass.
+Final full suite and local verification commit follow.
