@@ -2,7 +2,7 @@
 
 Branch green-ops/week11-fault-injection; clean baseline46b1b9c. Freeze d0d6331,
 implementation24b746a. Current: Week11 complete, final dev/frozen-proposal evidence
-ready to commit. Release341 tests pass (24 new,111.869s), full replay/independent
+committed00a4466; no implementation pending. Release341 tests pass (24 new,111.869s), full replay/independent
 85-file development output determinism verified. Read docs/green-ops-fault-injection.md,
 docs/green-ops-week11-results.md and Week11 plan.
 
@@ -30,3 +30,6 @@ No current-task push/publication/merge/deploy; earlier remoteff801898 verificati
 is historical only. No physical/Nordic unsupported source/95% assurance claims.
 Refresh atomic Windows status after milestones/input/before stopping per export
 policy; tracker authoritative. No user/hardware action required now.
+
+Verified code/accounting24b746a; final development/freeze evidence00a4466.
+Subsequent checkpoint documentation only; no remote run for Week11.

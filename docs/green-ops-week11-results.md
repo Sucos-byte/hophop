@@ -97,7 +97,10 @@ Keep5% change labels and200mW point labels separate in later benchmarking.
 Original source catalog/conditions are archived unchanged: nRF9151 DECT NR+
 minimum-latency reference at3.7V/25C, declared19dBm and -90dBm RX conditions,
 Product Specification1.1(June2025), current table37mA idle/47mA RX/235mA TX.
-Original timings/loss remain assumptions; no LTE values substituted.
+Original timings/loss remain assumptions; no LTE values substituted. Loss draws
+are deliberately held independent of TX-power changes and common across paired
+baselines where applicable; no RF link-budget or power-dependent delivery model
+is validated.
 
 New CPU increment5mA(range0..20), lower14dBm current180mA(range120..234), linear
 interpolation, idle/RX transfer at lower power,8byte fragment headers and extra

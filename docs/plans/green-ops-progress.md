@@ -898,3 +898,13 @@ Explicit supplemental infeasible-beacon artifact has null fault labels and
 ABSTAIN, no fabricated zero or positive. Current: final docs/evidence checks and
 commit/export; next separately authorized Week12 scoring under the frozen recipe.
 No current-task push/publication/merge/deploy; frozen dependencies unchanged.
+
+Final verified Week11 development/frozen-Week12 milestone committed00a4466;
+Windows snapshot refreshed. Current: Week11 complete; source24b746a verified341
+local tests, exact development replay and frozen dependency/lineage hashes pass.
+No Week12 energy/scoring performed; no current-task push/publication/merge/deploy.
+Next separately authorized Week12 under frozen1920-case/16-parent proposal;
+keep11missed oracle violations,2point violations and12control blocks visible.
+Loss draws across TX variants remain an explicit common-noise/no-link-budget
+assumption, not validated physical RF behavior. Final handoff-only checkpoint
+and atomic Windows refresh before stopping; no required user/hardware action.
