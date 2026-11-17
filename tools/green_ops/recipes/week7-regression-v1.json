@@ -1,0 +1,243 @@
+{
+  "assumptions_path": "tools/green_ops/models/analytical-assumptions-v1.md",
+  "assumptions_sha256": "3ba5877e065aeb16ebb450e19580928824e19933e1536d6e8e52ddd4854ed694",
+  "axes": {
+    "intervals_ms": [
+      50,
+      75,
+      100,
+      150,
+      250,
+      500
+    ],
+    "payload_sizes_bytes": [
+      16,
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "window_durations_ms": [
+      1000,
+      5000,
+      10000
+    ]
+  },
+  "cv_folds": [
+    {
+      "assessment_groups": [
+        "af-1de88bbaad389b3007ebe57c0ccbf59e",
+        "af-31b030395c6626bf981b37a2b49aaa20",
+        "af-54dc9a1bc403858b95a0ed00666e192e",
+        "af-802d888e0e03d975cec06d764adf15d6",
+        "af-96953c44774b6c6d4befd2a8999ae974",
+        "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+      ],
+      "fit_groups": [
+        "af-200636b56aaed1cd4b01c4a744a29f96",
+        "af-2231f8c40d71a1949d09d3ddb787faa6",
+        "af-348483f78c83cab28067308b4ee1bde1",
+        "af-509e2e726b8681408a1efc9aca0bc988",
+        "af-6de44f445924baae26de95fdbe3de161",
+        "af-759c2010ed4c333eae1f63c47c5c8f66",
+        "af-79814fa841fb5110019c61299cb85125",
+        "af-883c8cfc45e1f4767fd854a75f19c953",
+        "af-9db7a935d9a1e2d16e5e3340e092c319",
+        "af-a0dd5fcd4179de3eb107927a8ec47e26",
+        "af-a54222ed65671b0bc3658d0b308e27c1",
+        "af-a94b485962b5ec69144906ff7716e13e",
+        "af-cdb754326bcb18d4f450c08898867c41",
+        "af-ce04975915533897837381dc3499e918",
+        "af-d76339345ecc6a82bf67a261d73ac27a",
+        "af-dc43ee9d6d1640eed9c1f79203508749",
+        "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+        "af-eb7dd48dcac8743291a5520b265d1c42"
+      ]
+    },
+    {
+      "assessment_groups": [
+        "af-200636b56aaed1cd4b01c4a744a29f96",
+        "af-509e2e726b8681408a1efc9aca0bc988",
+        "af-759c2010ed4c333eae1f63c47c5c8f66",
+        "af-a54222ed65671b0bc3658d0b308e27c1",
+        "af-d76339345ecc6a82bf67a261d73ac27a",
+        "af-dc43ee9d6d1640eed9c1f79203508749"
+      ],
+      "fit_groups": [
+        "af-1de88bbaad389b3007ebe57c0ccbf59e",
+        "af-2231f8c40d71a1949d09d3ddb787faa6",
+        "af-31b030395c6626bf981b37a2b49aaa20",
+        "af-348483f78c83cab28067308b4ee1bde1",
+        "af-54dc9a1bc403858b95a0ed00666e192e",
+        "af-6de44f445924baae26de95fdbe3de161",
+        "af-79814fa841fb5110019c61299cb85125",
+        "af-802d888e0e03d975cec06d764adf15d6",
+        "af-883c8cfc45e1f4767fd854a75f19c953",
+        "af-96953c44774b6c6d4befd2a8999ae974",
+        "af-9db7a935d9a1e2d16e5e3340e092c319",
+        "af-a0dd5fcd4179de3eb107927a8ec47e26",
+        "af-a94b485962b5ec69144906ff7716e13e",
+        "af-cdb754326bcb18d4f450c08898867c41",
+        "af-ce04975915533897837381dc3499e918",
+        "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+        "af-eb7dd48dcac8743291a5520b265d1c42",
+        "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+      ]
+    },
+    {
+      "assessment_groups": [
+        "af-6de44f445924baae26de95fdbe3de161",
+        "af-79814fa841fb5110019c61299cb85125",
+        "af-883c8cfc45e1f4767fd854a75f19c953",
+        "af-9db7a935d9a1e2d16e5e3340e092c319",
+        "af-cdb754326bcb18d4f450c08898867c41",
+        "af-eb7dd48dcac8743291a5520b265d1c42"
+      ],
+      "fit_groups": [
+        "af-1de88bbaad389b3007ebe57c0ccbf59e",
+        "af-200636b56aaed1cd4b01c4a744a29f96",
+        "af-2231f8c40d71a1949d09d3ddb787faa6",
+        "af-31b030395c6626bf981b37a2b49aaa20",
+        "af-348483f78c83cab28067308b4ee1bde1",
+        "af-509e2e726b8681408a1efc9aca0bc988",
+        "af-54dc9a1bc403858b95a0ed00666e192e",
+        "af-759c2010ed4c333eae1f63c47c5c8f66",
+        "af-802d888e0e03d975cec06d764adf15d6",
+        "af-96953c44774b6c6d4befd2a8999ae974",
+        "af-a0dd5fcd4179de3eb107927a8ec47e26",
+        "af-a54222ed65671b0bc3658d0b308e27c1",
+        "af-a94b485962b5ec69144906ff7716e13e",
+        "af-ce04975915533897837381dc3499e918",
+        "af-d76339345ecc6a82bf67a261d73ac27a",
+        "af-dc43ee9d6d1640eed9c1f79203508749",
+        "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+        "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+      ]
+    },
+    {
+      "assessment_groups": [
+        "af-2231f8c40d71a1949d09d3ddb787faa6",
+        "af-348483f78c83cab28067308b4ee1bde1",
+        "af-a0dd5fcd4179de3eb107927a8ec47e26",
+        "af-a94b485962b5ec69144906ff7716e13e",
+        "af-ce04975915533897837381dc3499e918",
+        "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+      ],
+      "fit_groups": [
+        "af-1de88bbaad389b3007ebe57c0ccbf59e",
+        "af-200636b56aaed1cd4b01c4a744a29f96",
+        "af-31b030395c6626bf981b37a2b49aaa20",
+        "af-509e2e726b8681408a1efc9aca0bc988",
+        "af-54dc9a1bc403858b95a0ed00666e192e",
+        "af-6de44f445924baae26de95fdbe3de161",
+        "af-759c2010ed4c333eae1f63c47c5c8f66",
+        "af-79814fa841fb5110019c61299cb85125",
+        "af-802d888e0e03d975cec06d764adf15d6",
+        "af-883c8cfc45e1f4767fd854a75f19c953",
+        "af-96953c44774b6c6d4befd2a8999ae974",
+        "af-9db7a935d9a1e2d16e5e3340e092c319",
+        "af-a54222ed65671b0bc3658d0b308e27c1",
+        "af-cdb754326bcb18d4f450c08898867c41",
+        "af-d76339345ecc6a82bf67a261d73ac27a",
+        "af-dc43ee9d6d1640eed9c1f79203508749",
+        "af-eb7dd48dcac8743291a5520b265d1c42",
+        "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+      ]
+    }
+  ],
+  "cv_seed": 2026111708,
+  "cv_shortlist": 2,
+  "dataset_version": 2,
+  "experiment_id": "week7-raw-pre-run-v1",
+  "feature_contract_version": 3,
+  "feature_order": [
+    "payload_size_bytes",
+    "interval_ms",
+    "tx_power_dbm",
+    "window_duration_ms"
+  ],
+  "feature_profile": "raw_pre_run_v1",
+  "generator_version": "1.0.1",
+  "master_seed": 20261117,
+  "max_attempts": 3,
+  "missing_label_policy": "exclude_per_target",
+  "parameters_path": "tools/green_ops/models/nrf9151-dect-reference-v1.json",
+  "parameters_sha256": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55",
+  "prediction_mode": "pre_run",
+  "preprocessing": "train_standardize_population_std_constant_scale_1",
+  "primary_row_count": 540,
+  "recipe_version": 1,
+  "refit_on_validation": false,
+  "repetitions": 5,
+  "ridge_alphas": [
+    0.01,
+    1.0,
+    100.0
+  ],
+  "sampler_version": "sha256-bernoulli-v1",
+  "selection_metric": "validation_rmse",
+  "solver": "augmented_householder_qr_centered_target_v1",
+  "split_seed": 2026111707,
+  "splits": {
+    "test": [
+      "af-304dd4ad10611502fcce49fa588d4d76",
+      "af-30f9dbd81a3216468a9d07c56413dca7",
+      "af-32ed793d58c2b84d8cc2ed1a08614753",
+      "af-7d29801a523fac4400fe6882242ea8cf",
+      "af-b45d9b0f54a19e12d2665d16bff5bcca",
+      "af-f4ba00d9eca12cfe896d727423b58d1f"
+    ],
+    "train": [
+      "af-1de88bbaad389b3007ebe57c0ccbf59e",
+      "af-200636b56aaed1cd4b01c4a744a29f96",
+      "af-2231f8c40d71a1949d09d3ddb787faa6",
+      "af-31b030395c6626bf981b37a2b49aaa20",
+      "af-348483f78c83cab28067308b4ee1bde1",
+      "af-509e2e726b8681408a1efc9aca0bc988",
+      "af-54dc9a1bc403858b95a0ed00666e192e",
+      "af-6de44f445924baae26de95fdbe3de161",
+      "af-759c2010ed4c333eae1f63c47c5c8f66",
+      "af-79814fa841fb5110019c61299cb85125",
+      "af-802d888e0e03d975cec06d764adf15d6",
+      "af-883c8cfc45e1f4767fd854a75f19c953",
+      "af-96953c44774b6c6d4befd2a8999ae974",
+      "af-9db7a935d9a1e2d16e5e3340e092c319",
+      "af-a0dd5fcd4179de3eb107927a8ec47e26",
+      "af-a54222ed65671b0bc3658d0b308e27c1",
+      "af-a94b485962b5ec69144906ff7716e13e",
+      "af-cdb754326bcb18d4f450c08898867c41",
+      "af-ce04975915533897837381dc3499e918",
+      "af-d76339345ecc6a82bf67a261d73ac27a",
+      "af-dc43ee9d6d1640eed9c1f79203508749",
+      "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+      "af-eb7dd48dcac8743291a5520b265d1c42",
+      "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+    ],
+    "validation": [
+      "af-152328364ab85cdb6495968af661ab95",
+      "af-2da0a5e52a8f7a0099bf417a2089809e",
+      "af-728f56eece1dc4a3984611fecd52b3f6",
+      "af-7517e1d1b3cc541b23f586645278571e",
+      "af-a3f0253cbbf3bba77992c2b79847e3b0",
+      "af-e2d7ef44adcbeb8778e740bce125525c"
+    ]
+  },
+  "stress_row_count": 180,
+  "stress_variants": [
+    {
+      "id": "airtime-low",
+      "tx_per_byte_us": 1
+    },
+    {
+      "id": "airtime-high",
+      "tx_per_byte_us": 10
+    }
+  ],
+  "targets": [
+    "target_mean_power_mw",
+    "target_total_energy_mj",
+    "target_energy_per_delivered_packet_uj"
+  ],
+  "tie_break": "training_mean_then_larger_alpha"
+}

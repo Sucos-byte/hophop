@@ -375,3 +375,15 @@ cases; all 288 acceptance bundles replay-audited. Current task: completed review
 final documentation-only resumption checkpoint. Next: separately requested
 Week 7 grouped software pilot, beginning with frozen dataset recipe/splits and
 per-target audit. Physical validation remains pending. No push or publish.
+
+## Week 7 started — frozen experiment
+
+Verified clean baseline `9138511334218d147f1128d04b893eac7458725e`; created
+`green-ops/week7-ml-regression`. Read actual APIs/instructions and Week 6 review;
+no applicable AGENTS.md. Plan: green-ops-week7-plan.md. Frozen recipe at
+tools/green_ops/recipes/week7-regression-v1.json records source hashes, exact
+540+180 design, pre-run features/targets, 24/6/6 family splits, four training CV
+folds, seeds and selection rules before any fit. Static count/isolation planning
+assertions pass. Current: recipe/source freeze. Next: actual materialization and
+audit, then standard-library numerical core. No training or held-out evaluation
+yet. Incoming suite evidence: 246 passing tests; actual hours unreported.
