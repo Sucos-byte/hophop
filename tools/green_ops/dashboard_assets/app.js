@@ -1,57 +1,1024 @@
-'use strict';
-const main=document.querySelector('main');
-let snapshot, requestId=0;
-const names={overview:'Overview',experiments:'Experiments',predictions:'Predictions',gates:'Gate decisions',faults:'Fault benchmark'};
-const faultNames={none:'Compliant control',cpu_busy_poll:'CPU busy-poll',tx_power_lock:'TX power lock',bursty_retry_storm:'Bursty retry storm',beacon_hyper_wakeup:'Beacon hyper-wakeup',payload_fragmentation_bloat:'Fragmentation bloat'};
-const targetNames={target_mean_power_mw:'Mean power',target_total_energy_mj:'Total energy',target_energy_per_delivered_packet_uj:'Energy per delivery'};
-const fmt=(v,d=3)=>v===null||v===undefined?'Missing / undefined':typeof v==='number'?v.toLocaleString('en',{maximumFractionDigits:d}):String(v);
-const pct=v=>v===null||v===undefined?'Undefined':fmt(100*v,2)+'%';
-function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined&&text!==null)n.textContent=String(text);if(cls)n.className=cls;return n;}
-function append(n,...children){children.flat().filter(x=>x!==null&&x!==undefined).forEach(c=>n.append(c instanceof Node?c:document.createTextNode(String(c))));return n;}
-function link(text,id){const a=el('a',text);a.href='/resource/'+id;a.target='_blank';a.rel='noopener';return a;}
-function details(title,value){const d=el('details');return append(d,el('summary',title),el('pre',typeof value==='string'?value:JSON.stringify(value,null,2)));}
-function note(text){return el('p',text,'note');}
-function callout(text){return el('div',text,'callout');}
-function tag(text,cls=text){return el('span',text,'tag '+cls);}
-function stat(label,value,sub){return append(el('div',null,'stat'),el('span',label,'label'),el('strong',fmt(value),'value'),el('small',sub));}
-function card(title,...body){return append(el('section',null,'card'),el('h2',title),...body);}
-function heading(title,intro){return append(el('div',null,'page-head'),append(el('div'),el('p','SAVED EVIDENCE / '+names[location.hash.slice(1)]?.toUpperCase(),'eyebrow'),el('h1',title),el('p',intro,'intro')),el('span','READ-ONLY SNAPSHOT','pill'));}
-function section(name){const s=snapshot.sections[name];if(!s||!s.available){main.append(append(el('div',null,'error'),el('strong','Evidence unavailable'),el('p',s?.error||'Artifact section not supported.')));return null;}return s.data;}
-function table(caption,headers,rows){const wrap=el('div',null,'table-wrap');wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label',caption);const t=el('table');t.append(el('caption',caption));const head=el('thead');const tr=el('tr');headers.forEach(h=>{const th=el('th',h);th.scope='col';tr.append(th);});head.append(tr);t.append(head);const body=el('tbody');rows.forEach(row=>{const tr=el('tr');row.forEach(c=>tr.append(append(el('td'),c instanceof Node?c:fmt(c))));body.append(tr);});t.append(body);if(!rows.length)append(t,append(el('tbody'),append(el('tr'),append(el('td'),el('p','No records match these filters.')))));wrap.append(t);return wrap;}
-function select(label,entries,value,onchange){const l=el('label',label);const s=el('select');for(const [v,text] of entries){const o=el('option',text);o.value=v;s.append(o);}s.value=value;s.addEventListener('change',()=>onchange(s.value));return append(l,s);}
-function searchControl(value,action){const l=el('label','Run / family identity');const input=el('input');input.type='search';input.placeholder='Find an identity…';input.value=value;input.maxLength=160;input.addEventListener('keydown',e=>{if(e.key==='Enter')action(input.value);});const b=el('button','Search');b.addEventListener('click',()=>action(input.value));return [append(l,input),b];}
-async function api(path){const res=await fetch(path,{cache:'no-store'});if(!res.ok)throw Error(`Local artifact request failed (${res.status}).`);return res.json();}
-function pagination(result,change){const p=el('div',null,'pager');const start=result.total?(result.page-1)*result.limit+1:0;append(p,note(`${start}–${Math.min(result.page*result.limit,result.total)} of ${fmt(result.total)} records · paginated`));const controls=el('div');for(const [label,delta] of [['Previous',-1],['Next',1]]){const b=el('button',label);b.disabled=delta<0?result.page===1:result.page*result.limit>=result.total;b.addEventListener('click',()=>change(result.page+delta));controls.append(b);}return append(p,controls);}
-function sources(){const d=el('details');d.append(el('summary','Inspect artifact sources & SHA-256 identities'));const list=el('div',null,'source-list');for(const [id,e] of Object.entries(snapshot.sources)){append(list,append(el('div'),link(e.path,id),note(e.available?'Pinned snapshot available':'UNAVAILABLE: '+e.error),el('div',e.sha256,'mono')));}d.append(list);return d;}
-function overview(){main.append(heading('A working pipeline.\nAn open research question.','A local evidence browser for energy-aware embedded software. Explore what was built, what the analytical studies show, and what remains unvalidated.'));const o=section('overview');if(!o)return;const f=snapshot.sections.faults;const w7=snapshot.sections.week7;const w8=snapshot.sections.week8;if(f.available){const a=f.data.aggregate.overall;main.append(append(el('div',null,'grid stats'),stat('Frozen benchmark cases',a.case_count,`${a.parent_count} dependent parent groups · both splits consumed`),stat('Positive FAIL detections',a.positive_FAIL_detections,`of ${a.oracle_violations} oracle budget violations`),stat('Abstention blocks',a.statuses.ABSTAIN,'ABSTAIN is not positive fault detection'),stat('Compliant control blocks',a.control_abstention_blocks,`${a.control_count} controls · blanket abstention`)));}
-const grid=el('div',null,'grid two-col');const hero=append(el('section',null,'hero'),el('p','THE CENTRAL FINDING','eyebrow'),el('h2','Configuration estimates cannot see hidden execution changes.'),el('p','The frozen predictor receives intended payload, interval, requested TX power and window duration. Hidden CPU, retry, wakeup and fragmentation changes leave those inputs unchanged.'),el('p','Identical permitted inputs → identical frozen predictions. Blocking everything does not establish useful selectivity.'),el('span','ANALYTICAL EVIDENCE · NOT HARDWARE VALIDATION','pill'));const scope=card('Evidence boundaries',tag('ANALYTICAL','analytical'),el('p','All displayed study results use synthetic/simulation provenance.'),tag('MEASURED: NOT ESTABLISHED','unavailable'),el('p','No synchronized PPK2 or physical detection study is presented.'),tag('UNMEASURED: MISSING ≠ ZERO','unavailable'),el('p','RTT and unavailable physical labels are not filled with invented values.'));append(grid,hero,scope);main.append(grid);
-main.append(card('Architecture · documented pipeline',append(el('div',null,'flow'),...[['01','Capture & contracts','Telemetry, identities, windows'],['02','Reference & learning','Sourced currents; assumed timing'],['03','Evidence & policy','Intervals, budgets, safe abstention'],['04','Review & diagnosis','Saved reports; observability gap']].map(([n,t,s])=>append(el('div',null,'step'),el('span',n),el('b',t),el('span',s)))),note('Documentation map, not a live execution diagram. All interaction here only reads saved snapshots.')));
-main.append(card('Milestones and experimental evidence',...o.evidence.map(r=>append(el('div',null,'evidence-row'),el('b',r.level),el('p',r.delivered),el('p','Limit: '+r.limitation)))));
-if(w7.available&&w8.available)main.append(card('Records are not independent experiments',note(`Week7: ${fmt(w7.data.record_count)} prediction records, ${fmt(w7.data.unique_runs)} unique run IDs and ${w7.data.unique_groups} shared evaluation families. Week8: ${fmt(w8.data.record_count)} prediction records, ${fmt(w8.data.unique_runs)} run IDs and ${w8.data.unique_groups} shared evaluation families. Targets, models and shift panels repeat related evidence.`)));
-main.append(card('Open gaps & next backend work',el('p','Actual-execution observations, synchronized physical power/delivery validation and a scoped RTT workload remain open. Original exact 18-feature / 100 ms requirements and academic acceptance need reconciliation.'),link('Read the requirements/evidence audit ↗','audit'),el('p','Next backend task: strict observation/capability validation and pure Rust operation/logical-ID bookkeeping, then an opt-in workload and importer. This dashboard does not implement those observations.'),link('Open the concrete observability sprint ↗','sprint'),details('Proposed sprint (source document)',o.next_backend)));main.append(sources());}
-async function experiments(state={page:1,split:'locked_evaluation',kind:'',search:''}){const id=++requestId;main.append(heading('Experiments','Inspect intended configurations and artifact identity. These are analytical fault cases, not live firmware runs.'));if(!section('faults'))return;const filters=el('div',null,'filters');const change=patch=>renderExperiments({...state,...patch,page:patch.page||1});append(filters,select('Partition',[['locked_evaluation','Locked evaluation'],['validation','Validation'],['','All partitions']],state.split,v=>change({split:v})),select('Mechanism',[['','All mechanisms'],...Object.entries(faultNames)],state.kind,v=>change({kind:v})),...searchControl(state.search,v=>change({search:v})));main.append(filters,callout('Showing intended configuration only. Window start/end timestamps and actual CPU/TX/retry behavior are unavailable in this saved case table; duration is the declared analytical observation window.'));
-const result=await api('/api/experiments?'+new URLSearchParams(state));if(id!==requestId)return;if(!result.available){main.append(el('div',result.error,'error'));return;}main.append(table('20 records per page · related variants stay with their parent', ['Case / family','Split / mechanism','Intended configuration','Window / feasibility','Evidence identity'],result.rows.map(r=>{const x=r.predictor.baseline_inputs;return [append(el('div'),el('div',r.case_id,'mono'),el('div',r.parent,'mono')),append(el('div'),tag(r.split,'unavailable'),el('p',faultNames[r.kind]),note('Severity '+r.severity)),append(el('div'),el('p',`${x[0]} bytes · ${x[1]} ms interval`),note(`${x[2]} dBm requested TX`)),append(el('div'),el('p',`${r.window_ms} ms`),tag(r.feasibility,'unavailable')),details('Hashes & permitted inputs',{artifact_sha256:r.artifact_sha256,report_sha256:r.report_sha256,feature_order:r.predictor.feature_order,inputs:x,seed:String(r.seed),provenance:'analytical_simulation',note:'Seeds are identity metadata, not features.'})];})),pagination(result,p=>change({page:p})),note('Artifact hashes identify saved evidence. Raw per-case replayable gzip files are not served; the allowlisted manifest is available for inspection.'),link('Inspect benchmark manifest ↗','w12-manifest'));}
-function renderExperiments(state){main.replaceChildren();experiments(state).catch(showError);}
-function svgNode(tag,attrs={}){const n=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,String(v)));return n;}
-function plot(rows,unit){const data=rows.filter(r=>r.truth!==null).slice(0,10);if(!data.length)return note('No labeled rows available for a chart.');const values=data.flatMap(r=>[r.truth,r.prediction,r.lower,r.upper].filter(v=>v!==null&&v!==undefined));const min=Math.min(...values),max=Math.max(...values),span=max-min||1;const pos=v=>105+(v-min)*570/span;const svg=svgNode('svg',{viewBox:`0 0 730 ${data.length*25+45}`,role:'img',class:'plot'});append(svg,elSVGText('title','Analytical reference and prediction, first10 labeled records on this page'),elSVGText('desc',`Horizontal scale in ${unit}; green circle reference, rust diamond prediction, gray line saved interval where available. Equivalent numbers and errors in table below.`));data.forEach((r,i)=>{const y=18+25*i;const text=svgNode('text',{x:0,y:y+4});text.textContent=`Record ${i+1}`;svg.append(text);if(r.lower!==null)svg.append(svgNode('line',{x1:pos(r.lower),x2:pos(r.upper),y1:y,y2:y,class:'interval'}));svg.append(svgNode('circle',{cx:pos(r.truth),cy:y,r:4,class:'truth'}),svgNode('path',{d:`M ${pos(r.prediction)} ${y-5} l 5 5 l -5 5 l -5 -5 Z`,class:'prediction'}));});const y=data.length*25+8;svg.append(svgNode('line',{x1:105,x2:675,y1:y,y2:y,class:'axis'}));for(const [value,x] of [[min,105],[max,675]]){const t=svgNode('text',{x,y:y+18,'text-anchor':x===105?'start':'end'});t.textContent=fmt(value,2)+' '+unit;svg.append(t);}return svg;}
-function elSVGText(tag,text){const n=svgNode(tag);n.textContent=text;return n;}
-async function predictions(state={study:'week7',panel:'test',target:'target_mean_power_mw',model:'chosen',page:1,search:''}){const id=++requestId;main.append(heading('Predictions, with their limits.','Reference versus prediction on consumed analytical evaluation data. No fitting, inference or model selection occurs in this browser.'));const d=section(state.study);if(!d)return;const panels=[...new Set(d.metrics.map(m=>m.panel))];const change=patch=>renderPredictions({...state,...patch,page:patch.page||1});const filters=append(el('div',null,'filters'),select('Study',[['week7','Week7 · baseline comparison'],['week8','Week8 · calibrated intervals']],state.study,v=>change({study:v,panel:v==='week7'?'test':'primary',model:'chosen'})),select('Panel',panels.map(p=>[p,p]),state.panel,v=>change({panel:v})),select('Target',Object.entries(targetNames),state.target,v=>change({target:v})),select('Model',state.study==='week7'?[['chosen','Frozen ridge'],['baseline','Training-mean baseline']]:[['chosen','Frozen ridge']],state.model,v=>change({model:v})),...searchControl(state.search,v=>change({search:v})));main.append(filters);
-const m=d.metrics.find(m=>m.panel===state.panel&&m.target===state.target&&m.model===state.model);if(!m)throw Error('Saved metric partition unavailable.');main.append(append(el('div',null,'grid stats'),stat('MAE',m.mae,m.unit),stat('RMSE',m.rmse,m.unit),stat('R² · dimensionless',m.r2,'Not percentage accuracy'),stat('Labeled samples',m.sample_count,`${m.total_group_count??m.coverage?.family_count??'Unknown'} family groups`)));
-if(m.coverage){const c=m.coverage;main.append(callout(`Nominal target ${pct(m.nominal_coverage)} FAMILY coverage. Observed row coverage ${pct(c.row_coverage)} / ${c.labeled_rows} labeled rows; family coverage ${pct(c.family_coverage)} / ${c.labeled_families} labeled families. Mean interval width ${fmt(c.mean_width)} ${m.unit}. A family succeeds only if all labeled rows are covered. This is a prediction interval, not a confidence interval for a metric.`));main.append(note('No mean-baseline interval/point comparison is present for Week8 in this saved file. Week7 baseline results use different families and cannot be joined as a Week8 baseline.'));main.append(table('Assumption-shift panels · same evaluation families, not fresh independent groups',['Panel','Family coverage / families','Row coverage / labeled rows','RMSE','Interval width'],d.metrics.filter(x=>x.target===state.target).map(x=>[x.panel,`${pct(x.coverage.family_coverage)} / ${x.coverage.labeled_families}`,`${pct(x.coverage.row_coverage)} / ${x.coverage.labeled_rows}`,`${fmt(x.rmse)} ${x.unit}`,`${fmt(x.coverage.mean_width)} ${x.unit}`])));}else{main.append(table('Training-mean baseline versus frozen ridge · same target/panel',['Model','MAE','RMSE','R² (dimensionless)','Labeled rows / groups'],d.metrics.filter(x=>x.target===state.target&&x.panel===state.panel).map(x=>[x.model,`${fmt(x.mae)} ${x.unit}`,`${fmt(x.rmse)} ${x.unit}`,fmt(x.r2),`${x.sample_count} / ${x.total_group_count}`])));main.append(note('Week7 interval and coverage fields are unavailable: this study predates calibration. Missing labels are excluded, never filled with zero.'));}
-main.append(note(`${fmt(d.record_count)} prediction records in this study ≠ ${fmt(d.unique_runs)} unique run IDs ≠ ${d.unique_groups} shared evaluation families. Per-target/panel records repeat related runs. ${state.panel.includes('airtime')?'This panel changes analytical assumptions; it is not hardware or independent-population evidence.':''}`));const result=await api('/api/predictions?'+new URLSearchParams(state));if(id!==requestId)return;if(!result.available)throw Error(result.error);main.append(card('Reference & prediction · first10 labeled records on this page',append(el('div',null,'legend'),el('b','● Analytical reference'),el('em','◆ Saved prediction'),el('span','━ Saved interval, if available')),plot(result.rows,m.unit),note('Horizontal axis in '+m.unit+'. The table provides all chart values, signed errors and identities.')));
-main.append(table('Reference is analytical truth, never an observed measurement',['Run / family','Reference','Prediction','Signed / absolute error','Saved interval'],result.rows.map(r=>[append(el('div'),el('div',r.run_id,'mono'),el('div',r.group_id,'mono')),`${fmt(r.truth)} ${r.unit}`,`${fmt(r.prediction)} ${r.unit}`,`${fmt(r.error)} / ${fmt(r.absolute_error)} ${r.unit}`,r.lower===null?'Unavailable (not zero)':`[${fmt(r.lower)}, ${fmt(r.upper)}] ${r.unit}`])),pagination(result,p=>change({page:p})));
+"use strict";
+const main = document.querySelector("main");
+let snapshot,
+  requestId = 0;
+const names = {
+  overview: "Overview",
+  experiments: "Experiments",
+  predictions: "Predictions",
+  gates: "Gate decisions",
+  faults: "Fault benchmark",
+};
+const faultNames = {
+  none: "Compliant control",
+  cpu_busy_poll: "CPU busy-poll",
+  tx_power_lock: "TX power lock",
+  bursty_retry_storm: "Bursty retry storm",
+  beacon_hyper_wakeup: "Beacon hyper-wakeup",
+  payload_fragmentation_bloat: "Fragmentation bloat",
+};
+const targetNames = {
+  target_mean_power_mw: "Mean power",
+  target_total_energy_mj: "Total energy",
+  target_energy_per_delivered_packet_uj: "Energy per delivery",
+};
+const fmt = (v, d = 3) =>
+  v === null || v === undefined
+    ? "Missing / undefined"
+    : typeof v === "number"
+      ? v.toLocaleString("en", { maximumFractionDigits: d })
+      : String(v);
+const pct = (v) =>
+  v === null || v === undefined ? "Undefined" : fmt(100 * v, 2) + "%";
+function el(tag, text, cls) {
+  const n = document.createElement(tag);
+  if (text !== undefined && text !== null) n.textContent = String(text);
+  if (cls) n.className = cls;
+  return n;
 }
-function renderPredictions(state){main.replaceChildren();predictions(state).catch(showError);}
-function gates(filter=''){main.append(heading('Decisions are evidence-scoped.','Saved research fixtures illustrate policy semantics. A displayed PASS is not current candidate approval or validated hardware assurance.'));const reports=section('gates');if(!reports)return;main.append(append(el('div',null,'filters'),select('Saved status',[['','All statuses'],...['PASS','FAIL','ABSTAIN','ERROR'].map(s=>[s,s])],filter,v=>{main.replaceChildren();gates(v);})));main.append(callout('PASS=0 · ERROR=1 · FAIL=2 · ABSTAIN=3. Only PASS permits a gate; FAIL, ABSTAIN and ERROR block. Explicit unvalidated research overrides are fixture metadata, never enabled by this dashboard.'));
-for(const r of reports.filter(r=>!filter||r.status===filter)){const c=el('section',null,'card gate-card');append(c,append(el('div',null,'gate-title'),el('h2',r.name.replaceAll('_',' ')),tag(r.status)),el('p',`Exit ${r.exit_code} · ${r.blocks_ci?'BLOCKS execution':'research-fixture criteria met'} · ${r.provenance}`,'status-detail'),el('p',r.evidence_label||'ERROR · evidence provenance not established'),el('p','Reasons: '+r.reason_codes.join(', ')),note('Candidate: '+(r.candidate_revision??'Not supplied')+' · Baseline: '+(r.baseline_revision??'Not supplied')));
-if(r.research_override_used)c.append(callout('EXPLICIT UNVALIDATED RESEARCH OVERRIDE IN THIS SAVED FIXTURE. No validated95% coverage or hardware assurance.'));
-if(r.criteria.length)c.append(table('Saved criteria, budgets and interval evidence',['Criterion / target','Budget / unit','Candidate point / interval','Baseline','Decision / reason'],r.criteria.map(q=>[`${q.id} · ${q.target}`,`${q.threshold} ${q.unit}`,q.candidate?`${fmt(q.candidate.point)} ${q.unit}; ${q.candidate.interval?JSON.stringify(q.candidate.interval):'interval unavailable'}`:'Missing',q.baseline?JSON.stringify(q.baseline):'Not supplied',`${q.status} · ${q.reason_code}`])));
-append(c,details('Prediction context, workload scope, assumptions & battery projection',{context:r.prediction_context??null,comparison_scope:r.comparison_scope??null,assumptions:r.assumptions,battery_projection:r.battery_projection??null,uncertainty_policy:r.uncertainty_policy??null,limitations:r.limitations}),details('Compatible model influences (not physical causes)',r.attributions??'Not supplied; no explanation invented.'),link('Inspect validated saved decision ↗',r.resource));main.append(c);}}
-function faults(split='locked_evaluation',kind=''){main.append(heading('The negative result matters.','Five analytical workload mechanisms changed state behavior before energy integration. The frozen pre-run model cannot observe hidden execution changes.'));const d=section('faults');if(!d)return;const a=d.aggregate.by_split[split];const change=(s,k)=>{main.replaceChildren();faults(s,k);};main.append(append(el('div',null,'filters'),select('Partition',[['locked_evaluation','Locked evaluation'],['validation','Validation']],split,v=>change(v,kind)),select('Stratum filter',[['','All five faults + controls'],...Object.entries(faultNames)],kind,v=>change(split,v))),append(el('div',null,'grid stats'),stat('Oracle violations',a.oracle_violations,`${a.oracle_known} feasible known-label pairs`),stat('Positive detections',a.positive_FAIL_detections,`${a.oracle_violations} violations · ${a.parent_count} parent groups`),stat('ABSTAIN blocks',a.statuses.ABSTAIN,`${a.case_count} scheduled cases`),stat('Control abstention blocks',a.control_abstention_blocks,`${a.control_count} compliant controls`)));
-main.append(callout(`${a.feasibility.COMPLETE} feasible / ${a.feasibility.INFEASIBLE} infeasible / ${a.feasibility.INVALID} invalid cases. ${a.violations_without_positive_detection} oracle violations without positive detection. Control FAIL false alarms ${a.control_false_alarms}/${a.control_count}; control abstention blocks ${a.control_abstention_blocks}/${a.control_count}. Zero false alarms with blanket abstention does not show useful selectivity.`),note('Cards summarize the selected partition; the mechanism filter narrows only the stratum table below. Infeasible energy is null and excluded from oracle/effect denominators. ABSTAIN/ERROR blocking never counts as detection. Both partitions are consumed.'));
-const strata=Object.entries(d.aggregate.by_fault_severity).filter(([k])=>k.startsWith(split+'/')&&(!kind||k.split('/')[1]===kind));main.append(table('Fault severity strata · related variants depend on parent; no population guarantee',['Mechanism / severity','Feasible / infeasible / invalid','Oracle violations / known','Positive FAIL / missed','PASS / FAIL / ABSTAIN / ERROR','Control FA / abstention blocks','Mean paired ΔmJ / Δ%'],strata.map(([key,r])=>{const [,k,s]=key.split('/');return [`${faultNames[k]} / ${s}`,`${r.feasibility.COMPLETE}/${r.feasibility.INFEASIBLE}/${r.feasibility.INVALID}`,`${r.oracle_violations}/${r.oracle_known}`,`${r.positive_FAIL_detections}/${r.violations_without_positive_detection}`,`${r.statuses.PASS}/${r.statuses.FAIL}/${r.statuses.ABSTAIN}/${r.statuses.ERROR}`,`${r.control_false_alarms}/${r.control_abstention_blocks} of ${r.control_count}`,`${fmt(r.effects.paired_energy_mj.mean)} mJ / ${fmt(r.effects.paired_increase_percent.mean)}%`];})));
-main.append(card('Observable inputs, not hidden oracle truth',el('p',`${a.inputs_changed} permitted-input changes; ${a.predictions_changed} prediction changes. Observable mechanism counts: ${a.observability.True} true, ${a.observability.False} false, ${a.observability.None} unknown/not realized/infeasible.`),el('p','CPU busy-poll, requested-versus-actual TX lock, retries, wakeups and fragmentation can change execution without changing intended payload/interval/requested power/window. Oracle labels and fault identity never enter X.'),note('Severity units differ: CPU idle permille; TX dBm above request; retries forced initial failures per burst fragment; wakeups per complete slot; extra fragments per logical packet. Cases are not IID; only eight locked parent groups exist.'),el('p','No intervals were transferred into this fault-engine scope. Default restrictions preserve abstention; the dashboard does not execute or override the gate.'),link('Inspect full frozen aggregate ↗','w12-aggregate')));}
-function showError(error){main.append(append(el('div',null,'error'),el('strong','Unable to display evidence'),el('p',error.message)));main.setAttribute('aria-busy','false');}
-async function render(){++requestId;main.replaceChildren();main.setAttribute('aria-busy','true');const view=location.hash.slice(1)||'overview';document.querySelectorAll('nav a').forEach(a=>{if(a.hash==='#'+view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});try{if(view==='overview')overview();else if(view==='experiments')await experiments();else if(view==='predictions')await predictions();else if(view==='gates')gates();else if(view==='faults')faults();else main.append(el('p','Unknown view. Choose a view from navigation.'));}catch(e){showError(e);}main.setAttribute('aria-busy','false');}
-window.addEventListener('hashchange',()=>render());
-(async()=>{try{snapshot=await api('/api/summary');document.getElementById('snapshot').textContent='Evidence checkpoint '+snapshot.snapshot_checkpoint.slice(0,12);await render();}catch(e){main.replaceChildren();showError(e);}})();
+function append(n, ...children) {
+  children
+    .flat()
+    .filter((x) => x !== null && x !== undefined)
+    .forEach((c) =>
+      n.append(c instanceof Node ? c : document.createTextNode(String(c))),
+    );
+  return n;
+}
+function link(text, id) {
+  const a = el("a", text);
+  a.href = "/resource/" + id;
+  a.target = "_blank";
+  a.rel = "noopener";
+  return a;
+}
+function details(title, value) {
+  const d = el("details");
+  return append(
+    d,
+    el("summary", title),
+    el(
+      "pre",
+      typeof value === "string" ? value : JSON.stringify(value, null, 2),
+    ),
+  );
+}
+function note(text) {
+  return el("p", text, "note");
+}
+function callout(text) {
+  return el("div", text, "callout");
+}
+function tag(text, cls = text) {
+  return el("span", text, "tag " + cls);
+}
+function stat(label, value, sub) {
+  return append(
+    el("div", null, "stat"),
+    el("span", label, "label"),
+    el("strong", fmt(value), "value"),
+    el("small", sub),
+  );
+}
+function card(title, ...body) {
+  return append(el("section", null, "card"), el("h2", title), ...body);
+}
+function heading(title, intro) {
+  return append(
+    el("div", null, "page-head"),
+    append(
+      el("div"),
+      el(
+        "p",
+        "SAVED EVIDENCE / " +
+          (
+            names[location.hash.slice(1) || "overview"] || "Evidence"
+          ).toUpperCase(),
+        "eyebrow",
+      ),
+      el("h1", title),
+      el("p", intro, "intro"),
+    ),
+    el("span", "READ-ONLY SNAPSHOT", "pill"),
+  );
+}
+function section(name) {
+  const s = snapshot.sections[name];
+  if (!s || !s.available) {
+    main.append(
+      append(
+        el("div", null, "error"),
+        el("strong", "Evidence unavailable"),
+        el("p", s?.error || "Artifact section not supported."),
+      ),
+    );
+    return null;
+  }
+  return s.data;
+}
+function table(caption, headers, rows) {
+  const wrap = el("div", null, "table-wrap");
+  wrap.tabIndex = 0;
+  wrap.setAttribute("role", "region");
+  wrap.setAttribute("aria-label", caption);
+  const t = el("table");
+  t.append(el("caption", caption));
+  const head = el("thead");
+  const tr = el("tr");
+  headers.forEach((h) => {
+    const th = el("th", h);
+    th.scope = "col";
+    tr.append(th);
+  });
+  head.append(tr);
+  t.append(head);
+  const body = el("tbody");
+  rows.forEach((row) => {
+    const tr = el("tr");
+    row.forEach((c) =>
+      tr.append(append(el("td"), c instanceof Node ? c : fmt(c))),
+    );
+    body.append(tr);
+  });
+  t.append(body);
+  if (!rows.length)
+    append(
+      t,
+      append(
+        el("tbody"),
+        append(
+          el("tr"),
+          append(el("td"), el("p", "No records match these filters.")),
+        ),
+      ),
+    );
+  wrap.append(t);
+  return wrap;
+}
+function select(label, entries, value, onchange) {
+  const l = el("label", label);
+  const s = el("select");
+  s.setAttribute("aria-label", label);
+  for (const [v, text] of entries) {
+    const o = el("option", text);
+    o.value = v;
+    s.append(o);
+  }
+  s.value = value;
+  s.addEventListener("change", () => onchange(s.value));
+  return append(l, s);
+}
+function searchControl(value, action) {
+  const l = el("label", "Run / family identity");
+  const input = el("input");
+  input.type = "search";
+  input.placeholder = "Find an identity…";
+  input.value = value;
+  input.maxLength = 160;
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") action(input.value);
+  });
+  const b = el("button", "Search");
+  b.addEventListener("click", () => action(input.value));
+  return [append(l, input), b];
+}
+async function api(path) {
+  const res = await fetch(path, { cache: "no-store" });
+  if (!res.ok) throw Error(`Local artifact request failed (${res.status}).`);
+  return res.json();
+}
+function pagination(result, change) {
+  const p = el("div", null, "pager");
+  const start = result.total ? (result.page - 1) * result.limit + 1 : 0;
+  append(
+    p,
+    note(
+      `${start}–${Math.min(result.page * result.limit, result.total)} of ${fmt(result.total)} records · paginated`,
+    ),
+  );
+  const controls = el("div");
+  for (const [label, delta] of [
+    ["Previous", -1],
+    ["Next", 1],
+  ]) {
+    const b = el("button", label);
+    b.disabled =
+      delta < 0
+        ? result.page === 1
+        : result.page * result.limit >= result.total;
+    b.addEventListener("click", () => change(result.page + delta));
+    controls.append(b);
+  }
+  return append(p, controls);
+}
+function sources() {
+  const d = el("details");
+  d.append(el("summary", "Inspect artifact sources & SHA-256 identities"));
+  const list = el("div", null, "source-list");
+  for (const [id, e] of Object.entries(snapshot.sources)) {
+    append(
+      list,
+      append(
+        el("div"),
+        link(e.path, id),
+        note(
+          e.available ? "Pinned snapshot available" : "UNAVAILABLE: " + e.error,
+        ),
+        el("div", e.sha256, "mono"),
+      ),
+    );
+  }
+  d.append(list);
+  return d;
+}
+function overview() {
+  main.append(
+    heading(
+      "A working pipeline.\nAn open research question.",
+      "A local evidence browser for energy-aware embedded software. Explore what was built, what the analytical studies show, and what remains unvalidated.",
+    ),
+  );
+  const o = section("overview");
+  if (!o) return;
+  const f = snapshot.sections.faults;
+  const w7 = snapshot.sections.week7;
+  const w8 = snapshot.sections.week8;
+  if (f.available) {
+    const a = f.data.aggregate.overall;
+    main.append(
+      append(
+        el("div", null, "grid stats"),
+        stat(
+          "Frozen benchmark cases",
+          a.case_count,
+          `${a.parent_count} dependent parent groups · both splits consumed`,
+        ),
+        stat(
+          "Positive FAIL detections",
+          a.positive_FAIL_detections,
+          `of ${a.oracle_violations} oracle budget violations`,
+        ),
+        stat(
+          "Abstention blocks",
+          a.statuses.ABSTAIN,
+          "ABSTAIN is not positive fault detection",
+        ),
+        stat(
+          "Compliant control blocks",
+          a.control_abstention_blocks,
+          `${a.control_count} controls · blanket abstention`,
+        ),
+      ),
+    );
+  }
+  const grid = el("div", null, "grid two-col");
+  const hero = append(
+    el("section", null, "hero"),
+    el("p", "THE CENTRAL FINDING", "eyebrow"),
+    el("h2", "Configuration estimates cannot see hidden execution changes."),
+    el(
+      "p",
+      "The frozen predictor receives intended payload, interval, requested TX power and window duration. Hidden CPU, retry, wakeup and fragmentation changes leave those inputs unchanged.",
+    ),
+    el(
+      "p",
+      "Identical permitted inputs → identical frozen predictions. Blocking everything does not establish useful selectivity.",
+    ),
+    el("span", "ANALYTICAL EVIDENCE · NOT HARDWARE VALIDATION", "pill"),
+  );
+  const scope = card(
+    "Evidence boundaries",
+    tag("ANALYTICAL", "analytical"),
+    el("p", "All displayed study results use synthetic/simulation provenance."),
+    tag("MEASURED: NOT ESTABLISHED", "unavailable"),
+    el("p", "No synchronized PPK2 or physical detection study is presented."),
+    tag("UNMEASURED: MISSING ≠ ZERO", "unavailable"),
+    el(
+      "p",
+      "RTT and unavailable physical labels are not filled with invented values.",
+    ),
+  );
+  append(grid, hero, scope);
+  main.append(grid);
+  main.append(
+    card(
+      "Architecture · documented pipeline",
+      append(
+        el("div", null, "flow"),
+        ...[
+          ["01", "Capture & contracts", "Telemetry, identities, windows"],
+          ["02", "Reference & learning", "Sourced currents; assumed timing"],
+          ["03", "Evidence & policy", "Intervals, budgets, safe abstention"],
+          ["04", "Review & diagnosis", "Saved reports; observability gap"],
+        ].map(([n, t, s]) =>
+          append(
+            el("div", null, "step"),
+            el("span", n),
+            el("b", t),
+            el("span", s),
+          ),
+        ),
+      ),
+      note(
+        "Documentation map, not a live execution diagram. All interaction here only reads saved snapshots.",
+      ),
+    ),
+  );
+  main.append(
+    card(
+      "Milestones and experimental evidence",
+      ...o.evidence.map((r) =>
+        append(
+          el("div", null, "evidence-row"),
+          el("b", r.level),
+          el("p", r.delivered),
+          el("p", "Limit: " + r.limitation),
+        ),
+      ),
+    ),
+  );
+  if (w7.available && w8.available)
+    main.append(
+      card(
+        "Records are not independent experiments",
+        note(
+          `Week7: ${fmt(w7.data.record_count)} prediction records, ${fmt(w7.data.unique_runs)} unique run IDs and ${w7.data.unique_groups} shared evaluation families. Week8: ${fmt(w8.data.record_count)} prediction records, ${fmt(w8.data.unique_runs)} run IDs and ${w8.data.unique_groups} shared evaluation families. Targets, models and shift panels repeat related evidence.`,
+        ),
+      ),
+    );
+  main.append(
+    card(
+      "Open gaps & next backend work",
+      el(
+        "p",
+        "Actual-execution observations, synchronized physical power/delivery validation and a scoped RTT workload remain open. Original exact 18-feature / 100 ms requirements and academic acceptance need reconciliation.",
+      ),
+      link("Read the requirements/evidence audit ↗", "audit"),
+      el(
+        "p",
+        "Next backend task: strict observation/capability validation and pure Rust operation/logical-ID bookkeeping, then an opt-in workload and importer. This dashboard does not implement those observations.",
+      ),
+      link("Open the concrete observability sprint ↗", "sprint"),
+      details("Proposed sprint (source document)", o.next_backend),
+    ),
+  );
+  main.append(sources());
+}
+async function experiments(
+  state = { page: 1, split: "locked_evaluation", kind: "", search: "" },
+) {
+  const id = ++requestId;
+  main.append(
+    heading(
+      "Experiments",
+      "Inspect intended configurations and artifact identity. These are analytical fault cases, not live firmware runs.",
+    ),
+  );
+  if (!section("faults")) return;
+  const filters = el("div", null, "filters");
+  const change = (patch) =>
+    renderExperiments({ ...state, ...patch, page: patch.page || 1 });
+  append(
+    filters,
+    select(
+      "Partition",
+      [
+        ["locked_evaluation", "Locked evaluation"],
+        ["validation", "Validation"],
+        ["", "All partitions"],
+      ],
+      state.split,
+      (v) => change({ split: v }),
+    ),
+    select(
+      "Mechanism",
+      [["", "All mechanisms"], ...Object.entries(faultNames)],
+      state.kind,
+      (v) => change({ kind: v }),
+    ),
+    ...searchControl(state.search, (v) => change({ search: v })),
+  );
+  main.append(
+    filters,
+    callout(
+      "Showing intended configuration only. Window start/end timestamps and actual CPU/TX/retry behavior are unavailable in this saved case table; duration is the declared analytical observation window.",
+    ),
+  );
+  const result = await api("/api/experiments?" + new URLSearchParams(state));
+  if (id !== requestId) return;
+  if (!result.available) {
+    main.append(el("div", result.error, "error"));
+    return;
+  }
+  main.append(
+    table(
+      "20 records per page · related variants stay with their parent",
+      [
+        "Case / family",
+        "Split / mechanism",
+        "Intended configuration",
+        "Window / feasibility",
+        "Evidence identity",
+      ],
+      result.rows.map((r) => {
+        const x = r.predictor.baseline_inputs;
+        return [
+          append(
+            el("div"),
+            el("div", r.case_id, "mono"),
+            el("div", r.parent, "mono"),
+          ),
+          append(
+            el("div"),
+            tag(r.split, "unavailable"),
+            el("p", faultNames[r.kind]),
+            note("Severity " + r.severity),
+          ),
+          append(
+            el("div"),
+            el("p", `${x[0]} bytes · ${x[1]} ms interval`),
+            note(`${x[2]} dBm requested TX`),
+          ),
+          append(
+            el("div"),
+            el("p", `${r.window_ms} ms`),
+            tag(r.feasibility, "unavailable"),
+          ),
+          details("Hashes & permitted inputs", {
+            artifact_sha256: r.artifact_sha256,
+            report_sha256: r.report_sha256,
+            feature_order: r.predictor.feature_order,
+            inputs: x,
+            seed: String(r.seed),
+            provenance: "analytical_simulation",
+            note: "Seeds are identity metadata, not features.",
+          }),
+        ];
+      }),
+    ),
+    pagination(result, (p) => change({ page: p })),
+    note(
+      "Artifact hashes identify saved evidence. Raw per-case replayable gzip files are not served; the allowlisted manifest is available for inspection.",
+    ),
+    link("Inspect benchmark manifest ↗", "w12-manifest"),
+  );
+}
+function renderExperiments(state) {
+  main.replaceChildren();
+  experiments(state).catch(showError);
+}
+function svgNode(tag, attrs = {}) {
+  const n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, String(v)));
+  return n;
+}
+function plot(rows, unit) {
+  const data = rows.filter((r) => r.truth !== null).slice(0, 10);
+  if (!data.length) return note("No labeled rows available for a chart.");
+  const values = data.flatMap((r) =>
+    [r.truth, r.prediction, r.lower, r.upper].filter(
+      (v) => v !== null && v !== undefined,
+    ),
+  );
+  const min = Math.min(...values),
+    max = Math.max(...values),
+    span = max - min || 1;
+  const pos = (v) => 105 + ((v - min) * 570) / span;
+  const svg = svgNode("svg", {
+    viewBox: `0 0 730 ${data.length * 25 + 45}`,
+    role: "img",
+    class: "plot",
+  });
+  append(
+    svg,
+    elSVGText(
+      "title",
+      "Analytical reference and prediction, first10 labeled records on this page",
+    ),
+    elSVGText(
+      "desc",
+      `Horizontal scale in ${unit}; green circle reference, rust diamond prediction, gray line saved interval where available. Equivalent numbers and errors in table below.`,
+    ),
+  );
+  data.forEach((r, i) => {
+    const y = 18 + 25 * i;
+    const text = svgNode("text", { x: 0, y: y + 4 });
+    text.textContent = `Record ${i + 1}`;
+    svg.append(text);
+    if (r.lower !== null)
+      svg.append(
+        svgNode("line", {
+          x1: pos(r.lower),
+          x2: pos(r.upper),
+          y1: y,
+          y2: y,
+          class: "interval",
+        }),
+      );
+    svg.append(
+      svgNode("circle", { cx: pos(r.truth), cy: y, r: 4, class: "truth" }),
+      svgNode("path", {
+        d: `M ${pos(r.prediction)} ${y - 5} l 5 5 l -5 5 l -5 -5 Z`,
+        class: "prediction",
+      }),
+    );
+  });
+  const y = data.length * 25 + 8;
+  svg.append(
+    svgNode("line", { x1: 105, x2: 675, y1: y, y2: y, class: "axis" }),
+  );
+  for (const [value, x] of [
+    [min, 105],
+    [max, 675],
+  ]) {
+    const t = svgNode("text", {
+      x,
+      y: y + 18,
+      "text-anchor": x === 105 ? "start" : "end",
+    });
+    t.textContent = fmt(value, 2) + " " + unit;
+    svg.append(t);
+  }
+  return svg;
+}
+function elSVGText(tag, text) {
+  const n = svgNode(tag);
+  n.textContent = text;
+  return n;
+}
+async function predictions(
+  state = {
+    study: "week7",
+    panel: "test",
+    target: "target_mean_power_mw",
+    model: "chosen",
+    page: 1,
+    search: "",
+  },
+) {
+  const id = ++requestId;
+  main.append(
+    heading(
+      "Predictions, with their limits.",
+      "Reference versus prediction on consumed analytical evaluation data. No fitting, inference or model selection occurs in this browser.",
+    ),
+  );
+  const d = section(state.study);
+  if (!d) return;
+  const panels = [...new Set(d.metrics.map((m) => m.panel))];
+  const change = (patch) =>
+    renderPredictions({ ...state, ...patch, page: patch.page || 1 });
+  const filters = append(
+    el("div", null, "filters"),
+    select(
+      "Study",
+      [
+        ["week7", "Week7 · baseline comparison"],
+        ["week8", "Week8 · calibrated intervals"],
+      ],
+      state.study,
+      (v) =>
+        change({
+          study: v,
+          panel: v === "week7" ? "test" : "primary",
+          model: "chosen",
+        }),
+    ),
+    select(
+      "Panel",
+      panels.map((p) => [p, p]),
+      state.panel,
+      (v) => change({ panel: v }),
+    ),
+    select("Target", Object.entries(targetNames), state.target, (v) =>
+      change({ target: v }),
+    ),
+    select(
+      "Model",
+      state.study === "week7"
+        ? [
+            ["chosen", "Frozen ridge"],
+            ["baseline", "Training-mean baseline"],
+          ]
+        : [["chosen", "Frozen ridge"]],
+      state.model,
+      (v) => change({ model: v }),
+    ),
+    ...searchControl(state.search, (v) => change({ search: v })),
+  );
+  main.append(filters);
+  const m = d.metrics.find(
+    (m) =>
+      m.panel === state.panel &&
+      m.target === state.target &&
+      m.model === state.model,
+  );
+  if (!m) throw Error("Saved metric partition unavailable.");
+  main.append(
+    append(
+      el("div", null, "grid stats"),
+      stat("MAE", m.mae, m.unit),
+      stat("RMSE", m.rmse, m.unit),
+      stat("R² · dimensionless", m.r2, "Not percentage accuracy"),
+      stat(
+        "Labeled samples",
+        m.sample_count,
+        `${m.total_group_count ?? m.coverage?.family_count ?? "Unknown"} family groups`,
+      ),
+    ),
+  );
+  if (m.coverage) {
+    const c = m.coverage;
+    main.append(
+      callout(
+        `Nominal target ${pct(m.nominal_coverage)} FAMILY coverage. Observed row coverage ${pct(c.row_coverage)} / ${c.labeled_rows} labeled rows; family coverage ${pct(c.family_coverage)} / ${c.labeled_families} labeled families. Mean interval width ${fmt(c.mean_width)} ${m.unit}. A family succeeds only if all labeled rows are covered. This is a prediction interval, not a confidence interval for a metric.`,
+      ),
+    );
+    main.append(
+      note(
+        "No mean-baseline interval/point comparison is present for Week8 in this saved file. Week7 baseline results use different families and cannot be joined as a Week8 baseline.",
+      ),
+    );
+    main.append(
+      table(
+        "Assumption-shift panels · same evaluation families, not fresh independent groups",
+        [
+          "Panel",
+          "Family coverage / families",
+          "Row coverage / labeled rows",
+          "RMSE",
+          "Interval width",
+        ],
+        d.metrics
+          .filter((x) => x.target === state.target)
+          .map((x) => [
+            x.panel,
+            `${pct(x.coverage.family_coverage)} / ${x.coverage.labeled_families}`,
+            `${pct(x.coverage.row_coverage)} / ${x.coverage.labeled_rows}`,
+            `${fmt(x.rmse)} ${x.unit}`,
+            `${fmt(x.coverage.mean_width)} ${x.unit}`,
+          ]),
+      ),
+    );
+  } else {
+    main.append(
+      table(
+        "Training-mean baseline versus frozen ridge · same target/panel",
+        ["Model", "MAE", "RMSE", "R² (dimensionless)", "Labeled rows / groups"],
+        d.metrics
+          .filter((x) => x.target === state.target && x.panel === state.panel)
+          .map((x) => [
+            x.model,
+            `${fmt(x.mae)} ${x.unit}`,
+            `${fmt(x.rmse)} ${x.unit}`,
+            fmt(x.r2),
+            `${x.sample_count} / ${x.total_group_count}`,
+          ]),
+      ),
+    );
+    main.append(
+      note(
+        "Week7 interval and coverage fields are unavailable: this study predates calibration. Missing labels are excluded, never filled with zero.",
+      ),
+    );
+  }
+  main.append(
+    note(
+      `${fmt(d.record_count)} prediction records in this study ≠ ${fmt(d.unique_runs)} unique run IDs ≠ ${d.unique_groups} shared evaluation families. Per-target/panel records repeat related runs. ${state.panel.includes("airtime") ? "This panel changes analytical assumptions; it is not hardware or independent-population evidence." : ""}`,
+    ),
+  );
+  const result = await api("/api/predictions?" + new URLSearchParams(state));
+  if (id !== requestId) return;
+  if (!result.available) throw Error(result.error);
+  main.append(
+    card(
+      "Reference & prediction · first10 labeled records on this page",
+      append(
+        el("div", null, "legend"),
+        el("b", "● Analytical reference"),
+        el("em", "◆ Saved prediction"),
+        el("span", "━ Saved interval, if available"),
+      ),
+      plot(result.rows, m.unit),
+      note(
+        "Horizontal axis in " +
+          m.unit +
+          ". The table provides all chart values, signed errors and identities.",
+      ),
+    ),
+  );
+  main.append(
+    table(
+      "Reference is analytical truth, never an observed measurement",
+      [
+        "Run / family",
+        "Reference",
+        "Prediction",
+        "Signed / absolute error",
+        "Saved interval",
+      ],
+      result.rows.map((r) => [
+        append(
+          el("div"),
+          el("div", r.run_id, "mono"),
+          el("div", r.group_id, "mono"),
+        ),
+        `${fmt(r.truth)} ${r.unit}`,
+        `${fmt(r.prediction)} ${r.unit}`,
+        `${fmt(r.error)} / ${fmt(r.absolute_error)} ${r.unit}`,
+        r.lower === null
+          ? "Unavailable (not zero)"
+          : `[${fmt(r.lower)}, ${fmt(r.upper)}] ${r.unit}`,
+      ]),
+    ),
+    pagination(result, (p) => change({ page: p })),
+  );
+}
+function renderPredictions(state) {
+  main.replaceChildren();
+  predictions(state).catch(showError);
+}
+function evidenceValue(value, unit) {
+  if (value === null || value === undefined) return "Not supplied";
+  if (Array.isArray(value))
+    return `[${fmt(value[0], 6)}, ${fmt(value[1], 6)}] ${unit} · engineering range`;
+  return `${fmt(value.point)} ${value.unit || unit}; ${value.interval ? "interval [" + fmt(value.interval[0]) + ", " + fmt(value.interval[1]) + "] " + (value.unit || unit) : "interval unavailable"}`;
+}
+function gates(filter = "") {
+  main.append(
+    heading(
+      "Decisions are evidence-scoped.",
+      "Saved research fixtures illustrate policy semantics. A displayed PASS is not current candidate approval or validated hardware assurance.",
+    ),
+  );
+  const reports = section("gates");
+  if (!reports) return;
+  main.append(
+    append(
+      el("div", null, "filters"),
+      select(
+        "Saved status",
+        [
+          ["", "All statuses"],
+          ...["PASS", "FAIL", "ABSTAIN", "ERROR"].map((s) => [s, s]),
+        ],
+        filter,
+        (v) => {
+          main.replaceChildren();
+          gates(v);
+        },
+      ),
+    ),
+  );
+  main.append(
+    callout(
+      "PASS=0 · ERROR=1 · FAIL=2 · ABSTAIN=3. Only PASS permits a gate; FAIL, ABSTAIN and ERROR block. Explicit unvalidated research overrides are fixture metadata, never enabled by this dashboard.",
+    ),
+  );
+  for (const r of reports.filter((r) => !filter || r.status === filter)) {
+    const c = el("section", null, "card gate-card");
+    append(
+      c,
+      append(
+        el("div", null, "gate-title"),
+        el("h2", r.name.replaceAll("_", " ")),
+        tag(r.status),
+      ),
+      el(
+        "p",
+        `Exit ${r.exit_code} · ${r.blocks_ci ? "BLOCKS execution" : "research-fixture criteria met"} · ${r.provenance}`,
+        "status-detail",
+      ),
+      el(
+        "p",
+        r.evidence_label || "ERROR · evidence provenance not established",
+      ),
+      el("p", "Reasons: " + r.reason_codes.join(", ")),
+      note(
+        "Candidate: " +
+          (r.candidate_revision ?? "Not supplied") +
+          " · Baseline: " +
+          (r.baseline_revision ?? "Not supplied"),
+      ),
+    );
+    if (r.research_override_used)
+      c.append(
+        callout(
+          "EXPLICIT UNVALIDATED RESEARCH OVERRIDE IN THIS SAVED FIXTURE. No validated95% coverage or hardware assurance.",
+        ),
+      );
+    if (r.criteria.length)
+      c.append(
+        table(
+          "Saved criteria, budgets and interval evidence",
+          [
+            "Criterion / target",
+            "Budget / unit",
+            "Candidate point / interval",
+            "Baseline",
+            "Regression comparison",
+            "Decision / reason",
+          ],
+          r.criteria.map((q) => [
+            `${q.id} · ${q.target}`,
+            `${q.threshold} ${q.unit}`,
+            evidenceValue(q.candidate, q.unit),
+            evidenceValue(q.baseline, q.unit),
+            q.point_regression_percent !== undefined
+              ? `${fmt(q.point_delta)} ${q.point_delta_unit} / ${fmt(q.point_regression_percent)}%`
+              : "Not applicable",
+            `${q.status} · ${q.reason_code}`,
+          ]),
+        ),
+      );
+    if (r.battery_projection?.available) {
+      const b = r.battery_projection;
+      c.append(
+        el(
+          "p",
+          `Battery projection: ${fmt(b.point_years, 6)} years; engineering range [${fmt(b.lifetime_years[0], 6)}, ${fmt(b.lifetime_years[1], 6)}] years. Capacity ${fmt(b.capacity_mah)} mAh at ${fmt(b.voltage_v)} V, usable fraction ${fmt(b.usable_fraction)}, efficiency ${fmt(b.conversion_efficiency)}, ${fmt(b.year_days)} days/year.`,
+        ),
+      );
+    }
+    append(
+      c,
+      details("Saved criterion comparison methods", r.criteria),
+      details(
+        "Prediction context, workload scope, assumptions & battery projection",
+        {
+          context: r.prediction_context ?? null,
+          comparison_scope: r.comparison_scope ?? null,
+          assumptions: r.assumptions,
+          battery_projection: r.battery_projection ?? null,
+          uncertainty_policy: r.uncertainty_policy ?? null,
+          limitations: r.limitations,
+        },
+      ),
+      details(
+        "Compatible model influences (not physical causes)",
+        r.attributions ?? "Not supplied; no explanation invented.",
+      ),
+      link("Inspect validated saved decision ↗", r.resource),
+    );
+    main.append(c);
+  }
+}
+function faults(split = "locked_evaluation", kind = "") {
+  main.append(
+    heading(
+      "The negative result matters.",
+      "Five analytical workload mechanisms changed state behavior before energy integration. The frozen pre-run model cannot observe hidden execution changes.",
+    ),
+  );
+  const d = section("faults");
+  if (!d) return;
+  const a = d.aggregate.by_split[split];
+  const change = (s, k) => {
+    main.replaceChildren();
+    faults(s, k);
+  };
+  main.append(
+    append(
+      el("div", null, "filters"),
+      select(
+        "Partition",
+        [
+          ["locked_evaluation", "Locked evaluation"],
+          ["validation", "Validation"],
+        ],
+        split,
+        (v) => change(v, kind),
+      ),
+      select(
+        "Stratum filter",
+        [["", "All five faults + controls"], ...Object.entries(faultNames)],
+        kind,
+        (v) => change(split, v),
+      ),
+    ),
+    append(
+      el("div", null, "grid stats"),
+      stat(
+        "Oracle violations",
+        a.oracle_violations,
+        `${a.oracle_known} feasible known-label pairs`,
+      ),
+      stat(
+        "Positive detections",
+        a.positive_FAIL_detections,
+        `${a.oracle_violations} violations · ${a.parent_count} parent groups`,
+      ),
+      stat(
+        "ABSTAIN blocks",
+        a.statuses.ABSTAIN,
+        `${a.case_count} scheduled cases`,
+      ),
+      stat(
+        "Control abstention blocks",
+        a.control_abstention_blocks,
+        `${a.control_count} compliant controls`,
+      ),
+    ),
+  );
+  main.append(
+    callout(
+      `${a.feasibility.COMPLETE} feasible / ${a.feasibility.INFEASIBLE} infeasible / ${a.feasibility.INVALID} invalid cases. ${a.violations_without_positive_detection} oracle violations without positive detection. Control FAIL false alarms ${a.control_false_alarms}/${a.control_count}; control abstention blocks ${a.control_abstention_blocks}/${a.control_count}. Zero false alarms with blanket abstention does not show useful selectivity.`,
+    ),
+    note(
+      "Cards summarize the selected partition; the mechanism filter narrows only the stratum table below. Infeasible energy is null and excluded from oracle/effect denominators. ABSTAIN/ERROR blocking never counts as detection. Both partitions are consumed.",
+    ),
+  );
+  const strata = Object.entries(d.aggregate.by_fault_severity).filter(
+    ([k]) => k.startsWith(split + "/") && (!kind || k.split("/")[1] === kind),
+  );
+  main.append(
+    table(
+      "Fault severity strata · related variants depend on parent; no population guarantee",
+      [
+        "Mechanism / severity",
+        "Feasible / infeasible / invalid",
+        "Oracle violations / known",
+        "Positive FAIL / missed",
+        "PASS / FAIL / ABSTAIN / ERROR",
+        "Control FA / abstention blocks",
+        "Mean paired ΔmJ / Δ%",
+      ],
+      strata.map(([key, r]) => {
+        const [, k, s] = key.split("/");
+        return [
+          `${faultNames[k]} / ${s}`,
+          `${r.feasibility.COMPLETE}/${r.feasibility.INFEASIBLE}/${r.feasibility.INVALID}`,
+          `${r.oracle_violations}/${r.oracle_known}`,
+          `${r.positive_FAIL_detections}/${r.violations_without_positive_detection}`,
+          `${r.statuses.PASS}/${r.statuses.FAIL}/${r.statuses.ABSTAIN}/${r.statuses.ERROR}`,
+          `${r.control_false_alarms}/${r.control_abstention_blocks} of ${r.control_count}`,
+          `${fmt(r.effects.paired_energy_mj.mean)} mJ / ${fmt(r.effects.paired_increase_percent.mean)}%`,
+        ];
+      }),
+    ),
+  );
+  main.append(
+    card(
+      "Observable inputs, not hidden oracle truth",
+      el(
+        "p",
+        `${a.inputs_changed} permitted-input changes; ${a.predictions_changed} prediction changes. Observable mechanism counts: ${a.observability.True} true, ${a.observability.False} false, ${a.observability.None} unknown/not realized/infeasible.`,
+      ),
+      el(
+        "p",
+        "CPU busy-poll, requested-versus-actual TX lock, retries, wakeups and fragmentation can change execution without changing intended payload/interval/requested power/window. Oracle labels and fault identity never enter X.",
+      ),
+      note(
+        "Severity units differ: CPU idle permille; TX dBm above request; retries forced initial failures per burst fragment; wakeups per complete slot; extra fragments per logical packet. Cases are not IID; only eight locked parent groups exist.",
+      ),
+      el(
+        "p",
+        "No intervals were transferred into this fault-engine scope. Default restrictions preserve abstention; the dashboard does not execute or override the gate.",
+      ),
+      link("Inspect full frozen aggregate ↗", "w12-aggregate"),
+    ),
+  );
+}
+function showError(error) {
+  main.append(
+    append(
+      el("div", null, "error"),
+      el("strong", "Unable to display evidence"),
+      el("p", error.message),
+    ),
+  );
+  main.setAttribute("aria-busy", "false");
+}
+async function render() {
+  ++requestId;
+  main.replaceChildren();
+  main.setAttribute("aria-busy", "true");
+  const view = location.hash.slice(1) || "overview";
+  document.querySelectorAll("nav a").forEach((a) => {
+    if (a.hash === "#" + view) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+  try {
+    if (view === "overview") overview();
+    else if (view === "experiments") await experiments();
+    else if (view === "predictions") await predictions();
+    else if (view === "gates") gates();
+    else if (view === "faults") faults();
+    else main.append(el("p", "Unknown view. Choose a view from navigation."));
+  } catch (e) {
+    showError(e);
+  }
+  main.setAttribute("aria-busy", "false");
+}
+window.addEventListener("hashchange", () => render());
+(async () => {
+  try {
+    snapshot = await api("/api/summary");
+    document.getElementById("snapshot").textContent =
+      "Evidence checkpoint " + snapshot.snapshot_checkpoint.slice(0, 12);
+    await render();
+  } catch (e) {
+    main.replaceChildren();
+    showError(e);
+  }
+})();

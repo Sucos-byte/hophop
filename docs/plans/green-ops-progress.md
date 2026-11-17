@@ -1025,3 +1025,15 @@ loaded counters preserve0detections/552violations/1920ABSTAIN/576control blocks.
 Week7/8 record/run/group and row/family coverage distinctions validated. Current
 commit initial verified implementation/export; next browser desktop/narrow checks,
 full suite, documentation/screenshots. No frozen inputs/models/results changed.
+
+Dashboard browser milestone verified: Chromium159 desktop1440x1000 and narrow
+390x844, all5views/keyboard nav/filtering/pagination, inert hostile text and
+missing-data display pass;0external requests/console errors/page overflow.
+Six representative screenshots saved docs/results/dashboard-demo. Browser review
+corrected accessible select names, narrow filter/reason-code overflow, and gate
+regression point units versus percent thresholds/battery engineering-range display.
+All15 targeted tests pass0.961s; initial full367 passed115.716s. Final368 rerun
+pending after a whitespace-sensitive test assertion was normalized (HTML formatting
+changed, provenance text/semantics unchanged). No frozen result/policy edits.
+Current commit verified UI/browser/docs milestone/export; next final suite receipt
+and clean handoff. Observability remains next backend; no hardware/remote claims.

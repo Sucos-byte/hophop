@@ -1,0 +1,38 @@
+{
+  "browser": "Chromium 159.0.8154.6",
+  "browser_check_version": 1,
+  "checks": [
+    "desktop/overview: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "desktop/experiments: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "desktop/predictions: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "desktop/gates: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "desktop/faults: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "narrow/overview: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "narrow/experiments: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "narrow/predictions: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "narrow/gates: rendered; keyboard navigation; persistent provenance; no page overflow",
+    "narrow/faults: rendered; keyboard navigation; persistent provenance; no page overflow"
+  ],
+  "console_or_page_errors": [],
+  "external_requests": [],
+  "limitations": [
+    "Automated smoke plus visual screenshot inspection; not a screen-reader or full accessibility audit",
+    "No Firefox/Safari/Windows browser verification",
+    "Screenshots are saved analytical artifacts, never physical evidence"
+  ],
+  "missing_data_visible": true,
+  "pagination": true,
+  "status_filters": true,
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "week8_shift_filter": true,
+  "xss_text_inert": true
+}

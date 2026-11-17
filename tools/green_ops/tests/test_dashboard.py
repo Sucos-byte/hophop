@@ -42,6 +42,15 @@ class AdapterTests(unittest.TestCase):
         self.assertEqual(r['error'],r['prediction']-r['truth'])
         self.assertIsNone(r['lower']);self.assertEqual(r['unit'],'uJ')
         self.assertEqual({r['model'] for r in d['rows']},{'baseline','chosen'})
+    def test_missing_labels_remain_missing_not_zero(self):
+        e=copy.deepcopy(self.store.json('w7-evaluation'));p=copy.deepcopy(self.store.json('w7-predictions'))
+        row=p['rows'][0];row['truth']=None
+        score=e['partitions'][row['partition']][row['target']][row['model_role']]
+        score['sample_count']-=1
+        result=a.prediction_adapter(e,p,'week7')['rows'][0]
+        self.assertIsNone(result['truth']);self.assertIsNone(result['error'])
+        self.assertIsNone(result['absolute_error'])
+
     def test_unsupported_schema_provenance_nonfinite_duplicate(self):
         evaluation=self.store.json('w7-evaluation');predictions=self.store.json('w7-predictions')
         for field,value in [('evaluation_version',2),('provenance','measured')]:
@@ -113,7 +122,7 @@ class ServerTests(unittest.TestCase):
         code,headers,body=self.request('/')
         self.assertEqual(code,200);self.assertIn("default-src 'none'",headers['Content-Security-Policy'])
         self.assertEqual(headers['X-Content-Type-Options'],'nosniff')
-        self.assertIn(b'ANALYTICAL SIMULATION',body);self.assertIn(b'Measured evidence: not established',body)
+        self.assertIn(b'ANALYTICAL SIMULATION',body);self.assertIn('Measured evidence: not established',' '.join(body.decode().split()))
         self.assertNotIn(b'https://',body)
         code,_,js=self.request('/app.js');self.assertEqual(code,200)
         self.assertNotIn(b'innerHTML',js);self.assertIn(b'textContent',js)

@@ -1,0 +1,19 @@
+{
+  "verification_version": 1,
+  "baseline": "be9085791649aa90baf676a3c6ca78409566b0b1",
+  "initial_implementation_commit": "bdd57c9b9ca7b3677bd0db5764341219e50047d5",
+  "initial_full_suite": {"tests": 367, "passed": true, "seconds": 115.716},
+  "final_dashboard_tests": {"tests": 15, "passed": true, "seconds": 0.961},
+  "final_full_suite": "running; receipt will be updated after completion",
+  "javascript_syntax": "node --check passed",
+  "browser": "Chromium 159.0.8154.6; desktop1440x1000 and narrow390x844",
+  "browser_receipt": "browser-check.json",
+  "screenshots_visually_inspected": ["desktop-overview.png", "desktop-intervals.png", "narrow-overview.png"],
+  "browser_corrections": ["explicit accessible select labels", "mobile filter sizing", "long reason-code wrapping", "point units distinct from regression-percent budgets", "battery engineering range rendering", "default overview heading"],
+  "frozen_dependency_preflight": "passed without scoring",
+  "frozen_models_results_policies_consumption_records": "unchanged",
+  "dashboard_runtime_dependencies": "Python standard library and local HTML/CSS/JavaScript only",
+  "remote_execution": false,
+  "physical_validation": false,
+  "limitations": ["No screen-reader/full accessibility audit", "No Firefox/Safari/Windows browser verification", "Saved analytical evidence only, no live telemetry or new decisions"]
+}

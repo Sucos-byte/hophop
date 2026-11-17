@@ -11,3 +11,10 @@ ResourceWarning errors; JavaScript syntax passes. Source versions/hash bindings,
 missing errors, negative outcomes, row/group counts and path restrictions checked.
 Current first implementation commit; next browser desktop/narrow and full suite.
 Browser tools isolated under/tmp; no dashboard runtime dependency added.
+
+UI/browser milestone complete: desktop/narrow5views, keyboard/filters/pagination,
+no external requests/console errors/page overflow; screenshots and browser receipt
+in docs/results/dashboard-demo.15final targeted tests pass; first full367 passes.
+Final368 suite running after normalizing HTML whitespace in a test assertion.
+Launch: python3 tools/green_ops/dashboard.py then http://127.0.0.1:8765.
+Five-minute walkthrough and source map: docs/green-ops-dashboard.md.

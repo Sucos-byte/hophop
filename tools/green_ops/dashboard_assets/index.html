@@ -1,8 +1,57 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Green Ops · Evidence browser</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
-<body><a class="skip" href="#content">Skip to content</a><div class="shell">
-<aside><a class="brand" href="#overview"><span class="mark">G<span>↗</span></span><span>Green Ops<small>RESEARCH WORKSPACE</small></span></a><p class="nav-label">EVIDENCE BROWSER</p><nav aria-label="Dashboard views"><a href="#overview">01 <span>Overview</span></a><a href="#experiments">02 <span>Experiments</span></a><a href="#predictions">03 <span>Predictions</span></a><a href="#gates">04 <span>Gate decisions</span></a><a href="#faults">05 <span>Fault benchmark</span></a></nav><div class="sidebar-note"><span class="dot"></span> Local · Read only<p>Saved evidence.<br>No live device connection.</p><a href="/resource/sprint" target="_blank" rel="noopener">Next: observability sprint ↗</a></div></aside>
-<div class="workspace"><header><span>GREEN OPS / <strong>Evidence browser</strong></span><span class="local-badge">OFFLINE ASSETS · LOCALHOST</span></header>
-<div class="evidence-banner"><strong>ANALYTICAL SIMULATION</strong><span>Displayed study results are synthetic/simulation. Measured evidence: not established. Unmeasured labels remain missing.</span></div>
-<main id="content" tabindex="-1" aria-busy="true"><p class="loading">Validating saved artifact snapshots…</p></main>
-<footer>Research demonstration · No hardware assurance · No training, firmware or gate execution controls<span id="snapshot"></span></footer></div></div></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Green Ops · Evidence browser</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <div class="shell">
+      <aside>
+        <a class="brand" href="#overview"
+          ><span class="mark">G<span>↗</span></span
+          ><span>Green Ops<small>RESEARCH WORKSPACE</small></span></a
+        >
+        <p class="nav-label">EVIDENCE BROWSER</p>
+        <nav aria-label="Dashboard views">
+          <a href="#overview">01 <span>Overview</span></a
+          ><a href="#experiments">02 <span>Experiments</span></a
+          ><a href="#predictions">03 <span>Predictions</span></a
+          ><a href="#gates">04 <span>Gate decisions</span></a
+          ><a href="#faults">05 <span>Fault benchmark</span></a>
+        </nav>
+        <div class="sidebar-note">
+          <span class="dot"></span> Local · Read only
+          <p>Saved evidence.<br />No live device connection.</p>
+          <a href="/resource/sprint" target="_blank" rel="noopener"
+            >Next: observability sprint ↗</a
+          >
+        </div>
+      </aside>
+      <div class="workspace">
+        <header>
+          <span>GREEN OPS / <strong>Evidence browser</strong></span
+          ><span class="local-badge">OFFLINE ASSETS · LOCALHOST</span>
+        </header>
+        <div class="evidence-banner">
+          <strong>ANALYTICAL SIMULATION</strong
+          ><span
+            >Displayed study results are synthetic/simulation. Measured
+            evidence: not established. Unmeasured labels remain missing.</span
+          >
+        </div>
+        <main id="content" tabindex="-1" aria-busy="true">
+          <p class="loading">Validating saved artifact snapshots…</p>
+        </main>
+        <footer>
+          Research demonstration · No hardware assurance · No training, firmware
+          or gate execution controls<span id="snapshot"></span>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
