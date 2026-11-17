@@ -82,3 +82,15 @@ Finish with remote-run prerequisites and Week11 fault-injection readiness.
 
 Stage explicit paths/modes100644; staged check/stat/summary; no second agent.
 Current: freeze. Next: implementation and meaningful tests.
+
+## Completion evidence
+
+Plan8b65a64, reporter2d33514, workflowa866525. Final317 Python tests/33 targeted
+checks pass; independent eight-status examples/fresh default pair reproduce exact
+bytes. Release receipt records final validation guards and input/code hashes.
+Rust hostdefault8/allfeatures8/telemetry8 + standalone ARMno_std pass locally;
+cached nrf9151-dk example profiling-on/off builds pass. Optional YAML/security
+and Bash syntax checks pass; actionlint/GitHub execution unavailable, clean-runner
+fetch/compatibility still required. No source locks, old workflow, model/calibration
+or decisions changed. Current final evidence commit/export, next separately
+requested Week11 fault injection. No posting, push, deploy or protection edits.

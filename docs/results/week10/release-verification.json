@@ -1,0 +1,35 @@
+{
+  "default_software_smoke_exit": 0,
+  "default_wrapper_exit": 3,
+  "external_checks_pending": [
+    "actionlint",
+    "GitHub Actions execution",
+    "clean hosted runner toolchain/Python/dependency fetch",
+    "fork PR runtime/permissions"
+  ],
+  "implementation_sha256": {
+    ".github/workflows/green-ops-ci.yml": "08885d16f4d35f4add7aad8e4e1ba565ee18e3cfeff7a4b5be0bc0f31af6bd8c",
+    "tools/green_ops/ci_rust_checks.sh": "7ec1ce35e649663ecd85c6132e407d976d3feb809ce5448ef21257bf4989c291",
+    "tools/green_ops/green_ops_ci_smoke.py": "b421d3fdb28328c6d0b7600c6394d92f70a90b9102d95591901f40d4cf89d0e9",
+    "tools/green_ops/green_ops_gate_report.py": "311c6c8f6f586625ebcc4463c539abe9d33ab8bc6a7963b3381034d63e3bc79d",
+    "tools/green_ops/green_ops_gatekeeper.py": "131be22575433e7cd1d2ae864cd1b1f24312e9d34645fdfce1c9cd9f14a85cb1",
+    "tools/green_ops/green_ops_report.py": "00a58c0bdde59aecf0dd66e92ab1316aa66f15a4f45a6f69c6ddefd39d770bc4",
+    "tools/green_ops/tests/test_report.py": "13f1889e559e41bbb53efa81e884e5e38cd63f9da57c60ef9e8062f51584b2aa"
+  },
+  "independent_render_runs_byte_identical": true,
+  "markdown_and_decision_bytes_unchanged_by_final_validation": true,
+  "push_publication_deployment_or_protection_changes": false,
+  "python_tests": {
+    "command": "python3 -W error::ResourceWarning -m unittest discover -s tools/green_ops/tests",
+    "count": 317,
+    "duration_seconds": 108.365,
+    "new_reporting_tests": 12,
+    "result": "PASS",
+    "tested_state": "working tree aftera866525 including final validation guards"
+  },
+  "release_verification_version": 1,
+  "scope": "local_checks_only_no_remote_execution",
+  "software_smoke_is_candidate_approval": false,
+  "targeted_reporter_and_gate_count": 33,
+  "test_log_sha256": "f59c44ac067d9347436b573430d95f3a17bd4e75a9c702898f29d2c215abf319"
+}

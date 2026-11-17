@@ -769,3 +769,28 @@ pins, Rust1.99.1/Python3.14.4 and read-only/no-publication scope recorded. No
 GitHub execution/actionlint or clean-runner download verification claimed.
 Current: commit workflow/local evidence/export. Next rendered8-case demos and
 Week11 readiness. Existing build workflow and lock files remain unchanged.
+
+Workflow/build milestone committeda866525; Windows snapshot refreshed. Eight
+saved decisions render all four statuses; fresh default wrapper returns3 without
+override. Independent render runs byte-identical. Final validation review tightens
+unknown attribution-method rejection, baseline workload/hash identity pairing
+and battery power-basis interpretation;33 targeted tests pass (12 new reporter
+checks), final full suite running. Valid Markdown/decision bytes unchanged;
+receipt updated for checked implementation, earlier local build evidence retained.
+Current: final release verification/docs. Next final results commit/export and
+Week11 fault-injection readiness; no remote execution/publication claimed.
+
+## Week10 final reporting/CI verification and readiness
+
+Release full suite317 passes (12 new,108.365s), ResourceWarning errors;33 targeted
+reporter+gate tests pass. Final validation guards preserve valid Markdown/decision
+bytes. Independent8-case render runs plus fresh default pair/receipt match11files
+byte-for-byte; all receipt/source/code/workflow hashes verified. Rust local
+8default+8all-feature+8telemetry tests and standalone ARMno_std compile passed;
+both cached profiling-on/off nrf9151-dk example builds passed. Existing frozen
+models/calibration/Week9 evidence, Cargo locks and old workflow unchanged.
+Default wrapper3 remains blocking; smoke0 means SOFTWARE VERIFICATION ONLY.
+Current: commit final results/release receipt; refresh Windows snapshot. Next
+separately authorized Week11 fault injection, not model tuning or hardware
+assurance. actionlint absent and GitHub/clean-runner execution still required;
+no remote run, posting/upload, push/deployment/protection change claimed.

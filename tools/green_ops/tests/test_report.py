@@ -92,6 +92,17 @@ class MarkdownTests(unittest.TestCase):
         for data in (b'{"x":1,"x":2}',b'{"x":NaN}',b'[]'):
             with self.assertRaises(ValueError):report.validate_decision(data,_sha256(data),policy)
 
+    def test_incompatible_attribution_method_and_battery_interpretation(self):
+        content,policy=fixture('pass_upper');bad=json.loads(content)
+        bad['attributions']['candidate']['target_mean_power_mw']['method']='physical_cause_claim'
+        with self.assertRaisesRegex(ValueError,'attribution method'):changed(bad,policy)
+        content,policy=fixture('battery_five_years_fail');bad=json.loads(content)
+        bad['battery_projection']['power_basis']='duty_cycle_applied_twice'
+        with self.assertRaisesRegex(ValueError,'power interpretation'):changed(bad,policy)
+        content,policy=fixture('same_features_regression');bad=json.loads(content)
+        bad['artifact_sha256']['baseline']=None
+        with self.assertRaisesRegex(ValueError,'artifact identity'):changed(bad,policy)
+
     def test_report_cli_collisions_aliases_and_cleanup(self):
         content,policy=fixture('pass_upper')
         with tempfile.TemporaryDirectory() as d,contextlib.redirect_stdout(io.StringIO()),contextlib.redirect_stderr(io.StringIO()):

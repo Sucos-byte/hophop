@@ -1,0 +1,84 @@
+{
+  "cases": {
+    "abstain_crossing": {
+      "blocks_candidate_ci": true,
+      "decision_exit": 3,
+      "markdown_sha256": "44c8f7366ca5d82ffd7b6f208733d5be0e160f0aca1dedf23eea663c3a1334af",
+      "policy_sha256": "27ef4bc7e4039ada41ea5699b8b01a20711e91d96a220c280827f3cfb8fcaf2d",
+      "renderer_exit": 0,
+      "source_decision_sha256": "7f9257503d2cd1bae328533bf24c354311d48b69cfb9d742c43089b30ff8485a"
+    },
+    "battery_five_years_fail": {
+      "blocks_candidate_ci": true,
+      "decision_exit": 2,
+      "markdown_sha256": "296887065adfac5b61d62c875575f021fb75d9d0e06778ee2725bb12a2fa33b7",
+      "policy_sha256": "2ba13dfe2312147b2f791cc2c461a99cc01938078ce346e0d9558860e05f0bb6",
+      "renderer_exit": 0,
+      "source_decision_sha256": "541813a740b7ca402f80b41bf04540ebba90bc002a73b23df0afbcd996b890bd"
+    },
+    "battery_missing_workload_abstain": {
+      "blocks_candidate_ci": true,
+      "decision_exit": 3,
+      "markdown_sha256": "74b450a30c2a46a789dee8997797311f886bc536f09be04d00fb25f8084b14ca",
+      "policy_sha256": "0bd646eeda49ee8fb9d57a2472f02fe773f1ea19a4ec5be7e403125c8199d885",
+      "renderer_exit": 0,
+      "source_decision_sha256": "97194933ec335295fdd9a3bc6285665637597a1e9585558ea62523740dd7d0a5"
+    },
+    "default_coverage_abstain": {
+      "blocks_candidate_ci": true,
+      "decision_exit": 3,
+      "markdown_sha256": "bc20584109e8a853ae88793395a0b8804cb656ffbe5383456278ce3f843bcb39",
+      "policy_sha256": "99468f2af6fe0c034ecb70eb5e976adc0861d3b084261a3d75d9ddb070d99a84",
+      "renderer_exit": 0,
+      "source_decision_sha256": "f68ae81459a068d6859b7f35df75fde57398d055a88ab35c6af46d3aa0e1ddbd"
+    },
+    "error_wrong_units": {
+      "blocks_candidate_ci": true,
+      "decision_exit": 1,
+      "markdown_sha256": "075c933215b95ba0286249b06026bbeb7fea547c496fe904eb247d98130890db",
+      "policy_sha256": "736d7f6dc994ef1fd5a726922a9eb0d4c15269be2328f02f48aa04e6b2003e4a",
+      "renderer_exit": 0,
+      "source_decision_sha256": "255302e4a858d265349e64faeae779e49f0eabb4f5798ca5418132591a738709"
+    },
+    "fail_upper": {
+      "blocks_candidate_ci": true,
+      "decision_exit": 2,
+      "markdown_sha256": "21e64f276afff6e752233ae1e8350544d59d680ea4c21227837039f3528777d6",
+      "policy_sha256": "bafbd257c1cd41ed18431281be7f2c97ee4f920dbf0b6b51f7e7aa0136618d80",
+      "renderer_exit": 0,
+      "source_decision_sha256": "10e360b752d37879fbdb79259bc283e35e8c01db7235e7430c4e8d8ff56458bf"
+    },
+    "pass_upper": {
+      "blocks_candidate_ci": false,
+      "decision_exit": 0,
+      "markdown_sha256": "2fbb73dd180e85afe30752d6129127714dbe6a0587c524a9b28c14a6aa4d953f",
+      "policy_sha256": "3a2c118584eb9ac678990804a027eb497cb81a69bed166bd5ff8b440c9ddfa49",
+      "renderer_exit": 0,
+      "source_decision_sha256": "d7426ceedc7d7b59ef263ee1499cd6bae7ec483d53764fbff4f781be086336f8"
+    },
+    "same_features_regression": {
+      "blocks_candidate_ci": false,
+      "decision_exit": 0,
+      "markdown_sha256": "0b4ee2b877bc8c86a0c8b7cac0a866919547cd1829afa87c603d261d1eae9063",
+      "policy_sha256": "d407e03735d88038e186218d8b1955baaadea0d853bbd42483244a04ffb41d59",
+      "renderer_exit": 0,
+      "source_decision_sha256": "cb9c97d081569d965e50e98d35ee280243b31e1d98bd1f237ebd1509f6471d08"
+    }
+  },
+  "default_override": false,
+  "default_wrapper_exit": 3,
+  "dependencies": "stdlib_only",
+  "fresh_default_decision_sha256": "fac8004229711b6bf6f9091ce687e9a12185b24524583dafe07037ac1eff3b1d",
+  "fresh_default_markdown_sha256": "59d740021e9a429e16877270c6f2ecdd245918174f9142ec573427af7736382e",
+  "implementation_sha256": {
+    "green_ops_ci_smoke.py": "b421d3fdb28328c6d0b7600c6394d92f70a90b9102d95591901f40d4cf89d0e9",
+    "green_ops_gate_report.py": "311c6c8f6f586625ebcc4463c539abe9d33ab8bc6a7963b3381034d63e3bc79d",
+    "green_ops_report.py": "00a58c0bdde59aecf0dd66e92ab1316aa66f15a4f45a6f69c6ddefd39d770bc4"
+  },
+  "no_github_actions_execution_or_posting": true,
+  "provenance": "analytical_simulation",
+  "python_version": "3.14.4",
+  "report_demo_version": 1,
+  "scope": "local_rendering_and_software_verification_not_candidate_approval",
+  "source_inventory_sha256": "92b7cc1b2ea705ea4098e85eb2e2da6290130c5b3762f06d4fe97dd289d4cc97"
+}

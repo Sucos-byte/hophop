@@ -63,7 +63,8 @@ def validate_attributions(value,criteria):
         for target,a in targets.items():
             _fields(a,{'unit','method','interpretation','baseline','prediction','contributions','top_three'},'attribution')
             if a['unit']!=TARGET_UNITS[target] or a['interpretation']!='model_attribution_not_physical_root_cause':raise ValueError('incompatible attribution unit/interpretation')
-            nonempty(a['method'],'attribution method');_fields(a['contributions'],PRE_RUN_FEATURES,'contribution features')
+            if a['method'] not in ('compatible_archived_week8_signed_model_contribution','recomputed_frozen_linear_model_contribution'):raise ValueError('unsupported attribution method')
+            _fields(a['contributions'],PRE_RUN_FEATURES,'contribution features')
             for x in [a['baseline'],a['prediction'],*a['contributions'].values()]:checked(x,'contribution value')
             if not math.isclose(a['baseline']+math.fsum(a['contributions'].values()),a['prediction'],rel_tol=1e-12,abs_tol=1e-9):raise ValueError('contribution accounting mismatch')
             expected=sorted(PRE_RUN_FEATURES,key=lambda f:(-abs(a['contributions'][f]),list(PRE_RUN_FEATURES).index(f)))[:3]
@@ -118,6 +119,7 @@ def _validate_decision(content,expected_sha256,policy_bytes):
     for key in ('resolved_workload','prediction_context','prediction_domain'):_fields(r[key],{'candidate','baseline'},key)
     for role in ('candidate','baseline'):
         w=r['resolved_workload'][role];c=r['prediction_context'][role];d=r['prediction_domain'][role]
+        if (w is None)!=(r['artifact_sha256'][role] is None):raise ValueError('workload/artifact identity mismatch')
         if w is None:
             if role=='candidate' or c is not None or d is not None:raise ValueError('missing/inconsistent workload context')
             continue
@@ -179,6 +181,9 @@ def _validate_decision(content,expected_sha256,policy_bytes):
         if projection['load_energy_mwh']!=spec['capacity_mah']*spec['voltage_v']*spec['usable_fraction']*spec['conversion_efficiency'] or projection['hours_per_year']!=24*spec['year_days']:raise ValueError('battery units/loss accounting mismatch')
         for k in ('load_energy_mwh','hours_per_year','mean_power_mw','point_years'):
             if k in projection:checked(projection[k],k)
+        if 'power_basis' in projection:
+            expected_basis='candidate_run_average_already_duty_averaged' if spec['workload_profile']['kind']=='run_average' else 'declared_compatible_exclusive_state_assumptions_not_calibrated'
+            if projection['power_basis']!=expected_basis:raise ValueError('battery power interpretation mismatch')
         strings(projection['assumptions'],'battery assumptions');strings(projection['omitted_effects'],'battery omissions')
         bc=next(c for c in r['criteria'] if c['id']=='battery')
         if projection['available']:
