@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Parth Shailesh Thite
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
-# Run from a fresh checkout of a2aeb15 with Python 3.11.8, before metric-v2 fixes.
+# Run from a fresh checkout of a2aeb15 with Python 3.14.4, before metric-v2 fixes.
 # Creates build/green-ops-week7-review; refuses to overwrite existing output.
 from pathlib import Path
 import sys,json,hashlib,collections,statistics,math

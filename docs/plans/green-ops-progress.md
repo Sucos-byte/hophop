@@ -502,3 +502,30 @@ Full suite270 passes, ResourceWarning errors; follow-up report-version targeted
 suite7 passes. Current: commit verified code/reproduction milestone. Next:
 finish corrected report audit, Week7 review and fresh Week8 family design.
 Original choices, model bytes and saved predictions remain frozen.
+
+Verified review correctness milestone committed locally as6a35879. Full suite270
+passes after report-version changes. Corrected replay confirms zero evaluation
+fit calls; model bytes, choices,1620 predictions and all MAE/RMSE unchanged.
+Only16 per-family R2 fields change at floating-point rounding scale in this
+actual experiment; aggregate R2 unchanged. Original reports remain intact.
+Current: archive corrected metrics/receipt and final review. Next: complete
+fresh Week8 group design and documentation-only verification/commit.
+
+## Week7 review completion
+
+Final review saved docs/plans/green-ops-week7-review.md with code/API findings,
+independent reproduction evidence, exact1620 breakdown and Week8 readiness.
+Two corrected replays produce byte-identical reports/receipts. Archived metric2
+reports explicitly replace historical R2 only; historical models/reports remain
+untouched. Dataset/recipe/selection digests match; no held-out tuning/refit.
+270 tests pass; strict JSON/archive checks and git diff --check pass.
+
+Week8 proposal (no labels generated):60 new semantic traffic families using new
+payload/interval levels,30calibration/30assessment,450rows each. Exact proposed
+memberships recorded in review/week8-design-proposal.json. Checked zero overlap
+against48 documented Week6/7 families and group-local streams. Before generation,
+audit all prior/demo/parent lineage and freeze source/method/coverage policies;
+new seeds alone are insufficient. Familywise calibration uses30 units, not450.
+Same generating law remains a physical-validation limitation.
+Current: commit final review/evidence milestone. Next: separately authorized
+Week8 implementation after final lineage/recipe freeze. No push/publish.

@@ -6,6 +6,12 @@ workflow/tests `58cbe92`. Real selected model/selection snapshots were committed
 as **`8b18a39` before any real test/stress score was inspected**. The locked
 evaluator performed no fitting, selection or tuning. No train+validation refit.
 
+Review update: [Week7 review](plans/green-ops-week7-review.md) preserves these
+historical snapshots. Metric-v2 replacement reports live in
+`docs/results/week7-regression-v1/review/`;16 per-family R2 fields change only
+at rounding scale. Aggregate scores, all MAE/RMSE, predictions and frozen models
+are unchanged. Existing validation/test/stress are consumed.
+
 ## Experiment and locked choices
 
 540 primary rows / 36 traffic families: 360 train (24 groups), 90 validation

@@ -1,0 +1,3507 @@
+{
+  "dataset_sha256": "e921297009bc1b12ca325cf13dfc16fbf4e4c5013bceb28fd1dbd02b18b9cf98",
+  "locked_test_groups": [
+    "af-304dd4ad10611502fcce49fa588d4d76",
+    "af-30f9dbd81a3216468a9d07c56413dca7",
+    "af-32ed793d58c2b84d8cc2ed1a08614753",
+    "af-7d29801a523fac4400fe6882242ea8cf",
+    "af-b45d9b0f54a19e12d2665d16bff5bcca",
+    "af-f4ba00d9eca12cfe896d727423b58d1f"
+  ],
+  "metrics_version": 2,
+  "policy": "frozen grouped CV; top ridge shortlist + baseline; validation RMSE; no test or stress access",
+  "provenance": "analytical_simulation",
+  "recipe_sha256": "4a979b6cec4555c27d1813f33dc8481410e1ba2382dec2bb93b8366be32d1daf",
+  "selection_report_version": 2,
+  "targets": {
+    "target_energy_per_delivered_packet_uj": {
+      "candidates": {
+        "ridge_0.01": {
+          "alpha": 0.01,
+          "cv": {
+            "mae": 537.3352903066692,
+            "r2": 0.998636095032956,
+            "r2_undefined_reason": null,
+            "rmse": 773.0925055805066,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 507.0042031195031,
+                "r2": 0.9883504903357402,
+                "r2_undefined_reason": null,
+                "rmse": 854.0709947733294,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 786.864384085497,
+                "r2": 0.9989159457357998,
+                "r2_undefined_reason": null,
+                "rmse": 907.4295749649523,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 412.5572460963847,
+                "r2": 0.9969646978990643,
+                "r2_undefined_reason": null,
+                "rmse": 567.3982155654436,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 442.91532792529216,
+                "r2": 0.9935806314102119,
+                "r2_undefined_reason": null,
+                "rmse": 718.2490209376929,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 266.36156959138515,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 318.25717913647384,
+                "r2": -1.7303851934045866,
+                "r2_undefined_reason": null,
+                "rmse": 402.7285571847644,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 362.78608500463014,
+                "r2": -3.87984327186694,
+                "r2_undefined_reason": null,
+                "rmse": 445.5809639677875,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 293.9857522535718,
+                "r2": -45.38063738644548,
+                "r2_undefined_reason": null,
+                "rmse": 366.0885818701221,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 254.0347614845576,
+                "r2": -15.916772495454612,
+                "r2_undefined_reason": null,
+                "rmse": 322.4167947098541,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 216.03211425472836,
+                "r2": -1.0523167475781139,
+                "r2_undefined_reason": null,
+                "rmse": 286.65786018774634,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 153.0735254143492,
+                "r2": -2.4255932351658167,
+                "r2_undefined_reason": null,
+                "rmse": 195.67295262228134,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.9988504641199896,
+            "r2_undefined_reason": null,
+            "rmse": 346.20965678438677,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "uJ"
+          }
+        },
+        "ridge_1": {
+          "alpha": 1.0,
+          "cv": {
+            "mae": 522.2799820524968,
+            "r2": 0.9987616605795445,
+            "r2_undefined_reason": null,
+            "rmse": 736.646715509668,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 499.6072495269739,
+                "r2": 0.988784344801739,
+                "r2_undefined_reason": null,
+                "rmse": 838.0163166283148,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 661.8083993948411,
+                "r2": 0.9992244767490995,
+                "r2_undefined_reason": null,
+                "rmse": 767.511391572004,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 462.19410485916427,
+                "r2": 0.9966042267844063,
+                "r2_undefined_reason": null,
+                "rmse": 600.1452092347382,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 465.51017442900803,
+                "r2": 0.9935409052860327,
+                "r2_undefined_reason": null,
+                "rmse": 720.4680274580111,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 279.9748400537764,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 308.47817087762814,
+                "r2": -1.620831055927022,
+                "r2_undefined_reason": null,
+                "rmse": 394.5662909111762,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 376.32853629871437,
+                "r2": -4.188983961438344,
+                "r2_undefined_reason": null,
+                "rmse": 459.4781417335691,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 321.9702880497749,
+                "r2": -52.83158584944157,
+                "r2_undefined_reason": null,
+                "rmse": 394.3995532922692,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 243.45171639439457,
+                "r2": -14.270317916142337,
+                "r2_undefined_reason": null,
+                "rmse": 306.3253519632934,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 240.38749672843855,
+                "r2": -1.3503963769594476,
+                "r2_undefined_reason": null,
+                "rmse": 306.7695255115708,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 189.2328319737078,
+                "r2": -3.738673760633481,
+                "r2_undefined_reason": null,
+                "rmse": 230.1395753151765,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.998779983129644,
+            "r2_undefined_reason": null,
+            "rmse": 356.6652761941178,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "uJ"
+          }
+        },
+        "ridge_100": {
+          "alpha": 100.0,
+          "cv": {
+            "mae": 4979.93577797006,
+            "r2": 0.9049863276285129,
+            "r2_undefined_reason": null,
+            "rmse": 6452.566066228286,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 2775.977507990195,
+                "r2": 0.8411462721619514,
+                "r2_undefined_reason": null,
+                "rmse": 3153.8341790359464,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 9417.304996982291,
+                "r2": 0.847815801884144,
+                "r2_undefined_reason": null,
+                "rmse": 10751.577723136961,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 4548.684528524701,
+                "r2": 0.7437424148877028,
+                "r2_undefined_reason": null,
+                "rmse": 5213.451875153077,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 3177.7760783830527,
+                "r2": 0.8280401500809912,
+                "r2_undefined_reason": null,
+                "rmse": 3717.426708909769,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 2383.78464795587,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 1486.4062374527584,
+                "r2": -38.0741613189144,
+                "r2_undefined_reason": null,
+                "rmse": 1523.5099632627744,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 1971.3570586770381,
+                "r2": -96.21133757048199,
+                "r2_undefined_reason": null,
+                "rmse": 1988.7589687889724,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 3067.7595390683186,
+                "r2": -3267.7585448546306,
+                "r2_undefined_reason": null,
+                "rmse": 3073.3303735399945,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 1527.4971833106906,
+                "r2": -383.8251101649521,
+                "r2_undefined_reason": null,
+                "rmse": 1537.7672340954084,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 2582.021856111311,
+                "r2": -166.3604773248276,
+                "r2_undefined_reason": null,
+                "rmse": 2588.618871985642,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 3667.666013115103,
+                "r2": -1203.3795704146587,
+                "r2_undefined_reason": null,
+                "rmse": 3668.973646025166,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.9388623119089392,
+            "r2_undefined_reason": null,
+            "rmse": 2524.831604117651,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "uJ"
+          }
+        },
+        "training_mean": {
+          "alpha": null,
+          "cv": {
+            "mae": 18466.675750941584,
+            "r2": -0.3302221398854708,
+            "r2_undefined_reason": null,
+            "rmse": 24143.570332068008,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 9408.615898668104,
+                "r2": -0.7103801607638411,
+                "r2_undefined_reason": null,
+                "rmse": 10348.716152759782,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 36282.672024857704,
+                "r2": -1.2726868976792467,
+                "r2_undefined_reason": null,
+                "rmse": 41548.679227155044,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 16429.07497622941,
+                "r2": -2.0704156414685544,
+                "r2_undefined_reason": null,
+                "rmse": 18046.192648419223,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 11746.340104011122,
+                "r2": -1.1476744829079788,
+                "r2_undefined_reason": null,
+                "rmse": 13137.511670129217,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "training_mean",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 11485.369580999344,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 8358.135431044362,
+                "r2": -1176.0285786533957,
+                "r2_undefined_reason": null,
+                "rmse": 8361.688218606845,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 10604.182197536835,
+                "r2": -2763.802328800732,
+                "r2_undefined_reason": null,
+                "rmse": 10606.100428637921,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 12177.816173536834,
+                "r2": -51321.95285122688,
+                "r2_undefined_reason": null,
+                "rmse": 12177.934814354037,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 8446.949526463166,
+                "r2": -11611.330711266552,
+                "r2_undefined_reason": null,
+                "rmse": 8447.313255990628,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 13881.129252401175,
+                "r2": -4812.450506295108,
+                "r2_undefined_reason": null,
+                "rmse": 13882.571387567461,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 15444.004905013686,
+                "r2": -21339.98242036732,
+                "r2_undefined_reason": null,
+                "rmse": 15444.366756857726,
+                "sample_count": 15
+              }
+            },
+            "r2": -0.3320025866503473,
+            "r2_undefined_reason": null,
+            "rmse": 11785.023310726994,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "uJ"
+          }
+        }
+      },
+      "chosen_candidate": "ridge_0.01",
+      "refit_on_validation": false,
+      "selection_metric": "validation_rmse",
+      "training_missing_labels": [],
+      "training_sample_count": 360,
+      "unit": "uJ",
+      "validation_shortlist": [
+        "training_mean",
+        "ridge_1",
+        "ridge_0.01"
+      ]
+    },
+    "target_mean_power_mw": {
+      "candidates": {
+        "ridge_0.01": {
+          "alpha": 0.01,
+          "cv": {
+            "mae": 10.890421004455563,
+            "r2": -1.3250241253447066,
+            "r2_undefined_reason": null,
+            "rmse": 16.207834985124048,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 6.485648225418726,
+                "r2": -3.0236448616925324,
+                "r2_undefined_reason": null,
+                "rmse": 7.743015755652955,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 23.41085239173283,
+                "r2": -13.899261536837955,
+                "r2_undefined_reason": null,
+                "rmse": 27.90223824784806,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 5.667449816216478,
+                "r2": 0.3367412364134561,
+                "r2_undefined_reason": null,
+                "rmse": 6.2840840936066265,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 7.9977335844542194,
+                "r2": 0.29194700426992726,
+                "r2_undefined_reason": null,
+                "rmse": 13.145217932486297,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 3.0575503433884,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 2.67631492678359,
+                "r2": -65.74524443020576,
+                "r2_undefined_reason": null,
+                "rmse": 2.69663855767793,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 2.320276738309849,
+                "r2": -0.5726486423171742,
+                "r2_undefined_reason": null,
+                "rmse": 2.529528308092203,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 3.2945410366585652,
+                "r2": -37.51598700973909,
+                "r2_undefined_reason": null,
+                "rmse": 3.336094491664079,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 3.4775791835027046,
+                "r2": -123.03413985687251,
+                "r2_undefined_reason": null,
+                "rmse": 3.4921228444900954,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 5.450388825877705,
+                "r2": -5.96840194779662,
+                "r2_undefined_reason": null,
+                "rmse": 5.88792781420969,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 1.1262013491979852,
+                "r2": -3.0720245438719447,
+                "r2_undefined_reason": null,
+                "rmse": 1.288508429459006,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.9009071330048936,
+            "r2_undefined_reason": null,
+            "rmse": 3.495777674772981,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "mW"
+          }
+        },
+        "ridge_1": {
+          "alpha": 1.0,
+          "cv": {
+            "mae": 10.860370733768201,
+            "r2": -1.3063291905125918,
+            "r2_undefined_reason": null,
+            "rmse": 16.142541904446777,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 6.47626903924678,
+                "r2": -3.0110053654942543,
+                "r2_undefined_reason": null,
+                "rmse": 7.730844602295976,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 23.288074034321788,
+                "r2": -13.733265365330263,
+                "r2_undefined_reason": null,
+                "rmse": 27.74637019697241,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 5.676478271878923,
+                "r2": 0.335372504024098,
+                "r2_undefined_reason": null,
+                "rmse": 6.290564819534731,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 8.000661589625315,
+                "r2": 0.2905879966761079,
+                "r2_undefined_reason": null,
+                "rmse": 13.157827078443656,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 3.0645231788579244,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 2.6927257736530237,
+                "r2": -66.55390950893336,
+                "r2_undefined_reason": null,
+                "rmse": 2.712925201440207,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 2.298819263734674,
+                "r2": -0.5461060509816282,
+                "r2_undefined_reason": null,
+                "rmse": 2.508091242422891,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 3.2933761907924177,
+                "r2": -37.489535970335695,
+                "r2_undefined_reason": null,
+                "rmse": 3.334948755448238,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 3.4905302691962294,
+                "r2": -123.95186659056081,
+                "r2_undefined_reason": null,
+                "rmse": 3.505018117645943,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 5.488888356671377,
+                "r2": -6.053063377227235,
+                "r2_undefined_reason": null,
+                "rmse": 5.923587027471697,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 1.1227992190998237,
+                "r2": -3.050600846349619,
+                "r2_undefined_reason": null,
+                "rmse": 1.2851144151716383,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.9002649821517489,
+            "r2_undefined_reason": null,
+            "rmse": 3.507086216208853,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "mW"
+          }
+        },
+        "ridge_100": {
+          "alpha": 100.0,
+          "cv": {
+            "mae": 8.788398439795767,
+            "r2": -0.27204682974960837,
+            "r2_undefined_reason": null,
+            "rmse": 11.988444154348679,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 5.810137731215783,
+                "r2": -2.1474000673680744,
+                "r2_undefined_reason": null,
+                "rmse": 6.848197819354582,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 14.662012966063754,
+                "r2": -4.3978266823205345,
+                "r2_undefined_reason": null,
+                "rmse": 16.794463650581005,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 6.351415907758496,
+                "r2": 0.20600971636701348,
+                "r2_undefined_reason": null,
+                "rmse": 6.875560114508015,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 8.330027154145036,
+                "r2": 0.18594493612865337,
+                "r2_undefined_reason": null,
+                "rmse": 14.094893521975791,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 3.8140575105516037,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 3.998868853037313,
+                "r2": -146.77226667420197,
+                "r2_undefined_reason": null,
+                "rmse": 4.012444548283705,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 1.7264339402070201,
+                "r2": -0.454167946745236,
+                "r2_undefined_reason": null,
+                "rmse": 2.4323774895933967,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 3.2094164106949923,
+                "r2": -35.60875257091621,
+                "r2_undefined_reason": null,
+                "rmse": 3.252447482389558,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 4.519791466255481,
+                "r2": -207.79806813156617,
+                "r2_undefined_reason": null,
+                "rmse": 4.530875525173838,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 8.557968443136977,
+                "r2": -14.719132213280707,
+                "r2_undefined_reason": null,
+                "rmse": 8.843214586590852,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 0.8718659499778406,
+                "r2": -1.6263578560156269,
+                "r2_undefined_reason": null,
+                "rmse": 1.034806197301709,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.8210710336838611,
+            "r2_undefined_reason": null,
+            "rmse": 4.697458306462496,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "mW"
+          }
+        },
+        "training_mean": {
+          "alpha": null,
+          "cv": {
+            "mae": 8.3402699102321,
+            "r2": -0.13974991748271126,
+            "r2_undefined_reason": null,
+            "rmse": 11.347914612853467,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 4.547405411812344,
+                "r2": -0.7957559406484565,
+                "r2_undefined_reason": null,
+                "rmse": 5.172779641865208,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 10.378230607111115,
+                "r2": -1.2572030460786952,
+                "r2_undefined_reason": null,
+                "rmse": 10.860304063899942,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 8.384402702992595,
+                "r2": -0.5119121922507222,
+                "r2_undefined_reason": null,
+                "rmse": 9.487761833174911,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 10.051040919012348,
+                "r2": -0.14888339893952507,
+                "r2_undefined_reason": null,
+                "rmse": 16.744527047837025,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "training_mean",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 9.117768040592592,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 9.14909443866667,
+                "r2": -768.3004170087414,
+                "r2_undefined_reason": null,
+                "rmse": 9.155046615130281,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 12.714789273333334,
+                "r2": -39.73479256131787,
+                "r2_undefined_reason": null,
+                "rmse": 12.873790764375151,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 3.021550486666672,
+                "r2": -31.59541439179916,
+                "r2_undefined_reason": null,
+                "rmse": 3.0689942918738886,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 8.553397990666669,
+                "r2": -744.1141692557451,
+                "r2_undefined_reason": null,
+                "rmse": 8.559143430404665,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 20.739672505333328,
+                "r2": -86.459362340183,
+                "r2_undefined_reason": null,
+                "rmse": 20.85926653680706,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 0.5281035488888809,
+                "r2": -0.09263722570870492,
+                "r2_undefined_reason": null,
+                "rmse": 0.6674520432456446,
+                "sample_count": 15
+              }
+            },
+            "r2": -0.03762682405603446,
+            "r2_undefined_reason": null,
+            "rmse": 11.312099142654771,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "mW"
+          }
+        }
+      },
+      "chosen_candidate": "ridge_1",
+      "refit_on_validation": false,
+      "selection_metric": "validation_rmse",
+      "training_missing_labels": [],
+      "training_sample_count": 360,
+      "unit": "mW",
+      "validation_shortlist": [
+        "training_mean",
+        "ridge_100",
+        "ridge_1"
+      ]
+    },
+    "target_total_energy_mj": {
+      "candidates": {
+        "ridge_0.01": {
+          "alpha": 0.01,
+          "cv": {
+            "mae": 61.1532056295796,
+            "r2": 0.971138777347941,
+            "r2_undefined_reason": null,
+            "rmse": 94.39574177842931,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 35.468509344260376,
+                "r2": 0.9932516029324716,
+                "r2_undefined_reason": null,
+                "rmse": 44.615186659829824,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 126.09381635094626,
+                "r2": 0.9181085622684296,
+                "r2_undefined_reason": null,
+                "rmse": 151.82350220543944,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 37.04692428411917,
+                "r2": 0.9932018826838018,
+                "r2_undefined_reason": null,
+                "rmse": 46.89970638340614,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 46.00357253899262,
+                "r2": 0.9747416704902274,
+                "r2_undefined_reason": null,
+                "rmse": 91.66106644662926,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 32.81012509301831,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 31.263901477321117,
+                "r2": 0.9949926274927382,
+                "r2_undefined_reason": null,
+                "rmse": 36.639356538023335,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 42.10059326811399,
+                "r2": 0.993611883169249,
+                "r2_undefined_reason": null,
+                "rmse": 47.76532544044524,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 16.943685895787514,
+                "r2": 0.9986125644442236,
+                "r2_undefined_reason": null,
+                "rmse": 20.144895599050827,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 31.104186111687486,
+                "r2": 0.9949732503134977,
+                "r2_undefined_reason": null,
+                "rmse": 36.85080718791314,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 70.12032980580155,
+                "r2": 0.9826345726097432,
+                "r2_undefined_reason": null,
+                "rmse": 82.8616488109468,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 5.328053999398174,
+                "r2": 0.999892229455576,
+                "r2_undefined_reason": null,
+                "rmse": 5.736396265753272,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.9935654016469934,
+            "r2_undefined_reason": null,
+            "rmse": 45.25248917064467,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "mJ"
+          }
+        },
+        "ridge_1": {
+          "alpha": 1.0,
+          "cv": {
+            "mae": 61.30280095381442,
+            "r2": 0.9713177226969598,
+            "r2_undefined_reason": null,
+            "rmse": 94.10265053287675,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 35.44236631546647,
+                "r2": 0.9934190269735739,
+                "r2_undefined_reason": null,
+                "rmse": 44.05827158378217,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 125.43071957322904,
+                "r2": 0.9193908791117448,
+                "r2_undefined_reason": null,
+                "rmse": 150.630129617552,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 37.769644297018374,
+                "r2": 0.9929307532369694,
+                "r2_undefined_reason": null,
+                "rmse": 47.82581363012813,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 46.568473629543796,
+                "r2": 0.9744362029381223,
+                "r2_undefined_reason": null,
+                "rmse": 92.21366306744541,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 32.86053663528448,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 30.106488685248753,
+                "r2": 0.9953546600908109,
+                "r2_undefined_reason": null,
+                "rmse": 35.28999822855438,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 43.32196241405891,
+                "r2": 0.9932238857144614,
+                "r2_undefined_reason": null,
+                "rmse": 49.19451429142176,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 16.938051224865525,
+                "r2": 0.9987153455943741,
+                "r2_undefined_reason": null,
+                "rmse": 19.384373369931566,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 29.940583059615538,
+                "r2": 0.9953100302374597,
+                "r2_undefined_reason": null,
+                "rmse": 35.59495078325554,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 71.37556199430776,
+                "r2": 0.9820066084788739,
+                "r2_undefined_reason": null,
+                "rmse": 84.34655467406895,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 5.4805724336104085,
+                "r2": 0.9998743980647178,
+                "r2_undefined_reason": null,
+                "rmse": 6.192803096019148,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.9934741703971294,
+            "r2_undefined_reason": null,
+            "rmse": 45.57216028658896,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "mJ"
+          }
+        },
+        "ridge_100": {
+          "alpha": 100.0,
+          "cv": {
+            "mae": 136.82781876136258,
+            "r2": 0.9100391362274479,
+            "r2_undefined_reason": null,
+            "rmse": 166.65634361986915,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 126.39260142448195,
+                "r2": 0.9304698390430202,
+                "r2_undefined_reason": null,
+                "rmse": 143.2085731426987,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 121.65392629563247,
+                "r2": 0.9185904744404643,
+                "r2_undefined_reason": null,
+                "rmse": 151.37611994984096,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 145.57422155900562,
+                "r2": 0.9065261687379694,
+                "r2_undefined_reason": null,
+                "rmse": 173.9085035848025,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 153.6905257663303,
+                "r2": 0.8874742815775014,
+                "r2_undefined_reason": null,
+                "rmse": 193.46770982061582,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "ridge",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 112.037489698157,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 80.01023346259049,
+                "r2": 0.9705727257649485,
+                "r2_undefined_reason": null,
+                "rmse": 88.82145966210408,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 138.85280878207993,
+                "r2": 0.9224870685346933,
+                "r2_undefined_reason": null,
+                "rmse": 166.38470339559447,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 97.73585666204215,
+                "r2": 0.9582494789464245,
+                "r2_undefined_reason": null,
+                "rmse": 110.506941975387,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 82.59839022424775,
+                "r2": 0.9690264661082684,
+                "r2_undefined_reason": null,
+                "rmse": 91.4742283712096,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 169.712963745012,
+                "r2": 0.896244089175287,
+                "r2_undefined_reason": null,
+                "rmse": 202.54300833280678,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 103.31468531296967,
+                "r2": 0.9520051008396635,
+                "r2_undefined_reason": null,
+                "rmse": 121.0560914777565,
+                "sample_count": 15
+              }
+            },
+            "r2": 0.9414339085486026,
+            "r2_undefined_reason": null,
+            "rmse": 136.5227010486906,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "mJ"
+          }
+        },
+        "training_mean": {
+          "alpha": null,
+          "cv": {
+            "mae": 470.8714352283951,
+            "r2": -0.0014646551318577838,
+            "r2_undefined_reason": null,
+            "rmse": 556.0487311920934,
+            "sample_count": 360
+          },
+          "folds": [
+            {
+              "assessment_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                137.77777777777777,
+                197.22222222222223,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                155.13848851037562,
+                172.5802729667674,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "3a61667c4beed047024e735a199fc7b042834686adb9b4e4c2d9651c0488ae0e",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 464.2135301866667,
+                "r2": -0.0010555497851747475,
+                "r2_undefined_reason": null,
+                "rmse": 543.389808939384,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                167.11111111111111,
+                126.38888888888889,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                168.7578438963452,
+                67.42908941076865,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "9f4215a7c92fe0cc1ea7c8f64e715768f94c9a29b8b222e7671b6a61ba854207",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 461.2659615288889,
+                "r2": -0.006843371654235986,
+                "r2_undefined_reason": null,
+                "rmse": 532.3542371156203,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-eb7dd48dcac8743291a5520b265d1c42"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                152.0,
+                211.11111111111111,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                170.7708015635772,
+                163.55899000017257,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "81f5c7a428cf56ce37fc30865ae216ce58993cb2949b263689c683fb444395eb",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 472.4233064493827,
+                "r2": -0.0026774834084981602,
+                "r2_undefined_reason": null,
+                "rmse": 569.5822246108903,
+                "sample_count": 90
+              }
+            },
+            {
+              "assessment_groups": [
+                "af-2231f8c40d71a1949d09d3ddb787faa6",
+                "af-348483f78c83cab28067308b4ee1bde1",
+                "af-a0dd5fcd4179de3eb107927a8ec47e26",
+                "af-a94b485962b5ec69144906ff7716e13e",
+                "af-ce04975915533897837381dc3499e918",
+                "af-e88b4cbfd6fc82fd1f8a5710e320011c"
+              ],
+              "assessment_missing_labels": [],
+              "assessment_sample_count": 90,
+              "feature_means": [
+                119.11111111111111,
+                202.77777777777777,
+                19,
+                5333.333333333333
+              ],
+              "feature_scales": [
+                125.89629280963709,
+                169.33056282364635,
+                1.0,
+                3681.787005729087
+              ],
+              "fit_groups": [
+                "af-1de88bbaad389b3007ebe57c0ccbf59e",
+                "af-200636b56aaed1cd4b01c4a744a29f96",
+                "af-31b030395c6626bf981b37a2b49aaa20",
+                "af-509e2e726b8681408a1efc9aca0bc988",
+                "af-54dc9a1bc403858b95a0ed00666e192e",
+                "af-6de44f445924baae26de95fdbe3de161",
+                "af-759c2010ed4c333eae1f63c47c5c8f66",
+                "af-79814fa841fb5110019c61299cb85125",
+                "af-802d888e0e03d975cec06d764adf15d6",
+                "af-883c8cfc45e1f4767fd854a75f19c953",
+                "af-96953c44774b6c6d4befd2a8999ae974",
+                "af-9db7a935d9a1e2d16e5e3340e092c319",
+                "af-a54222ed65671b0bc3658d0b308e27c1",
+                "af-cdb754326bcb18d4f450c08898867c41",
+                "af-d76339345ecc6a82bf67a261d73ac27a",
+                "af-dc43ee9d6d1640eed9c1f79203508749",
+                "af-eb7dd48dcac8743291a5520b265d1c42",
+                "af-f3b7d5f3abb903e08c2046582fd5f1f1"
+              ],
+              "fit_missing_labels": [],
+              "fit_run_ids_sha256": "b325a4121eb33cf24295b827466b4d443e99381f5ea611213f1ff3f156c2dae6",
+              "fit_sample_count": 270,
+              "scores": {
+                "mae": 485.58294274864204,
+                "r2": -0.0030978553391254326,
+                "r2_undefined_reason": null,
+                "rmse": 577.6359900616677,
+                "sample_count": 90
+              }
+            }
+          ],
+          "kind": "training_mean",
+          "validation": {
+            "labeled_group_count": 6,
+            "mae": 476.52196679555556,
+            "missing_label_count": 0,
+            "missing_label_run_ids": [],
+            "negative_prediction_count": 0,
+            "per_family": {
+              "af-152328364ab85cdb6495968af661ab95": {
+                "mae": 453.86125726666666,
+                "r2": -0.008916530348809903,
+                "r2_undefined_reason": null,
+                "rmse": 520.0804233376725,
+                "sample_count": 15
+              },
+              "af-2da0a5e52a8f7a0099bf417a2089809e": {
+                "mae": 492.36731809333344,
+                "r2": -0.01290555382184011,
+                "r2_undefined_reason": null,
+                "rmse": 601.4655981269874,
+                "sample_count": 15
+              },
+              "af-728f56eece1dc4a3984611fecd52b3f6": {
+                "mae": 462.1413481466667,
+                "r2": -0.0008408428513437816,
+                "r2_undefined_reason": null,
+                "rmse": 541.0546339848812,
+                "sample_count": 15
+              },
+              "af-7517e1d1b3cc541b23f586645278571e": {
+                "mae": 454.4544175866667,
+                "r2": -0.007772688455444543,
+                "r2_undefined_reason": null,
+                "rmse": 521.7766830605633,
+                "sample_count": 15
+              },
+              "af-a3f0253cbbf3bba77992c2b79847e3b0": {
+                "mae": 530.0507051333334,
+                "r2": -0.031199602907084012,
+                "r2_undefined_reason": null,
+                "rmse": 638.5313153483622,
+                "sample_count": 15
+              },
+              "af-e2d7ef44adcbeb8778e740bce125525c": {
+                "mae": 466.2567545466667,
+                "r2": -7.218370402517493e-06,
+                "r2_undefined_reason": null,
+                "rmse": 552.5742888965541,
+                "sample_count": 15
+              }
+            },
+            "r2": -0.00042823631288091413,
+            "r2_undefined_reason": null,
+            "rmse": 564.2540978793135,
+            "sample_count": 90,
+            "total_group_count": 6,
+            "total_rows": 90,
+            "unit": "mJ"
+          }
+        }
+      },
+      "chosen_candidate": "ridge_0.01",
+      "refit_on_validation": false,
+      "selection_metric": "validation_rmse",
+      "training_missing_labels": [],
+      "training_sample_count": 360,
+      "unit": "mJ",
+      "validation_shortlist": [
+        "training_mean",
+        "ridge_1",
+        "ridge_0.01"
+      ]
+    }
+  }
+}

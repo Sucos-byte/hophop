@@ -1,0 +1,439 @@
+{
+  "calibration_groups": [
+    "af-123b5c3ef3f9c87b2316e2114d03302a",
+    "af-174a5146056e890adf601885f3b42030",
+    "af-17e47becdbffda72ef1c252535706e67",
+    "af-18842008cf5cff68981e0745c858e8a8",
+    "af-2829d83e852306c5e26e353bcd78ad84",
+    "af-29d297928b8eb748f549ded01af2fe22",
+    "af-36aa31ea02ad46804eb763bbc48453df",
+    "af-39d446218d425e197429387f96c291bc",
+    "af-3f64390aa582ae34df518c5ebfedd2e2",
+    "af-3fa4b542644b726729afcb7301352f40",
+    "af-560c6897da829f50a4ef46f85522c59a",
+    "af-5a90c9054d1a6d103307648cb5fad742",
+    "af-5ca0510edaac93da92c0cbe5310e2672",
+    "af-5e6313e5feb4e8118ed8c17ac0588f76",
+    "af-761b7e736f1f4c43dd2090111f399a14",
+    "af-869cc87d629c799796b4612a70cdf7ec",
+    "af-9cd14e9a5b46e59d76703fc022639ef4",
+    "af-a11daa9a372a3cc13d469f2b48ce2aee",
+    "af-a3f4ced4afc484aed3556e220cae9399",
+    "af-b2ef1305ec8459526bd54470f0c3f4b6",
+    "af-bf3491447f50730eab08edb808028bc3",
+    "af-c51d309d1de6dd240b512e17d75ab44d",
+    "af-c6584e35ede3f0abefffc12ecb4018ae",
+    "af-d557481d1e75f8b542ed3dc716413b75",
+    "af-d6f133d9983945a15d6de428ab4fa67b",
+    "af-d71a42489defcecd3b29dcbb5212129e",
+    "af-ebbbda0457024718d6ea32b2c57a10fb",
+    "af-f5d4dda0cf4d8d3fc40d298811988419",
+    "af-f8dc524a20715df172e400a5fc79cd07",
+    "af-fb7e169c74fcc68854d2e0775a77db0f"
+  ],
+  "configurations": [
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 24,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 24,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 24,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 24,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 24,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 24,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 48,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 48,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 48,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 48,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 48,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 48,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 80,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 80,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 80,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 80,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 80,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 80,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 96,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 96,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 96,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 96,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 96,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 96,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 160,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 160,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 160,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 160,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 160,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 160,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 192,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 192,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 192,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 192,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 192,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 192,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 320,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 320,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 320,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 320,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 320,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 320,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 384,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 384,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 384,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 384,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 384,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 384,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 448,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 448,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 448,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 448,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 448,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 448,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 60,
+      "payload_size_bytes": 480,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 90,
+      "payload_size_bytes": 480,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 120,
+      "payload_size_bytes": 480,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 180,
+      "payload_size_bytes": 480,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 300,
+      "payload_size_bytes": 480,
+      "tx_power_dbm": 19
+    },
+    {
+      "interval_ms": 450,
+      "payload_size_bytes": 480,
+      "tx_power_dbm": 19
+    }
+  ],
+  "evaluation_groups": [
+    "af-0b18718011e6b9f4921b52391865a0b8",
+    "af-2b12330fe4798eff93baae92360bb4e4",
+    "af-2e7abe676361bd836a6fd39c53ac964e",
+    "af-46094968d20af18897f8407ffbf9ff2b",
+    "af-4822652cd39c853f7892c2cbc0a4c878",
+    "af-4ee01eecf66d375122c34e67628b7e4c",
+    "af-51b1ae6de92412c11be4c8b64564b0fe",
+    "af-5c095a5d3241e3f3362c2fc6b077433b",
+    "af-601929102f2c96323c1ddf986a53fe38",
+    "af-6b5396765df1c6b5059a89e6eada0a7f",
+    "af-6e44b287dc03abc16077fc4013112417",
+    "af-6f98a1ec8b54abafd49425ccd6c1d154",
+    "af-70820922825403db4ead79c36bdde7c5",
+    "af-7524b740a8942d49888126f3c59cb8bf",
+    "af-8245b300b2ecada88489c02c7ad05560",
+    "af-845e4552164cbbfcd13c2542f1ba2019",
+    "af-9ede6fef8e103d70dca14fe4d9852573",
+    "af-a15316a8f0432abef91ac0b037eafc3c",
+    "af-a20ffb501135e5bb48eec18e5a155c76",
+    "af-ae0c60eac8b976b8450028ffdc4e2da3",
+    "af-b01e1904b018f7a65910c8159ec913cb",
+    "af-b2090f6b6e2a0a0139f1de809ffe56cf",
+    "af-ba37377bdd592d620846e3fa0a5e2943",
+    "af-c17f71b57630b82d38ffd7b3aaf995ab",
+    "af-c22d13ae5c950156dd41c3b249bba881",
+    "af-cab44398c698420fd224dc674cfdaa48",
+    "af-d3832186d2374b1acde22e01f03fd633",
+    "af-e0ac740247e53ef238ed1249fe21f975",
+    "af-ee89fe0c11b06218516bd807d43947dc",
+    "af-f87de808b96a952e1ec513d6bbd23380"
+  ],
+  "excluded_known_week6_week7_family_ids": [
+    "af-0fac6c91b07d9f359c5851540ffb8f48",
+    "af-152328364ab85cdb6495968af661ab95",
+    "af-1de88bbaad389b3007ebe57c0ccbf59e",
+    "af-200636b56aaed1cd4b01c4a744a29f96",
+    "af-2231f8c40d71a1949d09d3ddb787faa6",
+    "af-25df5dee205c0050584859b9a19b2f7a",
+    "af-2da0a5e52a8f7a0099bf417a2089809e",
+    "af-304dd4ad10611502fcce49fa588d4d76",
+    "af-30f9dbd81a3216468a9d07c56413dca7",
+    "af-31b030395c6626bf981b37a2b49aaa20",
+    "af-32ed793d58c2b84d8cc2ed1a08614753",
+    "af-348483f78c83cab28067308b4ee1bde1",
+    "af-509e2e726b8681408a1efc9aca0bc988",
+    "af-54dc9a1bc403858b95a0ed00666e192e",
+    "af-5dbd83cf29861642ceec5cd431e132eb",
+    "af-6368d61353a610a81fa145090e06e348",
+    "af-6de44f445924baae26de95fdbe3de161",
+    "af-728f56eece1dc4a3984611fecd52b3f6",
+    "af-7517e1d1b3cc541b23f586645278571e",
+    "af-759c2010ed4c333eae1f63c47c5c8f66",
+    "af-79814fa841fb5110019c61299cb85125",
+    "af-7d29801a523fac4400fe6882242ea8cf",
+    "af-802d888e0e03d975cec06d764adf15d6",
+    "af-883c8cfc45e1f4767fd854a75f19c953",
+    "af-927bcbe2635a34c38727218dc74adb80",
+    "af-96953c44774b6c6d4befd2a8999ae974",
+    "af-9ce203b9b26c1a11cf195845df063c6c",
+    "af-9db7a935d9a1e2d16e5e3340e092c319",
+    "af-a0dd5fcd4179de3eb107927a8ec47e26",
+    "af-a3f0253cbbf3bba77992c2b79847e3b0",
+    "af-a54222ed65671b0bc3658d0b308e27c1",
+    "af-a94b485962b5ec69144906ff7716e13e",
+    "af-b2ee005c414bcb611ea9d6d40fe63408",
+    "af-b45d9b0f54a19e12d2665d16bff5bcca",
+    "af-cdb754326bcb18d4f450c08898867c41",
+    "af-ce04975915533897837381dc3499e918",
+    "af-d76339345ecc6a82bf67a261d73ac27a",
+    "af-dc43ee9d6d1640eed9c1f79203508749",
+    "af-ddd70a72c5524ad064884eb6a725f73a",
+    "af-e2d7ef44adcbeb8778e740bce125525c",
+    "af-e88b4cbfd6fc82fd1f8a5710e320011c",
+    "af-e9d9f7de5ce9f738c5e0de8c073f26ba",
+    "af-eb7dd48dcac8743291a5520b265d1c42",
+    "af-f2855cfc6533e060cea81d88f5df199c",
+    "af-f3b7d5f3abb903e08c2046582fd5f1f1",
+    "af-f4ba00d9eca12cfe896d727423b58d1f",
+    "af-fa1d583b2c3dc36950051b4509c5dfb4",
+    "af-fe5f39a16296e9b432455ee258838bb3"
+  ],
+  "family_fields": [
+    "payload_size_bytes",
+    "interval_ms",
+    "tx_power_dbm"
+  ],
+  "independence_limit": "Same analytical generating law; semantic group disjointness is not physical independence or proven exchangeability.",
+  "lineage_requirement": "New independent design tuples; if any are derived from an existing parent, coarsen parent groups and reject overlap before generation.",
+  "master_seed": 2026111808,
+  "proposal_version": 1,
+  "repetitions": 5,
+  "rows_per_partition": 450,
+  "split_hash_input": "week8-proposal:2026111809:{family_id}",
+  "split_seed": 2026111809,
+  "status": "proposal_only_no_labels_generated",
+  "verified_family_intersection": 0,
+  "verified_seed_intersection": 0,
+  "window_durations_ms": [
+    1000,
+    5000,
+    10000
+  ]
+}

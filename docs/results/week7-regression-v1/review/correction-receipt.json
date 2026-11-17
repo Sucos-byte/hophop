@@ -1,0 +1,99 @@
+{
+  "choices_unchanged": true,
+  "dataset_sha256": "e921297009bc1b12ca325cf13dfc16fbf4e4c5013bceb28fd1dbd02b18b9cf98",
+  "evaluation_fit_calls": 0,
+  "files": {
+    "evaluation.json": "8cd1d452e2e58c8f689953d6b6c4f89a32982556a6d77f1de280a97ecf0ce391",
+    "predictions.json": "aedbf3b2145329754503cfbca1c6a7abca86e2b56b7ed55588dcc7390db40ee3"
+  },
+  "mae_rmse_unchanged": true,
+  "metrics_version": 2,
+  "model_bytes_unchanged": true,
+  "original_selection_sha256": "31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b",
+  "provenance": "analytical_simulation",
+  "r2_changes": [
+    {
+      "old": -5292.083726326765,
+      "path": "/airtime-high/target_energy_per_delivered_packet_uj/baseline/per_family/af-7d29801a523fac4400fe6882242ea8cf/r2",
+      "replacement": -5292.083726326762
+    },
+    {
+      "old": -14.84789557596975,
+      "path": "/airtime-high/target_energy_per_delivered_packet_uj/chosen/per_family/af-7d29801a523fac4400fe6882242ea8cf/r2",
+      "replacement": -14.847895575969742
+    },
+    {
+      "old": -12656.32473383962,
+      "path": "/airtime-low/target_energy_per_delivered_packet_uj/baseline/per_family/af-b45d9b0f54a19e12d2665d16bff5bcca/r2",
+      "replacement": -12656.324733839627
+    },
+    {
+      "old": -1129.7882248846788,
+      "path": "/airtime-low/target_mean_power_mw/baseline/per_family/af-304dd4ad10611502fcce49fa588d4d76/r2",
+      "replacement": -1129.7882248846793
+    },
+    {
+      "old": -76.94621990491703,
+      "path": "/airtime-low/target_mean_power_mw/baseline/per_family/af-30f9dbd81a3216468a9d07c56413dca7/r2",
+      "replacement": -76.946219904917
+    },
+    {
+      "old": -81.33864495289757,
+      "path": "/airtime-low/target_mean_power_mw/chosen/per_family/af-304dd4ad10611502fcce49fa588d4d76/r2",
+      "replacement": -81.33864495289761
+    },
+    {
+      "old": -0.011202925284776954,
+      "path": "/airtime-low/target_total_energy_mj/baseline/per_family/af-7d29801a523fac4400fe6882242ea8cf/r2",
+      "replacement": -0.01120292528477651
+    },
+    {
+      "old": -0.0003768799185970284,
+      "path": "/airtime-low/target_total_energy_mj/baseline/per_family/af-b45d9b0f54a19e12d2665d16bff5bcca/r2",
+      "replacement": -0.0003768799185965843
+    },
+    {
+      "old": -2740.451551631891,
+      "path": "/test/target_energy_per_delivered_packet_uj/baseline/per_family/af-f4ba00d9eca12cfe896d727423b58d1f/r2",
+      "replacement": -2740.451551631893
+    },
+    {
+      "old": 0.31401669455983483,
+      "path": "/test/target_energy_per_delivered_packet_uj/chosen/per_family/af-f4ba00d9eca12cfe896d727423b58d1f/r2",
+      "replacement": 0.3140166945598346
+    },
+    {
+      "old": -571.7163317493848,
+      "path": "/test/target_mean_power_mw/baseline/per_family/af-304dd4ad10611502fcce49fa588d4d76/r2",
+      "replacement": -571.7163317493847
+    },
+    {
+      "old": -182.78363078033206,
+      "path": "/test/target_mean_power_mw/baseline/per_family/af-30f9dbd81a3216468a9d07c56413dca7/r2",
+      "replacement": -182.78363078033212
+    },
+    {
+      "old": -70.72938918196606,
+      "path": "/test/target_mean_power_mw/chosen/per_family/af-304dd4ad10611502fcce49fa588d4d76/r2",
+      "replacement": -70.72938918196603
+    },
+    {
+      "old": -61.41911972251857,
+      "path": "/test/target_mean_power_mw/chosen/per_family/af-30f9dbd81a3216468a9d07c56413dca7/r2",
+      "replacement": -61.41911972251859
+    },
+    {
+      "old": -0.011102622339889123,
+      "path": "/test/target_total_energy_mj/baseline/per_family/af-304dd4ad10611502fcce49fa588d4d76/r2",
+      "replacement": -0.01110262233988868
+    },
+    {
+      "old": -0.0035659316568539268,
+      "path": "/test/target_total_energy_mj/baseline/per_family/af-32ed793d58c2b84d8cc2ed1a08614753/r2",
+      "replacement": -0.0035659316568534827
+    }
+  ],
+  "recipe_sha256": "4a979b6cec4555c27d1813f33dc8481410e1ba2382dec2bb93b8366be32d1daf",
+  "review_correction_version": 1,
+  "unchanged_predictions_sha256": "aedbf3b2145329754503cfbca1c6a7abca86e2b56b7ed55588dcc7390db40ee3"
+}
