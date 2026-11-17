@@ -1,0 +1,16 @@
+{
+  "command": "python3 -W error::ResourceWarning -m unittest discover -s tools/green_ops/tests",
+  "committed_outputs_match_execution": true,
+  "duration_seconds": 114.947,
+  "execution_receipt_hashes_verified": true,
+  "final_source_unchanged": true,
+  "frozen_preflight_passed": true,
+  "markdown_regeneration_identical": true,
+  "passed": true,
+  "physical_validation": false,
+  "raw_log_sha256": "56e6adccf5a2eece08627d149058bd25e3d7402bacd14e6b5f76e476a2423d59",
+  "remote_week12_run": false,
+  "source_checkpoint": "2f3559cb8eb6fe35b8bdbcd328029c9998c31797",
+  "tests": 353,
+  "verification_version": 1
+}

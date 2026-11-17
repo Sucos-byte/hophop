@@ -947,3 +947,14 @@ state (341existing+12new); no production/frozen changes. Final report and projec
 summary distinguish analytical software evidence, historical remoteff801898 run,
 and unperformed physical validation. Next commit evidence, verify archived report
 regeneration/hash receipt and clean checkout, update final handoff/export. No push.
+
+Benchmark evidence committed4b2e75c; Windows snapshot refreshed. Final verification:
+353tests/114.947s (ResourceWarning errors), unchanged scoring source2f3559c;
+committed cases/aggregate/manifest/preflight equal actual execution bytes, receipt
+hashes and deterministic Markdown regeneration pass. Week12 complete. Final
+handoff supersedes earlier in-progress/unscored notes. Both splits consumed;
+no frozen changes/tuning/push/current remote run/physical validation. Next proposed
+work: actual-state telemetry/post-run contract, synchronized PPK2 and fresh
+physical parent-disjoint study, not tuning on this benchmark. No blocker or
+required user/hardware action for this completed task. Final docs-only checkpoint
+and atomic Windows snapshot before stopping.

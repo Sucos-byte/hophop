@@ -40,3 +40,12 @@ partial files on errors. A separate durable consumption record survives rollback
 Executor success means completed software execution, never candidate approval.
 
 Current task: frozen preflight and tooling. Next: tests and pre-scoring commit.
+
+## Completion
+
+Protocol e2a9fc7, pre-scoring tooling2f3559c, evidence4b2e75c. Frozen preflight
+passes;1920cases run twice,3844files match and rational audits pass. Both splits
+consumed. All1920ABSTAIN,0detections,552missed5%violations,576control blocks;
+21infeasible labels remain null. Final353tests pass114.947s. No frozen changes,
+tuning, current remote run or physical claims. Final reports/project follow-up
+and deterministic archived hashes verified; task complete, no required user action.
