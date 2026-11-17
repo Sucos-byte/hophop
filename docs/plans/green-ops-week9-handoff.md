@@ -7,3 +7,12 @@ calibration and consumed evaluation data frozen. Nominal family coverage fails
 only for labeled demonstrations, never physical assurance. No Actions/PR reporter.
 Next implement strict gatekeeper/comparison/battery APIs and tests; commit verified
 milestones and refresh Windows export per green-ops-status-export.md. No push.
+
+Plan/default freeze060a7fc; Windows export refreshed.20 targeted tests pass.
+Current full suite /tmp/green-ops-week9-tests.log. Implementation ready for final
+verification; no model/calibration changes. Next code milestone commit/export,
+then labeled demonstrations and documentation. No baseline tests duplicated.
+
+Full suite304 passes (107.0s),20 new targeted tests. Code milestone verified;
+next commit/export then run docs/results/week9/reproduce.py to fresh build dirs.
+No tuning or numeric edits to frozen models/calibration.

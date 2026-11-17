@@ -672,3 +672,18 @@ accounting. Observed nominal family coverage28/30,28/30,26/30 inadequate95%;
 assumption shifts have no coverage guarantee. No retraining/recalibration/tuning.
 Current: commit plan/default policy; next implementation/tests. Latest verified
 source remains284 Week8 tests (541bda5); new policy/docs only, not code verified yet.
+
+Semantics/default policy committed060a7fc; Windows snapshot refreshed atomically.
+Implemented strict policy/evidence adapter, PASS0/ERROR1/FAIL2/ABSTAIN3 engine,
+logical marginal comparisons and explicit battery energy/loss accounting.20
+new targeted tests pass (0.4s), including allowance one-ULP excess protection,
+all exits, coverage/shift overrides, contexts, hashes/tampering and publication
+rollback. Current: full suite underway, no frozen model/calibration changes.
+Next: verified implementation commit/export, then reproducible research demos.
+
+Week9 implementation verified: full suite304 passes (20 new,107.0s),
+ResourceWarning errors enabled; diff check clean. Strict source replay/frozen
+hash evidence, conservative uncertainty/status rules, explicit loss/duty battery
+projection, all exit codes and rollback tested. No old source/model/calibration
+modified. Current: commit implementation and refresh Windows snapshot. Next:
+execute/reproduce8 labeled policy demonstrations and document Week10 readiness.
