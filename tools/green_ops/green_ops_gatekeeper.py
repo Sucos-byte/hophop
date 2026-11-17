@@ -152,7 +152,7 @@ class Parser(argparse.ArgumentParser):
     def error(self,message):raise ValueError(message)
 
 
-def main(argv=None):
+def make_parser():
     parser=Parser(description=__doc__)
     parser.add_argument('--policy',type=Path,required=True);parser.add_argument('--candidate',type=Path,required=True)
     parser.add_argument('--baseline',type=Path);parser.add_argument('--output',type=Path,required=True)
@@ -165,6 +165,11 @@ def main(argv=None):
     parser.add_argument('--baseline-domain',choices=('primary','declared_stress'),default='primary')
     parser.add_argument('--candidate-revision');parser.add_argument('--baseline-revision')
     parser.add_argument('--allow-research-override',action='store_true')
+    return parser
+
+
+def main(argv=None):
+    parser=make_parser()
     try:
         args=parser.parse_args(argv);output=args.output.expanduser().resolve()
         inputs=[v.expanduser().resolve() for k,v in vars(args).items() if isinstance(v,Path) and k!='output']

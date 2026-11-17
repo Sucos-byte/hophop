@@ -740,3 +740,20 @@ Rust1.99.1/Python3.14.4; offline host default test passed using existing exclusi
 Third-party pins verified from official GitHub release/commit pages; shell Git
 network DNS unavailable. Current: commit plan; next implementation/tests, workflow
 and local validation. No source/models/calibration edits, push or remote posting.
+
+Plan freeze8b65a64 committed; Windows snapshot refreshed. Implemented strict
+hash/policy-bound Markdown validator/renderer, atomic JSON+Markdown gate wrapper,
+software-only expected-default-ABSTAIN smoke.32 targeted reporter+gate tests pass
+(11 new), including all statuses, escaping, missing attributions, units/hashes,
+collisions/rollback and exact gate exits; renderer failure blocks1. Current:
+full Python suite underway; next verified code commit/export and workflow/builds.
+Only gate parser extraction refactor; decision semantics/models/calibration unchanged.
+
+Reporter/wrapper release full Python suite316 passes (11 new,108.6s), ResourceWarning
+errors enabled. Software smoke verifies exact defaultABSTAIN3/no override and
+byte determinism; no candidate approval. Reusable Rust host/default+all-features,
+8 telemetry tests and ARM no_std compile pass locally with installedstable=1.99.1.
+Workflow YAML parse/duplicate/security-contract checks pass (optional localPyYAML);
+actionlint absent, no remote execution. Firmware enabled normal attempt DNS-failed;
+cache-only retry passed. Disabled cached build underway. Current: commit verified
+reporter code then workflow/build milestone; next eight-status rendering evidence.

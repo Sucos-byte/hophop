@@ -10,3 +10,11 @@ No posting/upload, push/deploy/protection changes; Windows snapshot per policy.
 Default evidence must abstain, overrides never enabled silently. Renderer/smoke
 software success is not candidate approval. Track unavailable remote/validator
 checks explicitly. Keep all frozen model/calibration results unchanged.
+
+Release316 Python tests pass (108.6s),32 targeted reporter+gate tests pass.
+New reporter/wrapper/smoke verified; parser extraction preserves gate semantics.
+Rust script local host+all-features/8telemetry/ARM no_std checks pass. New workflow
+YAML/security checks pass; actionlint unavailable, remote execution unverified.
+Both cached nrf9151-dk example builds (profiling on/off) passed; initial online
+attempt DNS-failed. Current: commit reporter milestone/export, then workflow/
+build evidence commit/export; next render/reproduce8 saved decision examples.
