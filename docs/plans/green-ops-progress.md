@@ -535,3 +535,17 @@ Current: Week7 review complete,270 passing tests; exact reproduction and fresh
 Week8 proposal archived. Next: separately authorized Week8 work with final
 lineage audit and recipe freeze before fresh calibration/assessment outcomes.
 No push/publish; original selection/models/predictions unchanged.
+
+## Week8 entry and pre-analysis freeze
+
+Verified clean00c19c2; branch green-ops/week8-uncertainty-explainability created.
+Read Week7 review/results/handoff/tracker and actual model/data/contract APIs.
+Plan and recipe freeze60 new families,30calibration/30evaluation,900 nominal
+plus900 evaluation-family sensitivity rows. Prior inventory3460 source files,
+48 excluded families; zero semantic overlap. Two unkeyed v1 parser demos have
+no configured workload or energy labels, explicitly resolved in lineage snapshot.
+Frozen raw family-max absolute residual95% rank rule,20 block permutations,
+signed training-mean contributions and four fixed-alpha leave-one-feature-out
+ablations. No new outcomes generated/scored. Week7 models/selection unchanged.
+Current: commit pre-analysis freeze. Next: implement/test strict study APIs and
+numerical methods, then fit ablations/calibration before evaluation. No push.
