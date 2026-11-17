@@ -274,3 +274,8 @@ overflow and safe-mean edge cases. Legacy publisher defaults remain unchanged;
 exact-text publication is opt-in for source snapshots. Current task: commit this
 verified milestone. Next: reproducible two-run workflow, documentation, final
 full suite and scientific/compatibility review.
+
+Artifact/sensitivity milestone committed as `9f13f8f`. Current task: final
+workflow/demo/documentation and verification. Next: execute two distinct saved
+workloads through generation and table CLI; run the full changed suite once,
+review scientific claims and leave a committed handoff. 34 focused checks pass.
