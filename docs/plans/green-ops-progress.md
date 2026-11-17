@@ -1010,3 +1010,18 @@ Next proposed implementation requires its own task; latency/exact original
 features/cadence/portability/academic acceptance decisions carried to supervisor.
 No immediate user action/blocker for this completed audit. Final docs-only
 checkpoint and atomic Windows refresh; no push/publication/merge/deploy.
+
+Dashboard demo started from verified cleanbe90857; branch green-ops/dashboard-demo.
+Small implementation plan and field-to-artifact mapping written before UI/code.
+Current explicit pinned snapshot adapters and localhost-only read-only server;
+next responsive views/tests/browser checks. No training/gate/hardware execution,
+new measurement or frozen artifact edits. Observability sprint remains next backend.
+
+Dashboard implementation milestone: all5 saved-artifact views implemented with
+explicit pinned catalog/adapters, localhost-only GET/HEAD server, inert resources,
+CSP, responsive local assets, filters/pagination and persistent provenance labels.
+14targeted tests pass (ResourceWarning errors,0.875s), JS syntax passes. Actual
+loaded counters preserve0detections/552violations/1920ABSTAIN/576control blocks.
+Week7/8 record/run/group and row/family coverage distinctions validated. Current
+commit initial verified implementation/export; next browser desktop/narrow checks,
+full suite, documentation/screenshots. No frozen inputs/models/results changed.

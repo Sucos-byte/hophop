@@ -1,0 +1,171 @@
+{
+  "catalog_version": 1,
+  "checkpoint": "be9085791649aa90baf676a3c6ca78409566b0b1",
+  "resources": {
+    "audit": {
+      "kind": "text",
+      "path": "docs/green-ops-requirements-evidence-audit.md",
+      "sha256": "59d21072d6e34bb29d4c9f505832b57c90d72e3aa129994cca208ea22a6dbb13"
+    },
+    "gate-abstain-crossing": {
+      "kind": "json",
+      "path": "docs/results/week9/reports/abstain_crossing.json",
+      "sha256": "7f9257503d2cd1bae328533bf24c354311d48b69cfb9d742c43089b30ff8485a"
+    },
+    "gate-battery-five-years-fail": {
+      "kind": "json",
+      "path": "docs/results/week9/reports/battery_five_years_fail.json",
+      "sha256": "541813a740b7ca402f80b41bf04540ebba90bc002a73b23df0afbcd996b890bd"
+    },
+    "gate-battery-missing-workload-abstain": {
+      "kind": "json",
+      "path": "docs/results/week9/reports/battery_missing_workload_abstain.json",
+      "sha256": "97194933ec335295fdd9a3bc6285665637597a1e9585558ea62523740dd7d0a5"
+    },
+    "gate-default-coverage-abstain": {
+      "kind": "json",
+      "path": "docs/results/week9/reports/default_coverage_abstain.json",
+      "sha256": "f68ae81459a068d6859b7f35df75fde57398d055a88ab35c6af46d3aa0e1ddbd"
+    },
+    "gate-error-wrong-units": {
+      "kind": "json",
+      "path": "docs/results/week9/reports/error_wrong_units.json",
+      "sha256": "255302e4a858d265349e64faeae779e49f0eabb4f5798ca5418132591a738709"
+    },
+    "gate-fail-upper": {
+      "kind": "json",
+      "path": "docs/results/week9/reports/fail_upper.json",
+      "sha256": "10e360b752d37879fbdb79259bc283e35e8c01db7235e7430c4e8d8ff56458bf"
+    },
+    "gate-index": {
+      "kind": "json",
+      "path": "docs/results/week9/demo-summary.json",
+      "sha256": "92b7cc1b2ea705ea4098e85eb2e2da6290130c5b3762f06d4fe97dd289d4cc97"
+    },
+    "gate-pass-upper": {
+      "kind": "json",
+      "path": "docs/results/week9/reports/pass_upper.json",
+      "sha256": "d7426ceedc7d7b59ef263ee1499cd6bae7ec483d53764fbff4f781be086336f8"
+    },
+    "gate-same-features-regression": {
+      "kind": "json",
+      "path": "docs/results/week9/reports/same_features_regression.json",
+      "sha256": "cb9c97d081569d965e50e98d35ee280243b31e1d98bd1f237ebd1509f6471d08"
+    },
+    "policy-abstain-crossing": {
+      "kind": "json",
+      "path": "docs/results/week9/policies/abstain_crossing.json",
+      "sha256": "27ef4bc7e4039ada41ea5699b8b01a20711e91d96a220c280827f3cfb8fcaf2d"
+    },
+    "policy-battery-five-years-fail": {
+      "kind": "json",
+      "path": "docs/results/week9/policies/battery_five_years_fail.json",
+      "sha256": "2ba13dfe2312147b2f791cc2c461a99cc01938078ce346e0d9558860e05f0bb6"
+    },
+    "policy-battery-missing-workload-abstain": {
+      "kind": "json",
+      "path": "docs/results/week9/policies/battery_missing_workload_abstain.json",
+      "sha256": "0bd646eeda49ee8fb9d57a2472f02fe773f1ea19a4ec5be7e403125c8199d885"
+    },
+    "policy-default-coverage-abstain": {
+      "kind": "json",
+      "path": "docs/results/week9/policies/default_coverage_abstain.json",
+      "sha256": "99468f2af6fe0c034ecb70eb5e976adc0861d3b084261a3d75d9ddb070d99a84"
+    },
+    "policy-error-wrong-units": {
+      "kind": "json",
+      "path": "docs/results/week9/policies/error_wrong_units.json",
+      "sha256": "736d7f6dc994ef1fd5a726922a9eb0d4c15269be2328f02f48aa04e6b2003e4a"
+    },
+    "policy-fail-upper": {
+      "kind": "json",
+      "path": "docs/results/week9/policies/fail_upper.json",
+      "sha256": "bafbd257c1cd41ed18431281be7f2c97ee4f920dbf0b6b51f7e7aa0136618d80"
+    },
+    "policy-pass-upper": {
+      "kind": "json",
+      "path": "docs/results/week9/policies/pass_upper.json",
+      "sha256": "3a2c118584eb9ac678990804a027eb497cb81a69bed166bd5ff8b440c9ddfa49"
+    },
+    "policy-same-features-regression": {
+      "kind": "json",
+      "path": "docs/results/week9/policies/same_features_regression.json",
+      "sha256": "d407e03735d88038e186218d8b1955baaadea0d853bbd42483244a04ffb41d59"
+    },
+    "project": {
+      "kind": "text",
+      "path": "docs/green-ops-project-results.md",
+      "sha256": "9c1adf2e84e268a8c94ebae8bbb1650665d830460fcdd1c8d15cc84acb662c6c"
+    },
+    "sprint": {
+      "kind": "text",
+      "path": "docs/plans/green-ops-observability-sprint.md",
+      "sha256": "c0dc23b5907b2da8495ee692b3d9780434d28cc4026cdba6ae662ab02d86c4fa"
+    },
+    "w12-aggregate": {
+      "kind": "json",
+      "path": "docs/results/week12/aggregate.json",
+      "sha256": "1c203fd041b5cadce22d141a426bb530e75595e01efca62c809b0201e12212ca"
+    },
+    "w12-cases": {
+      "kind": "jsonl",
+      "path": "docs/results/week12/cases.jsonl",
+      "sha256": "af441adb389dc9a7f9c59c2169749717c9f27877163bbc8275567f4b26857030"
+    },
+    "w12-execution": {
+      "kind": "json",
+      "path": "docs/results/week12/execution.json",
+      "sha256": "a46b7efe362ef4b32397d658d5ded4f62315d1a1e5b56aae0cac0a599f8468a8"
+    },
+    "w12-manifest": {
+      "kind": "json",
+      "path": "docs/results/week12/manifest.json",
+      "sha256": "024007b87adc8b81644d56b07b288f5b9fdec0076aae7100ae511fe0a7ff5063"
+    },
+    "w12-recipe": {
+      "kind": "json",
+      "path": "tools/green_ops/recipes/week12-fault-benchmark-v1.json",
+      "sha256": "f0340476576f6603302c0c33ad9aa62c701d58eada8fae3130cad78d3b03ac29"
+    },
+    "w7-evaluation": {
+      "kind": "json",
+      "path": "docs/results/week7-regression-v1/evaluation/evaluation.json",
+      "sha256": "17e1728c7423bbc35af88146e3a75a38973ab3a6c7e0bd5e5c26fd0129040f12"
+    },
+    "w7-predictions": {
+      "kind": "json",
+      "path": "docs/results/week7-regression-v1/evaluation/predictions.json",
+      "sha256": "aedbf3b2145329754503cfbca1c6a7abca86e2b56b7ed55588dcc7390db40ee3"
+    },
+    "w7-recipe": {
+      "kind": "json",
+      "path": "tools/green_ops/recipes/week7-regression-v1.json",
+      "sha256": "4a979b6cec4555c27d1813f33dc8481410e1ba2382dec2bb93b8366be32d1daf"
+    },
+    "w7-selection": {
+      "kind": "json",
+      "path": "docs/results/week7-regression-v1/training/selection.json",
+      "sha256": "31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b"
+    },
+    "w8-calibration": {
+      "kind": "json",
+      "path": "docs/results/week8/calibration/calibration-set.json",
+      "sha256": "f686446aa1b6e124cc3c60cc01341953c8ffaa05132a6ab002245cf6276fc5b4"
+    },
+    "w8-evaluation": {
+      "kind": "json",
+      "path": "docs/results/week8/evaluation/evaluation.json",
+      "sha256": "74a86bbeb117b6907afc355e016bbc5aefcea1c81de2d8d0ef34e78d2729329c"
+    },
+    "w8-predictions": {
+      "kind": "json",
+      "path": "docs/results/week8/evaluation/predictions.json",
+      "sha256": "a562594c151f3619dbaf8c8263714d92c4d9cb8993da33d8b4b6d381a70a4d8b"
+    },
+    "w8-recipe": {
+      "kind": "json",
+      "path": "tools/green_ops/recipes/week8-uncertainty-v1.json",
+      "sha256": "547c93bf038eb9a064571f3d1d46f28fb071e1f76106673ec537e597d3cb20fa"
+    }
+  }
+}
