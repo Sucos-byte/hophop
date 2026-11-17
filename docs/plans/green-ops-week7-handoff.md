@@ -19,3 +19,5 @@ all old val/test/stress consumed. New seeds alone never establish new groups.
 All results analytical_simulation; same law/assumptions do not prove physical
 independence or exchangeability. No calibration/explainability implemented,
 no physical measurements. No push/publish. Verify Git status before resuming.
+
+Final review/evidence commitadcd44f; corrections6a35879. Work complete.

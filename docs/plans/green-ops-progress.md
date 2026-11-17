@@ -529,3 +529,9 @@ new seeds alone are insufficient. Familywise calibration uses30 units, not450.
 Same generating law remains a physical-validation limitation.
 Current: commit final review/evidence milestone. Next: separately authorized
 Week8 implementation after final lineage/recipe freeze. No push/publish.
+
+Final review/evidence milestone committed locally asadcd44f (correction6a35879).
+Current: Week7 review complete,270 passing tests; exact reproduction and fresh
+Week8 proposal archived. Next: separately authorized Week8 work with final
+lineage audit and recipe freeze before fresh calibration/assessment outcomes.
+No push/publish; original selection/models/predictions unchanged.
