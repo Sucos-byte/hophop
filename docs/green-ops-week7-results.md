@@ -143,3 +143,7 @@ or scoring. Frozen selection/model hashes remain those committed before test.
 The prediction CLI example exactly matches its saved held-out prediction.
 V1, dataset v2, feature-contract3 and analytical artifact/table compatibility
 remain intact. No optional libraries, calibration or explainability were added.
+
+Final verified evaluation/compatibility milestone: `ebd9998`; frozen model
+selection checkpoint: `8b18a39`. A documentation-only progress/handoff checkpoint
+follows. No unchanged-suite rerun is required for that checkpoint.

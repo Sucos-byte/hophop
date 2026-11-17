@@ -101,6 +101,6 @@ scores. Results/docs include weak power stress performance honestly. Final
 prediction compatibility adds recipe/full-slot/retry policy and consumed-snapshot
 hash checks without changing frozen estimator state or saved scores. All270
 locked inputs pass the guard. Current task: commit final results/compatibility
-milestone, then immediately update tracker/handoff with actual hash. Next is a
+milestone completed as ebd9998; tracker/handoff updated. Next is a
 separately requested Week8 calibration/explainability design; current held-out
 sets are already observed, and physical validation remains pending.

@@ -2,8 +2,11 @@
 
 Branch green-ops/week7-ml-regression; entry9138511. Milestones:6c4662e recipe
 freeze,13b6064 data,ea8fafd core,58cbe92 pre-experiment workflow,8b18a39 selected
-models BEFORE any real held-out score. Current: final results/compatibility
-milestone verified and ready for commit; next immediately record its hash.
+models BEFORE any real held-out score. Final results/compatibility milestone
+ebd9998. Current: Week7 software pilot complete; no implementation pending.
+Next: separately requested Week8 calibration/explainability design, with new
+group-disjoint calibration/evaluation data. Do not reuse observed test scores
+for tuning while calling them untouched.
 
 Full suite267 passes (21 new tests), ResourceWarning errors; git diff --check.
 540 primary/36 families,24/6/6 train/validation/test, plus180 stress rows.
@@ -19,7 +22,7 @@ week7-regression-v1. Compatibility guards require recipe bytes for prediction
 (--recipe FILE) and full-slot offers/retry cap, plus original manifest digest.
 These tighten new-input checks only; all270 locked inputs pass; no scores changed.
 
-No Week7 implementation remains after final commit. Next separately requested
+No Week7 implementation remains. Next separately requested
 Week8: predeclare new group-disjoint calibration/evaluation data before interval
 or attribution choices. Existing validation selected models; existing test/
 stress are already observed. No uncertainty/explainability implemented here.

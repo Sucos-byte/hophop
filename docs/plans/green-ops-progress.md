@@ -474,3 +474,12 @@ verified results/compatibility milestone and immediately record actual hash.
 Next: Week8 separately requested work with new group-disjoint calibration and
 assessment data; no uncertainty or explainability implementation performed.
 Physical calibration remains pending; no actual effort hours, push or publish.
+
+Final Week7 evaluation/results and prediction-compatibility milestone committed
+as `ebd9998`. Frozen real choices/models remain byte-identical to pre-test
+`8b18a39`; no held-out tuning/refit. Verified code267 tests passes (21 new),
+ResourceWarning errors enabled. Current: completed Week7 software pilot, final
+documentation-only resumption checkpoint. Next: separately requested Week8 work
+with a new predeclared group-disjoint calibration/evaluation design. Existing
+validation/test/stress are consumed; no calibrated uncertainty or physical
+accuracy claimed. No push/publish; actual research hours unreported.
