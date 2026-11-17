@@ -8,7 +8,7 @@ results doc. Original Week7 selection/models unchanged, no held-out tuning.
 Current: Week8 complete; release suite284 passes (108.5s), ResourceWarning
 errors enabled. Exact replay passes after final dataset-digest and seed/run
 compatibility guards, with no numerical changes. Final verified results/evidence
-commit pending; next record its hash, then separately authorized Week9 work.
+committed541bda5; next separately authorized Week9 work.
 Read docs/green-ops-week8-results.md and docs/results/week8/reproduction.json.
 
 Real data build/green-ops-week8-data, independent regeneration -data-replay;
@@ -23,3 +23,6 @@ Week9: research-only gatekeeper can proceed with scope/provenance/abstention
 checks and explicit coverage failures. No physical95% guarantee or deployment
 readiness. All new sets now consumed; tuning requires new group-disjoint final
 data. No hardware actuation, fake PPK2, push/publish or inferred research hours.
+
+Final verified results/compatibility commit541bda5. Week8 complete; no pending
+implementation. Next separately authorized Week9 work. Verify clean Git status.

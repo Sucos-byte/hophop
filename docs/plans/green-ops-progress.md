@@ -642,3 +642,9 @@ Current: commit final verified results/compatibility milestone. Next: separately
 authorized Week9 research-only gatekeeper; physical/hardware95% assurance gate
 not satisfied. All calibration/evaluation/stress now consumed. No push/publish,
 no hardware actuation, no inferred research hours.
+
+Final verified Week8 results/compatibility milestone committed541bda5.
+Current: Week8 complete,284 tests and exact replay pass; all results remain
+analytical_simulation and original Week7 models/selection unchanged. Next:
+separately authorized Week9 research gatekeeper, with explicit coverage failure,
+provenance/scope/abstention rules and no hardware assurance claim. No push/publish.
