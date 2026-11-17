@@ -74,3 +74,135 @@ def load_ppk2_summary(path, *, expected_run_id=None):
         )
     validate_ppk2_summary(data, expected_run_id=expected_run_id)
     return data
+
+
+_V2_FIELDS = {
+    "summary_version",
+    "run_id",
+    "instrument",
+    "target_mean_power_mw",
+    "target_total_energy_mj",
+    "window_id",
+    "window_duration_ms",
+    "voltage_v",
+    "raw_capture_sha256",
+    "alignment_reference_sha256",
+}
+
+
+def _v2_finite_number(value, field, *, positive=False):
+    if type(value) not in {int, float}:
+        raise ValueError(f"{field} must be a finite number")
+    try:
+        finite = math.isfinite(value)
+    except OverflowError:
+        finite = False
+    if not finite or value < 0 or (positive and value == 0):
+        qualifier = "positive" if positive else "nonnegative"
+        raise ValueError(f"{field} must be finite and {qualifier}")
+
+
+def validate_ppk2_summary_v2(
+    data,
+    *,
+    expected_run_id,
+    window,
+    duration_tolerance_ms=1.0,
+    duration_tolerance_fraction=0.001,
+    max_alignment_uncertainty_ms=1.0,
+    energy_tolerance_mj=0.001,
+    energy_tolerance_fraction=0.001,
+):
+    """Return a validated independent copy of a bounded PPK2 summary.
+
+    Checks summary consistency and declared alignment, not physical authenticity.
+    Tolerances are engineering policy settings, not instrument specifications.
+    """
+    import copy
+    from measurement_window import validate_measurement_window
+
+    policies = {
+        "duration_tolerance_ms": duration_tolerance_ms,
+        "duration_tolerance_fraction": duration_tolerance_fraction,
+        "max_alignment_uncertainty_ms": max_alignment_uncertainty_ms,
+        "energy_tolerance_mj": energy_tolerance_mj,
+        "energy_tolerance_fraction": energy_tolerance_fraction,
+    }
+    for field, value in policies.items():
+        _v2_finite_number(value, field)
+    for field in (
+        "duration_tolerance_fraction", "energy_tolerance_fraction",
+    ):
+        if policies[field] > 1:
+            raise ValueError(f"{field} must not exceed one")
+
+    validated_window = validate_measurement_window(
+        window, expected_run_id=expected_run_id
+    )
+    if not isinstance(data, dict) or set(data) != _V2_FIELDS:
+        raise ValueError("PPK2 v2 summary must contain exactly the documented fields")
+    if type(data["summary_version"]) is not int or data["summary_version"] != 2:
+        raise ValueError("bounded measurement requires summary_version integer 2")
+
+    for field in ("run_id", "window_id"):
+        _identifier(data[field], field)
+    if data["run_id"] != expected_run_id:
+        raise ValueError("PPK2 summary run_id mismatch")
+    if data["window_id"] != validated_window["window_id"]:
+        raise ValueError("PPK2 summary window_id mismatch")
+    if data["instrument"] != "nordic-ppk2":
+        raise ValueError("instrument must be nordic-ppk2")
+
+    for field in (
+        "target_mean_power_mw", "target_total_energy_mj",
+        "window_duration_ms", "voltage_v",
+    ):
+        _v2_finite_number(data[field], field, positive=True)
+
+    for field in ("raw_capture_sha256", "alignment_reference_sha256"):
+        value = data[field]
+        if not isinstance(value, str) or re.fullmatch(r"[0-9a-f]{64}", value) is None:
+            raise ValueError(f"{field} must be a lowercase SHA-256")
+
+    alignment = validated_window["alignment"]
+    if alignment["method"] not in {"gpio", "serial"}:
+        raise ValueError("PPK2 measurement requires physical alignment evidence")
+    if alignment["uncertainty_ms"] > max_alignment_uncertainty_ms:
+        raise ValueError("alignment uncertainty exceeds policy")
+    if (
+        data["alignment_reference_sha256"]
+        != alignment["reference_artifact_sha256"]
+    ):
+        raise ValueError("PPK2 alignment reference mismatch")
+
+    expected_duration = validated_window["window_duration_ms"]
+    permitted_duration_difference = max(
+        duration_tolerance_ms,
+        duration_tolerance_fraction * expected_duration,
+    )
+    if (
+        abs(data["window_duration_ms"] - expected_duration)
+        > permitted_duration_difference
+    ):
+        raise ValueError("PPK2 duration does not match measurement window")
+
+    try:
+        expected_energy = (
+            data["target_mean_power_mw"]
+            * (data["window_duration_ms"] / 1000.0)
+        )
+    except OverflowError as error:
+        raise ValueError("derived energy is outside numeric range") from error
+    _v2_finite_number(expected_energy, "derived energy", positive=True)
+
+    permitted_energy_difference = max(
+        energy_tolerance_mj,
+        energy_tolerance_fraction * expected_energy,
+    )
+    if (
+        abs(data["target_total_energy_mj"] - expected_energy)
+        > permitted_energy_difference
+    ):
+        raise ValueError("PPK2 energy is inconsistent with mean power and duration")
+
+    return copy.deepcopy(data)
