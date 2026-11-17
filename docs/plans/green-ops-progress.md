@@ -660,3 +660,15 @@ c78705f, clean before these documentation edits; tested source unchanged (284
 release tests, code committed541bda5). Current: commit setup docs then publish
 fresh exact branch/HEAD/status snapshot. Next: separately authorized Week9 work;
 no completed coding task restarted and no unchanged-code tests repeated.
+
+## Week9 entry and policy-semantics freeze
+
+Verified clean340a5b7; created green-ops/week9-gatekeeper. Read authoritative
+tracker, Week8 results/handoff, actual APIs and standing Windows export rules.
+Plan/default policy freeze statuses/exits, interval boundaries, logical marginal
+regression comparison (no calibrated difference claim), default coverage abstention,
+two-part explicit research override, compatible workloads and battery units/loss
+accounting. Observed nominal family coverage28/30,28/30,26/30 inadequate95%;
+assumption shifts have no coverage guarantee. No retraining/recalibration/tuning.
+Current: commit plan/default policy; next implementation/tests. Latest verified
+source remains284 Week8 tests (541bda5); new policy/docs only, not code verified yet.
