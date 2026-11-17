@@ -31,3 +31,24 @@ Keep prediction inputs and targets disjoint, distinguish pre-run configuration f
 ## Communication
 
 Explain changes and impact plainly; announce confirmed milestones, update the progress tracker with actual hashes/test counts, and distinguish software progress from physical evidence. User prefers GPT-6.1 Sol Medium for routine implementation, High for validation/schema/design work when available. Do not ask the user to paste routine coding commands when native execution works. Ask for help only when required. Avoid claiming measured hours, overall completion percentages or hardware results without evidence.
+
+
+## Native continuation completed — 17 November 2026
+
+The original baseline/next-action sections above are historical. Week 5 software
+Tasks 0–7 are now implemented and locally committed:
+
+- `822679f`: aligned dataset v2, strict file API/CLI, feature registry v2.
+- `c037dd8`: strict artifacts and provenance-filtered deterministic tables.
+- `f119f2d`: table CLI and reserved output lifecycle.
+- `637afb0`: official-source acquisition protocol, migration guide and demo.
+- `e064cfa`: final contract hardening; 182 tests pass with ResourceWarning errors.
+
+The acceptance demo at `/tmp/green-ops-week5-demo` produced two synthetic
+unmeasured rows with null labels and a separate two-row analytical contract-test
+table. No physical capture or calibrated model exists from this execution.
+Reproduce using `python3 tools/green_ops/demo_dataset_v2.py NEW_DIRECTORY`.
+Next planned software is Week 6's explicitly sourced analytical generator;
+do not mistake the fixed Week 5 contract fixtures for that generator. Lab
+acquisition and actual effort logging remain pending. No push or publish was
+performed. Verify actual Git status before any later continuation.

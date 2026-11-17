@@ -193,3 +193,9 @@ PPK2 errors. Full suite: **182 tests passing**, ResourceWarning as errors;
 or analytical contract-test evidence. Tasks 0–7 are complete for software scope;
 no push/publish performed. Research hours and physical calibration remain
 unreported/pending, rather than inferred from test counts.
+
+
+Final validation changes committed as `e064cfa`; 182 passing tests. The native
+handoff now records completed Week 5 milestones and separates the next planned
+Week 6 generator from the fixed analytical contract fixtures. Documentation-only
+checkpoint follows; no unchanged-suite rerun is required.
