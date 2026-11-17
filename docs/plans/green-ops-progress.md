@@ -148,3 +148,10 @@ preserved. Full suite: 165 tests passing with ResourceWarning as errors;
 `git diff --check` passes. No hardware measurements were performed.
 Next: strict dataset artifact validator and provenance-filtered multi-run table.
 Actual research hours have not been supplied and are not inferred.
+
+Dataset v2 committed as `822679f` (165 passing tests). Task 4 implemented:
+strict typed CSV/manifest loading, CSV digest and identity checks, analytical
+reference checks, deterministic provenance filtering, target missing policies,
+null preservation and duplicate rejection. Eight focused table tests pass.
+The table validates summary contracts and byte identity, not physical truth.
+Next: table CLI and atomic output integration.
