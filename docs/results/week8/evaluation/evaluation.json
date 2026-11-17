@@ -1,0 +1,2063 @@
+{
+  "ablation_sha256": "8f971502c475a6eeb0a9110e5f28af07c97073e60debb73667463e380c57b875",
+  "ablations": {
+    "target_energy_per_delivered_packet_uj": {
+      "ablations": {
+        "interval_ms": {
+          "rmse_minus_frozen": 19127.180672003444,
+          "scores": {
+            "mae": 16787.214779126865,
+            "r2": -0.05534785530716624,
+            "r2_undefined_reason": null,
+            "rmse": 21154.489138275796,
+            "sample_count": 450
+          }
+        },
+        "payload_size_bytes": {
+          "rmse_minus_frozen": 240.1217915318639,
+          "scores": {
+            "mae": 1363.1550098431724,
+            "r2": 0.9878756511541603,
+            "r2_undefined_reason": null,
+            "rmse": 2267.4302578042157,
+            "sample_count": 450
+          }
+        },
+        "tx_power_dbm": {
+          "rmse_minus_frozen": 0.0,
+          "scores": {
+            "mae": 1046.4927795582396,
+            "r2": 0.9903076248370377,
+            "r2_undefined_reason": null,
+            "rmse": 2027.3084662723518,
+            "sample_count": 450
+          }
+        },
+        "window_duration_ms": {
+          "rmse_minus_frozen": 82.3373143570534,
+          "scores": {
+            "mae": 1073.4050377048918,
+            "r2": 0.9895043429708886,
+            "r2_undefined_reason": null,
+            "rmse": 2109.645780629405,
+            "sample_count": 450
+          }
+        }
+      },
+      "frozen": {
+        "mae": 1046.4927795582396,
+        "r2": 0.9903076248370377,
+        "r2_undefined_reason": null,
+        "rmse": 2027.3084662723518,
+        "sample_count": 450
+      },
+      "missing_label_run_ids": [],
+      "unit": "uJ"
+    },
+    "target_mean_power_mw": {
+      "ablations": {
+        "interval_ms": {
+          "rmse_minus_frozen": 3.752679261245077,
+          "scores": {
+            "mae": 7.829126185234454,
+            "r2": 0.1103672408239208,
+            "r2_undefined_reason": null,
+            "rmse": 9.534027029296723,
+            "sample_count": 450
+          }
+        },
+        "payload_size_bytes": {
+          "rmse_minus_frozen": 1.3935384665503951,
+          "scores": {
+            "mae": 5.193450947298071,
+            "r2": 0.49616533167357213,
+            "r2_undefined_reason": null,
+            "rmse": 7.174886234602042,
+            "sample_count": 450
+          }
+        },
+        "tx_power_dbm": {
+          "rmse_minus_frozen": 0.0,
+          "scores": {
+            "mae": 4.877670035058856,
+            "r2": 0.6728731453035619,
+            "r2_undefined_reason": null,
+            "rmse": 5.7813477680516465,
+            "sample_count": 450
+          }
+        },
+        "window_duration_ms": {
+          "rmse_minus_frozen": 0.0019245748175888977,
+          "scores": {
+            "mae": 4.876944846125867,
+            "r2": 0.6726553120495786,
+            "r2_undefined_reason": null,
+            "rmse": 5.783272342869235,
+            "sample_count": 450
+          }
+        }
+      },
+      "frozen": {
+        "mae": 4.877670035058856,
+        "r2": 0.6728731453035619,
+        "r2_undefined_reason": null,
+        "rmse": 5.7813477680516465,
+        "sample_count": 450
+      },
+      "missing_label_run_ids": [],
+      "unit": "mW"
+    },
+    "target_total_energy_mj": {
+      "ablations": {
+        "interval_ms": {
+          "rmse_minus_frozen": 14.670303375030265,
+          "scores": {
+            "mae": 46.302835396949696,
+            "r2": 0.987072121641961,
+            "r2_undefined_reason": null,
+            "rmse": 63.23058709984178,
+            "sample_count": 450
+          }
+        },
+        "payload_size_bytes": {
+          "rmse_minus_frozen": 5.49343314305878,
+          "scores": {
+            "mae": 35.66401978458701,
+            "r2": 0.990552346572999,
+            "r2_undefined_reason": null,
+            "rmse": 54.05371686787029,
+            "sample_count": 450
+          }
+        },
+        "tx_power_dbm": {
+          "rmse_minus_frozen": 0.0,
+          "scores": {
+            "mae": 36.564583112396164,
+            "r2": 0.9923750805599094,
+            "r2_undefined_reason": null,
+            "rmse": 48.56028372481151,
+            "sample_count": 450
+          }
+        },
+        "window_duration_ms": {
+          "rmse_minus_frozen": 505.7390283951902,
+          "scores": {
+            "mae": 470.0024256076942,
+            "r2": 0.006514557569120671,
+            "r2_undefined_reason": null,
+            "rmse": 554.2993121200017,
+            "sample_count": 450
+          }
+        }
+      },
+      "frozen": {
+        "mae": 36.564583112396164,
+        "r2": 0.9923750805599094,
+        "r2_undefined_reason": null,
+        "rmse": 48.56028372481151,
+        "sample_count": 450
+      },
+      "missing_label_run_ids": [],
+      "unit": "mJ"
+    }
+  },
+  "calibration_set_sha256": "f686446aa1b6e124cc3c60cc01341953c8ffaa05132a6ab002245cf6276fc5b4",
+  "coverage_unit": "all_labeled_rows_in_new_family_same_15_row_schedule",
+  "dataset_sha256": "d4a3c8a0ecbaf774274aa33ccd334bdf991180863212a14e5cae47e8b163545e",
+  "evaluation_version": 1,
+  "explanation_sha256": "26cdd40938c6d1c316020b0af00490f0e40bc7e898e9766d69b1a51d3ee68759",
+  "feature_contract_version": 3,
+  "limitation": "Analytical simulation; exchangeability is unproven for these deterministic configuration grids. No hardware coverage or metric confidence interval.",
+  "model_sha256": {
+    "target_energy_per_delivered_packet_uj": "95e90fee96268d211d6e4dc4c26ead7166a1440d52fc9a832f386e10b332c64a",
+    "target_mean_power_mw": "0605d0c3c95cdac6b8fb2941308e21875355e3c5f7dcc6aa922b9590c0dc606b",
+    "target_total_energy_mj": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4"
+  },
+  "nominal_coverage": 0.95,
+  "panels": {
+    "airtime-high": {
+      "target_energy_per_delivered_packet_uj": {
+        "coverage": {
+          "failed_families": [
+            "af-2b12330fe4798eff93baae92360bb4e4",
+            "af-4822652cd39c853f7892c2cbc0a4c878",
+            "af-6e44b287dc03abc16077fc4013112417",
+            "af-b01e1904b018f7a65910c8159ec913cb",
+            "af-cab44398c698420fd224dc674cfdaa48",
+            "af-d3832186d2374b1acde22e01f03fd633"
+          ],
+          "family_count": 30,
+          "family_coverage": 0.8,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 13954.312115380773,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-a4fde1c35fece437dca15b95d29ba202",
+                "ar-e8028a45f80248428322d8687432b402"
+              ],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-069e54a08f160960d1d605cf631a9812",
+                "ar-3457c89bae8031aa5517112dcc1ff245",
+                "ar-8ea7ae9394ae56ca3780fa9a307f44d7",
+                "ar-9406bc669e24324c951ae309489f146c",
+                "ar-a24b2552cc1fc1d9bb24fbce26c8908c"
+              ],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-823609cbfc5a66aa89ab7f93add2c83d"
+              ],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-385768b861f8de5a4e7cd2d8791906c6",
+                "ar-69ef7c9128a4724321ec4154b4282a36",
+                "ar-87fe5b3564407dd9a4e13759118d36f7",
+                "ar-892fbb49fa9be3ff7e05cf26b6c82c96",
+                "ar-d45b90ab28f3a691f95ae5d8ffb6fcb6"
+              ],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-124712db10bc0da6b82d94cfb4dfdbc6",
+                "ar-1d54bb9c7d4cc5b7ff2e3698fffdda10",
+                "ar-21efc982e26a48e03857609ba20fabec",
+                "ar-5cc7dd9933b9760d9fabd7d7dbc1262c",
+                "ar-a8e72428a700142720118f80bf32b5bd",
+                "ar-deea71385332c0f15a249392b2135eca"
+              ],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-1b7bd427c3adc570df9c8d874ba5c5f5",
+                "ar-1c6858cf75d90aac92c0d30f5e69be03",
+                "ar-37c4efa890d90261ffc333e8e2fd0964",
+                "ar-a9f46e744770e786bcfffb57f7754ce9",
+                "ar-b41d89759a2c60fa8bf44a18f192805e"
+              ],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 0.9466666666666667
+        },
+        "point_metrics": {
+          "mae": 2038.4094363098416,
+          "r2": 0.9809463428194231,
+          "r2_undefined_reason": null,
+          "rmse": 2848.648490421749,
+          "sample_count": 450
+        },
+        "q": 6977.156057690387,
+        "unit": "uJ"
+      },
+      "target_mean_power_mw": {
+        "coverage": {
+          "failed_families": [
+            "af-46094968d20af18897f8407ffbf9ff2b",
+            "af-4ee01eecf66d375122c34e67628b7e4c",
+            "af-51b1ae6de92412c11be4c8b64564b0fe",
+            "af-845e4552164cbbfcd13c2542f1ba2019",
+            "af-a20ffb501135e5bb48eec18e5a155c76",
+            "af-ae0c60eac8b976b8450028ffdc4e2da3",
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf"
+          ],
+          "family_count": 30,
+          "family_coverage": 0.7666666666666667,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 26.64481419848977,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-0b58f97d28de975cd048a5fd9d74563c",
+                "ar-12ed4ddc86aa235af0dedeb453de2be9",
+                "ar-16d827d9a49512f445510a4587240719",
+                "ar-17d344a0c6a0d9879f41f3dded9e46b3",
+                "ar-2d9f5db0f7174b221a0c648036dcc5aa",
+                "ar-320f0f5615de60954d0b8b34c339d77d",
+                "ar-338974886f9d294c3616c026b6a068c4",
+                "ar-49b3348c3445f4e838ae0a7628ac31ec",
+                "ar-62171a0c86e6a21b61b109c9e8dd4a1a",
+                "ar-7515f4fb65c1220c2ee0e2149c959411",
+                "ar-7eb06506335ce5691cc53487f9a71877",
+                "ar-d2d744d4236c1894e39af35df8d7d517",
+                "ar-e6409367f1bec28b6255b2ae6ae4d250",
+                "ar-e7b2c74144db933e143d884ac7b543bb",
+                "ar-fb3a258c3f267d148848c9ad2967e73f"
+              ],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-00b3f604a8eeec8479ec4f8ac53ce8f5",
+                "ar-04ad32aa62d73da6cfd9b2d17355423c",
+                "ar-19bc7fcc262279bd2b305ad4fa0790e8",
+                "ar-23aa7fbfc89873f79835a5ec81eb88bb",
+                "ar-2a59eb12d51d45cbb4582d88e896cedf",
+                "ar-46bf9997d451155053229f7aaec88f7e",
+                "ar-6ac47262e98a3307835730dfe19b4fd1",
+                "ar-7c4c448ee2be3ce371fc615a6a693822",
+                "ar-899315c8c4cb2dac15cb36fa1c89528b",
+                "ar-cd6e9a9e21f5785eb8e19fd4f963e71f",
+                "ar-f45d1a0df1169053f62de537d5c2d9cd",
+                "ar-f91c64988c6379e1dffd54fd2131dce6"
+              ],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-0291b3eb47bc09e1381fd75b8db8faaf",
+                "ar-1c6ff0c9913c8582e2648883a1c22e7b",
+                "ar-223c8b887d7526fea52ac78a2d439473",
+                "ar-415e1465994d8841b8be22573289ed79",
+                "ar-4556057cdcce61f2faceedb4f3d59beb",
+                "ar-56aa5718496c3f7093f865364626d6ed",
+                "ar-64f70f63847da6b677cbd0e69c947896",
+                "ar-675c6c75942a93c194d648f31c51a283",
+                "ar-7ba40a69f43429f9fe21dbaa492480fa",
+                "ar-7f8f7d1d9d20422811fa6cfdf136e9d9",
+                "ar-b49fad28f3dfcdbd6741d086dbf9b25a",
+                "ar-bca62fa2aa4dad92d7177789f34ea733",
+                "ar-bfdbab4d7d952108c516fed0db8bf8c3",
+                "ar-ceb95c236c8e406b4500fdabada5995a",
+                "ar-d9ae6301cab0c4af64647c1653604006"
+              ],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-0b2e85a22eb18d718f53626d2d74a30f",
+                "ar-16fcf581e11dea6a173a84966fc7fc36",
+                "ar-17e765cf4d5c8310955710bc19ff2cbc",
+                "ar-1e1c145fe4025b0f42e391331dcb87d8",
+                "ar-21b1ce290d5ae36c4d34000574ea17d7",
+                "ar-44f3b72a8d79b3c9885b4ae389525393",
+                "ar-5bd269747c26d30beda2b11f8c63b63a",
+                "ar-6f5363f0d9b6d3de7912d30eee4254de",
+                "ar-805010f4999df398d88b8e7fee323954",
+                "ar-82ea517c72940966c9248e0d8e74b229",
+                "ar-922e3c8dbfff50d22576222fbdba019e",
+                "ar-cdee9a5bfc7f5ccdd9a819e1dd7dda4f",
+                "ar-e60a0a068c02d46a8ddada688d3c612c",
+                "ar-e96624f9edeac78713aec0354dbaf083",
+                "ar-efdfd749d0625583483c68d14304c74e"
+              ],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-24bb0031047333367fb594f3566c2599",
+                "ar-29053f44129f139f4da4d087e1224071",
+                "ar-4bb22270614683b927ebf3fca34ae05f",
+                "ar-5c4f0efc1f76478ff26da07e898e0dd4",
+                "ar-602f0fd13d26b364e04fe2d995d88020",
+                "ar-79ee6c2fde2a9f77ad22fe67ba4c6696",
+                "ar-865a354c299c2868d78433afe659cb07",
+                "ar-8ea26c00a5be8d45275b240f443ac164",
+                "ar-8f0b1ab9687ce1ff133c24cb1d503a57",
+                "ar-902814e7cc8c43d01e638001eb55bf4a",
+                "ar-9655e48a361c981d20f112eda873fe32",
+                "ar-9a0ad1d5735d5fefe22e924b5c4b7749",
+                "ar-b220f3cd1d28f3e2499d012b82eafbc9",
+                "ar-c761f68159b83d98d51188da5890131a",
+                "ar-efc3495eeeb1daa8b67f134a5bb6f7b6"
+              ],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-053927dfcb3bafe7f55e6b6c227f0a04",
+                "ar-13cacf8162a7e7027de3587c3c110746",
+                "ar-246f7737bd876fc995d7f2536172ae5d",
+                "ar-2fd55748f126d74bb41a33d4545c3377",
+                "ar-5e7de2152bf0048a6e9b950783e1c25f",
+                "ar-8cfb889a7ca43a58cfef3252e8273721",
+                "ar-b52c0b22ed696fce8dbc89977273c4c1",
+                "ar-bda0da345db021ff88b90d9148389d97",
+                "ar-c008a6f583ab0a9c6f9dcb3e94ae5889",
+                "ar-c26e6b545ba5fad21396ee30c4c1b742",
+                "ar-c2f9ef1ae174cdbf9c23b48253abb9b4",
+                "ar-c33f92b6cbb098ee85b69b9ee8bbc83f",
+                "ar-ef273db925443b8ed568e0700e52c303",
+                "ar-ef3b278dc4ffe89cd1387a5b036643f1",
+                "ar-f475b1986adcb6b9d887b8446fe2d581"
+              ],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-01096e3fe2cb670af74e455d0573f2d6",
+                "ar-012cf497b6f16f4508988ab41e67d245",
+                "ar-2b47ca3be53c867dd2033f3072c99ec3",
+                "ar-34190e1bba62805d4dbd47d584671f8d",
+                "ar-8c1ded89f036720ed36248c3de8226de",
+                "ar-b4e7e43852e63629760504557f7eea84",
+                "ar-bab54734bc38273adc0b1bb0f5a7e5eb",
+                "ar-d3914cfc5ef53e82dc7a6157298a5e8a"
+              ],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 0.7888888888888889
+        },
+        "point_metrics": {
+          "mae": 8.902631627356831,
+          "r2": 0.37433189744039574,
+          "r2_undefined_reason": null,
+          "rmse": 15.642893809948871,
+          "sample_count": 450
+        },
+        "q": 13.322407099244884,
+        "unit": "mW"
+      },
+      "target_total_energy_mj": {
+        "coverage": {
+          "failed_families": [
+            "af-46094968d20af18897f8407ffbf9ff2b",
+            "af-4ee01eecf66d375122c34e67628b7e4c",
+            "af-51b1ae6de92412c11be4c8b64564b0fe",
+            "af-845e4552164cbbfcd13c2542f1ba2019",
+            "af-a20ffb501135e5bb48eec18e5a155c76",
+            "af-ae0c60eac8b976b8450028ffdc4e2da3",
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf"
+          ],
+          "family_count": 30,
+          "family_coverage": 0.7666666666666667,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 354.74640040514396,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-0b58f97d28de975cd048a5fd9d74563c",
+                "ar-12ed4ddc86aa235af0dedeb453de2be9",
+                "ar-17d344a0c6a0d9879f41f3dded9e46b3",
+                "ar-2d9f5db0f7174b221a0c648036dcc5aa",
+                "ar-320f0f5615de60954d0b8b34c339d77d",
+                "ar-62171a0c86e6a21b61b109c9e8dd4a1a",
+                "ar-7515f4fb65c1220c2ee0e2149c959411",
+                "ar-7eb06506335ce5691cc53487f9a71877",
+                "ar-d2d744d4236c1894e39af35df8d7d517",
+                "ar-e7b2c74144db933e143d884ac7b543bb"
+              ],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-00b3f604a8eeec8479ec4f8ac53ce8f5",
+                "ar-23aa7fbfc89873f79835a5ec81eb88bb",
+                "ar-6ac47262e98a3307835730dfe19b4fd1",
+                "ar-cd6e9a9e21f5785eb8e19fd4f963e71f",
+                "ar-f91c64988c6379e1dffd54fd2131dce6"
+              ],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-0291b3eb47bc09e1381fd75b8db8faaf",
+                "ar-1c6ff0c9913c8582e2648883a1c22e7b",
+                "ar-223c8b887d7526fea52ac78a2d439473",
+                "ar-4556057cdcce61f2faceedb4f3d59beb",
+                "ar-64f70f63847da6b677cbd0e69c947896",
+                "ar-7f8f7d1d9d20422811fa6cfdf136e9d9",
+                "ar-bca62fa2aa4dad92d7177789f34ea733",
+                "ar-bfdbab4d7d952108c516fed0db8bf8c3",
+                "ar-ceb95c236c8e406b4500fdabada5995a",
+                "ar-d9ae6301cab0c4af64647c1653604006"
+              ],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-0b2e85a22eb18d718f53626d2d74a30f",
+                "ar-1e1c145fe4025b0f42e391331dcb87d8",
+                "ar-21b1ce290d5ae36c4d34000574ea17d7",
+                "ar-922e3c8dbfff50d22576222fbdba019e",
+                "ar-e96624f9edeac78713aec0354dbaf083"
+              ],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-4bb22270614683b927ebf3fca34ae05f",
+                "ar-602f0fd13d26b364e04fe2d995d88020",
+                "ar-8ea26c00a5be8d45275b240f443ac164",
+                "ar-8f0b1ab9687ce1ff133c24cb1d503a57",
+                "ar-9a0ad1d5735d5fefe22e924b5c4b7749"
+              ],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-053927dfcb3bafe7f55e6b6c227f0a04",
+                "ar-5e7de2152bf0048a6e9b950783e1c25f",
+                "ar-8cfb889a7ca43a58cfef3252e8273721",
+                "ar-c33f92b6cbb098ee85b69b9ee8bbc83f",
+                "ar-ef273db925443b8ed568e0700e52c303",
+                "ar-f475b1986adcb6b9d887b8446fe2d581"
+              ],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-34190e1bba62805d4dbd47d584671f8d",
+                "ar-8c1ded89f036720ed36248c3de8226de",
+                "ar-b4e7e43852e63629760504557f7eea84",
+                "ar-bab54734bc38273adc0b1bb0f5a7e5eb",
+                "ar-fb073d85989ed928766225a9e04c43a8"
+              ],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 0.8977777777777778
+        },
+        "point_metrics": {
+          "mae": 58.943149262510595,
+          "r2": 0.9614460466962831,
+          "r2_undefined_reason": null,
+          "rmse": 117.97441183454843,
+          "sample_count": 450
+        },
+        "q": 177.37320020257198,
+        "unit": "mJ"
+      }
+    },
+    "airtime-low": {
+      "target_energy_per_delivered_packet_uj": {
+        "coverage": {
+          "failed_families": [],
+          "family_count": 30,
+          "family_coverage": 1.0,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 13954.312115380773,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 1.0
+        },
+        "point_metrics": {
+          "mae": 1189.687679992388,
+          "r2": 0.9914802070909876,
+          "r2_undefined_reason": null,
+          "rmse": 1899.8032836559132,
+          "sample_count": 450
+        },
+        "q": 6977.156057690387,
+        "unit": "uJ"
+      },
+      "target_mean_power_mw": {
+        "coverage": {
+          "failed_families": [
+            "af-2b12330fe4798eff93baae92360bb4e4",
+            "af-601929102f2c96323c1ddf986a53fe38",
+            "af-6f98a1ec8b54abafd49425ccd6c1d154",
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf"
+          ],
+          "family_count": 30,
+          "family_coverage": 0.8666666666666667,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 26.64481419848977,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-009e4e39dd1bbaf4638a974479983a8c",
+                "ar-165ee79b3de20928a2ae6eae984e5a85",
+                "ar-2522138508c85be2151cb79ea37007db",
+                "ar-45f00d463ea884f407b7fb38c5dd1ba2",
+                "ar-5e45ad08d0f1feb1ceb1d0944e195905",
+                "ar-63e10f2f3d830f377e58670185488ecf",
+                "ar-808a6a871320b1214184109ebb0f8578",
+                "ar-92748f75e4b19bf8cfeb30a48549a66e",
+                "ar-ab0b139235a5763efc6e017f759d081d",
+                "ar-b4fe6db46d6ac345d9fd616847fd2fa9",
+                "ar-ca6e4960484ad22b8a17d30817f752a6",
+                "ar-cb6c0636e346f540b00387092543410d",
+                "ar-e6e98ddfd42f8b7dd1c4be772916f502"
+              ],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-00e6160cbab06523d40de4c7d5cf7331",
+                "ar-131a77fd1d127d129d3d4e9d0d143d0d",
+                "ar-2d8fff00fafaf2065884f2ecd6b8a33e",
+                "ar-3ae6ff8bf45294cf0142c0c603ff079f",
+                "ar-3ed36d9900288706d1d5e818cec9568b",
+                "ar-4ce2bd4aa3e3ad6d77964f038fa4cafd",
+                "ar-4e5192a61a0a909a21c00440e0d6c00c",
+                "ar-596f3798859c6aee24644498d8c72464",
+                "ar-99c08e24ffc07dc76330317bb4650175",
+                "ar-aef4c85a5ae47ca1ca9ea75f2991571d",
+                "ar-e7e57ea63a1d7678aacd95652b74008b",
+                "ar-e8a72747e223b32bcae2dc2a349f257a",
+                "ar-f4140e8f1e85034258ad0f3297135de5",
+                "ar-f84322afd97defdd33ce4a5f2251955e",
+                "ar-ffad5afe827c5a5bb6271febeb5443a2"
+              ],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-1962b196c9e3d5a00c65fa6accafa12f",
+                "ar-3602246e3c9c5e47579a69d3c2682783",
+                "ar-3ab3214c332e9b61ee3b7354351890bf",
+                "ar-5b6d53fccf072647e891a8c384b6fa7a",
+                "ar-6085adb1e9f506ccb54447c32e2d082a",
+                "ar-8582d46f3eedbf7b46bed9d87eb9a9e7",
+                "ar-87491805d160bf406f2086fccee736ad",
+                "ar-9557b36f5bc0e7374121ef41eb8a0315",
+                "ar-9eda7afcca76a745aaecee04cc4bc947",
+                "ar-d9535946c3f9701055407e3f793212bb",
+                "ar-e40625afaa9247dcefafc743946d097f",
+                "ar-ff741bd051e5daafd51ff962e4d0eab4"
+              ],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-0797cc89b4802f1143a45956fe80c787",
+                "ar-19338a5a867523f439d51e41914d5a08",
+                "ar-2f3cc38ee45661b128c9d82ee38363b0",
+                "ar-36b22c17074920b67d2ef5dbd28fd202",
+                "ar-4c383caff34ebe173b9122762912753f",
+                "ar-596e8c28a7ac041f434795f9c19b1295",
+                "ar-6575d9998726a51cca0243287829e0cc",
+                "ar-85a64982efb23f97ddf898bcd892be16",
+                "ar-b3f1b094c24fb02d929e22a6bbcfd9c6",
+                "ar-b4d920e98056d86d56a768eb862fccd1",
+                "ar-cdd302f63536d8f95895943328cdb2b3",
+                "ar-d0d8a333637912d9b1835a82f1d600da",
+                "ar-d1dbc54160916dd7ed2955e6e03bc58f",
+                "ar-f1eddfb0915119cddf94c6c0736089b4",
+                "ar-fdc191a5048b63af35dd4739fd8dc4e8"
+              ],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 0.8777777777777778
+        },
+        "point_metrics": {
+          "mae": 6.821572392638897,
+          "r2": -1.037621576701853,
+          "r2_undefined_reason": null,
+          "rmse": 7.996929049622951,
+          "sample_count": 450
+        },
+        "q": 13.322407099244884,
+        "unit": "mW"
+      },
+      "target_total_energy_mj": {
+        "coverage": {
+          "failed_families": [],
+          "family_count": 30,
+          "family_coverage": 1.0,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 354.74640040514396,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 1.0
+        },
+        "point_metrics": {
+          "mae": 41.42868961331138,
+          "r2": 0.9913319185599675,
+          "r2_undefined_reason": null,
+          "rmse": 49.91865679913072,
+          "sample_count": 450
+        },
+        "q": 177.37320020257198,
+        "unit": "mJ"
+      }
+    },
+    "primary": {
+      "target_energy_per_delivered_packet_uj": {
+        "coverage": {
+          "failed_families": [
+            "af-4822652cd39c853f7892c2cbc0a4c878",
+            "af-b01e1904b018f7a65910c8159ec913cb",
+            "af-cab44398c698420fd224dc674cfdaa48",
+            "af-d3832186d2374b1acde22e01f03fd633"
+          ],
+          "family_count": 30,
+          "family_coverage": 0.8666666666666667,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 13954.312115380773,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-047225107c4f146b834afd93c1e37196"
+              ],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-aa767bcd65b6969a45aed82069607269"
+              ],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-c5c5e15f462c3e17242e5183ad2dc423"
+              ],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-ee476eb99a664931451da90ba099e35c"
+              ],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 0.9911111111111112
+        },
+        "point_metrics": {
+          "mae": 1046.4927795582396,
+          "r2": 0.9903076248370377,
+          "r2_undefined_reason": null,
+          "rmse": 2027.3084662723518,
+          "sample_count": 450
+        },
+        "q": 6977.156057690387,
+        "unit": "uJ"
+      },
+      "target_mean_power_mw": {
+        "coverage": {
+          "failed_families": [
+            "af-46094968d20af18897f8407ffbf9ff2b",
+            "af-51b1ae6de92412c11be4c8b64564b0fe"
+          ],
+          "family_count": 30,
+          "family_coverage": 0.9333333333333333,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 26.64481419848977,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-5be6d484059cedab6a8419e3861780d7",
+                "ar-780ba27335f00dcfd9436053e38eb888",
+                "ar-79631a2b56a7021bfb864a8caaaa5bee"
+              ],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-3558f4b09f8d3edddd5d3b3a7527321e",
+                "ar-ac3b1e0a937e2cd97623ab15c3a12517"
+              ],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 0.9888888888888889
+        },
+        "point_metrics": {
+          "mae": 4.877670035058856,
+          "r2": 0.6728731453035619,
+          "r2_undefined_reason": null,
+          "rmse": 5.7813477680516465,
+          "sample_count": 450
+        },
+        "q": 13.322407099244884,
+        "unit": "mW"
+      },
+      "target_total_energy_mj": {
+        "coverage": {
+          "failed_families": [
+            "af-46094968d20af18897f8407ffbf9ff2b",
+            "af-51b1ae6de92412c11be4c8b64564b0fe"
+          ],
+          "family_count": 30,
+          "family_coverage": 0.9333333333333333,
+          "labeled_families": 30,
+          "labeled_rows": 450,
+          "mean_width": 354.74640040514396,
+          "missing_label_run_ids": [],
+          "per_family": {
+            "af-0b18718011e6b9f4921b52391865a0b8": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2b12330fe4798eff93baae92360bb4e4": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-2e7abe676361bd836a6fd39c53ac964e": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-46094968d20af18897f8407ffbf9ff2b": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-3db6fa588717d8de2d698f9c6895aaf9",
+                "ar-79631a2b56a7021bfb864a8caaaa5bee",
+                "ar-8d0e20d337b1909d6786ba5e90198ebd",
+                "ar-9305d238888fdf178ef1feb152e12297",
+                "ar-e725febda72bbe90550d8761b99d007a"
+              ],
+              "labeled_rows": 15
+            },
+            "af-4822652cd39c853f7892c2cbc0a4c878": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-4ee01eecf66d375122c34e67628b7e4c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-51b1ae6de92412c11be4c8b64564b0fe": {
+              "covered": false,
+              "failed_run_ids": [
+                "ar-3558f4b09f8d3edddd5d3b3a7527321e",
+                "ar-b57b00ec6940a25bfe48d9a11cd9a8d6",
+                "ar-ef16c61ae3ca76c6835ee097712b65f9"
+              ],
+              "labeled_rows": 15
+            },
+            "af-5c095a5d3241e3f3362c2fc6b077433b": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-601929102f2c96323c1ddf986a53fe38": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6b5396765df1c6b5059a89e6eada0a7f": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6e44b287dc03abc16077fc4013112417": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-6f98a1ec8b54abafd49425ccd6c1d154": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-70820922825403db4ead79c36bdde7c5": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-7524b740a8942d49888126f3c59cb8bf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-8245b300b2ecada88489c02c7ad05560": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-845e4552164cbbfcd13c2542f1ba2019": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-9ede6fef8e103d70dca14fe4d9852573": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a15316a8f0432abef91ac0b037eafc3c": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-a20ffb501135e5bb48eec18e5a155c76": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ae0c60eac8b976b8450028ffdc4e2da3": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b01e1904b018f7a65910c8159ec913cb": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-b2090f6b6e2a0a0139f1de809ffe56cf": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ba37377bdd592d620846e3fa0a5e2943": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c17f71b57630b82d38ffd7b3aaf995ab": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-c22d13ae5c950156dd41c3b249bba881": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-cab44398c698420fd224dc674cfdaa48": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-d3832186d2374b1acde22e01f03fd633": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-e0ac740247e53ef238ed1249fe21f975": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-ee89fe0c11b06218516bd807d43947dc": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            },
+            "af-f87de808b96a952e1ec513d6bbd23380": {
+              "covered": true,
+              "failed_run_ids": [],
+              "labeled_rows": 15
+            }
+          },
+          "row_count": 450,
+          "row_coverage": 0.9822222222222222
+        },
+        "point_metrics": {
+          "mae": 36.564583112396164,
+          "r2": 0.9923750805599094,
+          "r2_undefined_reason": null,
+          "rmse": 48.56028372481151,
+          "sample_count": 450
+        },
+        "q": 177.37320020257198,
+        "unit": "mJ"
+      }
+    }
+  },
+  "provenance": "analytical_simulation",
+  "recipe_sha256": "547c93bf038eb9a064571f3d1d46f28fb071e1f76106673ec537e597d3cb20fa",
+  "refit_or_tuning_performed": false,
+  "split_sha256": "447e6cfeeff0c0caf7b6917e8d4ff5ee78a29222901119b16f52581802dcb115"
+}

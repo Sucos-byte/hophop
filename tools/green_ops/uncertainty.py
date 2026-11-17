@@ -8,7 +8,7 @@ from analytical_reference import _fields,_integer,_json_bytes,_sha256
 from dataset_builder import _json_from_bytes
 from ml_dataset import _digest,TARGET_UNITS
 from ml_pipeline import finite,predict_record
-from week8_dataset import recipe_from_bytes
+from week8_dataset import recipe_from_bytes,DATASET_SHA256
 
 CAL_FIELDS={'calibration_version','provenance','target','unit','model_sha256','dataset_sha256','recipe_sha256',
  'original_recipe_sha256','feature_contract_version','feature_order','split_sha256','lineage_sha256','method',
@@ -88,7 +88,8 @@ def validate_binding(calibration,model,study_recipe_bytes,*,dataset_sha256=None)
     expected=dict(target=target,model_sha256=_sha256(_json_bytes(model)),recipe_sha256=_sha256(study_recipe_bytes),
         original_recipe_sha256=model['training']['recipe_sha256'],split_sha256=_sha256(_json_bytes(r['splits'])),
         lineage_sha256=r['lineage_sha256'],calibration_groups=r['splits']['calibration'])
-    if dataset_sha256 is not None:expected['dataset_sha256']=dataset_sha256
+    if dataset_sha256 is not None and dataset_sha256!=DATASET_SHA256:raise ValueError('unsupported calibration dataset')
+    expected['dataset_sha256']=DATASET_SHA256
     for key,value in expected.items():
         if c[key]!=value:raise ValueError(f'calibration compatibility mismatch: {key}')
     if c['model_sha256']!=r['model_sha256'][target]:raise ValueError('model not frozen in study')
@@ -111,6 +112,11 @@ def predict_interval(model,record,calibration,*,original_recipe_bytes,study_reci
     run=record['workload']
     if (run['window_duration_ms'] not in r['axes']['window_durations_ms'] or run['repetition'] not in range(1,r['repetitions']+1)
             or record['row']['evaluation_group_id']!=group):raise ValueError('interval schedule mismatch')
+    expected_seed=int.from_bytes(bytes.fromhex(_sha256(f"analytical-design-v1:{r['master_seed']}:{group}:{run['repetition']}".encode()))[:8],'big')
+    variants=['nominal'] if domain=='primary' else [v['id'] for v in r['stress_variants']]
+    expected_ids={'ar-'+_sha256(_json_bytes(dict(family=group,repetition=run['repetition'],duration_ms=run['window_duration_ms'],
+        variant_id=v,master_seed=r['master_seed'],max_attempts=r['max_attempts'])))[:32] for v in variants}
+    if run['seed']!=expected_seed or run['run_id'] not in expected_ids:raise ValueError('interval schedule seed/run identity mismatch')
     prediction=predict_record(model,record,recipe_bytes=original_recipe_bytes,domain=domain)
     lower,upper=interval_bounds(prediction,c['q'])
     return dict(prediction=prediction,lower=lower,upper=upper,unit=c['unit'],nominal_coverage=0.95,

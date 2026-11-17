@@ -596,3 +596,49 @@ max scores; strict three calibration artifacts and inventory archived. No
 threshold/method selection. Current: commit frozen calibration artifacts before
 actual locked evaluation. Next: nominal+assumption-shift coverage, explanations
 and predeclared ablation diagnostics without fitting or threshold changes.
+
+Calibration committed4d66d51 before actual evaluation. Fixed half-widths:
+13.322407099mW,177.373200203mJ,6977.156057690uJ. Current: locked actual
+nominal/sensitivity scoring with these exact thresholds, original models and
+committed diagnostic ablations. No fit/selection/recalibration in evaluator.
+Next: archive results, independent replay/accounting, honest interpretation.
+
+Locked results available, unchanged thresholds/models: nominal family coverage
+28/30 power,28/30 total energy,26/30 per-delivery (93.3%,93.3%,86.7%); all below
+nominal95%. High-airtime shifts23/30,23/30,24/30; no interval adjustment.
+Saved4050 interval predictions (1350 runs ×3 targets; only30 evaluation families,
+reused in stress). Explainability/ablation results retain policy blind spot:
+within-duration permutation cannot vary duration, so zero importance there is
+unidentifiable, not irrelevant; signed contributions/ablation expose strong
+energy duration dependence. Current: independent replay and honest results docs.
+Next: commit final report/evidence and gatekeeper-readiness handoff, no tuning.
+
+Independent replay verifies exact ablation/calibration/evaluation bytes,4050
+unique interval predictions and independent bounds/coverage/failure/RMSE checks;
+second1800-bundle generation matches inventory/audit/sources/tables exactly.
+Final compatibility review pins this independently reproduced release dataset
+digest for single-record interval prediction, preventing an otherwise well-formed
+calibration from claiming a different dataset. Added CLI/default-binding rejection
+checks. This changes only provenance acceptance, no source/model/threshold/score
+or saved output. Current: affected final-suite and exact replay verification.
+Next: verified local final results/provenance commit and Week9 handoff.
+
+Final interval compatibility additionally binds the exact declared seed/run
+schedule, preventing extra realizations from silently expanding the15-row
+family event. Default point API remains unchanged. Targeted test mutates a seed
+and rejects the interval; release suite/replay underway. All saved1800 workloads
+already satisfy this identity; no threshold, attribution policy or score changes.
+
+## Week8 completed results and release verification
+
+Release full suite284 passes (108.5s), ResourceWarning errors enabled; includes
+both final metadata guards. Exact replay after guards preserves every archived
+ablation/calibration/evaluation/prediction byte; independent regeneration receipt
+and strict finite/duplicate-free JSON checks pass. All six Week7 model hashes
+and selection digest unchanged. No evaluation tuning or numeric correction.
+Results docs/green-ops-week8-results.md retain poor family coverage and duration
+permutation blind spot. End-to-end CLI example and4050 interval records saved.
+Current: commit final verified results/compatibility milestone. Next: separately
+authorized Week9 research-only gatekeeper; physical/hardware95% assurance gate
+not satisfied. All calibration/evaluation/stress now consumed. No push/publish,
+no hardware actuation, no inferred research hours.

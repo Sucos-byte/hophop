@@ -113,12 +113,12 @@ Existing green_ops_ml.py predict still emits its original version1 point result.
 Add BOTH `--calibration TARGET-calibration.json --study-recipe FILE` to emit
 version2 interval metadata. Other original flags remain required. The extension
 checks calibration quantile, target, model hash, frozen recipe/split/lineage,
-feature contract and fresh declared evaluation-family schedule; default behavior
+feature contract and exact fresh evaluation-family seed/run schedule; default behavior
 and v1 dataset compatibility are preserved. Research prediction consumes a
 validated completed analytical record; this is not an unqualified prospective
-hardware predictor. Calibration dataset hashes remain auditable via the study
-inventory; a single-record CLI cannot revalidate an unavailable entire dataset.
-A whole-study evaluator checks that digest as well. Hashes detect accidental
+hardware predictor. The exact supported dataset inventory digest is pinned after independent
+regeneration; single-record prediction rejects a different calibration dataset
+digest too. The whole-study loader additionally replays all archived sources. Hashes detect accidental
 inconsistency, not malicious wholesale coordinated artifact rewriting.
 
 Explanation and ablation artifacts bind model hashes, original training dataset,

@@ -1,0 +1,18 @@
+{
+  "selection": "lexicographically first nominal evaluation run, target power; no outcome-based selection",
+  "argv": [
+    "predict",
+    "--model",
+    "docs/results/week7-regression-v1/training/target_mean_power_mw-chosen.json",
+    "--recipe",
+    "tools/green_ops/recipes/week7-regression-v1.json",
+    "--artifact-dir",
+    "build/green-ops-week8-data/bundles/primary/ar-000bb804497d318a55175dfddfed806c",
+    "--output",
+    "build/green-ops-week8-prediction.json",
+    "--calibration",
+    "docs/results/week8/calibration/target_mean_power_mw-calibration.json",
+    "--study-recipe",
+    "tools/green_ops/recipes/week8-uncertainty-v1.json"
+  ]
+}

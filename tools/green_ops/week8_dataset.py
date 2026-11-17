@@ -12,6 +12,8 @@ from ml_dataset import FreshDirectory,table_files,_entry
 from ml_pipeline import model_from_bytes,validate_model_recipe
 
 RECIPE_PATH=Path('tools/green_ops/recipes/week8-uncertainty-v1.json')
+# Exact supported release inventory, established by two independent generations.
+DATASET_SHA256='d4a3c8a0ecbaf774274aa33ccd334bdf991180863212a14e5cae47e8b163545e'
 RECIPE_SHA256='547c93bf038eb9a064571f3d1d46f28fb071e1f76106673ec537e597d3cb20fa'
 
 
@@ -80,6 +82,7 @@ def load_dataset(path,progress=None):
     inventory=_json_from_bytes((root/'inventory.json').read_bytes())
     expected=dict(study_inventory_version=1,recipe_sha256=_sha256(content),lineage_sha256=recipe['lineage_sha256'],entries=[_entry(s,root) for s in specs])
     digest=_sha256(_json_bytes(expected));expected['dataset_sha256']=digest
+    if digest!=DATASET_SHA256:raise ValueError('unsupported study dataset digest')
     if _json_bytes(inventory)!=_json_bytes(expected):raise ValueError('study inventory mismatch')
     records=[]
     for index,(entry,spec) in enumerate(zip(inventory['entries'],specs)):

@@ -1,0 +1,27 @@
+{
+  "ablations_byte_identical": true,
+  "calibration_byte_identical": true,
+  "dataset_sha256": "d4a3c8a0ecbaf774274aa33ccd334bdf991180863212a14e5cae47e8b163545e",
+  "dependencies": "stdlib_only",
+  "evaluation_byte_identical": true,
+  "evaluation_fit_calls": 0,
+  "files": {
+    "evaluation.json": "74a86bbeb117b6907afc355e016bbc5aefcea1c81de2d8d0ef34e78d2729329c",
+    "explanations.json": "26cdd40938c6d1c316020b0af00490f0e40bc7e898e9766d69b1a51d3ee68759",
+    "predictions.json": "a562594c151f3619dbaf8c8263714d92c4d9cb8993da33d8b4b6d381a70a4d8b"
+  },
+  "independent_interval_coverage_and_rmse_checks": true,
+  "model_sha256": {
+    "target_energy_per_delivered_packet_uj": "95e90fee96268d211d6e4dc4c26ead7166a1440d52fc9a832f386e10b332c64a",
+    "target_mean_power_mw": "0605d0c3c95cdac6b8fb2941308e21875355e3c5f7dcc6aa922b9590c0dc606b",
+    "target_total_energy_mj": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4"
+  },
+  "prediction_count": 4050,
+  "provenance": "analytical_simulation",
+  "python_version": "3.14.4",
+  "recipe_sha256": "547c93bf038eb9a064571f3d1d46f28fb071e1f76106673ec537e597d3cb20fa",
+  "reproduction_version": 1,
+  "selection_sha256": "31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b",
+  "source_audit_equal": true,
+  "unique_prediction_keys": 4050
+}

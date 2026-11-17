@@ -1,0 +1,22 @@
+{
+  "all_inventory_sources_replay_audited": true,
+  "byte_identical_files": {
+    "airtime-high-table.csv": "4db7fe1862665c854d67f2e93fcebf254abd959b4c07ee5c2c19d4f74a8b05e9",
+    "airtime-high-table.json": "e05631bcb335aee68e8bf031eed86da7b4dbd41b8ec490688913f0180d5dbfdd",
+    "airtime-low-table.csv": "9498ab39452aedc4fdc7664532ded41f696d929db53acc019188b70052949e9f",
+    "airtime-low-table.json": "6cbea922369f15bc9de5b5e4ca340f4e7da5dd9b0451df4dd2a6d5d324e93e0a",
+    "assumptions.md": "3ba5877e065aeb16ebb450e19580928824e19933e1536d6e8e52ddd4854ed694",
+    "audit.json": "0a0907eb1567b23c2b494919afdf318808dc21c0d8fb9add867e0f5cd2fe818a",
+    "inventory.json": "ee6a503dd7bfb164a331128002af5745c927d3653eed3e588aedb869978c142c",
+    "lineage.json": "40973a949977f1d993feecd31a31a56bcb45738c30dc7804a5a36dee18844c16",
+    "parameters.json": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55",
+    "primary-table.csv": "db77d4d97c1ad442bd33f8e5d53237777e6a251b2e9865e45ee84e5d3a4485f4",
+    "primary-table.json": "c7bd01c754519e64a0f9edf44ee513e1be62f6061f3a4880f3cfeff744add7aa",
+    "recipe.json": "547c93bf038eb9a064571f3d1d46f28fb071e1f76106673ec537e597d3cb20fa"
+  },
+  "first_output": "build/green-ops-week8-data",
+  "generated_bundles_each": 1800,
+  "provenance": "analytical_simulation",
+  "regeneration_check_version": 1,
+  "second_output": "build/green-ops-week8-data-replay"
+}

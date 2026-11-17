@@ -155,7 +155,13 @@ class StudyIntegrationTests(unittest.TestCase):
         for key in ('dataset_sha256','model_sha256','recipe_sha256','split_sha256','lineage_sha256'):
             bad=copy.deepcopy(artifact);bad[key]='0'*64
             with self.assertRaises(ValueError):u.validate_binding(bad,self.models[target],self.data['recipe_bytes'],dataset_sha256=self.data['dataset_sha256'])
+            with self.assertRaises(ValueError):u.validate_binding(bad,self.models[target],self.data['recipe_bytes'])
         with self.assertRaises(ValueError):u.calibration_from_bytes(b'{"q":1,"q":2}')
+        record=copy.deepcopy(next(r for r in self.data['records'] if r['split']=='evaluation'))
+        record['workload']['seed']+=1
+        with self.assertRaisesRegex(ValueError,'seed/run identity'):
+            u.predict_interval(self.models[target],record,artifact,original_recipe_bytes=self.original_bytes,study_recipe_bytes=self.data['recipe_bytes'])
+
 
     def test_permutation_blocks_and_invalid_combinations(self):
         records=[r for r in self.data['records'] if r['split']=='evaluation']
@@ -193,3 +199,7 @@ class StudyIntegrationTests(unittest.TestCase):
         self.assertLessEqual(interval['interval']['lower'],interval['value']);saved=output.read_bytes()
         self.assertEqual(prediction_cli.main(args),1);self.assertEqual(output.read_bytes(),saved)
         output.unlink();self.assertEqual(prediction_cli.main(args[:-2]),1);self.assertFalse(output.exists())
+        spoof=self.root/'spoof-calibration.json'
+        parsed=json.loads(self.cal_files[f'{target}-calibration.json']);parsed['dataset_sha256']='0'*64;spoof.write_bytes(_json_bytes(parsed))
+        args[args.index('--calibration')+1]=str(spoof)
+        self.assertEqual(prediction_cli.main(args),1);self.assertFalse(output.exists())

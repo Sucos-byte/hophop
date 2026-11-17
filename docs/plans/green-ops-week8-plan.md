@@ -75,3 +75,22 @@ update tracker/handoff. Finish Week9 gatekeeper readiness; no physical evidence.
 
 Use explicit staging, new files100644, staged check/stat/summary before commits.
 Keep a current/next handoff. No inferred research hours; no optional dependencies.
+
+## Execution evidence
+
+Recipe/lineage freeze3e0dd39; verified standard-library APIs/data6da8dba;
+original-training-only ablations3e491f9; calibration4d66d51 before actual locked
+evaluation.1800 source bundles,60 new semantic families, zero prior-family/seed
+overlap; independent regeneration yields identical hashes/tables. Dataset audit
+and all model/calibration/explanation/prediction/reproduction evidence under
+docs/results/week8; interpretation docs/green-ops-week8-results.md.
+
+Nominal family coverage28/30,28/30,26/30 (power,total,per-delivery), below95%.
+No tuning, model replacement or interval adjustment. Explicit permutation
+blind spot: fixed-duration policy cannot identify duration; use predeclared
+signed contribution/ablation diagnostics without changing that policy.
+Final compatibility checks bind exact release dataset digest and seed/run
+schedule, affecting acceptance only, leaving saved outputs unchanged.
+Current: verified final evidence commit; next separately authorized Week9
+research gatekeeper with provenance/scope/abstention checks. Physical coverage
+and hardware actuation remain out of scope; all study sets now consumed.
