@@ -240,3 +240,8 @@ No LTE current substituted. Timings, loss, optional RTT and uncertainty ranges
 remain assumptions. Current task: versioned profile/core validation. Next step:
 implement exclusive state-time accounting with independent energy oracles.
 Incoming suite evidence remains 197 tests; no unchanged full-suite rerun.
+
+Milestone 1 committed as `e2e8030`. Verified JSON parse and equality of all three
+current values with the audited source catalog. Current task: strict model/
+workload validation and core simulation. Next: independent energy/conservation
+and invalid-input tests, then the core commit. See `green-ops-week6-handoff.md`.
