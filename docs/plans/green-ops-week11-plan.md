@@ -78,3 +78,55 @@ Fork push does not exercise the PR-only legacy Build workflow, fork-PR approval
 policies or full board/application matrix. Those remain separately scoped checks.
 No measured hardware accuracy, validated95% coverage, universal battery compliance
 or deployability follows from a successful software run.
+
+## Authorized implementation refinement and pre-outcome freeze
+
+Verified clean46b1b9c3f89306cfe36f4eae41bdb9144934202f; created branch
+green-ops/week11-fault-injection. Read instructions (no AGENTS.md found), tracker,
+remote receipt (exactff801898 run green), actual accounting/model/features/gate.
+Incoming317 tests; no baseline rerun. No push/publication/merge/deploy this task;
+standing local Windows status export remains separately requested.
+
+Freeze fault assumptions/development policy/recipe before simulation. Development
+parent(payload96bytes,interval200ms), windows1000ms,2 group-local repetitions.
+Current19dBm supports sourced nominalTX; TX-lock intent14dBm baseline uses180mA
+assumed current, lockdelta0/1/5dBm interpolates to original19dBm235mA. CPU additive
+5mA in free-idle replacement state is an assumption(range0..20); lower TX current
+range120..234mA, interpolation/idle-RX transfer assumption, no LTE substitution.
+All added assumptions explicit, sensitivity checks planned at low/high bounds.
+
+Mechanisms before energy integration: CPU replaces floor(free_idle*severity/1000)
+with exclusive idle+CPU current; TX lock changes actual TX state current/power
+without changing request; retry storm adds firstN forced failures on seeded
+contiguous2-of4 packet bursts, then common baseline loss draws, actual cap3+N;
+beacons addK prepare/RX services per complete slot; fragments split logical
+payload into1+N parts with8-byte header per fragment only whenN>0, each gets its
+own complete service/retries. Logical packet delivered iff all fragments succeed.
+Scheduling keeps exclusive segments, half-open acceptance and full observation;
+any service crossing its reserved slot is INFEASIBLE before integration, energy
+labels null (never0). These are rejected simulations, not observed partial runs.
+
+Every case compares a compliant baseline with the same intent/seed. severity0
+and none are controls. Predeclared research oracle: total-energy increase>5%,
+equality compliant. This is a scenario diagnostic, not a production gate override
+or calibrated detection policy. Frozen production gate policy remains unchanged;
+new harness scope has no calibrated interval, so gate ABSTAIN. Diagnostic frozen
+linear predictions use ONLY intended4-column X; no actual power/state/fault/seed/
+labels enter X. Mark extrapolated14dBm unsupported profile. Do not create fake
+completed v2 reference records just to make prediction/gate APIs accept faults.
+Use separate strict fault-artifact v1 with replay/hash validation; old v1/v2
+builders remain unchanged. Exact gate0/1/2/3 and blocked flags recorded separately
+from oracle violation, mechanism truth and positive detection.
+
+Parent grouping coarsens to(payload,interval), excluding requestedTX too, so related
+power variants stay together. Preserve source catalog, parameters/assumptions/
+recipe/policy hashes and parent/child IDs. Week12 proposal reserves16 new parents
+payload40/72/112/144 x interval65/110/220/360ms,8validation/8locked evaluation,
+2windows x3repetitions, all fault/power variants grouped. No Week12 energy/score
+will be generated in Week11; enumerate/freeze actual counts/IDs/lineage before
+benchmark scoring. Do not optimize current code/model/5%policy on final outcomes.
+
+Milestones: freeze (this commit); implementation/accounting tests; trusted
+integration/replay and development examples; full suite/frozen benchmark proposal,
+readiness/docs. Commit verified milestones and refresh tracker/handoff/Windows.
+Current freeze; next implement five mechanisms and independent arithmetic tests.

@@ -846,3 +846,16 @@ This evidence/readiness checkpoint is local documentation only, not pushed or
 runner-verified; exact localHEAD is in Git/Windows export. Source remains identical
 to tested forkff801898. No user action required; Week11 five-fault plan prepared,
 implementation not begun. No redundant unchanged-source test run performed.
+
+## Week11 authorized entry and pre-outcome freeze
+
+Verified clean46b1b9c; branchgreen-ops/week11-fault-injection. Read actual APIs,
+prepared plan and successful remoteff801898 receipt. Freeze dev parent96bytes/
+200ms,2repetitions, explicit5-mechanism severity units and assumption ranges;
+research oracle>5% energy increase, no gate override. All execution changes happen
+before energy integration; infeasible slots reject with null labels. TX request14
+stays fixed when actual lock increases; lower current/CPU profile are assumptions,
+not invented Nordic/LTE data. Group requested-power variants under shared payload/
+interval parent. Models/calibration/production policies frozen. Current: commit
+refined plan/recipes; next accounting implementation/tests. Prior317 tests remain
+latest verified source; no unchanged baseline rerun. No remote writes this task.

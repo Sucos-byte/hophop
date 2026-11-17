@@ -1,0 +1,32 @@
+{
+  "assumption_id": "fault-assumptions-v1",
+  "assumption_version": 1,
+  "burst_length_packets": 2,
+  "burst_period_packets": 4,
+  "cpu_increment_ma": {
+    "basis": "assumption",
+    "max": 20,
+    "min": 0,
+    "unit": "mA",
+    "value": 5
+  },
+  "fragment_header_bytes": 8,
+  "lower_tx_current_ma": {
+    "basis": "assumption",
+    "max": 234,
+    "min": 120,
+    "unit": "mA",
+    "value": 180
+  },
+  "lower_tx_dbm": 14,
+  "notes": [
+    "CPU increment applies only to free-idle time, exclusive state idle+increment; never overlaps radio current.",
+    "Only upper19dBm TX current inherits the original declared source conditions. Lower current and linear interpolation are assumptions, not a Nordic power curve.",
+    "Idle/RX currents transferred unchanged at14dBm are assumptions; original source catalog remains archived with exact conditions.",
+    "Beacon severity counts extra queued wake prepare+RX services per complete interval slot; no logical data delivery credit.",
+    "Retries force a seeded contiguous burst of initial failures then resume common baseline draws with an increased actual cap.",
+    "Fragment overhead applies only when extra fragments exist; each fragment has prepare/TX/RX/retry service, logical delivery requires all fragments.",
+    "Infeasible slot schedules are rejected before energy calculation; no clipping, hidden overflow or fabricated zero labels."
+  ],
+  "upper_tx_dbm": 19
+}
