@@ -1,0 +1,10 @@
+{
+  "available_fields": [
+    "payload_size_bytes",
+    "interval_ms",
+    "tx_power_dbm",
+    "window_duration_ms"
+  ],
+  "completed_as_planned": true,
+  "planned_window_duration_ms": 1000
+}

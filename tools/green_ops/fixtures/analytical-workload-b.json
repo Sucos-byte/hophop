@@ -1,0 +1,13 @@
+{
+  "evaluation_group_id": "workload-family-b",
+  "interval_ms": 200,
+  "max_attempts": 3,
+  "offered_packets": 4,
+  "payload_size_bytes": 256,
+  "repetition": 1,
+  "run_id": "reference-002",
+  "seed": 7,
+  "tx_power_dbm": 19,
+  "window_duration_ms": 1000,
+  "workload_version": 1
+}

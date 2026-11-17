@@ -24,3 +24,10 @@ optional RTT and all durations/loss/uncertainty envelopes are assumptions.
 Official current facts/conditions are in ../green-ops-analytical-sources.md.
 Read plan before expanding scope. Physical calibration/accuracy and actual
 hours remain pending/unreported. No push/publish. Verify Git status on resume.
+
+
+Final workflow/docs/review ready for commit. All 224 tests pass (27 new),
+ResourceWarning errors enabled; git diff --check passes. Acceptance demo passed
+at /tmp/green-ops-week6-demo with two analytical rows, matching hashes, null RTT,
+exact state sums and sensitivity diagnostics. Current task: final milestone
+commit; next: record actual hash immediately and close Week 6 software scope.

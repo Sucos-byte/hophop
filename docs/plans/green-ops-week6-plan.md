@@ -82,6 +82,10 @@ intervals. Sensitivity results are not additional independent observations.
 
 ## Current task / next step
 
-Current: source audit and versioned profile; generic implementation not started.
-Next: commit verified audit/profile, then implement core with independent energy
-oracles. See progress tracker for the latest actual commit and checks.
+Milestones 1–3 committed: e2e8030 (source/plan), d9de639 (core), 9f13f8f
+(artifacts/sensitivity). Task 4 workflow/docs/final review now verified: full
+suite 224 passing tests with ResourceWarning errors, and two-run generation/table
+acceptance at /tmp/green-ops-week6-demo. Current task: final local commit, then
+immediately record its hash in tracker/handoff. Next work after that checkpoint
+is physical calibration or a separately authorized Week 7 continuation; do not
+infer hardware/model accuracy from this reference generator.

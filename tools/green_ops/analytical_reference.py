@@ -171,7 +171,7 @@ def integrate_states(state_duration_us, currents_ma, *, voltage_v):
         _integer(duration, f"{state}.duration_us")
         _number(currents_ma[state], f"{state}.current_ma")
         try:
-            energy = voltage_v * currents_ma[state] * (duration / 1000000)
+            energy = voltage_v * currents_ma[state] * (duration / 1000000) if duration else 0.0
         except OverflowError as error:
             raise ValueError(f"{state}: energy overflow") from error
         _number(energy, f"{state}.energy_mj")

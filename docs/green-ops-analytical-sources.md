@@ -21,7 +21,10 @@ The initial profile pins band 1 and this mode; it does not model other powers.
 
 [Current consumption, Table 1: common conditions](https://docs.nordicsemi.com/r/bundle/ps_nrf9151/page/chapters/current_consumption/doc/frontpage.html)
 sets 3.7 V, 25 C, sleeping application CPU, idle peripherals and no RAM retention.
-This is the reference condition, not a voltage/temperature response model.
+The same table lists cache enabled and application HFCLK (HFINT source) and
+LFCLK not running. These application-side conditions are not a claim that the
+active DECT modem has no running clocks. This is the reference condition, not a
+voltage/temperature response model.
 The following LTE-specific conditions are not used. No LTE PSM/eDRX/RRC energy
 or current values are imported into NR+ states.
 

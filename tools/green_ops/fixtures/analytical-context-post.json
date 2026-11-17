@@ -1,0 +1,18 @@
+{
+  "available_fields": [
+    "payload_size_bytes",
+    "interval_ms",
+    "tx_power_dbm",
+    "window_duration_ms",
+    "rx_operations",
+    "rx_decoded_packets",
+    "sync_beacons",
+    "tx_successes",
+    "rx_decode_per_operation_ratio",
+    "offered_packets",
+    "delivered_packets",
+    "packet_delivery_ratio"
+  ],
+  "completed_as_planned": true,
+  "planned_window_duration_ms": 1000
+}

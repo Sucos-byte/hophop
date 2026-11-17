@@ -13,7 +13,7 @@ Week 4   Dataset builder + synthetic demo   [##########] Complete software scope
 Week 5   Feature/window/table contracts     [####------] Software contracts, table CLI and demos complete; lab evidence pending
 
 PHASE 2  Analytical data and learning
-Week 6   Analytical reference generator     [----------] Planned; laptop executable
+Week 6   Analytical reference generator     [##########] Reference software complete; physical validation pending
 Week 7   Regression + grouped evaluation    [----------] Planned; laptop executable
 Week 8   Uncertainty + explainability       [----------] Planned; laptop executable
 
@@ -279,3 +279,29 @@ Artifact/sensitivity milestone committed as `9f13f8f`. Current task: final
 workflow/demo/documentation and verification. Next: execute two distinct saved
 workloads through generation and table CLI; run the full changed suite once,
 review scientific claims and leave a committed handoff. 34 focused checks pass.
+
+
+## Week 6 final verification milestone
+
+Implemented deterministic standard-library reference generation with audited
+Nordic DECT NR+ point currents, versioned parameters/source catalog/assumptions,
+seeded modeled delivery, exact exclusive state time, energy integration, optional
+assumed RTT, sensitivity, snapshot hashes and current artifact/table contracts.
+Source audit documents full reference conditions and omitted overheads. No LTE
+currents or fake measured PPK2 evidence were used. Current model is deliberately
+limited to the specified minimum-latency reference conditions.
+
+Acceptance workflow at `/tmp/green-ops-week6-demo` generated reference-001 and
+reference-002, then an analytical-only two-row table. Verified per-input hashes,
+seeds/groups, exact 1000000 us state sums, null default RTT and 18 sensitivity
+cases per run. Independent TX-current sensitivity oracle passes. Final review
+also handles zero-duration states without spurious numeric overflow.
+
+Full suite: **224 passing tests**, including **27 new analytical tests**, with
+ResourceWarning errors. Full diff check passes. Existing v1 APIs/CLI defaults,
+dataset v2 fields and feature-contract 3 behavior remain intact. No publication,
+training result, hardware accuracy or actual research hours claimed.
+Current task: commit this verified final milestone. Next: immediately record
+its actual hash and leave a completed/resumable Week 6 handoff. Future Week 7
+training is separately planned; real calibration and independent evaluation
+remain pending. Workflow: `../green-ops-analytical-reference.md`.

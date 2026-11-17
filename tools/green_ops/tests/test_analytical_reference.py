@@ -158,3 +158,9 @@ class AnalyticalNumericBoundaryTests(unittest.TestCase):
         data["rtt_extra_ms"] = dict(value=1e308,min=0,max=1e308,unit="ms",basis="assumption",source_id=None,range_note="Numeric boundary test only")
         result = analytical.simulate_reference(data,workload(offered_packets=2))
         self.assertEqual(result["ping_rtt_latency_ms"],1e308)
+
+    def test_zero_duration_state_has_zero_energy_without_intermediate_overflow(self):
+        result = analytical.integrate_states({"idle":1000000,"unused":0},
+            {"idle":1,"unused":1e308}, voltage_v=3.7)
+        self.assertEqual(result["state_energy_mj"]["unused"],0)
+        self.assertAlmostEqual(result["total_energy_mj"],3.7)

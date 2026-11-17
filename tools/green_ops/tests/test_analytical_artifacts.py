@@ -192,3 +192,13 @@ class AnalyticalCliTests(unittest.TestCase):
             self.assertEqual(cli.main(self.arguments),1)
         self.assertFalse(self.output.exists())
         self.assertEqual(self.params.read_bytes(),original)
+
+
+class IndependentSensitivityOracleTests(unittest.TestCase):
+    def test_single_packet_tx_current_sensitivity_matches_independent_delta(self):
+        data = model(); assumed_value(data["loss_probability"],0.0)
+        result = analytical.sensitivity_analysis(data, workload(offered_packets=1,max_attempts=1))
+        high = next(c for c in result["cases"] if c["parameter"]=="currents_ma.tx" and c["bound"]=="max")
+        # Exactly 1256us TX; assumed +20%=47mA increase, at 3.7V.
+        expected_extra_mj = 47 * 3.7 * .001256
+        self.assertAlmostEqual(high["energy_change_mj"],expected_extra_mj)
