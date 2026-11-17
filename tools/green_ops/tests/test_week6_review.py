@@ -44,3 +44,14 @@ class AccountingReviewTests(unittest.TestCase):
         self.assertEqual(result["packets"][0]["accepted_us"],1000)
         self.assertEqual(result["packets"][1]["late_acceptance_us"],2000)
         self.assertEqual(sum(result["state_duration_us"].values()),2000)
+
+    def test_energy_does_not_depend_on_callers_decimal_context(self):
+        from decimal import localcontext,Inexact
+        with localcontext() as context:
+            context.Emax=2
+            context.traps[Inexact]=True
+            result=analytical.integrate_states({"active":100000,"idle":900000},
+                {"active":10,"idle":1},voltage_v=3)
+            self.assertAlmostEqual(result["total_energy_mj"],5.7)
+            self.assertEqual(context.Emax,2)
+            self.assertTrue(context.traps[Inexact])

@@ -169,3 +169,50 @@ not prove independence. Keep held-out scenario/oracle checks independent from
 the generator's own formula. Analytical fit accuracy cannot establish hardware
 accuracy. Week 7 model training is outside this change; no validated model or
 battery-autonomy claim follows from these generated labels.
+
+## Pre-training design review and audit
+
+The two-run workflow above remains an artifact demonstration, not a grouped ML
+dataset. See [Week 6 review/design](plans/green-ops-week6-review.md) for the
+verified 96-row primary panel, separate parameter-stress panels and proposed
+Week 7 dataset/splits. Generator arithmetic patch 1.0.1 avoids spurious
+intermediate overflow/underflow with an isolated decimal context; ordinary
+float outputs and existing dataset/table schemas remain compatible.
+
+`analytical_design.plan_workload_grid` plans complete full-slot offers from
+payload/interval/duration axes, group-local seeded repetitions and a variant ID.
+Traffic-family IDs depend on payload, interval and requested TX power; duration,
+seed/repetition and parameter variants stay together. Changing variant_id changes
+run IDs but preserves group and common random draws. Caller-assigned broader
+parent groups must coarsen known related configurations that change the family
+keys. No tool can infer undisclosed lineage or physical independence.
+
+```python
+from analytical_design import plan_workload_grid, audit_reference_dataset
+
+runs = plan_workload_grid(
+    validated_model,
+    payload_sizes_bytes=(16, 32, 64, 128, 256, 512),
+    intervals_ms=(50, 75, 100, 150, 250, 500),
+    window_durations_ms=(1000, 5000, 10000),
+    repetitions=5, master_seed=20261117, variant_id="nominal",
+)
+# Generate each run with generate_analytical_artifact and archive its bundle.
+report = audit_reference_dataset(bundle_directories)
+```
+
+The audit reopens local archived sources, verifies hashes/identity and state/
+packet replay, and checks groups, repeated realizations, seed sharing, capability
+context and pre-run identifiability. Existing bundles remain compatible. It
+refuses unsafe split relationships; readiness is false for insufficient groups,
+partial unidentifiable offers, hidden retry/model/assumption variation or absent
+pre-run capabilities. Its six-group default is a software-pilot policy rather
+than a statistical sufficiency guarantee. Numeric spellings such as 235 and
+235.0 do not create independent realizations. Hashes/replay establish internal
+analytical consistency, not truthful manufacturer data or physical observations.
+
+Keep parameters and retry limits fixed for primary pre-run learning under the
+current profile. Separate parameter-stress panels because those inputs are not
+in X. Per-target label filters, complete delivery-proxy ablations, frozen group
+splits and training-only preprocessing are required before Week 7 evaluation.
+Learning the generating formula is a software benchmark, not hardware evidence.

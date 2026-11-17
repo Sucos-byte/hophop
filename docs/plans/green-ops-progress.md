@@ -61,16 +61,20 @@ Sources checked 17 November 2026: [European Commission overview](https://energy-
 
 ### Current handoff
 
-Week 6 reference software is complete on `green-ops/week6-analytical-reference`.
-Entry checkpoint: `1726971`. Source/plan: `e2e8030`; deterministic core:
-`d9de639`; artifact CLI/sensitivity: `9f13f8f`; final workflow/review: `c17c95d`.
-Full suite: 224 passing tests with ResourceWarning errors (27 new analytical
-tests). Two generated analytical runs passed current table CLI integration.
-Plan and current/next-step handoff: `green-ops-week6-plan.md` and
-`green-ops-week6-handoff.md`. Physical acquisition/calibration and independent
-model evaluation remain pending; no measured accuracy or actual hours claimed.
-No further coding is pending in the approved Week 6 scope. Week 7 remains a
-separately planned continuation.
+Week 6 software and pre-training review are complete on
+`green-ops/week6-analytical-reference`. Original checkpoint: `9ed6b96`; initial
+review corrections: `f8c35bf`. Generator arithmetic patch: 1.0.1; v1/dataset v2/
+feature-contract 3 remain compatible. Latest full suite: 246 passing tests,
+ResourceWarning errors enabled (22 new review/design cases). Final review and
+training design: `green-ops-week6-review.md`.
+
+Audited acceptance: 96 primary rows plus 192 separate stress rows, 24 declared
+families, source/state/packet/sensitivity replay verified. The two-row demo and
+indiscriminately pooled parameter variants are not primary training designs.
+Week 7 is ready for a fixed-scope grouped software pilot after freezing its
+recipe/splits: proposed 540 primary rows / 36 families plus 180 held-out stress
+rows. No fit, hardware accuracy or physical-validation readiness is claimed.
+Current/next-step handoff: `green-ops-week6-handoff.md`. Actual hours unreported.
 
 The historical status below records completed evidence. Its hardware-dependent model-training wording is superseded by the revised software/lab separation above.
 
@@ -338,3 +342,29 @@ Review correction milestone committed as `f8c35bf`. Current task: multi-panel
 acceptance and final documentation. Next: generate/audit 24 traffic families
 with duration/repetition variants and separate model-stress panels, then final
 suite and Week 7 readiness/design report. 45 focused checks pass.
+
+
+## Week 6 review — final verification and readiness
+
+Final review additionally guards caller-decimal-context independence, numeric-
+spelling duplicate realizations, empty assumption documents and coherently
+rehashed but incorrect sensitivity reports. Full suite: **246 tests pass**,
+including **22 new review/design tests**, with ResourceWarning treated as errors.
+`git diff --check` passes. No existing v1/dataset/table/feature contracts changed.
+
+Executed and replay-audited 288 bundles under
+`/tmp/green-ops-week6-review-panel`: 96 fixed-parameter primary rows (24 families,
+48 pre-run configurations, 48 group-local random streams) and two 96-row timing-
+stress panels sharing the same families. Primary table CLI accepts all 96 rows.
+Combined panels correctly fail fixed-parameter primary readiness because hidden
+coefficients differ. Original two-row demo remains compatible but fails the
+full-slot offer-count policy. Results are synthetic software evidence only.
+
+`green-ops-week6-review.md` records rechecked Nordic sources, all findings,
+limitations and a proposed 540-primary / 36-family Week 7 design with frozen
+24/6/6-family train/validation/test splits and 180 separate held-out stress rows.
+Related duration/repetition/model variants and shared random draws stay within
+groups; unknown parent lineage still needs explicit design declarations.
+Current task: commit final verified review. Next: immediately record actual hash
+and leave a resumable handoff; actual Week 7 fitting remains unperformed.
+No push or publish; physical calibration and actual effort logging still pending.

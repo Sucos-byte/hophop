@@ -13,7 +13,7 @@ from pathlib import Path
 
 from analytical_reference import (
     GENERATOR_VERSION, SAMPLER_VERSION, STATES, _integer, _identifier, _json_bytes,
-    _number, _sha256, validate_model, validate_workload, simulate_reference,
+    _number, _text, _sha256, validate_model, validate_workload, simulate_reference, sensitivity_analysis,
 )
 from dataset_builder import _json_from_bytes
 from dataset_table import load_dataset_artifact
@@ -89,6 +89,38 @@ def _close(actual, expected, name):
             raise ValueError(f"{name}: does not match analytical replay")
 
 
+def _compare_sensitivity(actual, expected, name, baseline_energy):
+    if isinstance(expected,dict):
+        if not isinstance(actual,dict) or set(actual) != set(expected):
+            raise ValueError(f"{name}: sensitivity fields mismatch")
+        for key,value in expected.items():
+            _compare_sensitivity(actual[key],value,f"{name}.{key}",baseline_energy)
+    elif isinstance(expected,list):
+        if not isinstance(actual,list) or len(actual) != len(expected):
+            raise ValueError(f"{name}: sensitivity case count mismatch")
+        for index,(left,right) in enumerate(zip(actual,expected)):
+            _compare_sensitivity(left,right,f"{name}[{index}]",baseline_energy)
+    elif type(expected) is float and not name.endswith(".value"):
+        _number(actual,name,minimum=-math.inf if name.endswith(".energy_change_mj") else 0)
+        # Delta-energy cancellation in older float arithmetic is bounded by
+        # baseline precision, not by a potentially near-zero delta itself.
+        tolerance=1e-12 if name.endswith(".ping_rtt_latency_ms") else 1e-12*max(1,baseline_energy)
+        if not math.isclose(actual,expected,rel_tol=1e-12,abs_tol=tolerance):
+            raise ValueError(f"{name}: sensitivity does not match replay")
+    elif type(actual) is not type(expected) or actual != expected:
+        raise ValueError(f"{name}: sensitivity does not match replay")
+
+
+def _canonical_numeric_point(value):
+    # 235 and 235.0 are the same parameter value, not independent scenarios.
+    if type(value) in {int,float}:
+        numerator,denominator=value.as_integer_ratio() if type(value) is float else (value,1)
+        return {"numeric_ratio":[numerator,denominator]}
+    if isinstance(value,dict):
+        return {key:_canonical_numeric_point(item) for key,item in value.items()}
+    return value
+
+
 def load_design_record(directory):
     """Verify archived source hashes, identities and replay before design audit.
 
@@ -113,6 +145,7 @@ def load_design_record(directory):
         snapshots[name] = path.read_bytes()
         if _sha256(snapshots[name]) != manifest["input_sha256"][name]:
             raise ValueError(f"{name}: archived source hash mismatch")
+    _text(snapshots["assumptions_document"].decode("utf-8"),"assumptions document")
     model = validate_model(_json_from_bytes(snapshots["parameters"]))
     workload = validate_workload(_json_from_bytes(snapshots["workload"]),model=model)
     configuration = _json_from_bytes(snapshots["configuration"])
@@ -182,6 +215,9 @@ def load_design_record(directory):
     _,_,normalized = describe_prediction_context(row,context)
     if _json_bytes(manifest["prediction_context"]) != _json_bytes(normalized):
         raise ValueError("prediction context does not match archived declaration")
+    sensitivity=sensitivity_analysis(model,workload)
+    _compare_sensitivity(_json_from_bytes(snapshots["sensitivity"]),sensitivity,
+                         "sensitivity",replay["total_energy_mj"])
     point = dict(conditions=model["conditions"],currents={k:v["value"] for k,v in model["currents_ma"].items()},
         timings={k:v["value"] for k,v in model["timing_us"].items()},loss=model["loss_probability"]["value"],
         rtt=model["rtt_extra_ms"]["value"] if model["rtt_extra_ms"] is not None else None)
@@ -189,7 +225,7 @@ def load_design_record(directory):
     return dict(row=row,manifest=manifest,workload=workload,family=configuration_family(workload),
                 parameter_sha256=_sha256(snapshots["parameters"]),
                 assumption_sha256=_sha256(snapshots["assumptions_document"]),
-                realization_sha256=_sha256(_json_bytes(dict(point=point,workload=realization))))
+                realization_sha256=_sha256(_json_bytes(dict(point=_canonical_numeric_point(point),workload=realization))))
 
 
 def audit_reference_dataset(directories, *, minimum_groups=6):

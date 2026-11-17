@@ -47,3 +47,14 @@ locator, conditions and units. If a page becomes inaccessible, retain this audit
 and mark any unverified replacement as a source gap; do not replace it with LTE
 figures. Manufacturer HTML can change: the shipped catalog pins audited facts
 and its hash identifies the exact local catalog used, not an official signature.
+
+## Week 6 pre-training review
+
+The official revision, DECT current and common-condition pages were rechecked
+on 17 November 2026; the pinned facts/units remain consistent. Workload timings,
+IID loss (including p=0.1), acceptance/ACK equivalence, uncertainty envelopes and
+RTT are not inferred from the -90 dBm current condition. The low-latency idle
+point is 37 mA, not a deep-sleep figure. Preparing actual firmware packets may
+consume CPU energy omitted by the idle-preparation approximation; exclusive
+state accounting avoids double counting but does not validate that omission.
+No new sourced parameters or wider operating-condition claims were introduced.

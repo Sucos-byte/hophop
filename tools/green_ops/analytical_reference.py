@@ -4,7 +4,7 @@
 """Deterministic analytical DECT scenario accounting, never measured evidence."""
 
 import copy
-from decimal import Decimal, localcontext
+from decimal import Context, Decimal, DivisionByZero, InvalidOperation, Overflow, ROUND_HALF_EVEN, localcontext
 import hashlib
 import math
 import re
@@ -174,8 +174,8 @@ def integrate_states(state_duration_us, currents_ma, *, voltage_v):
         try:
             # Scale the complete product before converting to binary float;
             # finite energy must not overflow/underflow in V*I first.
-            with localcontext() as context:
-                context.prec = 50
+            with localcontext(Context(prec=50, rounding=ROUND_HALF_EVEN, Emin=-999999,
+                                      Emax=999999, traps=[InvalidOperation,DivisionByZero,Overflow])):
                 voltage = Decimal.from_float(voltage_v) if type(voltage_v) is float else Decimal(voltage_v)
                 current = Decimal.from_float(currents_ma[state]) if type(currents_ma[state]) is float else Decimal(currents_ma[state])
                 energy = float(voltage * current * Decimal(duration) / Decimal(1000000))

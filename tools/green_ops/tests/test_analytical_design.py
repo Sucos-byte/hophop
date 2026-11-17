@@ -165,3 +165,30 @@ class AnalyticalDesignAuditTests(unittest.TestCase):
         self.assertNotEqual(records[0]["row"]["target_total_energy_mj"],records[1]["row"]["target_total_energy_mj"])
         report=audit_reference_dataset([a,b],minimum_groups=2)
         self.assertTrue(any("offered count" in reason for reason in report["primary_scope_issues"]))
+
+    def test_numeric_spelling_changes_are_not_new_parameter_realizations(self):
+        a=save_bundle(self.root/"numeric-a",workload())
+        data=model();data["currents_ma"]["tx"]["value"]=235.0
+        b=save_bundle(self.root/"numeric-b",workload(run_id="spelling-only",repetition=2),data)
+        with self.assertRaisesRegex(ValueError,"duplicate analytical realization"):audit_reference_dataset([a,b])
+
+    def test_rehashed_empty_assumptions_do_not_qualify_as_a_complete_bundle(self):
+        path=save_bundle(self.root/"empty-assumptions",workload())
+        (path/"assumptions.md").write_bytes(b'')
+        digest=hashlib.sha256(b'').hexdigest()
+        config=json.loads((path/"configuration.json").read_text());config["assumptions_document_sha256"]=digest
+        content=_json_bytes(config);(path/"configuration.json").write_bytes(content)
+        manifest=json.loads((path/"manifest.json").read_text())
+        manifest["input_sha256"].update(assumptions_document=digest,configuration=hashlib.sha256(content).hexdigest())
+        manifest["analytical_reference"].update(assumptions_document_sha256=digest,configuration_sha256=hashlib.sha256(content).hexdigest())
+        (path/"manifest.json").write_bytes(_json_bytes(manifest))
+        with self.assertRaisesRegex(ValueError,"assumptions"):load_design_record(path)
+
+    def test_rehashed_sensitivity_results_must_match_declared_parameter_ranges(self):
+        path=save_bundle(self.root/"bad-sensitivity",workload())
+        sensitivity=json.loads((path/"sensitivity.json").read_text())
+        sensitivity["cases"][0]["total_energy_mj"]+=1
+        content=_json_bytes(sensitivity);(path/"sensitivity.json").write_bytes(content)
+        manifest=json.loads((path/"manifest.json").read_text());manifest["input_sha256"]["sensitivity"]=hashlib.sha256(content).hexdigest()
+        (path/"manifest.json").write_bytes(_json_bytes(manifest))
+        with self.assertRaisesRegex(ValueError,"sensitivity"):load_design_record(path)
