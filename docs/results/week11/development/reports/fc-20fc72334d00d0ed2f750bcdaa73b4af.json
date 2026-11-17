@@ -1,0 +1,371 @@
+{
+  "analytical": {
+    "baseline": {
+      "energy_per_delivered_packet_uj": 28325.329279999998,
+      "mean_power_mw": 141.6266464,
+      "total_energy_mj": 141.6266464
+    },
+    "budget_increase_percent": 5,
+    "budget_scope": "unvalidated_analytical_execution_oracle_not_gate_override",
+    "budget_violation": false,
+    "energy_delta_mj": 0.33797280000001706,
+    "fault": {
+      "energy_per_delivered_packet_uj": 28392.923840000003,
+      "mean_power_mw": 141.96461920000002,
+      "total_energy_mj": 141.96461920000002
+    },
+    "fault_status": "COMPLETE",
+    "frozen_policy_point_checks": [
+      {
+        "baseline_value": 141.6266464,
+        "baseline_violation": false,
+        "criterion_id": "power-budget",
+        "fault_value": 141.96461920000002,
+        "fault_violation": false,
+        "kind": "absolute_upper",
+        "scope": "analytical_point_diagnostic_only_not_gate_evidence_or_approval",
+        "threshold": 200,
+        "unit": "mW"
+      }
+    ]
+  },
+  "artifact_sha256": "8571527682df01416b5c7bc1f24b0ddfa6edad89938f49e5df4c337ace494785",
+  "block_semantics": "gate_would_block_execution; offline_analytical_simulation_already_performed_no_hardware",
+  "configured_fault": true,
+  "control_blocked_without_positive_detection": false,
+  "control_false_alarm": false,
+  "energy_fault_undetected": false,
+  "engine_id": "exclusive-fault-accounting-v1",
+  "execution_blocked": true,
+  "fault": {
+    "kind": "tx_power_lock",
+    "severity": 1
+  },
+  "fault_report_version": 1,
+  "gatekeeper": {
+    "artifact_sha256": {
+      "baseline": {
+        "assumptions": "98e69b335b76f306ee3f40a52954eee98a5113db497893e63a308a37cf783504",
+        "fault": "3df9c49369b6338bf1c10e4a81a5de9e2fc6b6e72bca4f6f6ff4d19ad957f658",
+        "fault_artifact": "8571527682df01416b5c7bc1f24b0ddfa6edad89938f49e5df4c337ace494785",
+        "intended_workload": "34d4fa4b07f479e6403f13e7b76e5db49bda513142f686d6619e5b204d8cc3f9",
+        "parameters": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55"
+      },
+      "candidate": {
+        "assumptions": "98e69b335b76f306ee3f40a52954eee98a5113db497893e63a308a37cf783504",
+        "fault": "3df9c49369b6338bf1c10e4a81a5de9e2fc6b6e72bca4f6f6ff4d19ad957f658",
+        "fault_artifact": "8571527682df01416b5c7bc1f24b0ddfa6edad89938f49e5df4c337ace494785",
+        "intended_workload": "34d4fa4b07f479e6403f13e7b76e5db49bda513142f686d6619e5b204d8cc3f9",
+        "parameters": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55"
+      }
+    },
+    "assumptions": [
+      "frozen analytical generator and prediction profile",
+      "intervals retain observed family coverage failures",
+      "comparable full-slot workloads and windows for regression",
+      "no joint or difference confidence guarantee"
+    ],
+    "attributions": {
+      "baseline": {
+        "target_energy_per_delivered_packet_uj": {
+          "baseline": 26849.634557536836,
+          "contributions": {
+            "interval_ms": 2132.03092961353,
+            "payload_size_bytes": -162.29833484845113,
+            "tx_power_dbm": -0.0,
+            "window_duration_ms": 242.4904464942901
+          },
+          "interpretation": "model_attribution_not_physical_root_cause",
+          "method": "recomputed_frozen_linear_model_contribution",
+          "prediction": 29061.857598796203,
+          "top_three": [
+            "interval_ms",
+            "window_duration_ms",
+            "payload_size_bytes"
+          ],
+          "unit": "uJ"
+        },
+        "target_mean_power_mw": {
+          "baseline": 149.73973432666668,
+          "contributions": {
+            "interval_ms": -0.6524681306901039,
+            "payload_size_bytes": -1.3935009435432035,
+            "tx_power_dbm": -0.0,
+            "window_duration_ms": -0.055820463920803906
+          },
+          "interpretation": "model_attribution_not_physical_root_cause",
+          "method": "recomputed_frozen_linear_model_contribution",
+          "prediction": 147.63794478851256,
+          "top_three": [
+            "payload_size_bytes",
+            "interval_ms",
+            "window_duration_ms"
+          ],
+          "unit": "mW"
+        },
+        "target_total_energy_mj": {
+          "baseline": 798.78701932,
+          "contributions": {
+            "interval_ms": -3.469682464756606,
+            "payload_size_bytes": -7.489339663099172,
+            "tx_power_dbm": -0.0,
+            "window_duration_ms": -649.0425389894361
+          },
+          "interpretation": "model_attribution_not_physical_root_cause",
+          "method": "recomputed_frozen_linear_model_contribution",
+          "prediction": 138.78545820270813,
+          "top_three": [
+            "window_duration_ms",
+            "payload_size_bytes",
+            "interval_ms"
+          ],
+          "unit": "mJ"
+        }
+      },
+      "candidate": {
+        "target_energy_per_delivered_packet_uj": {
+          "baseline": 26849.634557536836,
+          "contributions": {
+            "interval_ms": 2132.03092961353,
+            "payload_size_bytes": -162.29833484845113,
+            "tx_power_dbm": -0.0,
+            "window_duration_ms": 242.4904464942901
+          },
+          "interpretation": "model_attribution_not_physical_root_cause",
+          "method": "recomputed_frozen_linear_model_contribution",
+          "prediction": 29061.857598796203,
+          "top_three": [
+            "interval_ms",
+            "window_duration_ms",
+            "payload_size_bytes"
+          ],
+          "unit": "uJ"
+        },
+        "target_mean_power_mw": {
+          "baseline": 149.73973432666668,
+          "contributions": {
+            "interval_ms": -0.6524681306901039,
+            "payload_size_bytes": -1.3935009435432035,
+            "tx_power_dbm": -0.0,
+            "window_duration_ms": -0.055820463920803906
+          },
+          "interpretation": "model_attribution_not_physical_root_cause",
+          "method": "recomputed_frozen_linear_model_contribution",
+          "prediction": 147.63794478851256,
+          "top_three": [
+            "payload_size_bytes",
+            "interval_ms",
+            "window_duration_ms"
+          ],
+          "unit": "mW"
+        },
+        "target_total_energy_mj": {
+          "baseline": 798.78701932,
+          "contributions": {
+            "interval_ms": -3.469682464756606,
+            "payload_size_bytes": -7.489339663099172,
+            "tx_power_dbm": -0.0,
+            "window_duration_ms": -649.0425389894361
+          },
+          "interpretation": "model_attribution_not_physical_root_cause",
+          "method": "recomputed_frozen_linear_model_contribution",
+          "prediction": 138.78545820270813,
+          "top_three": [
+            "window_duration_ms",
+            "payload_size_bytes",
+            "interval_ms"
+          ],
+          "unit": "mJ"
+        }
+      }
+    },
+    "baseline_revision": null,
+    "battery_projection": null,
+    "blocks_ci": true,
+    "candidate_revision": null,
+    "comparison_scope": "configuration_estimates_only",
+    "coverage_reference": "observed_Week8_nominal_family_coverage_not_a_guarantee",
+    "criteria": [
+      {
+        "baseline": {
+          "family_coverage": null,
+          "interval": null,
+          "point": 147.63794478851256,
+          "unavailable_reason": "new_fault_engine_scope_without_calibration",
+          "unit": "mW"
+        },
+        "candidate": {
+          "family_coverage": null,
+          "interval": null,
+          "point": 147.63794478851256,
+          "unavailable_reason": "new_fault_engine_scope_without_calibration",
+          "unit": "mW"
+        },
+        "comparison_method": "upper_bound",
+        "evidence_acceptance": "new_fault_engine_scope_without_calibration",
+        "id": "power-budget",
+        "kind": "absolute_upper",
+        "reason_code": "new_fault_engine_scope_without_calibration",
+        "status": "ABSTAIN",
+        "target": "target_mean_power_mw",
+        "threshold": 200,
+        "unit": "mW"
+      }
+    ],
+    "decision_report_version": 1,
+    "evidence_label": "RESEARCH ONLY; NO HARDWARE ASSURANCE",
+    "execution_regression_observable_from_commit_identity": false,
+    "exit_code": 3,
+    "feature_contract_version": 3,
+    "feature_profile": "raw_pre_run_v1",
+    "hardware_assurance": false,
+    "limitations": [
+      "research_only_no_hardware_assurance",
+      "observed_family_coverage_below_nominal_95_percent",
+      "marginal_ranges_are_not_calibrated_difference_or_joint_confidence_intervals",
+      "identical_permitted_features_fixed_model_identical_predictions_regardless_of_commit",
+      "configuration_estimate_not_actual_execution_telemetry",
+      "consumed_week8_data_not_reused_for_tuning",
+      "assumption_shift_has_no_calibrated_coverage_guarantee",
+      "model_attribution_not_physical_causation"
+    ],
+    "model_sha256": {
+      "target_energy_per_delivered_packet_uj": "95e90fee96268d211d6e4dc4c26ead7166a1440d52fc9a832f386e10b332c64a",
+      "target_mean_power_mw": "0605d0c3c95cdac6b8fb2941308e21875355e3c5f7dcc6aa922b9590c0dc606b",
+      "target_total_energy_mj": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4"
+    },
+    "policy_id": "research-default-v1",
+    "policy_sha256": "e54213fd603445753ffde6f1512a8e59b646669f4c8744ba322fa79ea9625020",
+    "prediction_context": {
+      "baseline": {
+        "available_fields": [
+          "payload_size_bytes",
+          "interval_ms",
+          "tx_power_dbm",
+          "window_duration_ms"
+        ],
+        "completed_as_planned": true,
+        "planned_window_duration_ms": 1000
+      },
+      "candidate": {
+        "available_fields": [
+          "payload_size_bytes",
+          "interval_ms",
+          "tx_power_dbm",
+          "window_duration_ms"
+        ],
+        "completed_as_planned": true,
+        "planned_window_duration_ms": 1000
+      }
+    },
+    "prediction_domain": {
+      "baseline": "declared_stress",
+      "candidate": "declared_stress"
+    },
+    "provenance": "analytical_simulation",
+    "reason_codes": [
+      "new_fault_engine_scope_without_calibration"
+    ],
+    "research_only": true,
+    "research_override_requested": false,
+    "research_override_used": false,
+    "resolved_workload": {
+      "baseline": {
+        "adapter": "analytical-fault-v1",
+        "assumptions_sha256": "98e69b335b76f306ee3f40a52954eee98a5113db497893e63a308a37cf783504",
+        "feature_profile_id": "raw_pre_run_v1",
+        "interval_ms": 200,
+        "max_attempts": 3,
+        "offered_packets": 5,
+        "parameters_sha256": "3a96c1cb77bbf7b864d119b0cd968b790a3cf0d0b3ee03dce43927c12d7cad23",
+        "payload_size_bytes": 96,
+        "seed": 4618219664735656177,
+        "tx_power_dbm": 14,
+        "window_duration_ms": 1000
+      },
+      "candidate": {
+        "adapter": "analytical-fault-v1",
+        "assumptions_sha256": "98e69b335b76f306ee3f40a52954eee98a5113db497893e63a308a37cf783504",
+        "feature_profile_id": "raw_pre_run_v1",
+        "interval_ms": 200,
+        "max_attempts": 3,
+        "offered_packets": 5,
+        "parameters_sha256": "30e1501d295327610a31ce4ab5c5456ea7246adee786b04b582e7f992cca2ae8",
+        "payload_size_bytes": 96,
+        "seed": 4618219664735656177,
+        "tx_power_dbm": 14,
+        "window_duration_ms": 1000
+      }
+    },
+    "status": "ABSTAIN",
+    "uncertainty_policy": {
+      "allow_assumption_shift": false,
+      "allow_unvalidated_research_intervals": false,
+      "minimum_family_coverage": 0.95
+    },
+    "validated_95_percent_coverage": false
+  },
+  "limitations": [
+    "ABSTAIN/ERROR blocking is not fault detection",
+    "same intended X and frozen model cannot observe hidden execution faults",
+    "all added CPU/lower-TX/wakeup/fragment behavior assumptions explicit, not measured evidence",
+    "no calibration intervals transferred to new scope",
+    "model contributions are not physical causal proof",
+    "fault-artifact-v1 is not a completed reference-v2 bundle; old readers/policies remain unchanged"
+  ],
+  "lineage": {
+    "baseline_id": "fb-704ae7f32261915d9b762a950fc31e43",
+    "child_id": "fc-20fc72334d00d0ed2f750bcdaa73b4af",
+    "evaluation_group_id": "fp-02d3c37cd51faccb34bfc35d7e469579",
+    "family_id": "af-79c02a6b0eb49dd9005ee2c67a824ecb",
+    "intended_run_id": "fi-f986380a9bc2bac8953f3b632f8c043c",
+    "parent_id": "fp-02d3c37cd51faccb34bfc35d7e469579",
+    "repetition": 2,
+    "seed": 4618219664735656177
+  },
+  "mechanism_occurred": true,
+  "observable_in_selected_prediction_context": false,
+  "positive_fault_detection": false,
+  "predictor": {
+    "baseline_inputs": [
+      96,
+      200,
+      14,
+      1000
+    ],
+    "baseline_predictions": {
+      "target_energy_per_delivered_packet_uj": 29061.857598796203,
+      "target_mean_power_mw": 147.63794478851256,
+      "target_total_energy_mj": 138.78545820270813
+    },
+    "fault_inputs": [
+      96,
+      200,
+      14,
+      1000
+    ],
+    "fault_predictions": {
+      "target_energy_per_delivered_packet_uj": 29061.857598796203,
+      "target_mean_power_mw": 147.63794478851256,
+      "target_total_energy_mj": 138.78545820270813
+    },
+    "feature_order": [
+      "payload_size_bytes",
+      "interval_ms",
+      "tx_power_dbm",
+      "window_duration_ms"
+    ],
+    "hidden_actual_information_in_X": false,
+    "inputs_changed": false,
+    "prediction_scope": "diagnostic_numeric_model_only_new_execution_scope_uncalibrated",
+    "predictions_changed": false,
+    "requested_power_outside_training_profile": true
+  },
+  "production_gate_policy_sha256": "e54213fd603445753ffde6f1512a8e59b646669f4c8744ba322fa79ea9625020",
+  "provenance": {
+    "execution_kind": "simulation",
+    "measurement_status": "analytical_simulation",
+    "source_kind": "synthetic"
+  },
+  "research_policy_sha256": "a07724f3216a75e83db507fbb0fce65c95613e2e183a7f3c99c7c59cf4f68d0b"
+}

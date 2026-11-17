@@ -1,0 +1,29 @@
+{
+  "benchmark_recipe_sha256": "f0340476576f6603302c0c33ad9aa62c701d58eada8fae3130cad78d3b03ac29",
+  "benchmark_scored": false,
+  "calibration_inventory_sha256": "f686446aa1b6e124cc3c60cc01341953c8ffaa05132a6ab002245cf6276fc5b4",
+  "case_count": 1920,
+  "development_parent_disjoint": true,
+  "engine_code_sha256": {
+    "tools/green_ops/fault_benchmark.py": "e240ccf56fca984f33b256d9a79ee8079b37c22c510dd41b9bf7795c8ffad081",
+    "tools/green_ops/fault_injection.py": "b9ecc62499fcdeeff4417c9cc5e58a18a49463f48d5d6203d16df32eec5b37a6",
+    "tools/green_ops/fault_workflow.py": "09a6bc2c97594c8f83f89141b1c73368bed3e69522d4ae72b58b246e6d7b12cf"
+  },
+  "feature_contract_version": 3,
+  "feature_order": [
+    "payload_size_bytes",
+    "interval_ms",
+    "tx_power_dbm",
+    "window_duration_ms"
+  ],
+  "freeze_version": 1,
+  "model_selection_sha256": "31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b",
+  "no_week12_energy_artifacts_or_scores_generated": true,
+  "parent_count": 16,
+  "partition_counts": {
+    "locked_evaluation": 960,
+    "validation": 960
+  },
+  "production_gate_policy_sha256": "e54213fd603445753ffde6f1512a8e59b646669f4c8744ba322fa79ea9625020",
+  "status": "FROZEN_UNSCORED"
+}

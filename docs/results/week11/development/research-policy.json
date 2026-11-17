@@ -1,0 +1,10 @@
+{
+  "analytical_total_energy_increase_budget_percent": 5,
+  "comparison": "fault_energy>baseline_energy*(1+5/100); equality is compliant",
+  "gate_override": false,
+  "policy_id": "week11-development-oracle-v1",
+  "positive_detection_definition": "gate FAIL with observable changed permitted inputs and analytical energy violation; ABSTAIN/ERROR never positive",
+  "production_gate_policy_sha256": "e54213fd603445753ffde6f1512a8e59b646669f4c8744ba322fa79ea9625020",
+  "research_only": true,
+  "research_policy_version": 1
+}

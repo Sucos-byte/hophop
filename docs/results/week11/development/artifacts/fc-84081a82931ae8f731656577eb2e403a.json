@@ -1,0 +1,1254 @@
+{
+  "baseline": {
+    "actual_attempt_cap_on_burst": 3,
+    "actual_tx_power_dbm": 19,
+    "beacons": [],
+    "burst_packet_indices": [],
+    "delivered_packets": 5,
+    "energy_per_delivered_packet_uj": 28663.30208,
+    "extra_wakeups_per_slot": 0,
+    "fragment_count": 1,
+    "logical_fragments": 5,
+    "mean_power_mw": 143.3165104,
+    "observation_us": 1000000,
+    "offered_packets": 5,
+    "packets": [
+      {
+        "accepted_us": 3384,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 3384,
+                "attempt_index": 0,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 0
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 0,
+        "packet_id": "ba120662b6418554c12854921cca46a55904243b8f30dd679e2c5c5a25228f03",
+        "packet_index": 0
+      },
+      {
+        "accepted_us": 203384,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 203384,
+                "attempt_index": 0,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 200000
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 200000,
+        "packet_id": "29551a7f0a73d2acc94574c2a34a204946607c54bfd36d744823abe33803e203",
+        "packet_index": 1
+      },
+      {
+        "accepted_us": 403384,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 403384,
+                "attempt_index": 0,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 400000
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 400000,
+        "packet_id": "cc4627745621d9476926efc43b448b8880136f525691f5997b39521fcef00c4b",
+        "packet_index": 2
+      },
+      {
+        "accepted_us": 607768,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 603384,
+                "attempt_index": 0,
+                "forced_failure": false,
+                "lost": true,
+                "start_us": 600000
+              },
+              {
+                "ack_end_us": 607768,
+                "attempt_index": 1,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 604384
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 600000,
+        "packet_id": "319c11a940ec9770f3dce89d5fef41735437460c32cfcf76fa357329d74980a0",
+        "packet_index": 3
+      },
+      {
+        "accepted_us": 803384,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 803384,
+                "attempt_index": 0,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 800000
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 800000,
+        "packet_id": "dc1f6b867ca937c5cf1d662ce3b4ba03aa634dfc71e64d60458234490a2cc599",
+        "packet_index": 4
+      }
+    ],
+    "ping_rtt_latency_ms": null,
+    "provenance": {
+      "execution_kind": "simulation",
+      "measurement_status": "analytical_simulation",
+      "source_kind": "synthetic"
+    },
+    "requested_tx_power_dbm": 19,
+    "rx_operations": 6,
+    "segments": [
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "prepare",
+        "start_us": 0,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "transmit",
+        "start_us": 500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "ack_wait",
+        "start_us": 1884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 196616,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 3384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 1,
+        "phase": "prepare",
+        "start_us": 200000,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 1,
+        "phase": "transmit",
+        "start_us": 200500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 1,
+        "phase": "ack_wait",
+        "start_us": 201884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 196616,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 203384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 2,
+        "phase": "prepare",
+        "start_us": 400000,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 2,
+        "phase": "transmit",
+        "start_us": 400500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 2,
+        "phase": "ack_wait",
+        "start_us": 401884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 196616,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 403384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "prepare",
+        "start_us": 600000,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "transmit",
+        "start_us": 600500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "ack_wait",
+        "start_us": 601884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "retry_backoff",
+        "start_us": 603384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "prepare",
+        "start_us": 604384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "transmit",
+        "start_us": 604884,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "ack_wait",
+        "start_us": 606268,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 192232,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 607768,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "prepare",
+        "start_us": 800000,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "transmit",
+        "start_us": 800500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "ack_wait",
+        "start_us": 801884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 196616,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 803384,
+        "state": "idle"
+      }
+    ],
+    "state_current_ma": {
+      "cpu_busy": 42,
+      "idle": 37,
+      "rx": 47,
+      "tx": 235
+    },
+    "state_duration_us": {
+      "cpu_busy": 0,
+      "idle": 982696,
+      "rx": 9000,
+      "tx": 8304
+    },
+    "state_energy_mj": {
+      "cpu_busy": 0.0,
+      "idle": 134.5310824,
+      "rx": 1.5651000000000002,
+      "tx": 7.220328
+    },
+    "status": "COMPLETE",
+    "total_energy_mj": 143.3165104,
+    "tx_attempts": 6
+  },
+  "engine_id": "exclusive-fault-accounting-v1",
+  "execution": {
+    "actual_attempt_cap_on_burst": 6,
+    "actual_tx_power_dbm": 19,
+    "beacons": [],
+    "burst_packet_indices": [
+      0,
+      3,
+      4
+    ],
+    "delivered_packets": 5,
+    "energy_per_delivered_packet_uj": 30588.255200000003,
+    "extra_wakeups_per_slot": 0,
+    "fragment_count": 1,
+    "logical_fragments": 5,
+    "mean_power_mw": 152.94127600000002,
+    "observation_us": 1000000,
+    "offered_packets": 5,
+    "packets": [
+      {
+        "accepted_us": 16536,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 3384,
+                "attempt_index": 0,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 0
+              },
+              {
+                "ack_end_us": 7768,
+                "attempt_index": 1,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 4384
+              },
+              {
+                "ack_end_us": 12152,
+                "attempt_index": 2,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 8768
+              },
+              {
+                "ack_end_us": 16536,
+                "attempt_index": 3,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 13152
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 0,
+        "packet_id": "ba120662b6418554c12854921cca46a55904243b8f30dd679e2c5c5a25228f03",
+        "packet_index": 0
+      },
+      {
+        "accepted_us": 203384,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 203384,
+                "attempt_index": 0,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 200000
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 200000,
+        "packet_id": "29551a7f0a73d2acc94574c2a34a204946607c54bfd36d744823abe33803e203",
+        "packet_index": 1
+      },
+      {
+        "accepted_us": 403384,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 403384,
+                "attempt_index": 0,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 400000
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 400000,
+        "packet_id": "cc4627745621d9476926efc43b448b8880136f525691f5997b39521fcef00c4b",
+        "packet_index": 2
+      },
+      {
+        "accepted_us": 620920,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 603384,
+                "attempt_index": 0,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 600000
+              },
+              {
+                "ack_end_us": 607768,
+                "attempt_index": 1,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 604384
+              },
+              {
+                "ack_end_us": 612152,
+                "attempt_index": 2,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 608768
+              },
+              {
+                "ack_end_us": 616536,
+                "attempt_index": 3,
+                "forced_failure": false,
+                "lost": true,
+                "start_us": 613152
+              },
+              {
+                "ack_end_us": 620920,
+                "attempt_index": 4,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 617536
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 600000,
+        "packet_id": "319c11a940ec9770f3dce89d5fef41735437460c32cfcf76fa357329d74980a0",
+        "packet_index": 3
+      },
+      {
+        "accepted_us": 816536,
+        "delivered": true,
+        "fragments": [
+          {
+            "attempts": [
+              {
+                "ack_end_us": 803384,
+                "attempt_index": 0,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 800000
+              },
+              {
+                "ack_end_us": 807768,
+                "attempt_index": 1,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 804384
+              },
+              {
+                "ack_end_us": 812152,
+                "attempt_index": 2,
+                "forced_failure": true,
+                "lost": true,
+                "start_us": 808768
+              },
+              {
+                "ack_end_us": 816536,
+                "attempt_index": 3,
+                "forced_failure": false,
+                "lost": false,
+                "start_us": 813152
+              }
+            ],
+            "delivered": true,
+            "fragment_index": 0,
+            "header_bytes": 0,
+            "payload_bytes": 96,
+            "wire_bytes": 96
+          }
+        ],
+        "offered_us": 800000,
+        "packet_id": "dc1f6b867ca937c5cf1d662ce3b4ba03aa634dfc71e64d60458234490a2cc599",
+        "packet_index": 4
+      }
+    ],
+    "ping_rtt_latency_ms": null,
+    "provenance": {
+      "execution_kind": "simulation",
+      "measurement_status": "analytical_simulation",
+      "source_kind": "synthetic"
+    },
+    "requested_tx_power_dbm": 19,
+    "rx_operations": 15,
+    "segments": [
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "prepare",
+        "start_us": 0,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "transmit",
+        "start_us": 500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "ack_wait",
+        "start_us": 1884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "retry_backoff",
+        "start_us": 3384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "prepare",
+        "start_us": 4384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "transmit",
+        "start_us": 4884,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "ack_wait",
+        "start_us": 6268,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "retry_backoff",
+        "start_us": 7768,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "prepare",
+        "start_us": 8768,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "transmit",
+        "start_us": 9268,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "ack_wait",
+        "start_us": 10652,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "retry_backoff",
+        "start_us": 12152,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "prepare",
+        "start_us": 13152,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "transmit",
+        "start_us": 13652,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 0,
+        "phase": "ack_wait",
+        "start_us": 15036,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 183464,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 16536,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 1,
+        "phase": "prepare",
+        "start_us": 200000,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 1,
+        "phase": "transmit",
+        "start_us": 200500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 1,
+        "phase": "ack_wait",
+        "start_us": 201884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 196616,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 203384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 2,
+        "phase": "prepare",
+        "start_us": 400000,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 2,
+        "phase": "transmit",
+        "start_us": 400500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 2,
+        "phase": "ack_wait",
+        "start_us": 401884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 196616,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 403384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "prepare",
+        "start_us": 600000,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "transmit",
+        "start_us": 600500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "ack_wait",
+        "start_us": 601884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "retry_backoff",
+        "start_us": 603384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "prepare",
+        "start_us": 604384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "transmit",
+        "start_us": 604884,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "ack_wait",
+        "start_us": 606268,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "retry_backoff",
+        "start_us": 607768,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "prepare",
+        "start_us": 608768,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "transmit",
+        "start_us": 609268,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "ack_wait",
+        "start_us": 610652,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "retry_backoff",
+        "start_us": 612152,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "prepare",
+        "start_us": 613152,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "transmit",
+        "start_us": 613652,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "ack_wait",
+        "start_us": 615036,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "retry_backoff",
+        "start_us": 616536,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 4,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "prepare",
+        "start_us": 617536,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 4,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "transmit",
+        "start_us": 618036,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 4,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 3,
+        "phase": "ack_wait",
+        "start_us": 619420,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 179080,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 620920,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "prepare",
+        "start_us": 800000,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "transmit",
+        "start_us": 800500,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "ack_wait",
+        "start_us": 801884,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 0,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "retry_backoff",
+        "start_us": 803384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "prepare",
+        "start_us": 804384,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "transmit",
+        "start_us": 804884,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "ack_wait",
+        "start_us": 806268,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 1,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "retry_backoff",
+        "start_us": 807768,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "prepare",
+        "start_us": 808768,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "transmit",
+        "start_us": 809268,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "ack_wait",
+        "start_us": 810652,
+        "state": "rx"
+      },
+      {
+        "attempt_index": 2,
+        "duration_us": 1000,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "retry_backoff",
+        "start_us": 812152,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "prepare",
+        "start_us": 813152,
+        "state": "idle"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 1384,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "transmit",
+        "start_us": 813652,
+        "state": "tx"
+      },
+      {
+        "attempt_index": 3,
+        "duration_us": 1500,
+        "fragment_index": 0,
+        "packet_index": 4,
+        "phase": "ack_wait",
+        "start_us": 815036,
+        "state": "rx"
+      },
+      {
+        "attempt_index": null,
+        "duration_us": 183464,
+        "fragment_index": null,
+        "packet_index": null,
+        "phase": "free_idle",
+        "start_us": 816536,
+        "state": "idle"
+      }
+    ],
+    "state_current_ma": {
+      "cpu_busy": 42,
+      "idle": 37,
+      "rx": 47,
+      "tx": 235
+    },
+    "state_duration_us": {
+      "cpu_busy": 0,
+      "idle": 956740,
+      "rx": 22500,
+      "tx": 20760
+    },
+    "state_energy_mj": {
+      "cpu_busy": 0.0,
+      "idle": 130.977706,
+      "rx": 3.9127500000000004,
+      "tx": 18.05082
+    },
+    "status": "COMPLETE",
+    "total_energy_mj": 152.94127600000002,
+    "tx_attempts": 15
+  },
+  "fault_artifact_version": 1,
+  "input_sha256": {
+    "assumptions": "98e69b335b76f306ee3f40a52954eee98a5113db497893e63a308a37cf783504",
+    "fault": "34c33b5e1f0783096ee12578182e593381f09d6e5083a7c75c0a5049290b8bce",
+    "intended_workload": "b520278a75ef19639206f1c439b3dff11fa6628fdb5225a9326e70bfff5f70d5",
+    "parameters": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55"
+  },
+  "lineage": {
+    "baseline_id": "fb-befdd06903f0efc46a02f7649f265536",
+    "child_id": "fc-84081a82931ae8f731656577eb2e403a",
+    "evaluation_group_id": "fp-02d3c37cd51faccb34bfc35d7e469579",
+    "family_id": "af-284168af605a7542a77d06821862525d",
+    "intended_run_id": "fi-51b19985e1d4caa795d93a31f8d31ff6",
+    "parent_id": "fp-02d3c37cd51faccb34bfc35d7e469579",
+    "repetition": 2,
+    "seed": 4618219664735656177
+  },
+  "provenance": {
+    "execution_kind": "simulation",
+    "measurement_status": "analytical_simulation",
+    "source_kind": "synthetic"
+  },
+  "sensitivity": [
+    {
+      "baseline_energy_mj": 143.3165104,
+      "basis": "assumption",
+      "bound": "min",
+      "fault_energy_mj": 152.94127600000002,
+      "parameter": "cpu_increment_ma",
+      "status": "COMPLETE",
+      "unit": "mA",
+      "value": 0
+    },
+    {
+      "baseline_energy_mj": 143.3165104,
+      "basis": "assumption",
+      "bound": "max",
+      "fault_energy_mj": 152.94127600000002,
+      "parameter": "cpu_increment_ma",
+      "status": "COMPLETE",
+      "unit": "mA",
+      "value": 20
+    },
+    {
+      "baseline_energy_mj": 143.3165104,
+      "basis": "assumption",
+      "bound": "min",
+      "fault_energy_mj": 152.94127600000002,
+      "parameter": "lower_tx_current_ma",
+      "status": "COMPLETE",
+      "unit": "mA",
+      "value": 120
+    },
+    {
+      "baseline_energy_mj": 143.3165104,
+      "basis": "assumption",
+      "bound": "max",
+      "fault_energy_mj": 152.94127600000002,
+      "parameter": "lower_tx_current_ma",
+      "status": "COMPLETE",
+      "unit": "mA",
+      "value": 234
+    }
+  ],
+  "snapshots": {
+    "assumptions": "{\n  \"assumption_id\": \"fault-assumptions-v1\",\n  \"assumption_version\": 1,\n  \"burst_length_packets\": 2,\n  \"burst_period_packets\": 4,\n  \"cpu_increment_ma\": {\n    \"basis\": \"assumption\",\n    \"max\": 20,\n    \"min\": 0,\n    \"unit\": \"mA\",\n    \"value\": 5\n  },\n  \"fragment_header_bytes\": 8,\n  \"lower_tx_current_ma\": {\n    \"basis\": \"assumption\",\n    \"max\": 234,\n    \"min\": 120,\n    \"unit\": \"mA\",\n    \"value\": 180\n  },\n  \"lower_tx_dbm\": 14,\n  \"notes\": [\n    \"CPU increment applies only to free-idle time, exclusive state idle+increment; never overlaps radio current.\",\n    \"Only upper19dBm TX current inherits the original declared source conditions. Lower current and linear interpolation are assumptions, not a Nordic power curve.\",\n    \"Idle/RX currents transferred unchanged at14dBm are assumptions; original source catalog remains archived with exact conditions.\",\n    \"Beacon severity counts extra queued wake prepare+RX services per complete interval slot; no logical data delivery credit.\",\n    \"Retries force a seeded contiguous burst of initial failures then resume common baseline draws with an increased actual cap.\",\n    \"Fragment overhead applies only when extra fragments exist; each fragment has prepare/TX/RX/retry service, logical delivery requires all fragments.\",\n    \"Infeasible slot schedules are rejected before energy calculation; no clipping, hidden overflow or fabricated zero labels.\"\n  ],\n  \"upper_tx_dbm\": 19\n}\n",
+    "fault": "{\n  \"kind\": \"bursty_retry_storm\",\n  \"severity\": 3\n}\n",
+    "intended_workload": "{\n  \"evaluation_group_id\": \"fp-02d3c37cd51faccb34bfc35d7e469579\",\n  \"interval_ms\": 200,\n  \"max_attempts\": 3,\n  \"offered_packets\": 5,\n  \"payload_size_bytes\": 96,\n  \"repetition\": 2,\n  \"run_id\": \"fi-51b19985e1d4caa795d93a31f8d31ff6\",\n  \"seed\": 4618219664735656177,\n  \"tx_power_dbm\": 19,\n  \"window_duration_ms\": 1000,\n  \"workload_version\": 1\n}\n",
+    "parameters": "{\n  \"conditions\": {\n    \"band\": 1,\n    \"modem_mode\": \"minimum_latency\",\n    \"rx_signal_dbm\": -90,\n    \"scope\": \"exclusive_VDD_scenario\",\n    \"supply_v\": 3.7,\n    \"temperature_c\": 25,\n    \"tx_power_dbm\": 19\n  },\n  \"currents_ma\": {\n    \"idle\": {\n      \"basis\": \"official_typical\",\n      \"max\": 44.4,\n      \"min\": 29.6,\n      \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n      \"source_id\": \"dect-idle\",\n      \"unit\": \"mA\",\n      \"value\": 37\n    },\n    \"rx\": {\n      \"basis\": \"official_typical\",\n      \"max\": 56.4,\n      \"min\": 37.6,\n      \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n      \"source_id\": \"dect-rx\",\n      \"unit\": \"mA\",\n      \"value\": 47\n    },\n    \"tx\": {\n      \"basis\": \"official_typical\",\n      \"max\": 282.0,\n      \"min\": 188.0,\n      \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n      \"source_id\": \"dect-tx\",\n      \"unit\": \"mA\",\n      \"value\": 235\n    }\n  },\n  \"description\": \"Exclusive nominal DECT NR+ scenario accounting; timings and loss are assumptions.\",\n  \"loss_probability\": {\n    \"basis\": \"assumption\",\n    \"max\": 0.5,\n    \"min\": 0.0,\n    \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n    \"source_id\": null,\n    \"unit\": \"probability\",\n    \"value\": 0.1\n  },\n  \"model_id\": \"nrf9151-dect-min-latency-reference\",\n  \"model_schema_version\": 1,\n  \"model_version\": \"1.0.0\",\n  \"parameter_version\": \"2026-11-17.1\",\n  \"rtt_extra_ms\": null,\n  \"sources\": {\n    \"dect-idle\": {\n      \"conditions\": {\n        \"band\": 1,\n        \"modem_mode\": \"minimum_latency\",\n        \"rx_signal_dbm\": -90,\n        \"scope\": \"exclusive_VDD_scenario\",\n        \"supply_v\": 3.7,\n        \"temperature_c\": 25,\n        \"tx_power_dbm\": 19\n      },\n      \"document\": \"nRF9151 Product Specification\",\n      \"revision\": \"1.1, June 2025\",\n      \"section\": \"Current consumption / Electrical specification / DECT NR+ current consumption\",\n      \"symbol\": \"IIDLE_LOW_LATENCY\",\n      \"table\": \"Unnumbered HTML current table\",\n      \"unit\": \"mA\",\n      \"url\": \"https://docs.nordicsemi.com/r/bundle/ps_nrf9151/page/_tmp/alta.nrf9151/autodita/application.current/parameters.id_current_dect_nr.html\",\n      \"value\": 37\n    },\n    \"dect-rx\": {\n      \"conditions\": {\n        \"band\": 1,\n        \"modem_mode\": \"minimum_latency\",\n        \"rx_signal_dbm\": -90,\n        \"scope\": \"exclusive_VDD_scenario\",\n        \"supply_v\": 3.7,\n        \"temperature_c\": 25,\n        \"tx_power_dbm\": 19\n      },\n      \"document\": \"nRF9151 Product Specification\",\n      \"revision\": \"1.1, June 2025\",\n      \"section\": \"Current consumption / Electrical specification / DECT NR+ current consumption\",\n      \"symbol\": \"IRX_-90DBM_LOW_LATENCY\",\n      \"table\": \"Unnumbered HTML current table\",\n      \"unit\": \"mA\",\n      \"url\": \"https://docs.nordicsemi.com/r/bundle/ps_nrf9151/page/_tmp/alta.nrf9151/autodita/application.current/parameters.id_current_dect_nr.html\",\n      \"value\": 47\n    },\n    \"dect-tx\": {\n      \"conditions\": {\n        \"band\": 1,\n        \"modem_mode\": \"minimum_latency\",\n        \"rx_signal_dbm\": -90,\n        \"scope\": \"exclusive_VDD_scenario\",\n        \"supply_v\": 3.7,\n        \"temperature_c\": 25,\n        \"tx_power_dbm\": 19\n      },\n      \"document\": \"nRF9151 Product Specification\",\n      \"revision\": \"1.1, June 2025\",\n      \"section\": \"Current consumption / Electrical specification / DECT NR+ current consumption\",\n      \"symbol\": \"ITX_PL13_LOW_LATENCY\",\n      \"table\": \"Unnumbered HTML current table\",\n      \"unit\": \"mA\",\n      \"url\": \"https://docs.nordicsemi.com/r/bundle/ps_nrf9151/page/_tmp/alta.nrf9151/autodita/application.current/parameters.id_current_dect_nr.html\",\n      \"value\": 235\n    }\n  },\n  \"timing_us\": {\n    \"backoff\": {\n      \"basis\": \"assumption\",\n      \"max\": 5000,\n      \"min\": 0,\n      \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n      \"source_id\": null,\n      \"unit\": \"us\",\n      \"value\": 1000\n    },\n    \"prepare\": {\n      \"basis\": \"assumption\",\n      \"max\": 2000,\n      \"min\": 100,\n      \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n      \"source_id\": null,\n      \"unit\": \"us\",\n      \"value\": 500\n    },\n    \"rx\": {\n      \"basis\": \"assumption\",\n      \"max\": 4000,\n      \"min\": 500,\n      \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n      \"source_id\": null,\n      \"unit\": \"us\",\n      \"value\": 1500\n    },\n    \"tx_base\": {\n      \"basis\": \"assumption\",\n      \"max\": 2000,\n      \"min\": 500,\n      \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n      \"source_id\": null,\n      \"unit\": \"us\",\n      \"value\": 1000\n    },\n    \"tx_per_byte\": {\n      \"basis\": \"assumption\",\n      \"max\": 10,\n      \"min\": 1,\n      \"range_note\": \"Assumed sensitivity envelope; not a manufacturer tolerance or probability interval.\",\n      \"source_id\": null,\n      \"unit\": \"us\",\n      \"value\": 4\n    }\n  }\n}\n"
+  }
+}

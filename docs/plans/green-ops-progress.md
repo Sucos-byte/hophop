@@ -879,3 +879,22 @@ neither is accepted calibrated evidence. Benchmark planner tests prove no energy
 simulation/scoring and1920unique cases/16new parents,48streams. Current: commit
 verified implementation/export; next actual small dev examples and unscored
 Week12 recipe freeze. Models/calibration/production policies unchanged, no push.
+
+Verified harness milestone committed24b746a; Windows snapshot refreshed.40 actual
+development cases completed and85 files reproduce byte-for-byte across two fresh
+runs with full artifact/report replay.28 active hidden faults leave intendedX/
+model predictions unchanged; all40 default gates ABSTAIN3/block, positive detections0.
+Analytical5% oracle flags11 undetected cases (CPU4,retry3,fragment4); unchanged
+200mW point budget violated by2 severe fragmentation cases.12 compliant controls
+also abstention-blocked; gateFAIL false alarms0, not claimed good selectivity.
+TX lock and beacon mechanisms change real modeled state/energy but remain below
+5% budget here; no retuning to make them pass a detection claim.
+
+Frozen Week12 proposal1920case IDs/16new coarsened parents,8validation/8locked
+(960 each),48streams, excluded109historical/development parents with zero overlap.
+No Week12 energy or score generated. Recipe +freeze receipt bind exact code,
+model selection, calibration inventory, feature contract and production policy.
+Explicit supplemental infeasible-beacon artifact has null fault labels and
+ABSTAIN, no fabricated zero or positive. Current: final docs/evidence checks and
+commit/export; next separately authorized Week12 scoring under the frozen recipe.
+No current-task push/publication/merge/deploy; frozen dependencies unchanged.

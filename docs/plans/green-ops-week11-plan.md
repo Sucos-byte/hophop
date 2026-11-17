@@ -130,3 +130,20 @@ Milestones: freeze (this commit); implementation/accounting tests; trusted
 integration/replay and development examples; full suite/frozen benchmark proposal,
 readiness/docs. Commit verified milestones and refresh tracker/handoff/Windows.
 Current freeze; next implement five mechanisms and independent arithmetic tests.
+
+## Completion evidence
+
+Freeze d0d6331; verified implementation24b746a. Release341 tests pass (24 new,
+111.869s), ResourceWarning errors.40development cases/85output files reproduce
+exactly with full artifact/report replay. All28 active hidden faults leave X/
+predictions unchanged: gates40ABSTAIN3/block, positive detections0,11research
+oracle violations undetected,2production point violations undetected.12controls
+also abstention-blocked; do not claim good selectivity from0FAIL false alarms.
+No target inflation or policy retuning. Infeasibility archived with null labels.
+
+Week12 recipe nowFROZEN_UNSCORED with1920unique IDs/16parents,8validation/
+8locked(960 each),48streams,109past/development parent exclusions, no overlap.
+Recipe/freeze receipt bind code/model/calibration/feature/policies before energy
+or benchmark scoring. No Week12 outcomes generated. Current final evidence/docs
+commit/export; next separately authorized Week12 benchmark implementation/scoring
+under this frozen proposal. No push/publication/merge/deploy or physical claims.
