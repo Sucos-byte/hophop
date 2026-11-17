@@ -1,0 +1,57 @@
+{
+  "firmware": {
+    "application": "hophop-examples",
+    "board": "nrf9151-dk",
+    "commands": [
+      "CARGO_NET_OFFLINE=true laze build -g -b nrf9151-dk -a hophop-examples -s green-ops-profile -D LOG=info",
+      "CARGO_NET_OFFLINE=true laze build -g -b nrf9151-dk -a hophop-examples -d green-ops-profile -D LOG=info"
+    ],
+    "hardware_run_or_flash": false,
+    "initial_online_attempt": "failed DNS index.crates.io",
+    "profiling_disabled_cached_exit": 0,
+    "profiling_enabled_cached_exit": 0,
+    "warnings": "unused existing ESP patches; no dependencies/lock changes"
+  },
+  "implementation_sha256": {
+    ".github/workflows/green-ops-ci.yml": "08885d16f4d35f4add7aad8e4e1ba565ee18e3cfeff7a4b5be0bc0f31af6bd8c",
+    "tools/green_ops/ci_rust_checks.sh": "7ec1ce35e649663ecd85c6132e407d976d3feb809ce5448ef21257bf4989c291"
+  },
+  "log_sha256": {
+    "green-ops-week10-firmware-disabled.log": "c2fc49a108fff8af1097238e4c90b3abd398bef79f33abcde1bc9d2f4f1bdfe1",
+    "green-ops-week10-firmware-enabled-offline.log": "741c9c79beb8702af8adede0da08ff9921e8afd842c65486dd73b50acb8b8c28",
+    "green-ops-week10-firmware-enabled.log": "1b7b5871939e7af8c80f4858c601f8e02d92ab61333e2592eec48c956d2bdae9",
+    "green-ops-week10-python.log": "95651ffdd86bcb10121d73754d982dadd319923d68d1243cea5283f1f86cb5c3",
+    "green-ops-week10-rust-checks.log": "668cec62fc855e7c34b289b32127dfa45f69330c8862ce01aac3997c80da761b"
+  },
+  "python_tests": {
+    "command": "python3 -W error::ResourceWarning -m unittest discover -s tools/green_ops/tests",
+    "count": 316,
+    "duration_seconds": 108.555,
+    "result": "PASS",
+    "tested_state": "reporter working tree after8b65a64, subsequently committed2d33514; workflow/script checked separately"
+  },
+  "python_version": "Python 3.14.4",
+  "rust_checks": {
+    "arm_no_std_compile_passed": true,
+    "arm_target": "thumbv8m.main-none-eabihf",
+    "command": "GREEN_OPS_RUST_TOOLCHAIN=stable CARGO_NET_OFFLINE=true bash tools/green_ops/ci_rust_checks.sh",
+    "exit_code": 0,
+    "host_all_features_unit_tests": 8,
+    "host_default_unit_tests": 8,
+    "note": "installed stable toolchain bits are1.99.1; CI installs exact named1.99.1; not full firmware ARM linking",
+    "standalone_telemetry_tests": 8
+  },
+  "rust_version": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "scope": "local_checks_only_not_GitHub_Actions_execution",
+  "unavailable": [
+    "actionlint",
+    "remote GitHub Actions execution",
+    "clean hosted runner dependency/toolchain fetch verification",
+    "full all-board application test/07 matrix not run"
+  ],
+  "validation_version": 1,
+  "workflow_checks": [
+    "bash -n tools/green_ops/ci_rust_checks.sh",
+    "PyYAML parse with duplicate-key rejection and trigger/pin/permission/command security checks"
+  ]
+}

@@ -757,3 +757,15 @@ Workflow YAML parse/duplicate/security-contract checks pass (optional localPyYAM
 actionlint absent, no remote execution. Firmware enabled normal attempt DNS-failed;
 cache-only retry passed. Disabled cached build underway. Current: commit verified
 reporter code then workflow/build milestone; next eight-status rendering evidence.
+
+Reporter milestone committed2d33514; Windows snapshot refreshed. Workflow/build
+milestone verified locally: default/all-features host suites8 tests each,
+8standalone telemetry tests and ARMthumbv8m.main-none-eabihf no_std compile pass.
+Cached nrf9151-dk hophop-examples profiling enabled and disabled builds both pass;
+initial online registry DNS failure recorded, existing unused ESP patch warnings
+unchanged. New workflow YAML/duplicate/security checks and bash syntax pass;
+optionalPyYAML only local validation, no runtime dependency. Exact official action
+pins, Rust1.99.1/Python3.14.4 and read-only/no-publication scope recorded. No
+GitHub execution/actionlint or clean-runner download verification claimed.
+Current: commit workflow/local evidence/export. Next rendered8-case demos and
+Week11 readiness. Existing build workflow and lock files remain unchanged.

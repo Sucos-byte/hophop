@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2026 Parth Shailesh Thite
+# SPDX-License-Identifier: MIT OR Apache-2.0
+name: Green Ops software verification (not energy approval)
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  rust-telemetry:
+    name: Host tests and standalone ARM no_std telemetry
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout without persisted credentials
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        with:
+          persist-credentials: false
+      - name: Install pinned Rust and ARM target
+        run: rustup toolchain install 1.99.1 --profile minimal --target thumbv8m.main-none-eabihf
+      - name: Locked host tests, telemetry tests and ARM compilation
+        run: bash tools/green_ops/ci_rust_checks.sh
+
+  python-reports:
+    name: Python tests and expected-ABSTAIN software smoke
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout without persisted credentials
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        with:
+          persist-credentials: false
+      - name: Pinned Python (standard-library installation)
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.14.4'
+      - name: Full Python tests with ResourceWarning errors
+        run: python3 -W error::ResourceWarning -m unittest discover -s tools/green_ops/tests
+      - name: SOFTWARE ONLY - verify default ABSTAIN3, not candidate approval
+        run: python3 tools/green_ops/green_ops_ci_smoke.py
+# No candidate-approval step: current default evidence must abstain/block3.
+# No overrides, comments, uploads, secrets, deployment or branch-protection changes.

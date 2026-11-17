@@ -1,0 +1,22 @@
+{
+  "actionlint": "unavailable locally",
+  "commands": [
+    "rustup toolchain install 1.99.1 --profile minimal --target thumbv8m.main-none-eabihf",
+    "bash tools/green_ops/ci_rust_checks.sh",
+    "python3 -W error::ResourceWarning -m unittest discover -s tools/green_ops/tests",
+    "python3 tools/green_ops/green_ops_ci_smoke.py"
+  ],
+  "github_actions_executed": false,
+  "local_security_contract_checks_passed": true,
+  "parsed": true,
+  "remote_runner_verification_required": true,
+  "sha256": "08885d16f4d35f4add7aad8e4e1ba565ee18e3cfeff7a4b5be0bc0f31af6bd8c",
+  "third_party_actions": [
+    "actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3",
+    "actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3",
+    "actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c"
+  ],
+  "validation_version": 1,
+  "workflow": ".github/workflows/green-ops-ci.yml",
+  "yaml_parser": "PyYAML 6.0.3 BaseLoader with duplicate rejection"
+}
