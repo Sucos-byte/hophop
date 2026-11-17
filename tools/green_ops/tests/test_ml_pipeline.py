@@ -19,6 +19,14 @@ from analytical_design import load_design_record
 
 
 class NumericalRegressionTests(unittest.TestCase):
+    def test_r2_preserves_small_variance_at_large_offsets(self):
+        self.assertAlmostEqual(ml.metrics([1e16,1e16,1e16+2],[1e16]*3)['r2'],-0.5)
+        centered=ml.metrics([0,0,2],[0,0,0])
+        shifted=ml.metrics([1e16,1e16,1e16+2],[1e16]*3)
+        self.assertAlmostEqual(centered['r2'],shifted['r2'])
+        self.assertAlmostEqual(ml.metrics([-1e308,1e308],[0,0])['r2'],0)
+        self.assertIsNone(ml.metrics([1e16]*3,[0]*3)['r2'])
+
     def test_independent_one_column_ridge_solution_and_mean_baseline(self):
         X=[[x,0,19,1000] for x in (1,2,3)];y=[5,7,9]
         model=ml.fit_regressor(X,y,alpha=3)
@@ -90,6 +98,18 @@ class ModelArtifactTests(unittest.TestCase):
         with self.assertRaises(ValueError):ml.model_from_bytes(b'{"a":1,"a":2}')
         with self.assertRaises(ValueError):ml.model_from_bytes(b'{"bad":NaN}')
         with self.assertRaises(ValueError):ml.predict_record(self.artifact,self.train[0],recipe_bytes=b'{}')
+
+    def test_prediction_rejects_metadata_inconsistent_with_exact_recipe(self):
+        for field,value in [('experiment_id','other'),('seeds',dict(master_seed=1,split_seed=2,cv_seed=3))]:
+            bad=copy.deepcopy(self.artifact);bad['training'][field]=value
+            ml.model_to_bytes(bad)  # internally valid is insufficient
+            with self.assertRaisesRegex(ValueError,'recipe/model'):self.predict(bad,self.train[0])
+        bad=copy.deepcopy(self.artifact)
+        bad['training']['split_membership']['test']=[]
+        from analytical_reference import _sha256
+        bad['training']['split_sha256']=_sha256(_json_bytes(bad['training']['split_membership']))
+        ml.model_to_bytes(bad)
+        with self.assertRaisesRegex(ValueError,'recipe/model'):self.predict(bad,self.train[0])
 
     def test_missing_label_is_excluded_and_invalid_x_cannot_hide_behind_it(self):
         zero=save_bundle(self.root/'zero',workload(run_id='zero',offered_packets=0))

@@ -140,10 +140,15 @@ def metrics(truth,predictions):
         if n<2:reason='fewer_than_two_labels'
         elif all(value==truth[0] for value in truth):reason='constant_truth'
         else:
-            mean=math.fsum(value/n for value in truth)
-            spread=math.hypot(*((value-mean)/math.sqrt(n) for value in truth))
+            # Power-of-two scaling avoids overflow; centering small offsets
+            # preserves variance when the large absolute mean rounds.
+            exponent=math.frexp(max(abs(value) for value in truth))[1]
+            scaled=[math.ldexp(value,-exponent) for value in truth]
+            offsets=[value-scaled[0] for value in scaled]
+            center=math.fsum(value/n for value in offsets)
+            spread=math.hypot(*((value-center)/math.sqrt(n) for value in offsets))
             if spread==0:reason='constant_truth'
-            else:r2=1-(rmse/spread)**2;finite(r2,'R2')
+            else:r2=1-(math.ldexp(rmse,-exponent)/spread)**2;finite(r2,'R2')
         finite(mae,'MAE');finite(rmse,'RMSE')
     except OverflowError as error:raise ValueError('metric numeric overflow') from error
     return dict(sample_count=n,mae=mae,rmse=rmse,r2=r2,r2_undefined_reason=reason)
@@ -275,5 +280,20 @@ def predict_record(artifact,record,*,domain='primary',recipe_bytes=None):
     if (recipe['parameters_sha256']!=artifact['scope']['primary_parameters_sha256']
             or recipe['assumptions_sha256']!=artifact['scope']['assumptions_sha256']):
         raise ValueError('recipe/model source scope mismatch')
+    validate_model_recipe(artifact,recipe)
     X=record_features(record,scope=artifact['scope'],domain=domain,recipe=recipe)
     return predict_matrix(artifact['estimator'],[X])[0]
+
+
+def validate_model_recipe(artifact,recipe):
+    """Bind internally consistent metadata to the exact supplied recipe."""
+    training=artifact['training']
+    for name,expected in dict(split_membership=recipe['splits'],experiment_id=recipe['experiment_id'],
+            seeds={key:recipe[key] for key in ('master_seed','split_seed','cv_seed')},
+            preprocessing=recipe['preprocessing']).items():
+        if training[name]!=expected:raise ValueError(f'recipe/model {name} mismatch')
+    if artifact['scope']['primary_parameters_sha256']!=recipe['parameters_sha256'] or artifact['scope']['assumptions_sha256']!=recipe['assumptions_sha256']:
+        raise ValueError('recipe/model source scope mismatch')
+    estimator=artifact['estimator']
+    if estimator['kind']=='ridge' and estimator['alpha'] not in recipe['ridge_alphas']:
+        raise ValueError('model alpha is outside frozen recipe')

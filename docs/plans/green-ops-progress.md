@@ -483,3 +483,22 @@ documentation-only resumption checkpoint. Next: separately requested Week8 work
 with a new predeclared group-disjoint calibration/evaluation design. Existing
 validation/test/stress are consumed; no calibrated uncertainty or physical
 accuracy claimed. No push/publish; actual research hours unreported.
+
+## Week7 review — verified correctness milestone
+
+Review entry clean a2aeb15 on green-ops/week7-ml-regression; scope9138511..HEAD.
+Fresh materialization/replay reproduced all720 sources, six models, selection,
+reports and1620 predictions byte-for-byte. Independent checks verified216
+preprocessing statistics, baseline means, labels, counts and MAE/RMSE. No
+held-out fitting/tuning. Historical reproduction receipt/script retained under
+docs/results/week7-regression-v1/review.
+
+Fixed rounded-large-mean R2 variance (independent example expected -0.5,
+previously0), with power-of-two scaling/offset centering and extreme-value tests.
+New evaluation/selection reports explicitly use metrics_version2; old reports
+remain readable. Also reject recipe-inconsistent model metadata and selection
+reports contradicting frozen CV shortlist/validation winner, with targeted tests.
+Full suite270 passes, ResourceWarning errors; follow-up report-version targeted
+suite7 passes. Current: commit verified code/reproduction milestone. Next:
+finish corrected report audit, Week7 review and fresh Week8 family design.
+Original choices, model bytes and saved predictions remain frozen.

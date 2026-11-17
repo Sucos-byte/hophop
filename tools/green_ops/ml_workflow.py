@@ -4,12 +4,13 @@
 """Separate validation selection from immutable held-out evaluation."""
 
 from pathlib import Path
+import math
 
 from analytical_reference import _fields,_json_bytes,_sha256
 from dataset_builder import _json_from_bytes
 from ml_dataset import TARGET_UNITS,validate_recipe,_digest
 from ml_pipeline import (PIPELINE_VERSION,fit_regressor,predict_matrix,prepare_target,metrics,
-    evaluate_estimator,package_model,model_to_bytes,model_from_bytes,predict_record)
+    evaluate_estimator,package_model,model_to_bytes,model_from_bytes,predict_record,validate_model_recipe)
 
 SELECTION_FIELDS={'selection_version','pipeline_version','stage','provenance','recipe_sha256','dataset_sha256',
                   'split_sha256','choices','model_sha256','selection_report_sha256','locked_test_groups'}
@@ -76,7 +77,7 @@ def train_selection(dataset):
         target_reports[target]=dict(unit=TARGET_UNITS[target],training_sample_count=len(used),training_missing_labels=missing,
             candidates=results,validation_shortlist=shortlist,chosen_candidate=chosen,selection_metric='validation_rmse',
             refit_on_validation=False)
-    report=dict(selection_report_version=1,provenance='analytical_simulation',recipe_sha256=dataset['recipe_sha256'],
+    report=dict(selection_report_version=2,metrics_version=2,provenance='analytical_simulation',recipe_sha256=dataset['recipe_sha256'],
         dataset_sha256=dataset['dataset_sha256'],targets=target_reports,
         policy='frozen grouped CV; top ridge shortlist + baseline; validation RMSE; no test or stress access',
         locked_test_groups=recipe['splits']['test'])
@@ -108,12 +109,14 @@ def load_training(directory,dataset):
             model_bytes=(directory/name).read_bytes()
             if _sha256(model_bytes)!=selection['model_sha256'][name]:raise ValueError('frozen model hash mismatch')
             model=model_from_bytes(model_bytes)
+            validate_model_recipe(model,dataset['recipe'])
             for key in ('recipe_sha256','dataset_sha256','split_sha256'):
                 if model['training'][key]!=selection[key]:raise ValueError('model training provenance mismatch')
             if model['target']!=target or model['training']['split_membership']!=dataset['recipe']['splits']:
                 raise ValueError('model target/split mismatch')
             _,_,used,_=prepare_target(parts['train'],target)
             if model['training']['train_run_ids']!=sorted(r['row']['run_id'] for r in used):raise ValueError('model training membership mismatch')
+            if model['training']['train_group_ids']!=sorted({r['row']['evaluation_group_id'] for r in used}):raise ValueError('model training group mismatch')
             if role=='baseline' and model['estimator']['kind']!='training_mean':raise ValueError('baseline model mismatch')
             if model['estimator']['kind']=='ridge' and model['estimator']['alpha'] not in dataset['recipe']['ridge_alphas']:
                 raise ValueError('model alpha is outside frozen recipe')
@@ -123,8 +126,10 @@ def load_training(directory,dataset):
     report_bytes=(directory/'selection-report.json').read_bytes()
     if _sha256(report_bytes)!=selection['selection_report_sha256']:raise ValueError('selection report hash mismatch')
     report=_json_from_bytes(report_bytes)
-    _fields(report,{'selection_report_version','provenance','recipe_sha256','dataset_sha256','targets','policy','locked_test_groups'},'selection report')
-    if type(report['selection_report_version']) is not int or report['selection_report_version']!=1 or report['provenance']!='analytical_simulation':raise ValueError('selection report version/provenance mismatch')
+    report_fields={'metrics_version'} if report.get('selection_report_version')==2 else set()
+    _fields(report,report_fields|{'selection_report_version','provenance','recipe_sha256','dataset_sha256','targets','policy','locked_test_groups'},'selection report')
+    if type(report['selection_report_version']) is not int or report['selection_report_version'] not in (1,2) or report['provenance']!='analytical_simulation':raise ValueError('selection report version/provenance mismatch')
+    if report['selection_report_version']==2 and (type(report['metrics_version']) is not int or report['metrics_version']!=2):raise ValueError('unsupported metrics version')
     if report['recipe_sha256']!=selection['recipe_sha256'] or report['dataset_sha256']!=selection['dataset_sha256'] or report['locked_test_groups']!=selection['locked_test_groups']:
         raise ValueError('selection report provenance mismatch')
     _fields(report['targets'],TARGET_UNITS,'selection report targets')
@@ -133,6 +138,20 @@ def load_training(directory,dataset):
         _fields(target_report,{'unit','training_sample_count','training_missing_labels','candidates','validation_shortlist','chosen_candidate','selection_metric','refit_on_validation'},'selection target report')
         if target_report['chosen_candidate']!=choice['selected_candidate'] or choice['selected_candidate']!=_candidate_name(choice['selected_kind'],choice['selected_alpha']):raise ValueError('choice/report mismatch')
         if target_report['unit']!=TARGET_UNITS[target] or target_report['selection_metric']!='validation_rmse' or target_report['refit_on_validation'] is not False:raise ValueError('selection report policy mismatch')
+        candidates=target_report['candidates']
+        expected={'training_mean':('training_mean',None),**{_candidate_name('ridge',a):('ridge',a) for a in dataset['recipe']['ridge_alphas']}}
+        _fields(candidates,expected,'selection candidates')
+        for name,(kind,alpha) in expected.items():
+            candidate=candidates[name]
+            if candidate['kind']!=kind or candidate['alpha']!=alpha:raise ValueError('candidate settings mismatch')
+            for score in (candidate['cv'],candidate['validation']):
+                value=score['rmse']
+                if type(value) not in (int,float) or not math.isfinite(value) or value<0:raise ValueError('invalid selection RMSE')
+        shortlist=['training_mean']+sorted((n for n in candidates if n!='training_mean'),
+            key=lambda n:(candidates[n]['cv']['rmse'],-candidates[n]['alpha']))[:dataset['recipe']['cv_shortlist']]
+        winner=min(shortlist,key=lambda n:(candidates[n]['validation']['rmse'],0 if n=='training_mean' else 1,-(candidates[n]['alpha'] or 0)))
+        if target_report['validation_shortlist']!=shortlist or target_report['chosen_candidate']!=winner:
+            raise ValueError('selection violates frozen CV/validation policy')
     return selection,models,_sha256(content)
 
 
@@ -156,7 +175,7 @@ def locked_evaluation(dataset,training_directory):
                 if scores['chosen'][metric] is not None and scores['baseline'][metric] is not None else None for metric in ('mae','rmse','r2')}
             results[target]=scores
         report[partition]=results
-    result=dict(evaluation_version=1,provenance='analytical_simulation',pipeline_version=PIPELINE_VERSION,
+    result=dict(evaluation_version=2,metrics_version=2,provenance='analytical_simulation',pipeline_version=PIPELINE_VERSION,
         recipe_sha256=dataset['recipe_sha256'],dataset_sha256=dataset['dataset_sha256'],selection_sha256=selection_digest,
         model_sha256=selection['model_sha256'],feature_profile=dataset['recipe']['feature_profile'],
         feature_order=dataset['recipe']['feature_order'],split_membership=dataset['recipe']['splits'],

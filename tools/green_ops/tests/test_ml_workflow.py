@@ -55,6 +55,19 @@ class WorkflowTests(unittest.TestCase):
                     for j,name in enumerate(model['feature_order']):
                         self.assertAlmostEqual(fold['feature_means'][j],sum(r['row'][name] for r in fits)/len(fits))
 
+    def test_rehashed_report_cannot_contradict_frozen_selection_policy(self):
+        files=workflow.train_selection(self.dataset)
+        report=json.loads(files['selection-report.json'])
+        target=next(iter(report['targets']))
+        details=report['targets'][target]
+        details['validation_shortlist']=['training_mean']
+        files['selection-report.json']=_json_bytes(report)
+        selection=json.loads(files['selection.json'])
+        selection['selection_report_sha256']=hashlib.sha256(files['selection-report.json']).hexdigest()
+        files['selection.json']=_json_bytes(selection)
+        training=self.root/'tampered';publish_files(training,files)
+        with self.assertRaisesRegex(ValueError,'frozen CV/validation policy'):workflow.load_training(training,self.dataset)
+
     def test_locked_evaluation_never_refits_and_keeps_artifacts_unchanged(self):
         training=self.root/'training';files=workflow.train_selection(self.dataset);publish_files(training,files)
         before={p.name:p.read_bytes() for p in training.iterdir()}

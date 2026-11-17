@@ -1,0 +1,166 @@
+{
+  "baseline_commit": "a2aeb156634d6ae5a915a5e9eb5c32badd55238e",
+  "choices_unchanged": true,
+  "count_breakdown": [
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "airtime-high",
+      "target": "target_energy_per_delivered_packet_uj"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "airtime-high",
+      "target": "target_energy_per_delivered_packet_uj"
+    },
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "airtime-high",
+      "target": "target_mean_power_mw"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "airtime-high",
+      "target": "target_mean_power_mw"
+    },
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "airtime-high",
+      "target": "target_total_energy_mj"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "airtime-high",
+      "target": "target_total_energy_mj"
+    },
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "airtime-low",
+      "target": "target_energy_per_delivered_packet_uj"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "airtime-low",
+      "target": "target_energy_per_delivered_packet_uj"
+    },
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "airtime-low",
+      "target": "target_mean_power_mw"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "airtime-low",
+      "target": "target_mean_power_mw"
+    },
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "airtime-low",
+      "target": "target_total_energy_mj"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "airtime-low",
+      "target": "target_total_energy_mj"
+    },
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "test",
+      "target": "target_energy_per_delivered_packet_uj"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "test",
+      "target": "target_energy_per_delivered_packet_uj"
+    },
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "test",
+      "target": "target_mean_power_mw"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "test",
+      "target": "target_mean_power_mw"
+    },
+    {
+      "count": 90,
+      "model_role": "baseline",
+      "partition": "test",
+      "target": "target_total_energy_mj"
+    },
+    {
+      "count": 90,
+      "model_role": "chosen",
+      "partition": "test",
+      "target": "target_total_energy_mj"
+    }
+  ],
+  "dataset_sha256": "e921297009bc1b12ca325cf13dfc16fbf4e4c5013bceb28fd1dbd02b18b9cf98",
+  "evaluation_fit_calls": 0,
+  "historical_evaluation_files": {
+    "evaluation.json": {
+      "byte_identical": true,
+      "sha256": "17e1728c7423bbc35af88146e3a75a38973ab3a6c7e0bd5e5c26fd0129040f12"
+    },
+    "predictions.json": {
+      "byte_identical": true,
+      "sha256": "aedbf3b2145329754503cfbca1c6a7abca86e2b56b7ed55588dcc7390db40ee3"
+    }
+  },
+  "historical_training_files": {
+    "selection-report.json": {
+      "byte_identical": true,
+      "sha256": "505203ca1530d819c135aab2b3e2687f360f5a36eb3caf74bb73e22d8e90c64e"
+    },
+    "selection.json": {
+      "byte_identical": true,
+      "sha256": "31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b"
+    },
+    "target_energy_per_delivered_packet_uj-baseline.json": {
+      "byte_identical": true,
+      "sha256": "42a069b41a7b2f9c076e87edaace204b2dab9d74fb7228f3fc5a9af0b970f465"
+    },
+    "target_energy_per_delivered_packet_uj-chosen.json": {
+      "byte_identical": true,
+      "sha256": "95e90fee96268d211d6e4dc4c26ead7166a1440d52fc9a832f386e10b332c64a"
+    },
+    "target_mean_power_mw-baseline.json": {
+      "byte_identical": true,
+      "sha256": "c909d0b98ff5b3bc295f33457782d36c458c7cf2b39084b7e0c8364ef798cd2d"
+    },
+    "target_mean_power_mw-chosen.json": {
+      "byte_identical": true,
+      "sha256": "0605d0c3c95cdac6b8fb2941308e21875355e3c5f7dcc6aa922b9590c0dc606b"
+    },
+    "target_total_energy_mj-baseline.json": {
+      "byte_identical": true,
+      "sha256": "8fdb60bef194b9485be96a06723656602fa7bc84cba11aa25aebb42a37beb197"
+    },
+    "target_total_energy_mj-chosen.json": {
+      "byte_identical": true,
+      "sha256": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4"
+    }
+  },
+  "preprocessing_statistic_checks": 216,
+  "recipe_sha256": "4a979b6cec4555c27d1813f33dc8481410e1ba2382dec2bb93b8366be32d1daf",
+  "review_reproduction_version": 1,
+  "selection_sha256": "31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b",
+  "source_replay_count": 720,
+  "unique_prediction_keys": 1620
+}
