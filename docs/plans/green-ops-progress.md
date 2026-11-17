@@ -802,3 +802,47 @@ implementation. Next separately authorized Week11 fault injection; remote
 Actions/actionlint/clean-runner verification still outstanding. No push,
 report posting/upload, deployment or branch-protection changes. Handoff-only
 checkpoint follows; export exact final HEAD/status before stopping.
+
+## Authorized fork push and runner verification in progress
+
+User authorized ordinary push/monitor/corrective commits toSucos-byte/hophop only.
+Verified cleanff801898.../green-ops/week10-ci-reporting; exact fork/identity/push
+permission, upstream preserved. Reviewed push effects: new Green Ops workflow
+only, legacy Build PR-only. Official checksum-verified actionlint1.7.12 passes.
+Ordinary branch push created tracking ref at exactff801898b3f7db47f49d9752fd5eed2444068f05.
+Run https://github.com/Sucos-byte/hophop/actions/runs/44080696563 in progress;
+both Rust/ARM and Python/smoke started. No job success yet claimed. Current:
+monitor exact SHA through completion, inspect failures and fix concrete runner
+problems without masking. Next record run/jobs/limits, Week11 plan readiness for
+CPU busy-poll/TX power lock/retry storm/beacon hyper-wakeup/fragmentation-bloat;
+artifact errors supplemental. No force/upstream/merge/deploy/protection/comment.
+
+## Authorized remote verification completed successfully
+
+Ordinary fork push verified atff801898b3f7db47f49d9752fd5eed2444068f05.
+Exact run https://github.com/Sucos-byte/hophop/actions/runs/44080696563 completed
+SUCCESS; Rust/ARM job134030191806 passed35s, Python/smoke134030192091 passed3m45s.
+Logs confirm installedRust1.99.1, host8default+8all-feature+8telemetry and ARM
+no_std; CPython3.14.4 setup,317 tests in209.274s with ResourceWarning errors.
+Default gateABSTAIN3 twice; software verification0 is NOT energy approval.
+Official checksum-verified actionlint1.7.12 passed. No runner fixes/replacement
+runs needed; no model/calibration/gate/lock/workflow changes. No other triggered
+run for thisSHA; legacy Build PR-only not triggered/claimed green. Metadata,
+log digests/excerpts and exact job URLs in docs/green-ops-remote-verification.md
+and docs/results/remote-verification. No user blocker. Remaining scope: PR event,
+legacy checks, full all-board firmware matrix and physical energy validation.
+
+Prepared docs/plans/green-ops-week11-plan.md: core CPU busy-poll, TX power lock,
+retry storm, beacon hyper-wakeup, fragmentation-bloat; artifact errors supplemental.
+Current: commit local evidence/readiness docs, explicitly NOT pushed or remotely
+verified afterff801898. No source edits; tested remote source remainsff801898.
+Next separately authorized Week11 implementation with explicit state/energy/
+intent observability and assumption gaps; no hardware/coverage claims. No force,
+upstream mutation, merge, deploy, protection change or PR comments.
+
+Final remote result: exactff801898 and run44080696563 are verified green; all
+metadata/receipt hashes and documentation diff checks pass. Current task complete.
+This evidence/readiness checkpoint is local documentation only, not pushed or
+runner-verified; exact localHEAD is in Git/Windows export. Source remains identical
+to tested forkff801898. No user action required; Week11 five-fault plan prepared,
+implementation not begun. No redundant unchanged-source test run performed.

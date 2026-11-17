@@ -1,5 +1,9 @@
 # Week10 — local PR Markdown reports and CI software verification
 
+Remote follow-up: [authorized fork verification](green-ops-remote-verification.md)
+now records a successful exact-SHA run and actionlint. This document below
+preserves the original local-only Week10 milestone history.
+
 Verified cleanb2b6c08; branch green-ops/week10-ci-reporting. No push, report
 posting/upload, deployment or branch-protection change. This is local evidence
 and a checked-in workflow definition, **not observed GitHub Actions execution**.

@@ -1,0 +1,19 @@
+Host tests and standalone ARM no_std telemetry	Set up job	﻿2026-11-17T12:10:45.5493167Z Current runner version: '2.338.2'
+Host tests and standalone ARM no_std telemetry	Install pinned Rust and ARM target	2026-11-17T12:10:58.5332449Z   1.99.1-x86_64-unknown-linux-gnu installed - rustc 1.99.1 (58cf8f9c3 2026-10-13)
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:11.0131236Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:11.0156368Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:11.0165638Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:11.0322402Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:11.0541887Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:16.6749220Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:16.6769451Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:16.6785938Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:16.7001293Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:16.7405907Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Host tests and standalone ARM no_std telemetry	Locked host tests, telemetry tests and ARM compilation	2026-11-17T12:11:16.8424812Z test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Python tests and expected-ABSTAIN software smoke	Set up job	﻿2026-11-17T12:10:44.6696130Z Current runner version: '2.338.2'
+Python tests and expected-ABSTAIN software smoke	Pinned Python (standard-library installation)	2026-11-17T12:10:56.0859376Z Successfully set up CPython (3.14.4)
+Python tests and expected-ABSTAIN software smoke	Full Python tests with ResourceWarning errors	2026-11-17T12:14:25.8620385Z Ran 317 tests in 209.274s
+Python tests and expected-ABSTAIN software smoke	SOFTWARE ONLY - verify default ABSTAIN3, not candidate approval	2026-11-17T12:14:26.1323955Z ABSTAIN: research-only gate; exit 3
+Python tests and expected-ABSTAIN software smoke	SOFTWARE ONLY - verify default ABSTAIN3, not candidate approval	2026-11-17T12:14:26.1325660Z ABSTAIN: research-only gate; exit 3
+Python tests and expected-ABSTAIN software smoke	SOFTWARE ONLY - verify default ABSTAIN3, not candidate approval	2026-11-17T12:14:26.1327660Z SOFTWARE VERIFICATION PASSED: expected ABSTAIN3 verified, NOT candidate approval. JSON/Markdown SHA256: ('fac8004229711b6bf6f9091ce687e9a12185b24524583dafe07037ac1eff3b1d', '59d740021e9a429e16877270c6f2ecdd245918174f9142ec573427af7736382e')

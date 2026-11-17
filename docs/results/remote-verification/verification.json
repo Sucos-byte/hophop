@@ -1,0 +1,79 @@
+{
+  "actionlint": {
+    "archive_sha256": "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8",
+    "checksum_verified": true,
+    "official_release": "https://github.com/rhysd/actionlint/releases/tag/v1.7.12",
+    "tag_commit": "914e7df21a07ef503a81201c76d2b11c789d3fca",
+    "version": "1.7.12",
+    "workflow_exit": 0
+  },
+  "authenticated_login": "Sucos-byte",
+  "conclusion": "success",
+  "correction_commits_needed": false,
+  "documentation_after_verified_sha": "local evidence/readiness edits only; not yet pushed or runner-verified",
+  "event": "push",
+  "jobs": [
+    {
+      "completed_at": "2026-11-17T12:11:19Z",
+      "conclusion": "success",
+      "name": "Host tests and standalone ARM no_std telemetry",
+      "started_at": "2026-11-17T12:10:44Z",
+      "url": "https://github.com/Sucos-byte/hophop/actions/runs/44080696563/job/134030191806"
+    },
+    {
+      "completed_at": "2026-11-17T12:14:28Z",
+      "conclusion": "success",
+      "name": "Python tests and expected-ABSTAIN software smoke",
+      "started_at": "2026-11-17T12:10:43Z",
+      "url": "https://github.com/Sucos-byte/hophop/actions/runs/44080696563/job/134030192091"
+    }
+  ],
+  "other_triggered_runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 44080696563,
+      "event": "push",
+      "headSha": "ff801898b3f7db47f49d9752fd5eed2444068f05",
+      "status": "completed",
+      "url": "https://github.com/Sucos-byte/hophop/actions/runs/44080696563",
+      "workflowName": "Green Ops software verification (not energy approval)"
+    }
+  ],
+  "push_type": "ordinary_non_force_branch_creation",
+  "pushed_sha": "ff801898b3f7db47f49d9752fd5eed2444068f05",
+  "python": {
+    "resourcewarning_errors": true,
+    "seconds": 209.274,
+    "tests": 317,
+    "version": "3.14.4"
+  },
+  "raw_downloaded_log_sha256": "4646918b737fabeff914f4e42ed154501b2856c08ab66ff748dc0afa71148e43",
+  "remaining_gaps": [
+    "pull_request_event/fork_PR_runtime_not_exercised",
+    "legacy_PR_only_Build_workflow_not_triggered",
+    "full_firmware_all_board_matrix_not_run_remotely",
+    "no_physical_energy_validation_or_95_percent_hardware_assurance"
+  ],
+  "remote_verification_version": 1,
+  "repository": "Sucos-byte/hophop",
+  "run_metadata_sha256": "015bb847243935cf4ff962955fc889642455d3619f00d3511c9cf2021da2fb6c",
+  "rust": {
+    "arm_no_std_target": "thumbv8m.main-none-eabihf",
+    "host_all_features_tests": 8,
+    "host_default_tests": 8,
+    "job_succeeded": true,
+    "standalone_telemetry_tests": 8,
+    "version": "1.99.1"
+  },
+  "smoke": {
+    "default_gate_exit": 3,
+    "energy_approval": false,
+    "override": false,
+    "software_smoke_exit": 0
+  },
+  "source_or_gate_changes": false,
+  "status": "completed",
+  "user_action_required": false,
+  "verified_run_url": "https://github.com/Sucos-byte/hophop/actions/runs/44080696563",
+  "workflow": "Green Ops software verification (not energy approval)"
+}
