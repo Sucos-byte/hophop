@@ -245,3 +245,13 @@ Milestone 1 committed as `e2e8030`. Verified JSON parse and equality of all thre
 current values with the audited source catalog. Current task: strict model/
 workload validation and core simulation. Next: independent energy/conservation
 and invalid-input tests, then the core commit. See `green-ops-week6-handoff.md`.
+
+Week 6 core milestone verified: analytical_reference.py has strict nonmutating
+versioned model/workload validation, an explicit SHA-256 seeded loss sampler,
+exclusive microsecond state traces, energy integration and optional assumed RTT.
+Eleven focused tests execute and pass: independent charge/energy oracles,
+conservation, zero/no/total loss, deterministic seeds, invalid inputs and source
+conditions, overflow, and exact half-open end acceptance. Acceptance at end is
+recorded as late and excluded from delivery. No measured evidence constructed.
+Current task: commit verified core. Next: sensitivity + compatible analytical
+artifacts/CLI and source-snapshot/hash/table integration tests.

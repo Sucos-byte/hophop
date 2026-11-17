@@ -12,3 +12,9 @@ actual hash here and in progress tracker immediately. Then analytical artifacts,
 CLI, one-at-a-time sensitivity and table integration. No push or publish.
 All timing/loss/current-envelope/RTT assumptions remain uncalibrated. No PPK2.
 Verify Git status before resuming. Actual hours remain unreported.
+
+
+Core now implemented, 11 focused analytical-reference tests pass. Current task:
+commit the verified core; next step sensitivity + analytical artifact API/CLI.
+No artifact publication code yet. End-of-window modeled acceptance is retained
+as late and excluded from delivery, matching [start,end) semantics.
