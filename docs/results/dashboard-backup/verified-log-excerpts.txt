@@ -1,0 +1,10 @@
+2026-11-17T19:42:42.5316093Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-11-17T19:42:42.5322475Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-11-17T19:42:47.2064049Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-11-17T19:42:47.2075295Z test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-11-17T19:42:47.3420766Z test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-11-17T19:44:47.3659231Z Ran 368 tests in 129.024s
+2026-11-17T19:44:47.3660238Z OK
+2026-11-17T19:44:47.6117694Z ABSTAIN: research-only gate; exit 3
+2026-11-17T19:44:47.6118931Z ABSTAIN: research-only gate; exit 3
+2026-11-17T19:44:47.6120102Z SOFTWARE VERIFICATION PASSED: expected ABSTAIN3 verified, NOT candidate approval. JSON/Markdown SHA256: ('fac8004229711b6bf6f9091ce687e9a12185b24524583dafe07037ac1eff3b1d', '59d740021e9a429e16877270c6f2ecdd245918174f9142ec573427af7736382e')

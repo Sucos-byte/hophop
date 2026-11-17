@@ -1,0 +1,85 @@
+{
+  "base": "ff801898b3f7db47f49d9752fd5eed2444068f05",
+  "head": "05b6c88c7b369bb2ec2d6f5a9f4afb2ff1c54064",
+  "new_commit_count": 14,
+  "new_blob_count": 182,
+  "new_blob_bytes": 9929458,
+  "secret_or_correspondence_pattern_hits": [],
+  "personal_document_paths": [],
+  "local_path_metadata_files": [
+    "docs/green-ops-requirements-evidence-audit.md",
+    "docs/results/observability-design/source-audit.json"
+  ],
+  "largest_new_blobs": [
+    {
+      "path": "docs/results/week12/cases.jsonl",
+      "bytes": 3337032,
+      "sha": "5f23fc41f49593977f839d43762b2c5b054b7991"
+    },
+    {
+      "path": "docs/results/week12/manifest.json",
+      "bytes": 1200423,
+      "sha": "58f93d6d17828e27a0fee9597ac11d000270c0c2"
+    },
+    {
+      "path": "docs/results/dashboard-demo/desktop-intervals.png",
+      "bytes": 460871,
+      "sha": "35af1e1fab1f2f709ca7eed0a89fb679e071ece4"
+    },
+    {
+      "path": "docs/results/dashboard-demo/narrow-intervals.png",
+      "bytes": 294642,
+      "sha": "ad376c81eecc7da64ccc64e420c998b9d5fe0627"
+    },
+    {
+      "path": "docs/results/dashboard-demo/desktop-faults.png",
+      "bytes": 292014,
+      "sha": "5a649c8a905e7bb93b1316070306f5b655c496e0"
+    },
+    {
+      "path": "docs/results/dashboard-demo/narrow-faults.png",
+      "bytes": 227335,
+      "sha": "430bac2bf01519dc7601f95473b3914d1382fa1a"
+    },
+    {
+      "path": "docs/results/dashboard-demo/desktop-overview.png",
+      "bytes": 183161,
+      "sha": "6835798ec359ede8e7005a266245e308c7dceae5"
+    },
+    {
+      "path": "docs/results/week12/aggregate.json",
+      "bytes": 168634,
+      "sha": "0ce2587cd08f9f7d48d0790fc59aa3001c6d5019"
+    },
+    {
+      "path": "docs/results/week11/development/artifacts/fc-db93bb960cb07ad23ed2c4ace69f5c7c.json",
+      "bytes": 116638,
+      "sha": "654a0249a85a4345e9585c7b667faed6aa05f9f5"
+    },
+    {
+      "path": "docs/results/week11/development/artifacts/fc-3572a6e1ba14acfde7f1374cf9fd4ce6.json",
+      "bytes": 112363,
+      "sha": "200bf287da72369d737c32bcda77918dfc37841e"
+    },
+    {
+      "path": "tools/green_ops/recipes/week12-fault-benchmark-v1.json",
+      "bytes": 101894,
+      "sha": "0e616ed2ccf4f4915b0380285e74b8e1652b9816"
+    },
+    {
+      "path": "docs/results/week11/development/artifacts/fc-fad5b473b48b36e5479cc2f3e5ca2ab6.json",
+      "bytes": 89156,
+      "sha": "69afb72729999b2076ffcc9a0b1e85c7086ef026"
+    }
+  ],
+  "divergent_local_branches": [],
+  "binary_paths": [
+    "docs/results/dashboard-demo/desktop-faults.png",
+    "docs/results/dashboard-demo/desktop-intervals.png",
+    "docs/results/dashboard-demo/desktop-overview.png",
+    "docs/results/dashboard-demo/narrow-faults.png",
+    "docs/results/dashboard-demo/narrow-intervals.png",
+    "docs/results/dashboard-demo/narrow-overview.png"
+  ],
+  "scan_limitations": "Pattern/filename review plus source/diff and image inspection, not a guarantee of absence; local username/path metadata intentionally reported separately"
+}
