@@ -4,12 +4,13 @@
 """Deterministic analytical DECT scenario accounting, never measured evidence."""
 
 import copy
+from decimal import Decimal, localcontext
 import hashlib
 import math
 import re
 from urllib.parse import urlparse
 
-GENERATOR_VERSION = "1.0.0"
+GENERATOR_VERSION = "1.0.1"
 SAMPLER_VERSION = "sha256-bernoulli-v1"
 STATES = ("idle", "tx", "rx")
 TIMINGS = ("prepare", "tx_base", "tx_per_byte", "rx", "backoff")
@@ -171,7 +172,13 @@ def integrate_states(state_duration_us, currents_ma, *, voltage_v):
         _integer(duration, f"{state}.duration_us")
         _number(currents_ma[state], f"{state}.current_ma")
         try:
-            energy = voltage_v * currents_ma[state] * (duration / 1000000) if duration else 0.0
+            # Scale the complete product before converting to binary float;
+            # finite energy must not overflow/underflow in V*I first.
+            with localcontext() as context:
+                context.prec = 50
+                voltage = Decimal.from_float(voltage_v) if type(voltage_v) is float else Decimal(voltage_v)
+                current = Decimal.from_float(currents_ma[state]) if type(currents_ma[state]) is float else Decimal(currents_ma[state])
+                energy = float(voltage * current * Decimal(duration) / Decimal(1000000))
         except OverflowError as error:
             raise ValueError(f"{state}: energy overflow") from error
         _number(energy, f"{state}.energy_mj")

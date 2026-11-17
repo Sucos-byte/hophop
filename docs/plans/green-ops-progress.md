@@ -313,3 +313,23 @@ Final Week 6 software milestone committed as `c17c95d`; the verified code has
 Current task: final progress/resumption checkpoint (documentation only).
 Next: physical calibration/independent model validation, or a separately
 requested Week 7 implementation. No unchanged-suite rerun, push or publish.
+
+## Week 6 pre-training review — correction milestone
+
+Verified clean entry at `9ed6b96`, reviewed actual `1726971..HEAD` changes and
+rechecked official Nordic revision/current/common-condition pages; sourced point
+currents remain valid only under their pinned conditions. No LTE values used.
+
+Found hidden pre-run workload/model variation, unchecked group/seed relationships,
+missing full archived-source/replay audit before training, and intermediate
+numeric overflow/underflow. Added analytical_design.py with a deterministic
+full-slot grid, group-local seed derivation and conservative pre-training audit.
+Related duration/repetition/parameter variants stay together; duplicated
+realizations and cross-group shared seeds fail. Parameter-stress panels cannot
+silently qualify as fixed-parameter primary data. General row/table/v1 APIs and
+feature contract 3 remain unchanged. Generator arithmetic patch: 1.0.1.
+
+45 focused tests pass, including 18 new review/design tests. Current task:
+commit verified correction milestone. Next: larger fixed-parameter and stress
+panel acceptance, final suite, review report and Week 7 dataset design. No
+training/hardware results claimed. See green-ops-week6-review.md.
