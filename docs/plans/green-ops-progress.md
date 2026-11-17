@@ -260,3 +260,17 @@ Core committed as `d9de639`; 11 focused tests pass. Current task: sensitivity
 and analytical artifact/API/CLI integration. Next: archive parameter/assumption
 hashes and modeled packet evidence, validate via existing table APIs, then
 commit that verified milestone. Incoming 197-test baseline remains preserved.
+
+Week 6 artifact/sensitivity milestone verified: explicit analytical artifact API
+and fresh-directory CLI archive exact source snapshots, model/parameter identity,
+configuration and assumption hashes, seeds/groups, state and modeled packet
+accounting, delivery summaries and one-at-a-time sensitivity. Existing strict
+artifact/table APIs accept the generated bundles; no fake PPK2 is accepted.
+Every nontrivial parameter range is exercised, with invalid schedules retained.
+
+Verification: 25 analytical tests pass; including affected dataset CLI/publisher
+checks gives 34 focused passing tests with ResourceWarning errors. Added numeric
+overflow and safe-mean edge cases. Legacy publisher defaults remain unchanged;
+exact-text publication is opt-in for source snapshots. Current task: commit this
+verified milestone. Next: reproducible two-run workflow, documentation, final
+full suite and scientific/compatibility review.

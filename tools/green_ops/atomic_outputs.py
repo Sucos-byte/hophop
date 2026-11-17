@@ -35,8 +35,12 @@ class OutputReservation:
             self.rollback()
             raise
 
-    def publish(self, outputs):
-        """Write every reserved output and publish them as a rollback group."""
+    def publish(self, outputs, *, append_newline=True):
+        """Publish reserved UTF-8 text as a rollback group.
+
+        Default behavior keeps legacy newline termination. Analytical source
+        snapshots use append_newline=False to preserve their exact byte hashes.
+        """
         if self._closed:
             raise RuntimeError("output reservation is already closed")
         normalized = {
@@ -61,7 +65,7 @@ class OutputReservation:
                     self._temporary.append(temporary)
                     content = normalized[path]
                     stream.write(content)
-                    if not content.endswith("\n"):
+                    if append_newline and not content.endswith("\n"):
                         stream.write("\n")
 
             for temporary, path in zip(self._temporary, self.paths):

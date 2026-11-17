@@ -16,3 +16,11 @@ a verified milestone and immediately update tracker with actual hash. Then
 workflow/demo, final suite and review. No fake PPK2; no push/publish. Official
 currents are mode/conditions-bound; timings/loss/envelopes/RTT are assumptions.
 End-of-window acceptance is late, outside [start,end). Verify status on resume.
+
+Artifact/sensitivity code now implemented and verified: 25 analytical tests,
+34 including affected dataset CLI/publisher tests, all passing. New CLI:
+green_ops_generate_analytical.py with required --parameters, --workload,
+--assumptions, --output-dir (fresh directory), optional --prediction-context.
+Current task: commit verified artifact milestone. Next: saved two-run workload
+fixtures/workflow docs, final full suite and review. Generated manifests satisfy
+feature contract 3; implicit capabilities remain empty. No PPK2 artifact exists.

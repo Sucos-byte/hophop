@@ -146,3 +146,15 @@ class AnalyticalWindowBoundaryTests(unittest.TestCase):
         self.assertEqual(result["rx_decoded_packets"], 0)
         self.assertEqual(result["packets"][0]["late_acceptance_us"], 1000)
         self.assertIsNone(result["packets"][0]["accepted_us"])
+
+
+class AnalyticalNumericBoundaryTests(unittest.TestCase):
+    def test_integer_intermediate_energy_overflow_is_a_contract_error(self):
+        with self.assertRaises(ValueError):
+            analytical.integrate_states({"active":1000000}, {"active":10**308}, voltage_v=10**308)
+
+    def test_large_finite_assumed_rtt_uses_overflow_safe_mean(self):
+        data = model(); assumed_value(data["loss_probability"],0.0)
+        data["rtt_extra_ms"] = dict(value=1e308,min=0,max=1e308,unit="ms",basis="assumption",source_id=None,range_note="Numeric boundary test only")
+        result = analytical.simulate_reference(data,workload(offered_packets=2))
+        self.assertEqual(result["ping_rtt_latency_ms"],1e308)

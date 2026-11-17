@@ -170,7 +170,10 @@ def integrate_states(state_duration_us, currents_ma, *, voltage_v):
         _identifier(state, "state")
         _integer(duration, f"{state}.duration_us")
         _number(currents_ma[state], f"{state}.current_ma")
-        energy = voltage_v * currents_ma[state] * (duration / 1000000)
+        try:
+            energy = voltage_v * currents_ma[state] * (duration / 1000000)
+        except OverflowError as error:
+            raise ValueError(f"{state}: energy overflow") from error
         _number(energy, f"{state}.energy_mj")
         energies[state] = energy
     duration_us = sum(state_duration_us.values())
@@ -243,7 +246,9 @@ def simulate_reference(model, workload):
     energy = integrate_states(durations, {s:p["value"] for s,p in model["currents_ma"].items()},
                               voltage_v=model["conditions"]["supply_v"])
     rtts = [p["modeled_rtt_ms"] for p in packets if p["modeled_rtt_ms"] is not None]
-    mean_rtt = math.fsum(rtts)/len(rtts) if rtts else None
+    mean_rtt = math.fsum(value/len(rtts) for value in rtts) if rtts else None
+    if mean_rtt is not None:
+        _number(mean_rtt, "mean modeled RTT")
     return dict(generator_version=GENERATOR_VERSION, sampler_version=SAMPLER_VERSION,
                 run_id=run["run_id"], seed=run["seed"], model_id=model["model_id"],
                 model_version=model["model_version"], parameter_version=model["parameter_version"],
@@ -251,3 +256,124 @@ def simulate_reference(model, workload):
                 packets=packets, offered_packets=len(packets), delivered_packets=sum(p["delivered"] for p in packets),
                 rx_operations=attempts, rx_decoded_packets=sum(p["delivered"] for p in packets),
                 tx_successes=attempts, ping_rtt_latency_ms=mean_rtt, **energy)
+
+
+def sensitivity_analysis(model, workload):
+    """One-at-a-time low/high scenario checks, not calibrated uncertainty bands."""
+    model = validate_model(model)
+    baseline = simulate_reference(model, workload)
+    cases = []
+    parameters = [("currents_ma", name) for name in STATES] + [("timing_us", name) for name in TIMINGS]
+    parameters += [("loss_probability", None)]
+    if model["rtt_extra_ms"] is not None:
+        parameters.append(("rtt_extra_ms", None))
+    for section, name in parameters:
+        parameter = model[section][name] if name is not None else model[section]
+        if parameter["min"] == parameter["max"]:
+            continue
+        for bound in ("min", "max"):
+            variant = copy.deepcopy(model)
+            changed = variant[section][name] if name is not None else variant[section]
+            changed.update(value=parameter[bound], basis="assumption", source_id=None)
+            case = dict(parameter=f"{section}.{name}" if name is not None else section,
+                        bound=bound, value=parameter[bound], unit=parameter["unit"],
+                        basis="assumption", variant_parameters_sha256=_sha256(_json_bytes(variant)))
+            try:
+                result = simulate_reference(variant, workload)
+                case.update(status="valid", total_energy_mj=result["total_energy_mj"],
+                            state_duration_us=result["state_duration_us"],
+                            delivered_packets=result["delivered_packets"],
+                            ping_rtt_latency_ms=result["ping_rtt_latency_ms"],
+                            energy_change_mj=result["total_energy_mj"]-baseline["total_energy_mj"])
+            except ValueError as error:
+                case.update(status="invalid", reason=str(error))
+            cases.append(case)
+    return dict(sensitivity_version=1, method="one_at_a_time_common_seed",
+                baseline_energy_mj=baseline["total_energy_mj"], cases=cases)
+
+
+def _json_bytes(value):
+    import json
+    return (json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + "\n").encode("utf-8")
+
+
+def _sha256(content):
+    return hashlib.sha256(content).hexdigest()
+
+
+def generate_analytical_artifact(parameters_bytes, workload_bytes, assumptions_bytes, *, prediction_context_bytes=None):
+    """Return exact UTF-8 file snapshots for one v2 analytical artifact bundle.
+
+    Parameters/assumptions are archived verbatim and hashed; no PPK2 artifact is
+    accepted or fabricated. File names/references are relative and deterministic.
+    """
+    import json
+    from pathlib import Path
+    from dataset_builder import DATASET_FIELDS_V2, _json_from_bytes
+    from dataset_table import validate_dataset_row, _validate_manifest
+    from green_ops_build_dataset import _dataset_csv, _manifest_v2
+    from measurement_window import validate_delivery_summary
+
+    for name, content in (("parameters", parameters_bytes), ("workload", workload_bytes),
+                          ("assumptions", assumptions_bytes)):
+        if not isinstance(content, bytes):
+            raise ValueError(f"{name} must be an immutable bytes snapshot")
+    model = validate_model(_json_from_bytes(parameters_bytes))
+    workload = validate_workload(_json_from_bytes(workload_bytes), model=model)
+    _text(assumptions_bytes.decode("utf-8"), "assumptions document")
+    if prediction_context_bytes is not None and not isinstance(prediction_context_bytes, bytes):
+        raise ValueError("prediction context must be a bytes snapshot")
+    context = _json_from_bytes(prediction_context_bytes) if prediction_context_bytes is not None else None
+    result = simulate_reference(model, workload)
+    sensitivity = sensitivity_analysis(model, workload)
+    packet_bytes = _json_bytes(dict(evidence_version=1, provenance="modeled_logical_delivery",
+                                    run_id=workload["run_id"], packets=result["packets"]))
+    delivery = validate_delivery_summary(dict(
+        summary_version=1, run_id=workload["run_id"], window_id=workload["run_id"],
+        sender_id="analytical-sender", receiver_id="analytical-receiver",
+        offered_packet_ids=[p["packet_id"] for p in result["packets"]],
+        delivered_packet_ids=[p["packet_id"] for p in result["packets"] if p["delivered"]],
+        evidence_sha256=_sha256(packet_bytes)),
+        expected_run_id=workload["run_id"], expected_window_id=workload["run_id"])
+    row = dict.fromkeys(DATASET_FIELDS_V2)
+    row.update(dataset_version=2, run_id=workload["run_id"], adapter="analytical-reference-v1",
+               feature_profile_id="dect-reference-v1", source_kind="synthetic", execution_kind="simulation",
+               measurement_status="analytical_simulation", segment_count=1,
+               payload_size_bytes=workload["payload_size_bytes"], interval_ms=workload["interval_ms"],
+               tx_power_dbm=workload["tx_power_dbm"], window_duration_ms=workload["window_duration_ms"],
+               seed=workload["seed"], repetition=workload["repetition"],
+               evaluation_group_id=workload["evaluation_group_id"], analytical_model_id=model["model_id"],
+               delivery_status="validated", offered_packets=result["offered_packets"],
+               delivered_packets=result["delivered_packets"], rx_operations=result["rx_operations"],
+               rx_decoded_packets=result["rx_decoded_packets"], sync_beacons=0,
+               tx_successes=result["tx_successes"], ping_rtt_latency_ms=result["ping_rtt_latency_ms"],
+               rx_decode_per_operation_ratio=(result["rx_decoded_packets"]/result["rx_operations"] if result["rx_operations"] else None),
+               packet_delivery_ratio=(result["delivered_packets"]/result["offered_packets"] if result["offered_packets"] else None),
+               target_total_energy_mj=result["total_energy_mj"], target_mean_power_mw=result["mean_power_mw"])
+    if result["delivered_packets"]:
+        row["target_energy_per_delivered_packet_uj"] = result["total_energy_mj"]*1000/result["delivered_packets"]
+    row = validate_dataset_row(row, schema_version=2)
+    configuration = dict(configuration_version=1, model_id=model["model_id"], model_version=model["model_version"],
+                         parameter_version=model["parameter_version"], generator_version=GENERATOR_VERSION,
+                         sampler_version=SAMPLER_VERSION, parameters_sha256=_sha256(parameters_bytes),
+                         workload_sha256=_sha256(workload_bytes), assumptions_document_sha256=_sha256(assumptions_bytes),
+                         prediction_context_sha256=_sha256(prediction_context_bytes) if prediction_context_bytes is not None else None,
+                         workload=workload)
+    snapshots = dict(parameters=parameters_bytes, workload=workload_bytes, assumptions_document=assumptions_bytes,
+                     configuration=_json_bytes(configuration), state_accounting=_json_bytes(result),
+                     packet_evidence=packet_bytes, delivery_summary=_json_bytes(delivery), sensitivity=_json_bytes(sensitivity))
+    filenames = dict(parameters="parameters.json", workload="workload.json", assumptions_document="assumptions.md",
+                     configuration="configuration.json", state_accounting="state-accounting.json",
+                     packet_evidence="packet-evidence.json", delivery_summary="delivery-summary.json", sensitivity="sensitivity.json")
+    if prediction_context_bytes is not None:
+        snapshots["prediction_context"] = prediction_context_bytes
+        filenames["prediction_context"] = "prediction-context.json"
+    manifest = json.loads(_manifest_v2(row, {name:Path(filenames[name]) for name in snapshots}, {},
+                                     prediction_context=context, source_bytes=snapshots))
+    manifest["analytical_reference"] = dict(model_id=model["model_id"], version=model["model_version"],
+                                           configuration_sha256=_sha256(snapshots["configuration"]),
+                                           assumptions_document_sha256=_sha256(assumptions_bytes))
+    _validate_manifest(row, manifest)
+    files = {filenames[name]: content for name, content in snapshots.items()}
+    files.update({"dataset.csv": _dataset_csv(row).encode("utf-8"), "manifest.json": _json_bytes(manifest)})
+    return files
