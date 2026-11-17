@@ -368,3 +368,10 @@ groups; unknown parent lineage still needs explicit design declarations.
 Current task: commit final verified review. Next: immediately record actual hash
 and leave a resumable handoff; actual Week 7 fitting remains unperformed.
 No push or publish; physical calibration and actual effort logging still pending.
+
+Final reviewed corrections/report committed as `ba268d8` (initial correction
+milestone `f8c35bf`). Verified code: 246 passing tests; 22 new review/design
+cases; all 288 acceptance bundles replay-audited. Current task: completed review,
+final documentation-only resumption checkpoint. Next: separately requested
+Week 7 grouped software pilot, beginning with frozen dataset recipe/splits and
+per-target audit. Physical validation remains pending. No push or publish.

@@ -2,9 +2,10 @@
 
 Branch: green-ops/week6-analytical-reference. Review entry: clean 9ed6b96,
 range 1726971..9ed6b96. Initial verified corrections: f8c35bf.
-Current: final reviewed corrections/docs verified and ready for local commit.
-Next: commit final milestone, immediately record its hash, then close this review.
-Actual Week 7 training remains a separately requested continuation.
+Final correction/report milestone: ba268d8 (initial corrections f8c35bf).
+Current: review complete; no coding/training remains in this request.
+Next: separately requested Week 7 grouped software pilot; first freeze/materialize
+its design and group splits, then audit labels/features/groups before any fit.
 
 Final evidence: 246 tests pass (22 new review/design cases), ResourceWarning
 errors enabled; git diff --check passes. Audited /tmp/green-ops-week6-review-panel:

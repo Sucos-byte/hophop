@@ -189,3 +189,8 @@ data. The old two-row demo and an indiscriminately pooled parameter grid are not
 training-ready.** No physical-validation or calibrated-model readiness is claimed.
 The proposed 540+180 design and frozen splits should be materialized/audited
 before actual training; this review performed no fit or model selection.
+
+Verified final correction/report commit: `ba268d8` (initial corrections
+`f8c35bf`). A documentation-only tracker/handoff checkpoint follows. Test and
+acceptance evidence above applies to that verified code; no suite rerun is
+needed for the final documentation-only checkpoint.
