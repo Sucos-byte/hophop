@@ -1,20 +1,18 @@
 # Week 6 current task / next step
 
 Branch: green-ops/week6-analytical-reference. Baseline: 1726971.
-Milestone 1: e2e8030, plan + official Nordic source audit + parameter/assumption
-files. JSON parse/catalog consistency checked. No new core code yet; incoming
-suite evidence: 197 passing tests. Source audit: ../green-ops-analytical-sources.md.
+Committed: e2e8030 plan/source/profile; d9de639 analytical core.
+Verification: 11 core tests pass; incoming full-suite evidence 197 tests.
 
-Current task: strict model/workload validators and deterministic exclusive
-state-time/energy simulation, following green-ops-week6-plan.md.
-Next: core tests with independent energy oracles; commit verified core, record
-actual hash here and in progress tracker immediately. Then analytical artifacts,
-CLI, one-at-a-time sensitivity and table integration. No push or publish.
-All timing/loss/current-envelope/RTT assumptions remain uncalibrated. No PPK2.
-Verify Git status before resuming. Actual hours remain unreported.
+Current task: one-at-a-time parameter sensitivity and explicit analytical
+artifact API/CLI. Core is in tools/green_ops/analytical_reference.py; exact
+schema/profile at models/nrf9151-dect-reference-v1.json. Existing table contract
+requires exact manifest keys, analytical_reference and a delivery_summary hash
+for validated counts. Use synthetic/simulation/analytical_simulation only.
 
-
-Core now implemented, 11 focused analytical-reference tests pass. Current task:
-commit the verified core; next step sensitivity + analytical artifact API/CLI.
-No artifact publication code yet. End-of-window modeled acceptance is retained
-as late and excluded from delivery, matching [start,end) semantics.
+Next: implement archived source snapshots, state/packet evidence, modeled
+delivery summary, deterministic output and table integration tests; commit only
+a verified milestone and immediately update tracker with actual hash. Then
+workflow/demo, final suite and review. No fake PPK2; no push/publish. Official
+currents are mode/conditions-bound; timings/loss/envelopes/RTT are assumptions.
+End-of-window acceptance is late, outside [start,end). Verify status on resume.

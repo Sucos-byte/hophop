@@ -255,3 +255,8 @@ conditions, overflow, and exact half-open end acceptance. Acceptance at end is
 recorded as late and excluded from delivery. No measured evidence constructed.
 Current task: commit verified core. Next: sensitivity + compatible analytical
 artifacts/CLI and source-snapshot/hash/table integration tests.
+
+Core committed as `d9de639`; 11 focused tests pass. Current task: sensitivity
+and analytical artifact/API/CLI integration. Next: archive parameter/assumption
+hashes and modeled packet evidence, validate via existing table APIs, then
+commit that verified milestone. Incoming 197-test baseline remains preserved.
