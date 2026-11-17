@@ -728,3 +728,15 @@ Next separately authorized Week10 CI/full PR Markdown reporter, preserving stric
 status exits and research/evidence limitations. No push, remote publication,
 deployment or hardware action. Final handoff-only checkpoint follows; export it
 before stopping. Repository tracker remains authoritative.
+
+## Week10 entry and reporting/CI plan freeze
+
+Verified cleanb2b6c08; created green-ops/week10-ci-reporting. Read tracker,
+Week9 evidence/APIs, workflows/manifests/test scripts and firmware setup docs.
+Plan freezes strict SHA/policy/schema report validation, safe escaped Markdown,
+status-preserving wrapper and software-only expected-default-ABSTAIN smoke.
+No approval semantics hidden by CI success. Inspectable actual toolchains
+Rust1.99.1/Python3.14.4; offline host default test passed using existing exclusions.
+Third-party pins verified from official GitHub release/commit pages; shell Git
+network DNS unavailable. Current: commit plan; next implementation/tests, workflow
+and local validation. No source/models/calibration edits, push or remote posting.
