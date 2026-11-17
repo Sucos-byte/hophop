@@ -573,3 +573,15 @@ serialization, model/split/source mismatches, block permutation, contribution
 accounting, no-fit evaluation and both leakage boundaries tested. Current:
 commit verified methods/dataset milestone. Next: real fixed-alpha ablation fits
 on original training only, commit, then calibrate/commit before locked scoring.
+
+Verified methods/dataset milestone committed6da8dba. Current: actual ablation
+command replay-validates Week8 and original Week7 sources, then fits only old
+training labels with selected alpha; no new-data label fitting. Next: freeze
+its artifact locally, then actual calibration threshold stage and commit.
+
+Actual diagnostic ablations complete:12 fits (4 omissions ×3 targets),360 old
+training labels each; alpha1 power/.01 energy targets, exact original run IDs.
+Artifact archived docs/results/week8/ablations/ablations.json, binds original
+and study dataset/recipe/model/split hashes. No calibration/evaluation label
+used for any fit. Current: commit immutable ablation artifact. Next: nominal
+calibration-family scores only, freeze/commit thresholds before real evaluation.

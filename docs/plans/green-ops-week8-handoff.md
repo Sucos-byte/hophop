@@ -18,3 +18,7 @@ calibration/commit, locked evaluation. Original model hashes unchanged.
 
 Final full suite284 passes (106.8s), including latest validators. Code/data
 milestone ready to commit; real scoring stages still pending in prescribed order.
+
+Methods/data committed6da8dba. Actual ablations running to
+build/green-ops-week8-ablations (CLI replay then original-training-only fits).
+Next archive/commit ablations.json; then calibrate/commit before evaluation.
