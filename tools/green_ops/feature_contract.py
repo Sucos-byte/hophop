@@ -8,7 +8,7 @@ import math
 from dataset_builder import DATASET_FIELDS, DATASET_FIELDS_V2
 
 
-FEATURE_CONTRACT_VERSION = 2
+FEATURE_CONTRACT_VERSION = 3
 
 METADATA_IDENTIFIERS = frozenset({
     "dataset_version",
@@ -191,7 +191,7 @@ def _validate_feature_value(field, value):
             raise ValueError(f"{field} must be between zero and one")
 
 
-def extract_features(row, *, prediction_mode, available_fields):
+def extract_features(row, *, prediction_mode, available_fields, prediction_context=None):
     """Extract typed model inputs without mutating or imputing the row.
 
     This validates selected features, not the complete dataset artifact.
@@ -204,9 +204,72 @@ def extract_features(row, *, prediction_mode, available_fields):
         prediction_mode=prediction_mode,
         available_fields=available_fields,
     )
+    if row["dataset_version"] == 2 and prediction_mode == "pre_run":
+        validate_pre_run_context(row, prediction_context)
     result = {}
     for field in selected:
         value = row.get(field)
         _validate_feature_value(field, value)
         result[field] = value
     return result
+
+
+def validate_pre_run_context(row, context):
+    """Require explicit completion of the predeclared fixed-duration workload."""
+    if not isinstance(context, dict) or set(context) != {
+        "planned_window_duration_ms", "completed_as_planned",
+    }:
+        raise ValueError("v2 pre_run requires an explicit prediction context")
+    if type(context["completed_as_planned"]) is not bool or not context["completed_as_planned"]:
+        raise ValueError("pre_run requires a workload completed as planned")
+    planned = context["planned_window_duration_ms"]
+    _validate_feature_value("window_duration_ms", planned)
+    _validate_feature_value("window_duration_ms", row.get("window_duration_ms"))
+    if not math.isclose(planned, row["window_duration_ms"], rel_tol=0.0, abs_tol=0.001):
+        raise ValueError("observed duration does not match planned fixed duration")
+
+
+def describe_prediction_context(row, context):
+    """Validate a manifest capability declaration; never infer it from a header."""
+    if context is None:
+        return [], {"pre_run": None, "post_run": None}, None
+    if not isinstance(context, dict) or set(context) != {
+        "available_fields", "planned_window_duration_ms", "completed_as_planned",
+    }:
+        raise ValueError("prediction context must contain exactly the documented fields")
+    fields = context["available_fields"]
+    if (not isinstance(fields, list) or any(not isinstance(f, str) for f in fields)
+            or len(set(fields)) != len(fields) or set(fields) - PREDICTION_TIME_FEATURES):
+        raise ValueError("prediction context requires unique prediction feature capabilities")
+    if type(context["completed_as_planned"]) is not bool:
+        raise ValueError("completed_as_planned must be boolean")
+    planned = context["planned_window_duration_ms"]
+    if planned is not None:
+        _validate_feature_value("window_duration_ms", planned)
+    if context["completed_as_planned"] and planned is None:
+        raise ValueError("completed workload requires planned_window_duration_ms")
+    for field in fields:
+        if row.get(field) is None:
+            raise ValueError(f"declared capability {field} is null")
+    extraction_context = {key: context[key] for key in (
+        "planned_window_duration_ms", "completed_as_planned",
+    )}
+    selected = {}
+    for mode in ("pre_run", "post_run"):
+        try:
+            names = select_feature_names(schema_version=2, prediction_mode=mode,
+                                         available_fields=frozenset(fields))
+        except ValueError:
+            selected[mode] = None
+            continue
+        if mode == "pre_run":
+            try:
+                validate_pre_run_context(row, extraction_context)
+            except ValueError:
+                selected[mode] = None
+                continue
+        extract_features(row, prediction_mode=mode, available_fields=frozenset(fields),
+                         prediction_context=extraction_context)
+        selected[mode] = list(names)
+    normalized = {**context, "available_fields": sorted(fields)}
+    return sorted(fields), selected, normalized

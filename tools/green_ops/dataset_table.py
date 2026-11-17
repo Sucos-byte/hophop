@@ -6,11 +6,14 @@
 import copy
 import csv
 import hashlib
+import io
+import json
 import math
 from pathlib import Path
 import re
 
-from dataset_builder import DATASET_FIELDS_V2, _load_json_object
+from channel_loss import PROBABILITY_FIELDS
+from dataset_builder import DATASET_FIELDS_V2, _unique_object, _reject_constant
 from feature_contract import FEATURE_CONTRACT_VERSION, TARGET_COLUMNS
 
 _ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}")
@@ -147,54 +150,43 @@ def validate_dataset_row(row, *, schema_version):
     return copy.deepcopy(row)
 
 
-def _digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
-
-
 def _validate_manifest(row, manifest):
     if not isinstance(manifest, dict):
         raise ValueError("manifest must be an object")
     for field, expected in (("manifest_version", 2), ("dataset_version", 2),
                             ("dataset_rows", 1), ("feature_contract_version", FEATURE_CONTRACT_VERSION)):
         if type(manifest.get(field)) is not int or manifest[field] != expected:
-            raise ValueError(f"invalid manifest {field}")
+            raise ValueError(f"invalid manifest {field}; regenerate artifacts with the current dataset v2 builder")
     for field in MANIFEST_IDENTITIES:
         if field not in manifest or manifest[field] != row[field]:
             raise ValueError(f"manifest {field} mismatch")
     required_keys = {
         "manifest_version", "dataset_version", "dataset_rows", "feature_contract_version",
-        "column_roles", "selected_features", "available_fields", "policies",
+        "column_roles", "selected_features", "available_fields", "prediction_context", "policies",
         "dataset_sha256", "input_paths", "input_sha256", *MANIFEST_IDENTITIES,
     }
     if row["measurement_status"] == "analytical_simulation":
         required_keys.add("analytical_reference")
     if set(manifest) != required_keys:
         raise ValueError("manifest must contain exactly the documented fields")
-    from feature_contract import feature_roles, select_feature_names
-    capabilities = manifest["available_fields"]
-    if not isinstance(capabilities, list) or any(not isinstance(f, str) for f in capabilities) or len(set(capabilities)) != len(capabilities) or set(capabilities) - set(DATASET_FIELDS_V2):
-        raise ValueError("invalid manifest capabilities")
-    if any(row[f] is None for f in capabilities):
-        raise ValueError("manifest capability has null value")
-    expected_selected = {}
-    for mode in ("pre_run", "post_run"):
-        try:
-            expected_selected[mode] = list(select_feature_names(
-                schema_version=2, prediction_mode=mode, available_fields=frozenset(capabilities)))
-        except ValueError:
-            expected_selected[mode] = None
-    if manifest["selected_features"] != expected_selected:
-        raise ValueError("manifest selected features mismatch")
-    if not isinstance(manifest["policies"], dict):
-        raise ValueError("invalid manifest policies")
-    if row["measurement_status"] == "measured":
+    from feature_contract import feature_roles, describe_prediction_context
+    capabilities, expected_selected, _ = describe_prediction_context(
+        row, manifest["prediction_context"])
+    if manifest["available_fields"] != capabilities or manifest["selected_features"] != expected_selected:
+        raise ValueError("manifest capability or selected features mismatch")
+    policies = manifest["policies"]
+    policy_fields = {"duration_tolerance_ms", "duration_tolerance_fraction", "max_alignment_uncertainty_ms"}
+    if not isinstance(policies, dict) or (policies and set(policies) != policy_fields):
+        raise ValueError("manifest policies must be empty or contain exactly the documented fields")
+    if policies:
         from ppk2_summary import _v2_finite_number
-        if set(manifest["policies"]) != {"duration_tolerance_ms", "duration_tolerance_fraction", "max_alignment_uncertainty_ms"}:
-            raise ValueError("measured manifest requires acquisition policies")
-        for name, value in manifest["policies"].items():
+        for name, value in policies.items():
             _v2_finite_number(value, name)
-        if manifest["policies"]["duration_tolerance_fraction"] > 1:
+        if policies["duration_tolerance_fraction"] > 1:
             raise ValueError("invalid duration tolerance fraction")
+    if row["measurement_status"] == "measured":
+        if not policies:
+            raise ValueError("measured manifest requires acquisition policies")
         if row["target_mean_power_mw"] <= 0 or row["target_total_energy_mj"] <= 0:
             raise ValueError("measured energy and power must be positive")
         try:
@@ -237,19 +229,25 @@ def _validate_manifest(row, manifest):
     elif row["measurement_status"] == "measured":
         if not {"ppk2_summary", "measurement_window", "telemetry_csv", "run_metadata"} <= manifest["input_sha256"].keys():
             raise ValueError("measured manifest requires bounded source references")
+    if row["delivery_status"] == "validated":
+        if "delivery_summary" not in manifest["input_sha256"]:
+            raise ValueError("validated packet delivery requires delivery_summary reference")
     if row["ping_rtt_latency_ms"] is not None and row["measurement_status"] != "analytical_simulation":
-        if "rtt_evidence" not in manifest["input_sha256"]:
-            raise ValueError("hardware RTT requires correlated evidence reference")
+        raise ValueError("hardware RTT is unsupported until a correlated evidence validator exists")
     return copy.deepcopy(manifest)
 
 
 def load_dataset_artifact(csv_path, manifest_path):
     """Load one strict row and verify its manifest's byte digest and identities."""
-    with Path(csv_path).open(encoding="utf-8", newline="") as stream:
-        reader = csv.DictReader(stream)
+    csv_bytes = Path(csv_path).read_bytes()
+    manifest_bytes = Path(manifest_path).read_bytes()
+    try:
+        reader = csv.DictReader(io.StringIO(csv_bytes.decode("utf-8"), newline=""), strict=True)
         if reader.fieldnames != list(DATASET_FIELDS_V2):
             raise ValueError("dataset header must be v2; regenerate v1 artifacts")
         rows = list(reader)
+    except csv.Error as error:
+        raise ValueError(f"invalid dataset CSV: {error}") from error
     if len(rows) != 1 or set(rows[0]) != set(DATASET_FIELDS_V2):
         raise ValueError("dataset artifact must contain exactly one complete row")
     row = {}
@@ -266,18 +264,21 @@ def load_dataset_artifact(csv_path, manifest_path):
             if re.fullmatch(r"-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?", value) is None:
                 raise ValueError(f"invalid numeric CSV value: {field}")
             try:
-                row[field] = float(value)
+                row[field] = (float(value) if field in PROBABILITY_FIELDS or any(c in value for c in ".eE")
+                              else int(value))
             except ValueError as error:
                 raise ValueError(f"invalid numeric CSV value: {field}") from error
         else:
             row[field] = value
     row = validate_dataset_row(row, schema_version=2)
-    manifest = _validate_manifest(row, _load_json_object(manifest_path))
-    csv_sha256 = _digest(csv_path)
+    manifest = _validate_manifest(row, json.loads(
+        manifest_bytes.decode("utf-8"), object_pairs_hook=_unique_object,
+        parse_constant=_reject_constant))
+    csv_sha256 = hashlib.sha256(csv_bytes).hexdigest()
     if manifest.get("dataset_sha256") != csv_sha256:
         raise ValueError("dataset CSV digest mismatch")
     return dict(row=row, manifest=manifest, csv_sha256=csv_sha256,
-                manifest_sha256=_digest(manifest_path))
+                manifest_sha256=hashlib.sha256(manifest_bytes).hexdigest())
 
 
 def build_dataset_table(artifacts, *, schema_version, measurement_status,

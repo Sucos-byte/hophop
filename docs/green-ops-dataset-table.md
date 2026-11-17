@@ -82,7 +82,9 @@ radio counters are required. Integers reject booleans and fractional notation;
 CSV empty cells become null, never zero. JSON duplicate keys, unknown manifest
 keys, nonfinite values and invalid UTF-8 fail. Counter/ratio and energy-per-
 delivery relationships are revalidated. V2 manifests use exact keys emitted by
-the dataset CLI; analytical manifests add only `analytical_reference`.
+the dataset CLI, including `prediction_context` (object or null); analytical
+manifests add only `analytical_reference`. Feature contract version 3 requires
+regenerating older v2 manifests from source artifacts.
 
 The analytical reference has exactly `model_id`, `version` (nonempty string),
 `configuration_sha256`, and `assumptions_document_sha256`. Hashes must match
@@ -91,3 +93,22 @@ identity must match the row. Status alone cannot establish analytical provenance
 Source digests establish byte identity rather than authorship or physical truth.
 The loader does not require archived source paths to remain locally accessible;
 source capture review is a separate acceptance step.
+
+
+## Reviewed evidence and integrity boundaries
+
+Validated delivery counts require a `delivery_summary` input path/hash, even
+when the energy-per-delivery target is null or zero deliveries were observed.
+A status string and count arithmetic alone do not establish a delivery source.
+Measured/hardware RTT stays null until a correlated-evidence validator exists;
+an opaque hash alone is insufficient. Analytical RTT is model-generated and
+requires the analytical model reference.
+
+The artifact loader reads CSV/manifest snapshots once and hashes exactly the
+bytes parsed. Malformed CSV quoting is rejected; integer-valued numeric targets
+retain precision rather than being rounded through binary floats. All declared
+policy values are checked, including sources subsequently excluded by filtering.
+Use `load_dataset_artifact` for external files before `build_dataset_table`;
+in-memory dictionaries and their supplied digests are trusted caller inputs,
+not an authenticated serialization format. The table does not reopen archived
+raw traces to establish their physical truth.

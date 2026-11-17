@@ -199,3 +199,25 @@ Final validation changes committed as `e064cfa`; 182 passing tests. The native
 handoff now records completed Week 5 milestones and separates the next planned
 Week 6 generator from the fixed analytical contract fixtures. Documentation-only
 checkpoint follows; no unchanged-suite rerun is required.
+
+## Week 5 independent code review checkpoint
+
+Reviewed `25b1aaa..eb6e936` against the approved plan and reproduced concrete
+failures before corrections. Fixed implicit capability/pre-run duration leakage,
+missing delivery-summary provenance, opaque-hash-only hardware RTT acceptance,
+parse/hash file rereads, integer numeric-target precision loss, malformed CSV
+acceptance, and unchecked policies on excluded nonmeasured sources.
+
+Feature contract version is now **3** (dataset v2 and v1 APIs/field order stay
+unchanged). Older v2 manifests must be regenerated with explicit prediction
+context; omitted context declares no prediction capabilities. Recorded early-
+terminated runs cannot select pre-run profiles. Hardware RTT stays null pending
+a correlated-evidence validator. Full details: `green-ops-week5-review.md`.
+
+Verification: **197 tests pass**, including 15 new targeted review tests, with
+ResourceWarning errors enabled. `git diff --check` passes. The two-row synthetic
+and separate two-row analytical contract-test demos pass in
+`/tmp/green-ops-week5-review-demo`. No hardware evidence or accuracy is claimed.
+Week 6 is ready for implementation of the sourced analytical generator;
+calibrated hardware accuracy and scientifically validated training remain
+pending. No actual effort hours inferred; no push or publish.

@@ -137,3 +137,33 @@ The v2 manifest records input hashes, CSV hash, policies, schema/registry
 versions, roles and selected profiles. Profiles with missing capabilities are
 null. The existing output reservation and rollback protect normal failures;
 this does not establish multi-file crash atomicity or evidence authenticity.
+
+
+## Week 5 review: explicit capabilities and source snapshots
+
+Optional v2-only `--prediction-context CONTEXT.json` declares the acquisition
+system's prediction features. Example for a completed fixed-duration run:
+
+```json
+{
+  "available_fields": ["payload_size_bytes", "interval_ms", "tx_power_dbm", "window_duration_ms"],
+  "planned_window_duration_ms": 1000.0,
+  "completed_as_planned": true
+}
+```
+
+The requested configuration must also be supplied by the experiment plan.
+Without this context, both selected profiles are null and capabilities are
+empty, even when configuration and telemetry values exist. For early-terminated
+recorded runs, use completed_as_planned=false and an explicit post-run
+capability declaration. See the [feature contract](green-ops-feature-contract.md).
+The context source is hashed with the other inputs. V2 parsing and hashing use
+the same immutable byte snapshots, avoiding a second file read that could hash
+newer bytes than those used to derive a row. Inputs must still be archived by
+the collector; an input path is not a durable archive or authentication proof.
+
+Feature contract version 3 tightens these rules; regenerate older v2 manifests
+from original artifacts. Hardware RTT remains unsupported even if a manifest
+contains an rtt_evidence hash: a correlated-evidence schema/validator is still
+required. Delivery status validated requires a delivery_summary source reference
+in tables, including any modeled delivery summaries in later analytical data.

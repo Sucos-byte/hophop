@@ -52,3 +52,14 @@ Next planned software is Week 6's explicitly sourced analytical generator;
 do not mistake the fixed Week 5 contract fixtures for that generator. Lab
 acquisition and actual effort logging remain pending. No push or publish was
 performed. Verify actual Git status before any later continuation.
+
+## Review superseding the first completion checkpoint
+
+The Week 5 code review found and corrected availability/duration leakage,
+delivery-reference and RTT evidence gaps, parse/hash snapshot races, numeric
+precision, CSV syntax and policy-validation defects. See
+`green-ops-week5-review.md` and the latest progress checkpoint. Current feature
+contract version is 3; regenerate earlier v2 manifests from source artifacts.
+The full suite now has 197 passing tests, including 15 targeted review cases.
+Week 6 generator implementation may proceed; physical acquisition and validated
+model accuracy remain separate pending milestones. Verify actual Git HEAD/status.

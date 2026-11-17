@@ -42,7 +42,8 @@ below supplies the bounded Week 5 contract.
 
 ## Registry v2
 
-`FEATURE_CONTRACT_VERSION=2` adds a separate exhaustive schema-v2 partition.
+`FEATURE_CONTRACT_VERSION=3` retains the exhaustive schema-v2 partition and
+adds explicit prediction context after the Week 5 review.
 `feature_roles(1)` and the v1 selectors preserve the legacy classification and
 profiles; public role/profile constants now describe v2.
 
@@ -54,3 +55,31 @@ V2 post-run adds `rx_operations`, `rx_decoded_packets`, `sync_beacons`,
 `delivered_packets` and `packet_delivery_ratio`. A missing delivery capability
 prevents selecting this full diagnostic profile; it never becomes zero.
 Delivery status, evaluation group and analytical model identity are metadata.
+
+
+## Recorded-run availability and duration qualification
+
+Manifests declare capabilities through optional `--prediction-context JSON`.
+Without a declaration, available_fields is empty and both selected profiles are
+null. A populated CSV cell never establishes prediction-time availability.
+A declared capability with a missing/null value is rejected. Loss-scenario
+fields remain excluded from the default profiles; a future simulation profile
+must be explicit.
+
+The context file has exactly `available_fields` (unique feature-name list),
+`planned_window_duration_ms` (positive finite number or null), and
+`completed_as_planned` (boolean). Pre-run selection of recorded dataset rows
+requires completion plus equality of planned and observed duration within
+0.001 ms absolute rounding tolerance. Early termination or a duration mismatch
+leaves that manifest profile null; direct pre-run extraction raises ValueError.
+Post-run selection can still use observed duration if its declared diagnostics
+are complete. Missing context never qualifies a recorded run for pre-run use.
+These are collection assertions to audit against source evidence, rather than
+proof derived from strings. Prospective candidate inference will need its own
+planned-workload input path; do not assert completed execution for a candidate.
+
+`extract_features(..., prediction_context=...)` accepts the two duration/
+completion keys for recorded v2 pre-run extraction; available_fields remains
+its separate explicit frozenset argument. V1 profiles/extraction are unchanged.
+Contract version 3 requires regeneration of older v2 manifests from source
+artifacts. Dataset version 2, its field order and the v1 APIs remain frozen.

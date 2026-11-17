@@ -6,6 +6,7 @@
 import csv
 import json
 import math
+import io
 from pathlib import Path
 import re
 
@@ -551,18 +552,37 @@ def build_dataset_row_v2_from_files(
     experiment_plan=None, ppk2_summary=None, delivery_summary=None, **policies,
 ):
     """Load strict artifacts and build a bounded v2 row."""
-    metadata = load_run_metadata(run_metadata)
-    with Path(telemetry_csv).open(encoding="utf-8", newline="") as stream:
-        reader = csv.DictReader(stream)
+    paths = dict(telemetry_csv=telemetry_csv, run_metadata=run_metadata,
+                 measurement_window=measurement_window, experiment_plan=experiment_plan,
+                 ppk2_summary=ppk2_summary, delivery_summary=delivery_summary)
+    return _build_dataset_row_v2_from_bytes(
+        {name: Path(path).read_bytes() for name, path in paths.items() if path is not None},
+        **policies,
+    )
+
+
+def _json_from_bytes(content):
+    return json.loads(content.decode("utf-8"), object_pairs_hook=_unique_object,
+                      parse_constant=_reject_constant)
+
+
+def _build_dataset_row_v2_from_bytes(sources, **policies):
+    """Join immutable input snapshots; hashes must describe these same bytes."""
+    metadata = _json_from_bytes(sources["run_metadata"])
+    validate_run_metadata(metadata)
+    try:
+        reader = csv.DictReader(io.StringIO(sources["telemetry_csv"].decode("utf-8"), newline=""), strict=True)
         if reader.fieldnames != CSV_FIELDS:
             raise ValueError("telemetry CSV header does not match the event schema")
         rows = list(reader)
-    experiment = (_select_experiment(_load_json_object(experiment_plan), metadata)
-                  if experiment_plan is not None else None)
+    except csv.Error as error:
+        raise ValueError(f"invalid telemetry CSV: {error}") from error
+    experiment = (_select_experiment(_json_from_bytes(sources["experiment_plan"]), metadata)
+                  if "experiment_plan" in sources else None)
     return build_dataset_row_v2(
-        metadata, rows, measurement_window=_load_json_object(measurement_window),
+        metadata, rows, measurement_window=_json_from_bytes(sources["measurement_window"]),
         experiment=experiment,
-        ppk2_summary=_load_json_object(ppk2_summary) if ppk2_summary is not None else None,
-        delivery_summary=_load_json_object(delivery_summary) if delivery_summary is not None else None,
+        ppk2_summary=_json_from_bytes(sources["ppk2_summary"]) if "ppk2_summary" in sources else None,
+        delivery_summary=_json_from_bytes(sources["delivery_summary"]) if "delivery_summary" in sources else None,
         **policies,
     )
