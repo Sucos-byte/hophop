@@ -908,3 +908,9 @@ keep11missed oracle violations,2point violations and12control blocks visible.
 Loss draws across TX variants remain an explicit common-noise/no-link-budget
 assumption, not validated physical RF behavior. Final handoff-only checkpoint
 and atomic Windows refresh before stopping; no required user/hardware action.
+
+Week12 started at clean673d203; branch green-ops/week12-benchmark-evaluation.
+Execution plan written before scoring. Frozen recipe/receipt retained unchanged;
+new execution ledger will distinguish consumed data from historical freeze state.
+Current: hash/isolation preflight and execution tooling; next verified tooling
+commit before any benchmark energy generation. No tuning/push/hardware claims.
