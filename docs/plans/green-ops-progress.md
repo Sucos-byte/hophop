@@ -406,3 +406,12 @@ Audit archived at docs/results/green-ops-week7-dataset-audit.json. Five targeted
 dataset tests pass. No design correction was necessary. No real-experiment
 fitting or held-out scoring occurred. Current: commit data milestone. Next:
 verified numerical core (toy tests only), then selection/evaluation workflow.
+
+Data milestone committed as `13b6064`. Numerical core now verified on toy cases:
+9 tests pass for independent ridge/mean solutions, rank deficiency/constant
+features, train-only preprocessing, determinism, finite-input validation,
+undefined R2, missing labels, strict JSON/model compatibility, source scope and
+pre-run availability. Householder augmented QR avoids normal equations; models
+retain negative predictions rather than clipping. Current: commit verified core.
+Next: grouped CV/validation selection and locked evaluator/CLI using toy data
+before the real experiment. Test/stress performance remains unobserved.

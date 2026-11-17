@@ -17,3 +17,7 @@ e921297009bc1b12ca325cf13dfc16fbf4e4c5013bceb28fd1dbd02b18b9cf98; audit in
 commit verified data milestone. ml_pipeline.py and tests exist as uncommitted
 numerical-core work;9 toy numerical/model tests pass, but no actual fitting or
 held-out scoring has run. Next core commit and then workflow tests/selection.
+
+Dataset commit13b6064; core9 tests now pass (toy cases only). Current: core
+milestone commit; next grouped selection/evaluation/prediction workflow tests.
+Real experiment fitting and held-out scoring have not run.
