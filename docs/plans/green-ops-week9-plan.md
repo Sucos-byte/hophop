@@ -84,3 +84,15 @@ additional modeling research or automation. Export before stopping/input.
 
 Stage explicit paths, modes100644; staged checks/stat/summary before commits.
 Current: semantics freeze. Next: implementation and targeted tests.
+
+## Completion evidence
+
+Semantics freeze060a7fc; implementationbbc187c. Release305 tests pass (21 new),
+ResourceWarning errors; exact independent8-demo replay and strict hashes/JSON
+checks pass. API/contract docs, honest results and complete research fixtures
+saved under docs/green-ops-gatekeeper.md, docs/green-ops-week9-results.md and
+docs/results/week9. Final audit enhancement adds workload/context/domain and
+explicit no-assurance flags without changing rules or predictions. No modeling
+changes/tuning, no CI workflows or PR Markdown. Current: final evidence commit
+and Windows snapshot. Next separately authorized Week10 reporting/CI plumbing,
+not hardware deployment or validated battery/95% assurance.

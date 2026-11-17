@@ -1,0 +1,13 @@
+{
+  "evaluation_group_id": "af-0b18718011e6b9f4921b52391865a0b8",
+  "interval_ms": 180,
+  "max_attempts": 3,
+  "offered_packets": 27,
+  "payload_size_bytes": 80,
+  "repetition": 5,
+  "run_id": "ar-000bb804497d318a55175dfddfed806c",
+  "seed": 13313103955936235453,
+  "tx_power_dbm": 19,
+  "window_duration_ms": 5000,
+  "workload_version": 1
+}

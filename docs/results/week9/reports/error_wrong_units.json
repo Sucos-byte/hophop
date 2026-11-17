@@ -1,0 +1,31 @@
+{
+  "artifact_sha256": {
+    "policy": "736d7f6dc994ef1fd5a726922a9eb0d4c15269be2328f02f48aa04e6b2003e4a"
+  },
+  "assumptions": [],
+  "baseline_revision": null,
+  "blocks_ci": true,
+  "candidate_revision": "research-candidate-label-not-an-observable-feature",
+  "criteria": [],
+  "decision_report_version": 1,
+  "detail": "criterion unit mismatch",
+  "exit_code": 1,
+  "hardware_assurance": false,
+  "limitations": [
+    "research_only_no_hardware_assurance",
+    "observed_family_coverage_below_nominal_95_percent",
+    "marginal_ranges_are_not_calibrated_difference_or_joint_confidence_intervals",
+    "identical_permitted_features_fixed_model_identical_predictions_regardless_of_commit",
+    "configuration_estimate_not_actual_execution_telemetry",
+    "consumed_week8_data_not_reused_for_tuning",
+    "assumption_shift_has_no_calibrated_coverage_guarantee",
+    "model_attribution_not_physical_causation"
+  ],
+  "provenance": "not_established",
+  "reason_codes": [
+    "malformed_incompatible_or_processing_error"
+  ],
+  "research_only": true,
+  "status": "ERROR",
+  "uncertainty_policy": null
+}

@@ -1,0 +1,206 @@
+{
+  "artifact_sha256": {
+    "baseline": null,
+    "candidate": {
+      "assumptions": "3ba5877e065aeb16ebb450e19580928824e19933e1536d6e8e52ddd4854ed694",
+      "calibration_set": "f686446aa1b6e124cc3c60cc01341953c8ffaa05132a6ab002245cf6276fc5b4",
+      "evaluation.json": "74a86bbeb117b6907afc355e016bbc5aefcea1c81de2d8d0ef34e78d2729329c",
+      "explanations.json": "26cdd40938c6d1c316020b0af00490f0e40bc7e898e9766d69b1a51d3ee68759",
+      "original_recipe": "4a979b6cec4555c27d1813f33dc8481410e1ba2382dec2bb93b8366be32d1daf",
+      "parameters": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55",
+      "selection": "31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b",
+      "source_dataset": "5296369ebdeceba0037931513f6a7f0d06f75072a6dd2ce7f18a157420040928",
+      "source_manifest": "b3dbe30bd5602d54bb7aa67127703a1a68583ab44be705c194b6e14fad55f9ee",
+      "study_recipe": "547c93bf038eb9a064571f3d1d46f28fb071e1f76106673ec537e597d3cb20fa",
+      "target_energy_per_delivered_packet_uj-calibration": "42ab820b364efcff5e5f129dc037f34803f97aa346922d188c2938379bcdab44",
+      "target_energy_per_delivered_packet_uj-model": "95e90fee96268d211d6e4dc4c26ead7166a1440d52fc9a832f386e10b332c64a",
+      "target_mean_power_mw-calibration": "7b100a97607f3821bc6efaa72b5a10f3f71de59e4963eab41139426b97ed082b",
+      "target_mean_power_mw-model": "0605d0c3c95cdac6b8fb2941308e21875355e3c5f7dcc6aa922b9590c0dc606b",
+      "target_total_energy_mj-calibration": "26cc914103919e9bb96783b5eac3237bfab579fb0dd97aaac0ac7d0156ae0ef7",
+      "target_total_energy_mj-model": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4"
+    }
+  },
+  "assumptions": [
+    "frozen analytical generator and prediction profile",
+    "intervals retain observed family coverage failures",
+    "comparable full-slot workloads and windows for regression",
+    "no joint or difference confidence guarantee"
+  ],
+  "attributions": {
+    "baseline": null,
+    "candidate": {
+      "target_energy_per_delivered_packet_uj": {
+        "baseline": 26849.634557536836,
+        "contributions": {
+          "interval_ms": -596.9686602917885,
+          "payload_size_bytes": -216.39777979793485,
+          "tx_power_dbm": 0.0,
+          "window_duration_ms": 18.65311126879153
+        },
+        "interpretation": "model_attribution_not_physical_root_cause",
+        "method": "compatible_archived_week8_signed_model_contribution",
+        "prediction": 26054.921228715903,
+        "top_three": [
+          "interval_ms",
+          "payload_size_bytes",
+          "window_duration_ms"
+        ],
+        "unit": "uJ"
+      },
+      "target_mean_power_mw": {
+        "baseline": 149.73973432666668,
+        "contributions": {
+          "interval_ms": 0.18269107659322908,
+          "payload_size_bytes": -1.8580012580576046,
+          "tx_power_dbm": 0.0,
+          "window_duration_ms": -0.0042938818400618355
+        },
+        "interpretation": "model_attribution_not_physical_root_cause",
+        "method": "compatible_archived_week8_signed_model_contribution",
+        "prediction": 148.06013026336225,
+        "top_three": [
+          "payload_size_bytes",
+          "interval_ms",
+          "window_duration_ms"
+        ],
+        "unit": "mW"
+      },
+      "target_total_energy_mj": {
+        "baseline": 798.78701932,
+        "contributions": {
+          "interval_ms": 0.9715110901318496,
+          "payload_size_bytes": -9.985786217465563,
+          "tx_power_dbm": 0.0,
+          "window_duration_ms": -49.9263491530335
+        },
+        "interpretation": "model_attribution_not_physical_root_cause",
+        "method": "compatible_archived_week8_signed_model_contribution",
+        "prediction": 739.8463950396329,
+        "top_three": [
+          "window_duration_ms",
+          "payload_size_bytes",
+          "interval_ms"
+        ],
+        "unit": "mJ"
+      }
+    }
+  },
+  "baseline_revision": null,
+  "battery_projection": {
+    "assumptions": [
+      "constant nominal voltage/capacity",
+      "usable fraction excludes conversion loss",
+      "efficiency applied once to energy",
+      "load-side power excludes conversion loss",
+      "stationary repeating workload",
+      "engineering target, no compliance certification"
+    ],
+    "available": false,
+    "capacity_mah": 1000,
+    "conversion_efficiency": 0.9,
+    "hours_per_year": 8766.0,
+    "load_energy_mwh": 2592.0,
+    "omitted_effects": [
+      "aging",
+      "self_discharge",
+      "temperature_and_environment",
+      "load_dependent_capacity_and_voltage",
+      "battery_replacement_and_transients"
+    ],
+    "reason_code": "battery_workload_profile_missing",
+    "target_years": 5,
+    "usable_fraction": 0.8,
+    "voltage_v": 3.6,
+    "workload_profile": null,
+    "year_days": 365.25
+  },
+  "blocks_ci": true,
+  "candidate_revision": "research-candidate-label-not-an-observable-feature",
+  "comparison_scope": "configuration_estimates_only",
+  "coverage_reference": "observed_Week8_nominal_family_coverage_not_a_guarantee",
+  "criteria": [
+    {
+      "baseline": null,
+      "candidate": null,
+      "comparison_method": "inverse_power_bounds_engineering_projection_not_confidence_interval",
+      "id": "battery",
+      "kind": "battery_minimum_years",
+      "reason_code": "battery_workload_profile_missing",
+      "status": "ABSTAIN",
+      "target": "target_mean_power_mw",
+      "threshold": 5,
+      "unit": "years"
+    }
+  ],
+  "decision_report_version": 1,
+  "evidence_label": "UNVALIDATED RESEARCH-ONLY OVERRIDE; NO VALIDATED 95% COVERAGE OR HARDWARE ASSURANCE",
+  "execution_regression_observable_from_commit_identity": false,
+  "exit_code": 3,
+  "feature_contract_version": 3,
+  "feature_profile": "raw_pre_run_v1",
+  "hardware_assurance": false,
+  "limitations": [
+    "research_only_no_hardware_assurance",
+    "observed_family_coverage_below_nominal_95_percent",
+    "marginal_ranges_are_not_calibrated_difference_or_joint_confidence_intervals",
+    "identical_permitted_features_fixed_model_identical_predictions_regardless_of_commit",
+    "configuration_estimate_not_actual_execution_telemetry",
+    "consumed_week8_data_not_reused_for_tuning",
+    "assumption_shift_has_no_calibrated_coverage_guarantee",
+    "model_attribution_not_physical_causation"
+  ],
+  "model_sha256": {
+    "target_energy_per_delivered_packet_uj": "95e90fee96268d211d6e4dc4c26ead7166a1440d52fc9a832f386e10b332c64a",
+    "target_mean_power_mw": "0605d0c3c95cdac6b8fb2941308e21875355e3c5f7dcc6aa922b9590c0dc606b",
+    "target_total_energy_mj": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4"
+  },
+  "policy_id": "RESEARCH-FIXTURE-battery_missing_workload_abstain",
+  "policy_sha256": "0bd646eeda49ee8fb9d57a2472f02fe773f1ea19a4ec5be7e403125c8199d885",
+  "prediction_context": {
+    "baseline": null,
+    "candidate": {
+      "available_fields": [
+        "interval_ms",
+        "payload_size_bytes",
+        "tx_power_dbm",
+        "window_duration_ms"
+      ],
+      "completed_as_planned": true,
+      "planned_window_duration_ms": 5000
+    }
+  },
+  "prediction_domain": {
+    "baseline": null,
+    "candidate": "primary"
+  },
+  "provenance": "analytical_simulation",
+  "reason_codes": [
+    "battery_workload_profile_missing"
+  ],
+  "research_only": true,
+  "research_override_requested": true,
+  "research_override_used": true,
+  "resolved_workload": {
+    "baseline": null,
+    "candidate": {
+      "adapter": "analytical-reference-v1",
+      "assumptions_sha256": "3ba5877e065aeb16ebb450e19580928824e19933e1536d6e8e52ddd4854ed694",
+      "feature_profile_id": "dect-reference-v1",
+      "interval_ms": 180,
+      "max_attempts": 3,
+      "offered_packets": 27,
+      "parameters_sha256": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55",
+      "payload_size_bytes": 80,
+      "seed": 13313103955936235453,
+      "tx_power_dbm": 19,
+      "window_duration_ms": 5000
+    }
+  },
+  "status": "ABSTAIN",
+  "uncertainty_policy": {
+    "allow_assumption_shift": false,
+    "allow_unvalidated_research_intervals": true,
+    "minimum_family_coverage": 0.95
+  },
+  "validated_95_percent_coverage": false
+}

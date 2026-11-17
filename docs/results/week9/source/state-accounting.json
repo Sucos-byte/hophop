@@ -1,0 +1,1243 @@
+{
+  "conditions": {
+    "band": 1,
+    "modem_mode": "minimum_latency",
+    "rx_signal_dbm": -90,
+    "scope": "exclusive_VDD_scenario",
+    "supply_v": 3.7,
+    "temperature_c": 25,
+    "tx_power_dbm": 19
+  },
+  "delivered_packets": 27,
+  "generator_version": "1.0.1",
+  "mean_power_mw": 143.035192,
+  "model_id": "nrf9151-dect-min-latency-reference",
+  "model_version": "1.0.0",
+  "offered_packets": 27,
+  "packets": [
+    {
+      "accepted_us": 3320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 0,
+      "packet_id": "f3a3e73eec9eee6676a7f300a37cd8a8d300780d49c8ac1d8678ae9b738143a5"
+    },
+    {
+      "accepted_us": 183320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 180000,
+      "packet_id": "23476873428ecece3534cca71a93aa088a1256a6728d18054b8cc149ad9a0482"
+    },
+    {
+      "accepted_us": 363320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 360000,
+      "packet_id": "4002d74a3185435831c603fd5db8a409382631156648042418444f35b832186e"
+    },
+    {
+      "accepted_us": 543320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 540000,
+      "packet_id": "6985cd4b2d73826762b26e9763310f7625685f673feeb6d25f9f438cf8d344e9"
+    },
+    {
+      "accepted_us": 723320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 720000,
+      "packet_id": "961de8d91be70076c6af52aa8f3ceefc71f9d1e6d47c9a1a781166afa5a8d93c"
+    },
+    {
+      "accepted_us": 903320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 900000,
+      "packet_id": "d2135184cd569fba403891c70ec2e1c18f3fb5bbc30a2dd3f351632e1d02641e"
+    },
+    {
+      "accepted_us": 1083320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 1080000,
+      "packet_id": "5814f32df0bc8df7576b9babd918c4262dfc7dd10b0a21ac988893cfdebffbba"
+    },
+    {
+      "accepted_us": 1263320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 1260000,
+      "packet_id": "fe2fe25d1405c8ee69e2569859b9a5c8e691fbfae5b84942b3c146854f4beea8"
+    },
+    {
+      "accepted_us": 1447640,
+      "attempts": 2,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 1440000,
+      "packet_id": "49eb81262aff5dd185d863073ecea49022d0e4134aedd9e461615a3b79332aa4"
+    },
+    {
+      "accepted_us": 1627640,
+      "attempts": 2,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 1620000,
+      "packet_id": "98bc83392a05621efb9451e22ae8b56c62514f4bb30531a882ab14da70346bae"
+    },
+    {
+      "accepted_us": 1803320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 1800000,
+      "packet_id": "79bcde3e0206579853ae1daed1d13fbab9eae570a3f197b137e2cf608bb17b20"
+    },
+    {
+      "accepted_us": 1983320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 1980000,
+      "packet_id": "22964b887db32523c80c080ac2dd981a0e1efffcbd0fd6b89dfaccce906cd65e"
+    },
+    {
+      "accepted_us": 2163320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 2160000,
+      "packet_id": "b4d8dc8de2e63628c8d8a823ff788038b5659bb12fffff2252fe55758785b2ee"
+    },
+    {
+      "accepted_us": 2343320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 2340000,
+      "packet_id": "949fb156025e6f0d145fbfed9ff662873c0eb05d2e5000b855fd449fd9848652"
+    },
+    {
+      "accepted_us": 2523320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 2520000,
+      "packet_id": "5bb28d3a0e640d05aa9aab0d28964c24206caefb28377e902ecb32cda538f7e5"
+    },
+    {
+      "accepted_us": 2703320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 2700000,
+      "packet_id": "6a895ce12f83b5abff6a66b6d0c9b92c624974554d323cf75346fa243199e65d"
+    },
+    {
+      "accepted_us": 2883320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 2880000,
+      "packet_id": "ca28c84541dd4f928eafb4f4f208c048819526e8879ee42febe8e7c50d69bb19"
+    },
+    {
+      "accepted_us": 3063320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 3060000,
+      "packet_id": "7ccde48c5e38d9580ec2f4aa182e9d514895b139bd9e3d8a1d7db97417855bfa"
+    },
+    {
+      "accepted_us": 3243320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 3240000,
+      "packet_id": "2114a3695ce5c34f9c2d436dedca8c102eda8eb7efe4dedf7afdebf7866bb90d"
+    },
+    {
+      "accepted_us": 3423320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 3420000,
+      "packet_id": "bbf48c70b7bf444e8091e9642b97081847ce00190632fdd3113da242d1e1014c"
+    },
+    {
+      "accepted_us": 3603320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 3600000,
+      "packet_id": "17e7bc182ddcab8a6bde3c8c59056af8f095f60c08903e5325bb1a4b0faa29a1"
+    },
+    {
+      "accepted_us": 3783320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 3780000,
+      "packet_id": "970e92c95f51b44dbee81b65fdc9932f5529ad5f40ee839299ae0f2894b45ade"
+    },
+    {
+      "accepted_us": 3967640,
+      "attempts": 2,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 3960000,
+      "packet_id": "faf489944ad7e6a6bb0b02618603f1fde4a76756425519c0cd61894ffb3f8eff"
+    },
+    {
+      "accepted_us": 4143320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 4140000,
+      "packet_id": "354fe709ca01349ee644a8424cce81830674c25706d8dacfcfd904b87077b554"
+    },
+    {
+      "accepted_us": 4323320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 4320000,
+      "packet_id": "5ca8f1e21fe08899651a899d7a63d4cb899b8ad6a515a50fd008b0c9b4b6f0c6"
+    },
+    {
+      "accepted_us": 4503320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 4500000,
+      "packet_id": "4fd7f05079c21d1037b649fca5fec07b1e450d7ded2130616eb2dbda0603870d"
+    },
+    {
+      "accepted_us": 4683320,
+      "attempts": 1,
+      "delivered": true,
+      "late_acceptance_us": null,
+      "modeled_rtt_ms": null,
+      "offered_us": 4680000,
+      "packet_id": "594f3888d002108871e53eb525f3df9cd33dca860da57102352bc6022d51ee95"
+    }
+  ],
+  "parameter_version": "2026-11-17.1",
+  "ping_rtt_latency_ms": null,
+  "run_id": "ar-000bb804497d318a55175dfddfed806c",
+  "rx_decoded_packets": 27,
+  "rx_operations": 30,
+  "sampler_version": "sha256-bernoulli-v1",
+  "seed": 13313103955936235453,
+  "segments": [
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 0,
+      "phase": "prepare",
+      "start_us": 0,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 0,
+      "phase": "transmit",
+      "start_us": 500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 0,
+      "phase": "ack_wait",
+      "start_us": 1820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 3320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 1,
+      "phase": "prepare",
+      "start_us": 180000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 1,
+      "phase": "transmit",
+      "start_us": 180500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 1,
+      "phase": "ack_wait",
+      "start_us": 181820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 183320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 2,
+      "phase": "prepare",
+      "start_us": 360000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 2,
+      "phase": "transmit",
+      "start_us": 360500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 2,
+      "phase": "ack_wait",
+      "start_us": 361820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 363320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 3,
+      "phase": "prepare",
+      "start_us": 540000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 3,
+      "phase": "transmit",
+      "start_us": 540500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 3,
+      "phase": "ack_wait",
+      "start_us": 541820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 543320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 4,
+      "phase": "prepare",
+      "start_us": 720000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 4,
+      "phase": "transmit",
+      "start_us": 720500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 4,
+      "phase": "ack_wait",
+      "start_us": 721820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 723320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 5,
+      "phase": "prepare",
+      "start_us": 900000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 5,
+      "phase": "transmit",
+      "start_us": 900500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 5,
+      "phase": "ack_wait",
+      "start_us": 901820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 903320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 6,
+      "phase": "prepare",
+      "start_us": 1080000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 6,
+      "phase": "transmit",
+      "start_us": 1080500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 6,
+      "phase": "ack_wait",
+      "start_us": 1081820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 1083320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 7,
+      "phase": "prepare",
+      "start_us": 1260000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 7,
+      "phase": "transmit",
+      "start_us": 1260500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 7,
+      "phase": "ack_wait",
+      "start_us": 1261820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 1263320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 8,
+      "phase": "prepare",
+      "start_us": 1440000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 8,
+      "phase": "transmit",
+      "start_us": 1440500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 8,
+      "phase": "ack_wait",
+      "start_us": 1441820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1000,
+      "packet_index": 8,
+      "phase": "retry_backoff",
+      "start_us": 1443320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 500,
+      "packet_index": 8,
+      "phase": "prepare",
+      "start_us": 1444320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 1320,
+      "packet_index": 8,
+      "phase": "transmit",
+      "start_us": 1444820,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 1500,
+      "packet_index": 8,
+      "phase": "ack_wait",
+      "start_us": 1446140,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 172360,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 1447640,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 9,
+      "phase": "prepare",
+      "start_us": 1620000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 9,
+      "phase": "transmit",
+      "start_us": 1620500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 9,
+      "phase": "ack_wait",
+      "start_us": 1621820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1000,
+      "packet_index": 9,
+      "phase": "retry_backoff",
+      "start_us": 1623320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 500,
+      "packet_index": 9,
+      "phase": "prepare",
+      "start_us": 1624320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 1320,
+      "packet_index": 9,
+      "phase": "transmit",
+      "start_us": 1624820,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 1500,
+      "packet_index": 9,
+      "phase": "ack_wait",
+      "start_us": 1626140,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 172360,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 1627640,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 10,
+      "phase": "prepare",
+      "start_us": 1800000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 10,
+      "phase": "transmit",
+      "start_us": 1800500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 10,
+      "phase": "ack_wait",
+      "start_us": 1801820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 1803320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 11,
+      "phase": "prepare",
+      "start_us": 1980000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 11,
+      "phase": "transmit",
+      "start_us": 1980500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 11,
+      "phase": "ack_wait",
+      "start_us": 1981820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 1983320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 12,
+      "phase": "prepare",
+      "start_us": 2160000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 12,
+      "phase": "transmit",
+      "start_us": 2160500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 12,
+      "phase": "ack_wait",
+      "start_us": 2161820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 2163320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 13,
+      "phase": "prepare",
+      "start_us": 2340000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 13,
+      "phase": "transmit",
+      "start_us": 2340500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 13,
+      "phase": "ack_wait",
+      "start_us": 2341820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 2343320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 14,
+      "phase": "prepare",
+      "start_us": 2520000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 14,
+      "phase": "transmit",
+      "start_us": 2520500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 14,
+      "phase": "ack_wait",
+      "start_us": 2521820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 2523320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 15,
+      "phase": "prepare",
+      "start_us": 2700000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 15,
+      "phase": "transmit",
+      "start_us": 2700500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 15,
+      "phase": "ack_wait",
+      "start_us": 2701820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 2703320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 16,
+      "phase": "prepare",
+      "start_us": 2880000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 16,
+      "phase": "transmit",
+      "start_us": 2880500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 16,
+      "phase": "ack_wait",
+      "start_us": 2881820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 2883320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 17,
+      "phase": "prepare",
+      "start_us": 3060000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 17,
+      "phase": "transmit",
+      "start_us": 3060500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 17,
+      "phase": "ack_wait",
+      "start_us": 3061820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 3063320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 18,
+      "phase": "prepare",
+      "start_us": 3240000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 18,
+      "phase": "transmit",
+      "start_us": 3240500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 18,
+      "phase": "ack_wait",
+      "start_us": 3241820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 3243320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 19,
+      "phase": "prepare",
+      "start_us": 3420000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 19,
+      "phase": "transmit",
+      "start_us": 3420500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 19,
+      "phase": "ack_wait",
+      "start_us": 3421820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 3423320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 20,
+      "phase": "prepare",
+      "start_us": 3600000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 20,
+      "phase": "transmit",
+      "start_us": 3600500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 20,
+      "phase": "ack_wait",
+      "start_us": 3601820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 3603320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 21,
+      "phase": "prepare",
+      "start_us": 3780000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 21,
+      "phase": "transmit",
+      "start_us": 3780500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 21,
+      "phase": "ack_wait",
+      "start_us": 3781820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 3783320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 22,
+      "phase": "prepare",
+      "start_us": 3960000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 22,
+      "phase": "transmit",
+      "start_us": 3960500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 22,
+      "phase": "ack_wait",
+      "start_us": 3961820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1000,
+      "packet_index": 22,
+      "phase": "retry_backoff",
+      "start_us": 3963320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 500,
+      "packet_index": 22,
+      "phase": "prepare",
+      "start_us": 3964320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 1320,
+      "packet_index": 22,
+      "phase": "transmit",
+      "start_us": 3964820,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 1,
+      "duration_us": 1500,
+      "packet_index": 22,
+      "phase": "ack_wait",
+      "start_us": 3966140,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 172360,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 3967640,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 23,
+      "phase": "prepare",
+      "start_us": 4140000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 23,
+      "phase": "transmit",
+      "start_us": 4140500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 23,
+      "phase": "ack_wait",
+      "start_us": 4141820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 4143320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 24,
+      "phase": "prepare",
+      "start_us": 4320000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 24,
+      "phase": "transmit",
+      "start_us": 4320500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 24,
+      "phase": "ack_wait",
+      "start_us": 4321820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 4323320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 25,
+      "phase": "prepare",
+      "start_us": 4500000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 25,
+      "phase": "transmit",
+      "start_us": 4500500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 25,
+      "phase": "ack_wait",
+      "start_us": 4501820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 176680,
+      "packet_index": null,
+      "phase": "between_packets",
+      "start_us": 4503320,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 500,
+      "packet_index": 26,
+      "phase": "prepare",
+      "start_us": 4680000,
+      "state": "idle"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1320,
+      "packet_index": 26,
+      "phase": "transmit",
+      "start_us": 4680500,
+      "state": "tx"
+    },
+    {
+      "attempt_index": 0,
+      "duration_us": 1500,
+      "packet_index": 26,
+      "phase": "ack_wait",
+      "start_us": 4681820,
+      "state": "rx"
+    },
+    {
+      "attempt_index": null,
+      "duration_us": 316680,
+      "packet_index": null,
+      "phase": "window_remainder",
+      "start_us": 4683320,
+      "state": "idle"
+    }
+  ],
+  "state_duration_us": {
+    "idle": 4915400,
+    "rx": 45000,
+    "tx": 39600
+  },
+  "state_energy_mj": {
+    "idle": 672.91826,
+    "rx": 7.825500000000001,
+    "tx": 34.4322
+  },
+  "total_energy_mj": 715.17596,
+  "tx_successes": 30
+}

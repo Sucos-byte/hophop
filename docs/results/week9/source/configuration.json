@@ -1,0 +1,25 @@
+{
+  "assumptions_document_sha256": "3ba5877e065aeb16ebb450e19580928824e19933e1536d6e8e52ddd4854ed694",
+  "configuration_version": 1,
+  "generator_version": "1.0.1",
+  "model_id": "nrf9151-dect-min-latency-reference",
+  "model_version": "1.0.0",
+  "parameter_version": "2026-11-17.1",
+  "parameters_sha256": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55",
+  "prediction_context_sha256": "68f92c97a127e875502869a538df5d17a84883645eba62e14610c85f30bd3ae6",
+  "sampler_version": "sha256-bernoulli-v1",
+  "workload": {
+    "evaluation_group_id": "af-0b18718011e6b9f4921b52391865a0b8",
+    "interval_ms": 180,
+    "max_attempts": 3,
+    "offered_packets": 27,
+    "payload_size_bytes": 80,
+    "repetition": 5,
+    "run_id": "ar-000bb804497d318a55175dfddfed806c",
+    "seed": 13313103955936235453,
+    "tx_power_dbm": 19,
+    "window_duration_ms": 5000,
+    "workload_version": 1
+  },
+  "workload_sha256": "dbf8c994bc5aee21735765b2f37c48a59fec2295845e9c51132b6c48c82594d3"
+}

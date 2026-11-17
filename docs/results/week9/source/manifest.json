@@ -1,0 +1,113 @@
+{
+  "adapter": "analytical-reference-v1",
+  "analytical_model_id": "nrf9151-dect-min-latency-reference",
+  "analytical_reference": {
+    "assumptions_document_sha256": "3ba5877e065aeb16ebb450e19580928824e19933e1536d6e8e52ddd4854ed694",
+    "configuration_sha256": "e1afeae5ccb8dfa9738ceb4432d98aab09dc7cb1a323a56e107b422a7dfb661c",
+    "model_id": "nrf9151-dect-min-latency-reference",
+    "version": "1.0.0"
+  },
+  "available_fields": [
+    "interval_ms",
+    "payload_size_bytes",
+    "tx_power_dbm",
+    "window_duration_ms"
+  ],
+  "column_roles": {
+    "features": [
+      "bad_state_loss_probability",
+      "bad_to_good_probability",
+      "delivered_packets",
+      "good_state_loss_probability",
+      "good_to_bad_probability",
+      "interval_ms",
+      "loss_initial_state",
+      "loss_model",
+      "loss_preset",
+      "offered_packets",
+      "packet_delivery_ratio",
+      "payload_size_bytes",
+      "rx_decode_per_operation_ratio",
+      "rx_decoded_packets",
+      "rx_operations",
+      "sync_beacons",
+      "tx_power_dbm",
+      "tx_successes",
+      "window_duration_ms"
+    ],
+    "metadata": [
+      "adapter",
+      "analytical_model_id",
+      "dataset_version",
+      "delivery_status",
+      "evaluation_group_id",
+      "execution_kind",
+      "feature_profile_id",
+      "measurement_status",
+      "repetition",
+      "run_id",
+      "seed",
+      "segment_count",
+      "source_kind"
+    ],
+    "targets": [
+      "ping_rtt_latency_ms",
+      "target_energy_per_delivered_packet_uj",
+      "target_mean_power_mw",
+      "target_total_energy_mj"
+    ]
+  },
+  "dataset_rows": 1,
+  "dataset_sha256": "5296369ebdeceba0037931513f6a7f0d06f75072a6dd2ce7f18a157420040928",
+  "dataset_version": 2,
+  "evaluation_group_id": "af-0b18718011e6b9f4921b52391865a0b8",
+  "execution_kind": "simulation",
+  "feature_contract_version": 3,
+  "feature_profile_id": "dect-reference-v1",
+  "input_paths": {
+    "assumptions_document": "assumptions.md",
+    "configuration": "configuration.json",
+    "delivery_summary": "delivery-summary.json",
+    "packet_evidence": "packet-evidence.json",
+    "parameters": "parameters.json",
+    "prediction_context": "prediction-context.json",
+    "sensitivity": "sensitivity.json",
+    "state_accounting": "state-accounting.json",
+    "workload": "workload.json"
+  },
+  "input_sha256": {
+    "assumptions_document": "3ba5877e065aeb16ebb450e19580928824e19933e1536d6e8e52ddd4854ed694",
+    "configuration": "e1afeae5ccb8dfa9738ceb4432d98aab09dc7cb1a323a56e107b422a7dfb661c",
+    "delivery_summary": "c68488ead757109f0b4113b8f87b4e04ff181acb3b305ac74872676304083954",
+    "packet_evidence": "45a20ba141194235b401ea11e9bbb3c853ae4b4dba57d59ff076b6e0c65b0d05",
+    "parameters": "8773204c3d7b175b3c84effa2098468e728ccf1a7db26c6e582fe1e8012d4f55",
+    "prediction_context": "68f92c97a127e875502869a538df5d17a84883645eba62e14610c85f30bd3ae6",
+    "sensitivity": "547fe53e4bcbe0179d9e7f252ff77cd2ce732613aafb77e76f0a4370f4bcfe9d",
+    "state_accounting": "244b29e52de91fffe7898020bce77cd9e536a7aa8cc14c585f4da50bcd747ffe",
+    "workload": "dbf8c994bc5aee21735765b2f37c48a59fec2295845e9c51132b6c48c82594d3"
+  },
+  "manifest_version": 2,
+  "measurement_status": "analytical_simulation",
+  "policies": {},
+  "prediction_context": {
+    "available_fields": [
+      "interval_ms",
+      "payload_size_bytes",
+      "tx_power_dbm",
+      "window_duration_ms"
+    ],
+    "completed_as_planned": true,
+    "planned_window_duration_ms": 5000
+  },
+  "run_id": "ar-000bb804497d318a55175dfddfed806c",
+  "selected_features": {
+    "post_run": null,
+    "pre_run": [
+      "payload_size_bytes",
+      "interval_ms",
+      "tx_power_dbm",
+      "window_duration_ms"
+    ]
+  },
+  "source_kind": "synthetic"
+}

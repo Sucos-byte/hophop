@@ -1,0 +1,331 @@
+{
+  "baseline_energy_mj": 715.17596,
+  "cases": [
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": -134.58365200000003,
+      "parameter": "currents_ma.idle",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 580.592308,
+      "unit": "mA",
+      "value": 29.6,
+      "variant_parameters_sha256": "0c362192031baec6eb792ec9c5e01aebe662958fe9a7af25a940091aa88c116f"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 27,
+      "energy_change_mj": 134.58365200000003,
+      "parameter": "currents_ma.idle",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 849.7596120000001,
+      "unit": "mA",
+      "value": 44.4,
+      "variant_parameters_sha256": "2efae4c2bc9b280f0e67b2b9c68b2d6b91f651263f8854694ef62a23b5a2a2a5"
+    },
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": -6.886439999999993,
+      "parameter": "currents_ma.tx",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 708.28952,
+      "unit": "mA",
+      "value": 188.0,
+      "variant_parameters_sha256": "2cde833ebc9433f9a859dd025458387bfe231219885c85347609331b675ea825"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 27,
+      "energy_change_mj": 6.886439999999993,
+      "parameter": "currents_ma.tx",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 722.0624,
+      "unit": "mA",
+      "value": 282.0,
+      "variant_parameters_sha256": "12696a62b478de9298b0c6763cb44feb2de97430b888618b60ef973a8fb281cb"
+    },
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": -1.5651000000000295,
+      "parameter": "currents_ma.rx",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 713.61086,
+      "unit": "mA",
+      "value": 37.6,
+      "variant_parameters_sha256": "528567c50e762440eb71228f63c7fa099c446c3ec0aee53091d117eeab5267d0"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 27,
+      "energy_change_mj": 1.5651000000000295,
+      "parameter": "currents_ma.rx",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 716.7410600000001,
+      "unit": "mA",
+      "value": 56.4,
+      "variant_parameters_sha256": "3c4f4245ee4961dad7a86a7ba2bbe7d9899c1a8d8f463ac9c34b8ca26f61d83b"
+    },
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": 0.0,
+      "parameter": "timing_us.prepare",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 715.17596,
+      "unit": "us",
+      "value": 100,
+      "variant_parameters_sha256": "73ed339039688c1ec84f8687466c8587cda8f94210498ed2bc69fdb6f455e1da"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 27,
+      "energy_change_mj": 0.0,
+      "parameter": "timing_us.prepare",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 715.17596,
+      "unit": "us",
+      "value": 2000,
+      "variant_parameters_sha256": "c74170dfb13a54097861967247f8b2b02fcb47cee030e117a8afa3b45b84c07d"
+    },
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": -10.989000000000033,
+      "parameter": "timing_us.tx_base",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4930400,
+        "rx": 45000,
+        "tx": 24600
+      },
+      "status": "valid",
+      "total_energy_mj": 704.18696,
+      "unit": "us",
+      "value": 500,
+      "variant_parameters_sha256": "4a6b6b47c9b3f6bf65f75526fc27454cd62d0acc2500c85d1c5cde207442f9a5"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 27,
+      "energy_change_mj": 21.978000000000065,
+      "parameter": "timing_us.tx_base",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4885400,
+        "rx": 45000,
+        "tx": 69600
+      },
+      "status": "valid",
+      "total_energy_mj": 737.1539600000001,
+      "unit": "us",
+      "value": 2000,
+      "variant_parameters_sha256": "36f45988fb64fa220c8399a7b0c8d4a14c4dc3db0e3d8ffa33ec0277d1d8dbf9"
+    },
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": -5.274720000000002,
+      "parameter": "timing_us.tx_per_byte",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4922600,
+        "rx": 45000,
+        "tx": 32400
+      },
+      "status": "valid",
+      "total_energy_mj": 709.90124,
+      "unit": "us",
+      "value": 1,
+      "variant_parameters_sha256": "ff63cea443197b2a482e110e4d93c4837fd97486425b5a002dd130828490b326"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 27,
+      "energy_change_mj": 10.549440000000004,
+      "parameter": "timing_us.tx_per_byte",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4901000,
+        "rx": 45000,
+        "tx": 54000
+      },
+      "status": "valid",
+      "total_energy_mj": 725.7254,
+      "unit": "us",
+      "value": 10,
+      "variant_parameters_sha256": "215780eaa02cc56330e77858068698d41080dba0eaba41771ebb1d43fb703daa"
+    },
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": -1.1100000000000136,
+      "parameter": "timing_us.rx",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4945400,
+        "rx": 15000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 714.06596,
+      "unit": "us",
+      "value": 500,
+      "variant_parameters_sha256": "86b407a1cbbb46fc225a5a231a450d2425bb001c313b7def4bc928db59d0049c"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 27,
+      "energy_change_mj": 2.7749999999999773,
+      "parameter": "timing_us.rx",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4840400,
+        "rx": 120000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 717.95096,
+      "unit": "us",
+      "value": 4000,
+      "variant_parameters_sha256": "edb2501c3348f933f4d2bac74e04b9e1de1555153c13c027665f91f4cf5d35f7"
+    },
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": 0.0,
+      "parameter": "timing_us.backoff",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 715.17596,
+      "unit": "us",
+      "value": 0,
+      "variant_parameters_sha256": "39f86a25ecdce3231a416330ef53d0bbc7af2cd00ad09299adb281fd9133e7be"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 27,
+      "energy_change_mj": 0.0,
+      "parameter": "timing_us.backoff",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4915400,
+        "rx": 45000,
+        "tx": 39600
+      },
+      "status": "valid",
+      "total_energy_mj": 715.17596,
+      "unit": "us",
+      "value": 5000,
+      "variant_parameters_sha256": "1deb5954802f3ca801d4d70e0c435910f6d3e19ff3f86d1950a82514a34d55e8"
+    },
+    {
+      "basis": "assumption",
+      "bound": "min",
+      "delivered_packets": 27,
+      "energy_change_mj": -3.0675959999999804,
+      "parameter": "loss_probability",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4923860,
+        "rx": 40500,
+        "tx": 35640
+      },
+      "status": "valid",
+      "total_energy_mj": 712.108364,
+      "unit": "probability",
+      "value": 0.0,
+      "variant_parameters_sha256": "81c9a5bb51bfd83283ca5166ab9ca4be60e9b43ddf230632fe4bbc9a2d2cd3ce"
+    },
+    {
+      "basis": "assumption",
+      "bound": "max",
+      "delivered_packets": 22,
+      "energy_change_mj": 24.540767999999957,
+      "parameter": "loss_probability",
+      "ping_rtt_latency_ms": null,
+      "state_duration_us": {
+        "idle": 4847720,
+        "rx": 81000,
+        "tx": 71280
+      },
+      "status": "valid",
+      "total_energy_mj": 739.716728,
+      "unit": "probability",
+      "value": 0.5,
+      "variant_parameters_sha256": "0e2c2ad0a499f1be5d6aa3a1b89fe72752f4cd462b23618e438f09ca399445be"
+    }
+  ],
+  "method": "one_at_a_time_common_seed",
+  "sensitivity_version": 1
+}

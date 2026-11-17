@@ -687,3 +687,36 @@ hash evidence, conservative uncertainty/status rules, explicit loss/duty battery
 projection, all exit codes and rollback tested. No old source/model/calibration
 modified. Current: commit implementation and refresh Windows snapshot. Next:
 execute/reproduce8 labeled policy demonstrations and document Week10 readiness.
+
+Implementation committedbbc187c; Windows snapshot refreshed atomically. Initial
+8 labeled research demos pass expected exits using unchanged same frozen source:
+PASS0 generous explicit override,FAIL2 strict ceiling,ABSTAIN3 crossing/default
+coverage/missing workload,ERROR1 invalid units; battery5-year target fails and
+same-feature regression reports0% (not code observability). Current: enrich
+report audit fields with resolved workload/context/domain and explicit no-hardware
+assurance flags; rules/predictions unchanged. Next targeted/full report checks,
+final reproducible demos/docs and milestone commit/export.
+
+Final report audit fields verified by21 targeted tests; final full suite underway.
+Two independent8-case demonstration runs are byte-identical across source,
+policies, reports and summary; final snapshots archived docs/results/week9.
+Default coverage abstains; research-only generous budget passes, strict budget
+fails, crossing abstains, invalid units errors. Battery1000mAh/3.6V/.8usable/
+.9efficiency, continuous148.06013mW =>0.00199708years (range.00183222-.00219454),
+configured5years fails; no workload abstains. Same features +different commit
+labels yield0% point regression, explicitly not execution observability.
+Current: final suite/strict JSON/hash checks; next verified results commit/export,
+Week10 readiness handoff. No tuning, physical measurement or deployment.
+
+## Week9 final verification and readiness
+
+Release full suite305 passes (21 new,108.867s), ResourceWarning errors enabled;
+strict JSON, report-hash/exit/block flags, frozen six model/selection and
+calibration hashes verified; git diff --check passes. Independent demos byte-
+identical. Results/docs/API contract and reproducible fixtures saved; no source,
+model, calibration or evaluated-set tuning. Default-policy coverage abstention,
+explicit research overrides, battery shortfall and commit-only non-observability
+reported honestly. Current: commit verified final evidence and refresh Windows
+snapshot. Next: separately authorized Week10 CI/full PR reporter, preserving
+0/1/2/3 and blocking FAIL/ABSTAIN/reporting errors. No Actions/PR Markdown,
+physical measurement, deployment, push or remote publication in Week9.

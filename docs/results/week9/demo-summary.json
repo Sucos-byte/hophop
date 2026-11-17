@@ -1,0 +1,123 @@
+{
+  "cases": {
+    "abstain_crossing": {
+      "exit_code": 3,
+      "policy_sha256": "27ef4bc7e4039ada41ea5699b8b01a20711e91d96a220c280827f3cfb8fcaf2d",
+      "reason_codes": [
+        "interval_crosses_budget"
+      ],
+      "report_sha256": "7f9257503d2cd1bae328533bf24c354311d48b69cfb9d742c43089b30ff8485a",
+      "research_override_requested": true,
+      "status": "ABSTAIN"
+    },
+    "battery_five_years_fail": {
+      "exit_code": 2,
+      "policy_sha256": "2ba13dfe2312147b2f791cc2c461a99cc01938078ce346e0d9558860e05f0bb6",
+      "reason_codes": [
+        "lifetime_upper_bound_below_target"
+      ],
+      "report_sha256": "541813a740b7ca402f80b41bf04540ebba90bc002a73b23df0afbcd996b890bd",
+      "research_override_requested": true,
+      "status": "FAIL"
+    },
+    "battery_missing_workload_abstain": {
+      "exit_code": 3,
+      "policy_sha256": "0bd646eeda49ee8fb9d57a2472f02fe773f1ea19a4ec5be7e403125c8199d885",
+      "reason_codes": [
+        "battery_workload_profile_missing"
+      ],
+      "report_sha256": "97194933ec335295fdd9a3bc6285665637597a1e9585558ea62523740dd7d0a5",
+      "research_override_requested": true,
+      "status": "ABSTAIN"
+    },
+    "default_coverage_abstain": {
+      "exit_code": 3,
+      "policy_sha256": "99468f2af6fe0c034ecb70eb5e976adc0861d3b084261a3d75d9ddb070d99a84",
+      "reason_codes": [
+        "observed_family_coverage_inadequate"
+      ],
+      "report_sha256": "f68ae81459a068d6859b7f35df75fde57398d055a88ab35c6af46d3aa0e1ddbd",
+      "research_override_requested": false,
+      "status": "ABSTAIN"
+    },
+    "error_wrong_units": {
+      "exit_code": 1,
+      "policy_sha256": "736d7f6dc994ef1fd5a726922a9eb0d4c15269be2328f02f48aa04e6b2003e4a",
+      "reason_codes": [
+        "malformed_incompatible_or_processing_error"
+      ],
+      "report_sha256": "255302e4a858d265349e64faeae779e49f0eabb4f5798ca5418132591a738709",
+      "research_override_requested": false,
+      "status": "ERROR"
+    },
+    "fail_upper": {
+      "exit_code": 2,
+      "policy_sha256": "bafbd257c1cd41ed18431281be7f2c97ee4f920dbf0b6b51f7e7aa0136618d80",
+      "reason_codes": [
+        "lower_bound_exceeds_budget"
+      ],
+      "report_sha256": "10e360b752d37879fbdb79259bc283e35e8c01db7235e7430c4e8d8ff56458bf",
+      "research_override_requested": true,
+      "status": "FAIL"
+    },
+    "pass_upper": {
+      "exit_code": 0,
+      "policy_sha256": "3a2c118584eb9ac678990804a027eb497cb81a69bed166bd5ff8b440c9ddfa49",
+      "reason_codes": [
+        "upper_bound_within_budget"
+      ],
+      "report_sha256": "d7426ceedc7d7b59ef263ee1499cd6bae7ec483d53764fbff4f781be086336f8",
+      "research_override_requested": true,
+      "status": "PASS"
+    },
+    "same_features_regression": {
+      "exit_code": 0,
+      "policy_sha256": "d407e03735d88038e186218d8b1955baaadea0d853bbd42483244a04ffb41d59",
+      "reason_codes": [
+        "candidate_upper_within_baseline_lower_allowance"
+      ],
+      "report_sha256": "cb9c97d081569d965e50e98d35ee280243b31e1d98bd1f237ebd1509f6471d08",
+      "research_override_requested": true,
+      "status": "PASS"
+    }
+  },
+  "demo_version": 1,
+  "dependencies": "stdlib_only",
+  "implementation_sha256": {
+    "battery_projection.py": "df9c06a3465bbeda4ec370e7238f1548fe9bf74d9adc2f320bea549b04ac5c3e",
+    "budget_policy.py": "75e143fcbd0519e946c9159c87f0dbd35c29f501b217d56d75a4bf1103670379",
+    "gate_evidence.py": "05f96a4e39c166bd947a1c67841b219c903ab9ab15dc905e3f3cf7afddbcfa20",
+    "green_ops_gatekeeper.py": "efc8200ff8bbaf8be13067a3ea0e45dc0eb7ce80afa9dbc4980aa88d777d16c4"
+  },
+  "limitations": [
+    "fixtures exercise explicit research policy semantics, not validated budgets",
+    "no model/calibration modification or fitting",
+    "no hardware/compliance assurance",
+    "configuration estimates cannot observe commit-only code changes"
+  ],
+  "model_sha256": {
+    "target_energy_per_delivered_packet_uj": "95e90fee96268d211d6e4dc4c26ead7166a1440d52fc9a832f386e10b332c64a",
+    "target_mean_power_mw": "0605d0c3c95cdac6b8fb2941308e21875355e3c5f7dcc6aa922b9590c0dc606b",
+    "target_total_energy_mj": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4"
+  },
+  "provenance": "analytical_simulation",
+  "python_version": "3.14.4",
+  "research_only": true,
+  "run_id": "ar-000bb804497d318a55175dfddfed806c",
+  "selection_sha256": "31e53f4e8f4317be71bc8fed6b0024f0985a1cc5e195f4c833d43ae62acf226b",
+  "source_manifest_sha256": "b3dbe30bd5602d54bb7aa67127703a1a68583ab44be705c194b6e14fad55f9ee",
+  "source_selection": "lexicographically first nominal Week8 evaluation run; no outcome selection",
+  "workload": {
+    "evaluation_group_id": "af-0b18718011e6b9f4921b52391865a0b8",
+    "interval_ms": 180,
+    "max_attempts": 3,
+    "offered_packets": 27,
+    "payload_size_bytes": 80,
+    "repetition": 5,
+    "run_id": "ar-000bb804497d318a55175dfddfed806c",
+    "seed": 13313103955936235453,
+    "tx_power_dbm": 19,
+    "window_duration_ms": 5000,
+    "workload_version": 1
+  }
+}

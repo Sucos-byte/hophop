@@ -1,18 +1,29 @@
 # Week9 current task / next step
 
-Verified clean340a5b7, branch green-ops/week9-gatekeeper. Current: predeclared
-semantics/default-policy freeze; read Week9 plan before implementation. Models,
-calibration and consumed evaluation data frozen. Nominal family coverage fails
-95% (28/30,28/30,26/30), default must abstain. Explicit two-part research override
-only for labeled demonstrations, never physical assurance. No Actions/PR reporter.
-Next implement strict gatekeeper/comparison/battery APIs and tests; commit verified
-milestones and refresh Windows export per green-ops-status-export.md. No push.
+Branch green-ops/week9-gatekeeper; clean entry340a5b7. Semantics/default policy
+060a7fc; tested implementationbbc187c. Current: Week9 complete, final results/
+report-audit commit ready. Release full suite305 passes (21 new,108.867s),
+ResourceWarning errors. Two8-case demo runs byte-identical; frozen six models,
+selection and calibration hashes unchanged. No retraining/recalibration/tuning.
 
-Plan/default freeze060a7fc; Windows export refreshed.20 targeted tests pass.
-Current full suite /tmp/green-ops-week9-tests.log. Implementation ready for final
-verification; no model/calibration changes. Next code milestone commit/export,
-then labeled demonstrations and documentation. No baseline tests duplicated.
+Read docs/green-ops-gatekeeper.md, docs/green-ops-week9-results.md and Week9 plan.
+API tools/green_ops/green_ops_gatekeeper.py, strict default policy
+ tools/green_ops/policies/green_ops_budget.json. Reports/fixtures/hash receipt and
+reproducer docs/results/week9; original intermediate demos remain under build.
+PASS0/ERROR1/FAIL2/ABSTAIN3; both FAIL/ABSTAIN block. Default95% family evidence
+abstains (28/30,28/30,26/30). Passing examples explicitly require policy+CLI
+unvalidated research opt-in, never hardware assurance. Battery1000mAh3.6V/.8/.9
+at148.06013mW gives0.00199708years (~17.5h), not5years. Losses applied once;
+run-average receives no second duty factor. Same X/fixed model=>same prediction
+for different commit labels; code energy regression not observable.
 
-Full suite304 passes (107.0s),20 new targeted tests. Code milestone verified;
-next commit/export then run docs/results/week9/reproduce.py to fresh build dirs.
-No tuning or numeric edits to frozen models/calibration.
+Next: separately authorized Week10 Actions/full PR Markdown reporter. Preserve
+status exits, output collision/rollback, provenance/scope and coverage warnings.
+Hardware assurance, calibrated95% claims and physical deployment remain blocked
+by missing validation. All study assessment sets already consumed; future tuning
+requires new genuinely group-disjoint final data. No physical/fake PPK2 evidence,
+Git push, remote publication, deployment or inferred research hours.
+
+Refresh Windows export after every verified milestone/local commit, before input
+and before stopping: docs/plans/green-ops-status-export.md. Repository tracker
+remains authoritative. No second agent or polling service.

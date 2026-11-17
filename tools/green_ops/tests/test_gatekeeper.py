@@ -153,6 +153,16 @@ class GateIntegrationTests(unittest.TestCase):
         self.assertEqual(_json_bytes(passed),_json_bytes(gate.decide(self.research(),self.candidate,allow_research_override=True)))
         self.assertIn('model_attribution_not_physical_root_cause',_json_bytes(passed).decode())
 
+    def test_report_carries_exact_scope_workload_context_and_no_assurance(self):
+        result=gate.decide(self.research(),self.candidate,self.candidate,allow_research_override=True)
+        self.assertEqual(result['resolved_workload']['candidate'],self.candidate['comparable_workload'])
+        self.assertEqual(result['prediction_context']['baseline'],self.candidate['prediction_context'])
+        self.assertEqual(result['prediction_domain'],{'candidate':'primary','baseline':'primary'})
+        self.assertEqual(result['comparison_scope'],'configuration_estimates_only')
+        self.assertFalse(result['hardware_assurance']);self.assertFalse(result['validated_95_percent_coverage'])
+        p=self.research();p['scope']['provenance']='measured'
+        self.assertEqual(gate.decide(p,self.candidate,allow_research_override=True)['status'],'ABSTAIN')
+
     def test_direct_fail_crossing_and_missing_baseline(self):
         for ceiling,status in [(100,'FAIL'),(150,'ABSTAIN'),(200,'PASS')]:
             p=self.research();p['criteria'][0]['threshold']=ceiling

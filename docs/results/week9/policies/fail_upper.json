@@ -1,0 +1,31 @@
+{
+  "battery": null,
+  "budget_version": 1,
+  "criteria": [
+    {
+      "id": "power-budget",
+      "kind": "absolute_upper",
+      "target": "target_mean_power_mw",
+      "threshold": 100,
+      "unit": "mW"
+    }
+  ],
+  "feature_contract_version": 3,
+  "feature_profile": "raw_pre_run_v1",
+  "policy_id": "RESEARCH-FIXTURE-fail_upper",
+  "research_only": true,
+  "scope": {
+    "model_sha256": {
+      "target_energy_per_delivered_packet_uj": "95e90fee96268d211d6e4dc4c26ead7166a1440d52fc9a832f386e10b332c64a",
+      "target_mean_power_mw": "0605d0c3c95cdac6b8fb2941308e21875355e3c5f7dcc6aa922b9590c0dc606b",
+      "target_total_energy_mj": "a45c065e435a92e6592635da1bdea505e8b95a32a5699fd32477d0a23852f1d4"
+    },
+    "prediction_mode": "pre_run",
+    "provenance": "analytical_simulation"
+  },
+  "uncertainty": {
+    "allow_assumption_shift": false,
+    "allow_unvalidated_research_intervals": true,
+    "minimum_family_coverage": 0.95
+  }
+}
