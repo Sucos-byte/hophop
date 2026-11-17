@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2026 Parth Shailesh Thite
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
+import contextlib
+import io
 import csv
 import hashlib
 import json
@@ -71,7 +73,7 @@ class TableCliTests(unittest.TestCase):
             if Path(destination) == self.manifest:
                 raise OSError("simulated second publication failure")
             return real_replace(source, destination)
-        with mock.patch.object(atomic_outputs.os, "replace", side_effect=fail_second):
+        with contextlib.redirect_stderr(io.StringIO()), mock.patch.object(atomic_outputs.os, "replace", side_effect=fail_second):
             self.assertEqual(cli.main(self.arguments), 1)
         self.assertFalse(self.output.exists()); self.assertFalse(self.manifest.exists())
         self.assertEqual(len(list(self.root.iterdir())), 4)

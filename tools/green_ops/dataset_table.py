@@ -129,12 +129,15 @@ def validate_dataset_row(row, *, schema_version):
             raise ValueError("labeled rows require power and energy")
         expected = row["target_mean_power_mw"] * (row["window_duration_ms"] / 1000)
         _finite(expected, "derived energy")
-        # Acquisition tolerances belong to the source manifest, so exact
-        # power-duration agreement is rechecked there for measured rows.
+        # Measured rows may have a tolerated capture/window duration difference;
+        # the source manifest supplies the policies checked below.
         if row["measurement_status"] == "analytical_simulation" and not math.isclose(row["target_total_energy_mj"], expected, rel_tol=1e-9, abs_tol=1e-9):
             raise ValueError("analytical energy inconsistent with power and duration")
-        per_delivery = (row["target_total_energy_mj"] * 1000 / row["delivered_packets"]
-                        if row["delivered_packets"] else None)
+        try:
+            per_delivery = (row["target_total_energy_mj"] * 1000 / row["delivered_packets"]
+                            if row["delivered_packets"] else None)
+        except OverflowError as error:
+            raise ValueError("derived energy per delivery overflow") from error
         if per_delivery is not None:
             _finite(per_delivery, "derived energy per delivery")
         if row["target_energy_per_delivered_packet_uj"] != per_delivery:
@@ -194,6 +197,19 @@ def _validate_manifest(row, manifest):
             raise ValueError("invalid duration tolerance fraction")
         if row["target_mean_power_mw"] <= 0 or row["target_total_energy_mj"] <= 0:
             raise ValueError("measured energy and power must be positive")
+        try:
+            expected_energy = row["target_mean_power_mw"] * (row["window_duration_ms"] / 1000)
+            duration_difference = max(manifest["policies"]["duration_tolerance_ms"],
+                                      manifest["policies"]["duration_tolerance_fraction"] * row["window_duration_ms"])
+            duration_energy_difference = row["target_mean_power_mw"] * (duration_difference / 1000)
+            permitted_difference = duration_energy_difference + max(
+                0.001, 0.001 * (expected_energy + duration_energy_difference))
+        except OverflowError as error:
+            raise ValueError("measured energy consistency overflow") from error
+        _finite(expected_energy, "derived measured energy")
+        _finite(permitted_difference, "energy tolerance")
+        if abs(row["target_total_energy_mj"] - expected_energy) > permitted_difference:
+            raise ValueError("measured energy inconsistent with duration/power policies")
     roles = dict(zip(("metadata", "features", "targets"), (sorted(r) for r in feature_roles(2))))
     if manifest.get("column_roles") != roles:
         raise ValueError("manifest column roles mismatch")
@@ -247,6 +263,8 @@ def load_dataset_artifact(csv_path, manifest_path):
                 raise ValueError(f"invalid integer CSV value: {field}")
             row[field] = int(value)
         elif field in NUMBER_FIELDS:
+            if re.fullmatch(r"-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?", value) is None:
+                raise ValueError(f"invalid numeric CSV value: {field}")
             try:
                 row[field] = float(value)
             except ValueError as error:
@@ -267,11 +285,11 @@ def build_dataset_table(artifacts, *, schema_version, measurement_status,
     """Validate every artifact before filtering and return stable rows/manifest."""
     if type(schema_version) is not int or schema_version != 2:
         raise ValueError("tables require dataset v2; regenerate v1 from source artifacts")
-    if measurement_status not in {"unmeasured", "measured", "analytical_simulation"}:
+    if not isinstance(measurement_status, str) or measurement_status not in {"unmeasured", "measured", "analytical_simulation"}:
         raise ValueError("invalid measurement_status selection")
-    if not isinstance(required_targets, tuple) or any(t not in TARGET_COLUMNS for t in required_targets) or len(set(required_targets)) != len(required_targets):
+    if not isinstance(required_targets, tuple) or any(not isinstance(t, str) or t not in TARGET_COLUMNS for t in required_targets) or len(set(required_targets)) != len(required_targets):
         raise ValueError("required_targets must be unique target column names")
-    if missing_target_policy not in {"error", "exclude"}:
+    if not isinstance(missing_target_policy, str) or missing_target_policy not in {"error", "exclude"}:
         raise ValueError("invalid missing_target_policy")
     accepted, excluded, sources = [], [], []
     seen = set()

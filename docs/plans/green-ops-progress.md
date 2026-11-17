@@ -10,7 +10,7 @@ Week 1   Firmware telemetry                 [##########] Complete software scope
 Week 2   Log pipeline + run metadata        [##########] Complete software scope
 Week 3   Planner + loss simulation          [##########] Complete software scope
 Week 4   Dataset builder + synthetic demo   [##########] Complete software scope
-Week 5   Feature/window/table contracts     [####------] Dataset v2 and feature registry v2 implemented; multi-run table next
+Week 5   Feature/window/table contracts     [####------] Software contracts, table CLI and demos complete; lab evidence pending
 
 PHASE 2  Analytical data and learning
 Week 6   Analytical reference generator     [----------] Planned; laptop executable
@@ -61,7 +61,15 @@ Sources checked 17 November 2026: [European Commission overview](https://energy-
 
 ### Current handoff
 
-Week 5 detailed execution plan: `green-ops-week5-plan.md` alongside this tracker. Baseline 35ce7f3 confirmed clean; branch green-ops/week5-measurement-contract created. V1 feature registry, pre/post-run selectors, typed extraction and documentation committed as ef0470f; clean working tree and 100644 modes confirmed by user. Full-suite result: 120 passing tests, including 14 new feature tests. V2 registry coverage, measurement windows, aligned PPK2 integration and multi-run table remain outstanding. Next increment: bounded-window validation and baseline subtraction tests. The two filled blocks indicate an initial completed increment, not a measured 20% effort estimate.
+Week 5 software scope is implemented on `green-ops/week5-measurement-contract`.
+Dataset/registry v2: `822679f`; provenance-filtered tables: `c037dd8`;
+table CLI: `f119f2d`; acquisition protocol and runnable demonstrations: `637afb0`.
+Final review suite: 182 passing tests with ResourceWarning treated as errors.
+Two synthetic unmeasured rows and a separate two-row analytical contract-test
+table passed the acceptance demo. No physical measurement or calibrated
+analytical generator is claimed. Week 6's sourced generator is the next planned
+software package and requires a separate continuation; physical acquisition
+remains a parallel lab milestone. Actual hours remain unreported.
 
 The historical status below records completed evidence. Its hardware-dependent model-training wording is superseded by the revised software/lab separation above.
 
@@ -173,3 +181,15 @@ or DECT current values were guessed. Incoming full baseline SHA:
 178 passing tests. Final validation review added strict numeric-token, manifest
 selection and integer-energy overflow checks; 16 focused table/CLI tests pass.
 Final full suite and local verification commit follow.
+
+
+## Week 5 final software verification
+
+Task 6 committed as `637afb0`. Final review tightened nondecimal CSV token
+rejection, unknown/selected-feature manifest checks, integer-energy overflow,
+measured row consistency against declared duration policies, and non-object
+PPK2 errors. Full suite: **182 tests passing**, ResourceWarning as errors;
+`git diff --check` passed. Demo sources/artifacts remained explicitly synthetic
+or analytical contract-test evidence. Tasks 0–7 are complete for software scope;
+no push/publish performed. Research hours and physical calibration remain
+unreported/pending, rather than inferred from test counts.

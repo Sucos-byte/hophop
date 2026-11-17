@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Parth Shailesh Thite
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
-"""Explicit column roles and prediction-time inputs for dataset schema v1."""
+"""Explicit column roles and prediction-time inputs for dataset schemas v1/v2."""
 
 import math
 
@@ -106,7 +106,7 @@ def _validate_schema_version(schema_version):
 
 
 def validate_feature_partition(fields, *, schema_version):
-    """Require an exhaustive, disjoint classification of the v1 schema."""
+    """Require an exhaustive, disjoint classification of the selected schema."""
     _validate_schema_version(schema_version)
     if not isinstance(fields, tuple):
         raise ValueError("schema fields must be a tuple")

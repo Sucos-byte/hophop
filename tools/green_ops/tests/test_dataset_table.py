@@ -112,3 +112,55 @@ class DatasetTableTests(unittest.TestCase):
                 csv_path.write_text(text, encoding="utf-8")
                 with self.assertRaises(ValueError):
                     load_dataset_artifact(csv_path, manifest_path)
+
+
+class TableStrictBoundaryTests(unittest.TestCase):
+    def test_nondecimal_csv_number_rejected_even_with_matching_digest(self):
+        a = artifact()
+        with tempfile.TemporaryDirectory() as directory:
+            csv_path, manifest_path = Path(directory)/"row.csv", Path(directory)/"manifest.json"
+            for value in ("1_000", " 1000.0", "+1000.0", "Infinity"):
+                text = _dataset_csv(a["row"]).replace("1000.0", value)
+                csv_path.write_text(text, encoding="utf-8")
+                a["manifest"]["dataset_sha256"] = hashlib.sha256(csv_path.read_bytes()).hexdigest()
+                manifest_path.write_text(json.dumps(a["manifest"]), encoding="utf-8")
+                with self.subTest(value=value), self.assertRaises(ValueError):
+                    load_dataset_artifact(csv_path, manifest_path)
+
+    def test_integer_energy_overflow_raises_contract_error(self):
+        a = artifact(status="analytical_simulation")
+        row = a["row"]
+        row.update(target_mean_power_mw=10**307, target_total_energy_mj=10**307,
+                   delivery_status="validated", offered_packets=1, delivered_packets=1,
+                   packet_delivery_ratio=1.0)
+        with self.assertRaisesRegex(ValueError, "overflow"):
+            validate_dataset_row(row, schema_version=2)
+
+    def test_unknown_manifest_keys_and_inconsistent_feature_selection_fail(self):
+        for key, value in (("extra", 1), ("selected_features", {"pre_run": ["target_total_energy_mj"]})):
+            a = artifact(); a["manifest"][key] = value
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                build_dataset_table([a], schema_version=2, measurement_status="unmeasured")
+
+
+class MeasuredTableTests(unittest.TestCase):
+    def test_measured_contract_and_policy_consistency(self):
+        from tools.green_ops.tests.test_ppk2_summary_v2 import aligned_window, valid_summary
+        metadata = run_metadata(execution_kind="hardware", measured_power=True)
+        metadata["run_id"] = "run-001"
+        window = aligned_window()
+        row = build_dataset_row_v2(metadata,
+            [event_row(run_id="run-001", source_kind="hardware", **window["end_counters"])],
+            measurement_window=window, ppk2_summary=valid_summary())
+        policies = dict(duration_tolerance_ms=1.0, duration_tolerance_fraction=0.001,
+                        max_alignment_uncertainty_ms=1.0)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/"test-evidence"; path.write_text("simulated contract only")
+            manifest = json.loads(_manifest_v2(row,
+                {name: path for name in ("ppk2_summary", "measurement_window", "run_metadata", "telemetry_csv")}, policies))
+        a = dict(row=row, manifest=manifest, csv_sha256=manifest["dataset_sha256"], manifest_sha256="a"*64)
+        rows, _ = build_dataset_table([a], schema_version=2, measurement_status="measured")
+        self.assertEqual(len(rows), 1)
+        row["target_mean_power_mw"] = 1000.0
+        with self.assertRaisesRegex(ValueError, "inconsistent"):
+            build_dataset_table([a], schema_version=2, measurement_status="measured")

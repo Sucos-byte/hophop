@@ -495,6 +495,8 @@ def build_dataset_row_v2(
     if ppk2_summary is not None:
         if run_metadata["execution_kind"] != "hardware" or power != "measured":
             raise ValueError("PPK2 measurements require measured hardware provenance")
+        if not isinstance(ppk2_summary, dict):
+            raise ValueError("PPK2 summary must be an object")
         if ppk2_summary.get("summary_version") == 1:
             raise ValueError("dataset v2 requires PPK2 summary v2; regenerate from bounded capture")
         energy = validate_ppk2_summary_v2(
