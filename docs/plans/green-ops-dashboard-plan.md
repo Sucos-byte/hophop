@@ -21,3 +21,12 @@ execution controls, cloud/database, training, hardware or gate decisions run.
 Metric/source mapping: docs/green-ops-dashboard.md (written before implementation).
 Next backend task remains green-ops-observability-sprint.md; dashboard does not
 implement actual-execution observation or fix unobservable hidden faults.
+
+## Completion
+
+Implementationbdd57c9; UI/browser correctionsedb0322.33pinned resources,5views,
+15new meaningful tests, final368full-suite pass. Chromium desktop/narrow checks
+and6local screenshots;9documentation links checked; frozen preflight/hashes pass
+without scoring. One-command launch/five-minute demo and explicit UI/platform/
+physical limitations documented. No backend execution/frozen changes/push.
+Next backend remains observability contract/bookkeeping sprint.

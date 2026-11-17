@@ -1,19 +1,70 @@
 {
-  "verification_version": 1,
+  "allowlisted_resource_count": 33,
   "baseline": "be9085791649aa90baf676a3c6ca78409566b0b1",
-  "initial_implementation_commit": "bdd57c9b9ca7b3677bd0db5764341219e50047d5",
-  "initial_full_suite": {"tests": 367, "passed": true, "seconds": 115.716},
-  "final_dashboard_tests": {"tests": 15, "passed": true, "seconds": 0.961},
-  "final_full_suite": "running; receipt will be updated after completion",
-  "javascript_syntax": "node --check passed",
   "browser": "Chromium 159.0.8154.6; desktop1440x1000 and narrow390x844",
+  "browser_corrections": [
+    "explicit accessible select labels",
+    "mobile filter sizing",
+    "long reason-code wrapping",
+    "point units distinct from regression-percent budgets",
+    "battery engineering range rendering",
+    "default overview heading"
+  ],
   "browser_receipt": "browser-check.json",
-  "screenshots_visually_inspected": ["desktop-overview.png", "desktop-intervals.png", "narrow-overview.png"],
-  "browser_corrections": ["explicit accessible select labels", "mobile filter sizing", "long reason-code wrapping", "point units distinct from regression-percent budgets", "battery engineering range rendering", "default overview heading"],
+  "dashboard_runtime_dependencies": "Python standard library and local HTML/CSS/JavaScript only",
+  "final_dashboard_tests": {
+    "passed": true,
+    "seconds": 0.961,
+    "tests": 15
+  },
+  "final_full_suite": {
+    "command": "python3 -W error::ResourceWarning -m unittest discover -s tools/green_ops/tests",
+    "log_sha256": "1edac1cf86c8a23e807f9b7f25b4306394caa9312da66e3571721039af19116a",
+    "passed": true,
+    "seconds": 121.691,
+    "tests": 368
+  },
   "frozen_dependency_preflight": "passed without scoring",
   "frozen_models_results_policies_consumption_records": "unchanged",
-  "dashboard_runtime_dependencies": "Python standard library and local HTML/CSS/JavaScript only",
-  "remote_execution": false,
+  "initial_full_suite": {
+    "passed": true,
+    "seconds": 115.716,
+    "tests": 367
+  },
+  "initial_implementation_commit": "bdd57c9b9ca7b3677bd0db5764341219e50047d5",
+  "javascript_syntax": "node --check passed",
+  "limitations": [
+    "No screen-reader/full accessibility audit",
+    "No Firefox/Safari/Windows browser verification",
+    "Saved analytical evidence only, no live telemetry or new decisions"
+  ],
+  "local_document_links_checked": 9,
   "physical_validation": false,
-  "limitations": ["No screen-reader/full accessibility audit", "No Firefox/Safari/Windows browser verification", "Saved analytical evidence only, no live telemetry or new decisions"]
+  "remote_execution": false,
+  "screenshots_sha256": {
+    "desktop-faults.png": "434e2d32bc2179bb13ad0bb1b3a6b99dd57bbb7cf82034a99418ed2085d6aac6",
+    "desktop-intervals.png": "a01552a2ba191742c44604dd5016b5083bb472abd134242a162fd9d592829795",
+    "desktop-overview.png": "e300a19cdab6a9ff904d6733ed27b8a689b64dcb33d8ea720304b6996251f195",
+    "narrow-faults.png": "42acf5b22070abcf24781daf198999a8b64675340b2cfd2d7adf29ac62bccf76",
+    "narrow-intervals.png": "b042d1a263ed052d5fe96d16a43c022e48adf2c6a66a56c17c2edc57a6864582",
+    "narrow-overview.png": "52e68beb5cabb7c93547e3e6366d4940cfd94009be65f127c0e376c60839d95d"
+  },
+  "screenshots_visually_inspected": [
+    "desktop-overview.png",
+    "desktop-intervals.png",
+    "narrow-overview.png",
+    "desktop-faults.png"
+  ],
+  "source_sha256": {
+    "tools/green_ops/dashboard.py": "ea28675e756fcbd296af39afb56cefbaaf76611c1eb6aba7d1bbf781f0c580a2",
+    "tools/green_ops/dashboard_artifacts.py": "3da6fd9018467855dc709fa6c6650bf67cc7e98b00cb9c2a64415b93f546a8c2",
+    "tools/green_ops/dashboard_assets/app.js": "8b64e4aa071313ac6ce5c43cd30e531096952086a77dfafa5e263e12902690f3",
+    "tools/green_ops/dashboard_assets/catalog.json": "7b97204c9d7a9b4e96c1208c15b10fb521d634df1825d35f252aa864d8e4cabc",
+    "tools/green_ops/dashboard_assets/index.html": "00777dcf5f4ec92d275f824dba7de72439bbfa1f686b61f73d553b49c358b6b5",
+    "tools/green_ops/dashboard_assets/style.css": "9d41e7300582c11ca8cb3ea04933cfae2ff7cab110da3c90d8f8be83c470e91a",
+    "tools/green_ops/dashboard_browser_check.py": "f7ee453f339ffc11f7026ef2c200023d8b7d58aa4ccec502cc21f9adc016653f",
+    "tools/green_ops/tests/test_dashboard.py": "a9aa9be35bfba4dc21e68523cdd4798903c8c456cebdee9b7d45cf02ceb38134"
+  },
+  "verification_version": 1,
+  "verified_source_commit": "edb032257a3da390fb0e781785b0ff2f76a70986"
 }

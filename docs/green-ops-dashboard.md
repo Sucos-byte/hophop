@@ -113,9 +113,10 @@ strings to avoid JavaScript integer precision loss. IDs/seeds are never features
 
 ## Validation and screenshots
 
-The first full suite passed367 tests (353existing+14new). The final missing-label
-case adds one meaningful dashboard test; final count/result is recorded in
-`docs/results/dashboard-demo/verification.json`. Run all tests with:
+The final full suite passed **368 tests** in121.691s with ResourceWarning
+treated as errors (353existing+15new dashboard tests). Exact source fingerprints,
+browser checks and limits are in `docs/results/dashboard-demo/verification.json`.
+Run all tests with:
 
 ```bash
 python3 -W error::ResourceWarning -m unittest discover -s tools/green_ops/tests
@@ -157,8 +158,9 @@ methods return405, unknown routes404, invalid queries400; Host/Origin checks,
 no-CORS, CSP, no framing and nosniff reduce local-browser exposure. Resources
 are immutable in-memory snapshots and served as text/plain. Artifact strings
 use DOM textContent, never HTML interpolation. Paths embedded inside artifacts
-are never followed. Localhost is not authentication against other local
-processes/users; do not expose through a proxy/tunnel or treat it as a hosted app.
+are never followed. Current file-safety implementation targets Linux (`dir_fd`/`O_NOFOLLOW`); a
+native Windows server runtime is unverified. Localhost is not authentication
+against other local processes/users; do not expose through a proxy/tunnel or treat it as a hosted app.
 
 Browser evidence covers Chromium on this Linux laptop only. Firefox/Safari,
 Windows browser/WSL forwarding, screen readers, a full accessibility audit and

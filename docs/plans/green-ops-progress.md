@@ -61,22 +61,21 @@ Sources checked 17 November 2026: [European Commission overview](https://energy-
 
 ### Current handoff
 
-Current task: requirements/evidence audit and observability design, from clean
-b48c91d on green-ops/observability-design. Week12 software benchmark complete;
-effective hidden-execution energy regression detection remains unmet. All1920
-gates ABSTAIN,0positive detections across552oracle violations;576control blocks.
-Frozen models/studies/policies and consumed partitions remain unchanged.
+Local read-only dashboard complete on green-ops/dashboard-demo from cleanbe90857.
+Implementationbdd57c9, UI/browser correctionedb0322; final368tests pass (15new),
+Chromium desktop/narrow5views verified,6screenshots saved. No frozen backend or
+study/result changes. Launch `python3 tools/green_ops/dashboard.py`, then open
+http://127.0.0.1:8765. Details: ../green-ops-dashboard.md;
+green-ops-dashboard-handoff.md; docs/results/dashboard-demo (relative to root).
 
-See ../green-ops-requirements-evidence-audit.md (16-row traceability matrix),
-../green-ops-observability-design.md (separate proposed post-run contract),
-green-ops-observability-sprint.md and green-ops-observability-handoff.md.
-Actual CPU residency, local TX readback, internal modem retries and wakeups are
-not exposed as validated observations by the reviewed wrappers. RTT needs a real
-request/reply workload and a supervisor scope decision. Original signed brief,
-exact18-feature specification/rubric and actual effort log remain unavailable.
-Next proposed work: application observation contracts/bookkeeping before physical
-acquisition. This design task does not implement or accept that future sprint.
-Latest verified suite353/114.947s at source2f3559c; current changes docs only.
+Next backend task remains green-ops-observability-sprint.md: strict post-run
+observation/capability contract and Rust operation/logical-ID bookkeeping before
+physical acquisition. Supervisor decisions on RTT scope/exact original features/
+cadence/generalization/academic acceptance remain open. Dashboard is read-only
+saved analytical evidence, not live telemetry, energy approval or project closure.
+Week12 remains0positive detections across552oracle violations with1920ABSTAIN
+and576control blocks; all frozen models/studies and consumed partitions preserved.
+No push/publication/deployment/hardware or current-branch remote verification.
 
 ### Historical Week7 handoff (superseded by current handoff above)
 
@@ -1037,3 +1036,15 @@ pending after a whitespace-sensitive test assertion was normalized (HTML formatt
 changed, provenance text/semantics unchanged). No frozen result/policy edits.
 Current commit verified UI/browser/docs milestone/export; next final suite receipt
 and clean handoff. Observability remains next backend; no hardware/remote claims.
+
+Dashboard final verification:368tests pass with ResourceWarning errors (15new),
+JS syntax,33pinned-resource digests,9local docs links and frozen preflight pass.
+Final UI sourceedb0322; six local screenshots/Chromium159 desktop+narrow receipt
+in docs/results/dashboard-demo. Browser fixes preserve actual artifact units,
+explicit missingness and negative results. No frozen model/result/policy/engine/
+consumption edits, new scoring/training/gate execution/hardware/remote actions.
+Dashboard complete; final verification/docs commit and Windows export next.
+Launch python3 tools/green_ops/dashboard.py at127.0.0.1:8765. Next backend task
+remains versioned observations/capabilities and Rust operation/logical-ID tracker,
+then opt-in workload/importer. UI is a demonstration of saved analytical evidence,
+not proof of detection, physical validation or academic project completion.
