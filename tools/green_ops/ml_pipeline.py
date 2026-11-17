@@ -180,6 +180,7 @@ def prepare_target(records,target):
 
 
 def evaluate_estimator(estimator,records,target,*,scope=None,domain='primary'):
+    if not isinstance(target,str) or target not in TARGET_UNITS:raise ValueError('unsupported energy target')
     predictions=[];truth=[];scores=[];families={};missing=[]
     for record in records:
         features=record_features(record,scope=scope,domain=domain)
@@ -237,6 +238,7 @@ def validate_model_artifact(artifact):
 
 
 def package_model(estimator,target,dataset,training_records):
+    if not training_records:raise ValueError('training records required for model artifact')
     recipe=validate_recipe(dataset['recipe']);scope_record=next(r for r in training_records)
     _,_,used,_=prepare_target(training_records,target)
     artifact=dict(model_artifact_version=1,pipeline_version=PIPELINE_VERSION,dataset_version=2,

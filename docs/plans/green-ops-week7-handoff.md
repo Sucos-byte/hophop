@@ -21,3 +21,10 @@ held-out scoring has run. Next core commit and then workflow tests/selection.
 Dataset commit13b6064; core9 tests now pass (toy cases only). Current: core
 milestone commit; next grouped selection/evaluation/prediction workflow tests.
 Real experiment fitting and held-out scoring have not run.
+
+Core commitea8fafd. Pre-real-experiment suite265 tests passes with ResourceWarning
+errors;19 new tests. Current: commit verified ml_workflow.py/green_ops_ml.py and
+tests. Next actual train stage only: python3 tools/green_ops/green_ops_ml.py train
+--dataset build/green-ops-week7/dataset --output-dir build/green-ops-week7/training.
+Commit frozen selection/models before any evaluate command. Test/stress metrics
+remain unobserved. No late tuning or train+validation refit allowed.

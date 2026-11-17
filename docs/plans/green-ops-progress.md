@@ -415,3 +415,13 @@ pre-run availability. Householder augmented QR avoids normal equations; models
 retain negative predictions rather than clipping. Current: commit verified core.
 Next: grouped CV/validation selection and locked evaluator/CLI using toy data
 before the real experiment. Test/stress performance remains unobserved.
+
+Core milestone committed as `ea8fafd`. Selection/evaluation/prediction workflow
+now verified on toy data: guarded test/stress labels are never accessed during
+selection; CV preprocessing uses fit groups only; locked scoring never refits;
+serialization/hash checks, source scope, CLI prediction, output safety and
+rollback pass. Full pre-experiment suite: **265 tests pass** (19 new Week7 tests),
+ResourceWarning errors enabled; git diff --check passes. No real experiment
+fit or held-out performance inspection yet. Current: commit verified workflow.
+Next: train/CV/validation only, locally commit frozen choices/models, then locked
+one-pass test/stress evaluation without tuning/refitting.
