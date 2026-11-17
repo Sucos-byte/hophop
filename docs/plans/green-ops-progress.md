@@ -61,15 +61,16 @@ Sources checked 17 November 2026: [European Commission overview](https://energy-
 
 ### Current handoff
 
-Week 5 software scope is implemented on `green-ops/week5-measurement-contract`.
-Dataset/registry v2: `822679f`; provenance-filtered tables: `c037dd8`;
-table CLI: `f119f2d`; acquisition protocol and runnable demonstrations: `637afb0`.
-Final review suite: 182 passing tests with ResourceWarning treated as errors.
-Two synthetic unmeasured rows and a separate two-row analytical contract-test
-table passed the acceptance demo. No physical measurement or calibrated
-analytical generator is claimed. Week 6's sourced generator is the next planned
-software package and requires a separate continuation; physical acquisition
-remains a parallel lab milestone. Actual hours remain unreported.
+Week 6 reference software is complete on `green-ops/week6-analytical-reference`.
+Entry checkpoint: `1726971`. Source/plan: `e2e8030`; deterministic core:
+`d9de639`; artifact CLI/sensitivity: `9f13f8f`; final workflow/review: `c17c95d`.
+Full suite: 224 passing tests with ResourceWarning errors (27 new analytical
+tests). Two generated analytical runs passed current table CLI integration.
+Plan and current/next-step handoff: `green-ops-week6-plan.md` and
+`green-ops-week6-handoff.md`. Physical acquisition/calibration and independent
+model evaluation remain pending; no measured accuracy or actual hours claimed.
+No further coding is pending in the approved Week 6 scope. Week 7 remains a
+separately planned continuation.
 
 The historical status below records completed evidence. Its hardware-dependent model-training wording is superseded by the revised software/lab separation above.
 
@@ -305,3 +306,10 @@ Current task: commit this verified final milestone. Next: immediately record
 its actual hash and leave a completed/resumable Week 6 handoff. Future Week 7
 training is separately planned; real calibration and independent evaluation
 remain pending. Workflow: `../green-ops-analytical-reference.md`.
+
+
+Final Week 6 software milestone committed as `c17c95d`; the verified code has
+224 passing tests. All four plan milestones are complete for software scope.
+Current task: final progress/resumption checkpoint (documentation only).
+Next: physical calibration/independent model validation, or a separately
+requested Week 7 implementation. No unchanged-suite rerun, push or publish.
