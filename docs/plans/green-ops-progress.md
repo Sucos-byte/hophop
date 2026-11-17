@@ -549,3 +549,27 @@ signed training-mean contributions and four fixed-alpha leave-one-feature-out
 ablations. No new outcomes generated/scored. Week7 models/selection unchanged.
 Current: commit pre-analysis freeze. Next: implement/test strict study APIs and
 numerical methods, then fit ablations/calibration before evaluation. No push.
+
+Pre-analysis freeze committed3e0dd39. Implemented separate Week8 dataset replay,
+family-max quantile calibration, signed contributions/block permutation and
+original-training-only ablations. Optional prediction interval flags preserve
+default v1 output. Current: targeted tests including full source replay and
+leakage guards; no real-study calibration/evaluation analysis run yet. Next:
+fix verified test failures, commit code, then materialize and fit frozen ablations.
+
+Week8 dataset materialized/replay-audited1800 bundles:450 nominal calibration,
+450 nominal evaluation and900 sensitivity rows,30+30 disjoint groups. Existing
+v2 table hashes match; no model fitting or evaluation scores inspected in data
+milestone. First full suite284 passes (14 new tests); strict explanation summary
+checks subsequently tightened, final same-suite verification underway. Tests
+exercise fixed-study invariants/determinism without printing performance scores
+or selecting methods. Current: final code verification; next: commit dataset/
+methods then fit real ablations, commit, then calibrate/commit before evaluation.
+
+Final full suite284 passes after strict contribution-summary checks (14 new),
+ResourceWarning errors enabled; diff check passes. Numerical independent expected
+values, rank boundaries, no-label/insufficient families, source tampering,
+serialization, model/split/source mismatches, block permutation, contribution
+accounting, no-fit evaluation and both leakage boundaries tested. Current:
+commit verified methods/dataset milestone. Next: real fixed-alpha ablation fits
+on original training only, commit, then calibrate/commit before locked scoring.

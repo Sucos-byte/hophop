@@ -26,16 +26,27 @@ def main(argv=None):
     sub.add_argument('--artifact-dir',type=Path,required=True);sub.add_argument('--output',type=Path,required=True)
     sub.add_argument('--recipe',type=Path,required=True)
     sub.add_argument('--domain',choices=('primary','declared_stress'),default='primary')
+    sub.add_argument('--calibration',type=Path)
+    sub.add_argument('--study-recipe',type=Path)
     args=parser.parse_args(argv)
     try:
         if args.command=='predict':
             output=args.output.expanduser().resolve();source=args.artifact_dir.resolve()
             if output in (args.model.resolve(),args.recipe.resolve()) or source==output or source in output.parents:raise ValueError('prediction output aliases input sources')
+            if bool(args.calibration)!=bool(args.study_recipe):raise ValueError('calibration and study recipe must be supplied together')
+            if any(p is not None and output==p.resolve() for p in (args.calibration,args.study_recipe)):raise ValueError('interval output aliases input')
             model_bytes=args.model.read_bytes();model=model_from_bytes(model_bytes);record=load_design_record(source)
             recipe_bytes=args.recipe.read_bytes();value=predict_record(model,record,domain=args.domain,recipe_bytes=recipe_bytes)
             prediction=dict(prediction_version=1,provenance='analytical_simulation',target=model['target'],unit=model['unit'],
                 run_id=record['row']['run_id'],value=value,domain=args.domain,model_sha256=_sha256(model_bytes),
                 input_manifest_sha256=record['manifest_sha256'],recipe_sha256=_sha256(recipe_bytes),feature_order=model['feature_order'])
+            if args.calibration is not None:
+                from uncertainty import calibration_from_bytes,predict_interval
+                calibration_bytes=args.calibration.read_bytes()
+                study_bytes=args.study_recipe.read_bytes()
+                interval=predict_interval(model,record,calibration_from_bytes(calibration_bytes),original_recipe_bytes=recipe_bytes,
+                    study_recipe_bytes=study_bytes,domain=args.domain)
+                prediction.update(prediction_version=2,interval=interval,calibration_sha256=_sha256(calibration_bytes),study_recipe_sha256=_sha256(study_bytes))
             publish_outputs({output:_json_bytes(prediction).decode('utf-8')})
         else:
             output=args.output_dir.expanduser().resolve()

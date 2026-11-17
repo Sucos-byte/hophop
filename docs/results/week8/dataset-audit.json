@@ -1,0 +1,20 @@
+{
+  "all_source_replays_passed": true,
+  "counts": {
+    "calibration": 450,
+    "evaluation": 450,
+    "stress": 900
+  },
+  "dataset_sha256": "d4a3c8a0ecbaf774274aa33ccd334bdf991180863212a14e5cae47e8b163545e",
+  "group_counts": {
+    "calibration": 30,
+    "evaluation": 30,
+    "stress": 30
+  },
+  "lineage_sha256": "40973a949977f1d993feecd31a31a56bcb45738c30dc7804a5a36dee18844c16",
+  "prior_family_overlap": [],
+  "provenance": "analytical_simulation",
+  "recipe_sha256": "547c93bf038eb9a064571f3d1d46f28fb071e1f76106673ec537e597d3cb20fa",
+  "row_count": 1800,
+  "study_audit_version": 1
+}

@@ -9,3 +9,12 @@ training-mean signed contributions, original-training-only fixed-alpha ablations
 Next: implement/test dataset/calibration/explanation/artifact APIs; commit verified
 code, ablation fits before calibration, calibration before evaluation. No tuning,
 no push/publish; all analytical_simulation, physical validation pending.
+
+Freeze commit3e0dd39. Dataset ready build/green-ops-week8-data,1800 source replays
+pass. First full suite284 passes; final rerun after stricter explanation summary
+validation is underway (/tmp/green-ops-week8-final-tests.log). No real-study
+scores inspected. Next commit verified code/data audit, then ablations/commit,
+calibration/commit, locked evaluation. Original model hashes unchanged.
+
+Final full suite284 passes (106.8s), including latest validators. Code/data
+milestone ready to commit; real scoring stages still pending in prescribed order.
