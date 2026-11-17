@@ -10,20 +10,20 @@ Week 1   Firmware telemetry                 [##########] Complete software scope
 Week 2   Log pipeline + run metadata        [##########] Complete software scope
 Week 3   Planner + loss simulation          [##########] Complete software scope
 Week 4   Dataset builder + synthetic demo   [##########] Complete software scope
-Week 5   Feature/window/table contracts     [####------] Software contracts, table CLI and demos complete; lab evidence pending
+Week 5   Feature/window/table contracts     [##########] Contracts/CLI implemented; physical evidence pending
 
 PHASE 2  Analytical data and learning
 Week 6   Analytical reference generator     [##########] Reference software complete; physical validation pending
 Week 7   Regression + grouped evaluation    [##########] Analytical software pilot complete; validation limits recorded
-Week 8   Uncertainty + explainability       [----------] Planned; laptop executable
+Week 8   Uncertainty + explainability       [##########] Analytical study complete; family coverage below nominal
 
 PHASE 3  Regression policy and CI
-Week 9   Budgets + battery forecasting      [----------] Planned; laptop executable
-Week 10  PR report + GitHub Actions         [----------] Planned; laptop executable
+Week 9   Budgets + battery forecasting      [##########] Research software; default evidence abstains
+Week 10  PR report + GitHub Actions         [##########] Reports/CI implemented; remote evidence only at ff801898
 
 PHASE 4  Fault-injection benchmark
-Week 11  Five fault families + baselines    [----------] Planned; laptop executable
-Week 12  Benchmark + reproducibility report [----------] Planned; laptop executable
+Week 11  Five fault families + baselines    [##########] Analytical mechanisms implemented, no physical faults tested
+Week 12  Benchmark + reproducibility report [##########] Benchmark complete; zero positive detections, objective unmet
 
 LAB      Physical calibration/validation   [----------] Parallel track; lab access required
 Review   Draft PR #101                     [??????????] Current status unverified
@@ -60,6 +60,25 @@ The cited EU phone/tablet ecodesign regulation does not establish a universal fi
 Sources checked 17 November 2026: [European Commission overview](https://energy-efficient-products.ec.europa.eu/product-list/smartphones-and-tablets_en), [Regulation (EU) 2023/1670](https://eur-lex.europa.eu/eli/reg/2023/1670/oj/eng).
 
 ### Current handoff
+
+Current task: requirements/evidence audit and observability design, from clean
+b48c91d on green-ops/observability-design. Week12 software benchmark complete;
+effective hidden-execution energy regression detection remains unmet. All1920
+gates ABSTAIN,0positive detections across552oracle violations;576control blocks.
+Frozen models/studies/policies and consumed partitions remain unchanged.
+
+See ../green-ops-requirements-evidence-audit.md (16-row traceability matrix),
+../green-ops-observability-design.md (separate proposed post-run contract),
+green-ops-observability-sprint.md and green-ops-observability-handoff.md.
+Actual CPU residency, local TX readback, internal modem retries and wakeups are
+not exposed as validated observations by the reviewed wrappers. RTT needs a real
+request/reply workload and a supervisor scope decision. Original signed brief,
+exact18-feature specification/rubric and actual effort log remain unavailable.
+Next proposed work: application observation contracts/bookkeeping before physical
+acquisition. This design task does not implement or accept that future sprint.
+Latest verified suite353/114.947s at source2f3559c; current changes docs only.
+
+### Historical Week7 handoff (superseded by current handoff above)
 
 Week7 analytical regression pilot is complete on green-ops/week7-ml-regression.
 Entry9138511; recipe freeze6c4662e; data13b6064; coreea8fafd; workflow58cbe92;
@@ -958,3 +977,25 @@ work: actual-state telemetry/post-run contract, synchronized PPK2 and fresh
 physical parent-disjoint study, not tuning on this benchmark. No blocker or
 required user/hardware action for this completed task. Final docs-only checkpoint
 and atomic Windows snapshot before stopping.
+
+Requirements/evidence audit started from cleanb48c91d; branch
+ green-ops/observability-design. Read Windows gap assessment as secondary status,
+then actual telemetry/Ping/PHY/MAC code. Current: trace requirements and design
+separate post-run observations; next concrete sprint/tests/acceptance map.
+No frozen study/model/policy changes or new scoring.353tests remains historical
+verified software evidence, not audit/physical completion. Original signed brief,
+exact18-feature specification and academic rubric not located in searched roots.
+
+Audit/design milestone:16-row requirement->implementation->tests->experiment->gap
+->proposed acceptance matrix written, including latency/delivery/18features/
+100ms/portability/optional comparisons/CI/academic evidence. Separate proposed
+post-run diagnosticv1 contract defines scope, capability/missingness, clocks,
+quality/overhead and leakage safeguards; unsupported fields remain unavailable.
+RTT A/B/C supervisor decision and new request/reply workload documented. Next
+sprint maps concrete proposed files/interfaces, tests and laptop/hardware gates;
+no unsupported readback promised or asynchronous wall-time called CPU-active.
+Tracker top roadmap/handoff reconciled with latest evidence without changing
+historical results.65local links/34source snapshot hashes verified; frozen
+preflight passes without scoring, code/model/policy/result bytes unchanged.
+Current: verify final docs/receipt and commit/export. No new suite/hardware/
+remote run, no tuning or task push. No decision required to finish this audit.

@@ -1,0 +1,258 @@
+{
+  "audit_version": 1,
+  "baseline_clean": true,
+  "entries": [
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-progress.md",
+      "sha256": "c87979483482d7d2e974b6888b84e161aff8f21d1f618ee25b974869c5bc9911",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-native-handoff.md",
+      "sha256": "a458c7f8e960f4198ed6b96ec6fb445974efeee442a47da7142e7558c4f1e34e",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week5-review.md",
+      "sha256": "2ff1adef6ebb8ee914c53463e6375f506cfb45915cccf5b84781a8c31bf0d276",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week7-review.md",
+      "sha256": "eade916c84b56c2a15ae6eee00e089d48eb8de142c74b274213ca7771fc561a8",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/green-ops-week12-results.md",
+      "sha256": "e3153f79bbdad984fbfcfe1eb2250bd810b4047dfcd8f9b66608d8ca18a3770c",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/green-ops-project-results.md",
+      "sha256": "9c1adf2e84e268a8c94ebae8bbb1650665d830460fcdd1c8d15cc84acb662c6c",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "examples/src/bin/ping.rs",
+      "sha256": "0368f3fcfd43061966822ff4b331bacd964e31021d81f6b04bf74394d72bcfdc",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "examples/src/green_ops_telemetry.rs",
+      "sha256": "645b2d7587521ae7154a8374a3da5dbb3dd9ea10477e2d0afc6567d98d0ca38c",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "hophop/src/nrfxlib_phy/mod.rs",
+      "sha256": "e33a2a5dd513b9d6957fd9f3fde191ca452e5343013b10382ace62250ac30153",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "hophop/src/nrfxlib_phy/rx.rs",
+      "sha256": "e4d017c8138cbbcf5b49e67a628f77e9300e9c5c06a3d79c63e8eb2f2a8c5a74",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "hophop/src/nrfxlib_phy/latency.rs",
+      "sha256": "c035a216ac19317c885725881382ba2961762c2e7b96a7c3e0ed96f1ee0808a7",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "hophop/src/nrfxlib_mac/mod.rs",
+      "sha256": "af59865b26c30607eb9277d210dfb41a8d9d492559e37fc204aaa5756eacf2a0",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "hophop/src/nrfxlib_mac/callbacks.rs",
+      "sha256": "19390afcadc1384e0c8a9c2d03a3f0490f7f0e6167ec5de3385ed7be887a7ef3",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "hophop/src/coap.rs",
+      "sha256": "f05a37430fd3a9c85f67548ebd1e92273818bb2cffabd1ae4d67754aff0f5024",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "tools/green_ops/feature_contract.py",
+      "sha256": "69158d2f5e86cccfc59d637145f240864de14e7704f8be2a9122b69bf4ee1ce9",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "tools/green_ops/fault_workflow.py",
+      "sha256": "09a6bc2c97594c8f83f89141b1c73368bed3e69522d4ae72b58b246e6d7b12cf",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "tools/green_ops/ppk2_summary.py",
+      "sha256": "fda7c21d62894540e5c92ec01c02380f8b9949538ec659beb50a6ee08b6bffc9",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": ".github/workflows/green-ops-ci.yml",
+      "sha256": "08885d16f4d35f4add7aad8e4e1ba565ee18e3cfeff7a4b5be0bc0f31af6bd8c",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": ".github/workflows/buildtest.yml",
+      "sha256": "f90afae0675af3631ef4094372bbd706ca7a10e9e3601d6e29ccca6f717fac6f",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "test/07_app-build.sh",
+      "sha256": "ff811798b3dc336f7e77ed2423ab049a1ce2e100cf4d9f6aad3e4efde9ce403a",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week10-plan.md",
+      "sha256": "56d96a8fd73a87af2408acb8e639e4b4c9ddbef3909dfb2d8505fa5c126cdc11",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week11-plan.md",
+      "sha256": "347032cf4edfa265ab1372f2c690e9ea67f16a1282888c9fb09d8424c9135c37",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week12-plan.md",
+      "sha256": "b6c7f6d34215494623dfa4d72dd401a0e31c523f932bd46b43156a9f6704e8c4",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week5-plan.md",
+      "sha256": "80b3cdd9271a50068852afe7daf907d1e491aa696af41ac6e0a18ee79f01256b",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week6-plan.md",
+      "sha256": "6bb124efc6623999bdf9ab993a56bb4e9379c788024d1a03692e579ce08377cf",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week7-plan.md",
+      "sha256": "5ed0eacb070f8ee2f50aacd2a9a3770e01fa73d987f086a19249e79acc9c01c9",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week8-plan.md",
+      "sha256": "8b1b3b56c3b76761e71c096c357a2b6f7c0c7f66aa24881c31e8ba31a261704f",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "repository source/history",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "docs/plans/green-ops-week9-plan.md",
+      "sha256": "0dea3c99f20c88c0b5d54550e2c1718d3cf7c875414dca3ee94027b2c6860631",
+      "snapshot_revision": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9"
+    },
+    {
+      "authority": "secondary external planning/status",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "/mnt/c/Users/thite/Documents/Codex/2026-11-10/superpowers-plugin-superpowers-openai-curated-remote/green-ops-gap-audit.md",
+      "sha256": "81d8a6f28e19bfddf8fe686fa6680f8cc3139c01219b8c652a40858b1d62803d"
+    },
+    {
+      "authority": "secondary external planning/status",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "/mnt/c/Users/thite/Documents/Codex/2026-11-10/superpowers-plugin-superpowers-openai-curated-remote/green-ops-interim-technical-report.md",
+      "sha256": "ed243932d08536529056d6c3b9cd5cb7460eb86b946e6e99cb790089de1da7e1"
+    },
+    {
+      "authority": "secondary external planning/status",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "/mnt/c/Users/thite/Documents/Codex/2026-11-10/superpowers-plugin-superpowers-openai-curated-remote/green-ops-week4-plan.md",
+      "sha256": "0173c86fef56b234cbf28cbde621edf73ced9e8add1cc8ade8d74c8f02bb8e4b"
+    },
+    {
+      "authority": "secondary external planning/status",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "/mnt/c/Users/thite/Documents/Codex/2026-11-10/superpowers-plugin-superpowers-openai-curated-remote/green-ops-week5-plan.md",
+      "sha256": "5f50916fa92e996ccb189eca2271ed9c800f80b955b78501468facb4b53b705e"
+    },
+    {
+      "authority": "secondary external planning/status",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "/mnt/c/Users/thite/Documents/Codex/2026-11-10/superpowers-plugin-superpowers-openai-curated-remote/green-ops-native-handoff.md",
+      "sha256": "2ad6df918578c8a7361e7d8c6caeb786569708eaef9e80a1e5379b310729c275"
+    },
+    {
+      "authority": "secondary external planning/status",
+      "hash_meaning": "inspected byte snapshot, not proof of requirement approval",
+      "path": "/mnt/c/Users/thite/Documents/Codex/2026-11-10/superpowers-plugin-superpowers-openai-curated-remote/green-ops-status-export-instructions.md",
+      "sha256": "02bc2ca21b8f482e8835014a66568367210baa48eb7e365d6226c2494ac74443"
+    }
+  ],
+  "entry_checkpoint": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9",
+  "latest_prior_tests": {
+    "count": 353,
+    "duration_seconds": 114.947,
+    "source": "2f3559cb8eb6fe35b8bdbcd328029c9998c31797"
+  },
+  "new_experiments": false,
+  "scope": "audit/design only",
+  "search_scope": [
+    "repository documentation and source",
+    "named Windows planning root and outputs filenames"
+  ],
+  "unavailable_originals": [
+    "signed project brief and title specification",
+    "supervisor-approved rubric/detailed requirements",
+    "exact18-feature specification",
+    "original100ms timing/tolerance specification",
+    "primary Week1-3 plans",
+    "actual student effort log"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "baseline": "b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9",
+  "changes": "documentation only; no implementation, new scoring or experiments",
+  "frozen_and_production_paths_unchanged": true,
+  "frozen_preflight": {
+    "case_count": 1920,
+    "excluded_parent_count": 109,
+    "freeze_receipt_sha256": "97a2c8a795eb2508a1ec47b433349070ca047198fced4486632ea8b47ab3a980",
+    "frozen_dependencies_verified": true,
+    "historical_archive_limitation": "5334 source paths audited at freeze; transient absolute paths not required for replay; frozen inventory digest retained",
+    "parent_count": 16,
+    "partition_counts": {
+      "locked_evaluation": 960,
+      "validation": 960
+    },
+    "preflight_version": 1,
+    "prior_known_seed_overlap": [],
+    "prior_parent_overlap": [],
+    "random_streams": 48,
+    "recipe_sha256": "f0340476576f6603302c0c33ad9aa62c701d58eada8fae3130cad78d3b03ac29"
+  },
+  "hardware_validation": false,
+  "local_markdown_links": 65,
+  "remote_verification": false,
+  "source_hashes_verified": true,
+  "source_snapshots": 34,
+  "tests": "No new tests/full-suite rerun for unchanged code; prior353 passing at2f3559c,114.947s",
+  "verification_version": 1
+}
