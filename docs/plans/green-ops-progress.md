@@ -859,3 +859,23 @@ not invented Nordic/LTE data. Group requested-power variants under shared payloa
 interval parent. Models/calibration/production policies frozen. Current: commit
 refined plan/recipes; next accounting implementation/tests. Prior317 tests remain
 latest verified source; no unchanged baseline rerun. No remote writes this task.
+
+Pre-outcome freeze committedd0d6331; Windows snapshot refreshed. All5 mechanisms
+implemented before state integration, strict replay/lineage/sensitivity and trusted
+request-only adapter added. Initial15 independent accounting tests passed;
+UTF8 snapshot boundary issue in integration was fixed and22 mechanism/integration
+tests passed. Additional benchmark planning/invalid-resource checks underway;
+full suite launched. New scopes supply no calibrated intervals and default gate
+ABSTAIN is recorded as block, never positive detection. Current: verify complete
+implementation, then commit/export. Next small development examples and freeze
+unscored Week12 parent-disjoint recipe; no pushes or model/policy/calibration edits.
+
+Implementation release full suite341 passes (24 new,111.869s), ResourceWarning
+errors enabled. Independent baseline/CPU/TX/retry/beacon/fragment arithmetic,
+half-open delivery, zero controls, time conservation, infeasible-before-integration,
+replay/lineage/seeds/input leakage and gate0/1/2/3/rollback tested. Reports also
+separate unchanged200mW analytical point checks from the5% development oracle;
+neither is accepted calibrated evidence. Benchmark planner tests prove no energy
+simulation/scoring and1920unique cases/16new parents,48streams. Current: commit
+verified implementation/export; next actual small dev examples and unscored
+Week12 recipe freeze. Models/calibration/production policies unchanged, no push.
