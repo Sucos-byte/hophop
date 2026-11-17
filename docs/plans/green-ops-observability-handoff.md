@@ -1,5 +1,6 @@
 # Requirements/evidence audit and observability handoff
 
+Audit/design milestone committed3b9f4e7. Final tracker-only checkpoint follows.
 Complete audit/design only on green-ops/observability-design from verified clean
 b48c91d7cc08f21f0bee7f44074f224c3fa2b3f9. No applicable AGENTS.md found.
 No source/model/policy/benchmark changes, new scoring, hardware execution, push,
